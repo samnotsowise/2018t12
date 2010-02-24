@@ -1,0 +1,3 @@
+* Committing
+
+For individual member committals, make a new folder in branch. Name each branch descriptively, and prefix it with your initials. The trunk will be updated at team meetings only. *Do not* modify the trunk. Before each modification of the trunk a backup will be made in tags. This will be a repository of previous code should you need to lookup how the program has changed.
