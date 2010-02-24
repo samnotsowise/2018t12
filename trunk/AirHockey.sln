@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AirHockey", "AirHockey\AirHockey.csproj", "{C510D757-7FC7-43F3-AE89-E3357359B466}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C510D757-7FC7-43F3-AE89-E3357359B466}.Debug|x86.ActiveCfg = Debug|x86
+		{C510D757-7FC7-43F3-AE89-E3357359B466}.Debug|x86.Build.0 = Debug|x86
+		{C510D757-7FC7-43F3-AE89-E3357359B466}.Release|x86.ActiveCfg = Release|x86
+		{C510D757-7FC7-43F3-AE89-E3357359B466}.Release|x86.Build.0 = Release|x86
+		{3C133142-F7B1-46AD-9D0F-388D0EAD179D}.Debug|x86.ActiveCfg = Debug|x86
+		{3C133142-F7B1-46AD-9D0F-388D0EAD179D}.Release|x86.ActiveCfg = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
