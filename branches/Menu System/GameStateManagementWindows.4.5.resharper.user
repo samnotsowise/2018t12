@@ -1,0 +1,95 @@
+<Configuration>
+  <SettingsComponent>
+    <string />
+    <integer />
+    <boolean>
+      <setting name="SolutionAnalysisEnabled">False</setting>
+    </boolean>
+  </SettingsComponent>
+  <NAntValidationSettings>
+    <NAntPath value="" />
+  </NAntValidationSettings>
+  <RecentFiles>
+    <RecentFiles>
+      <File id="B1A596F8-B26C-4826-99D1-94C9327AB586/d:ScreenManager/f:GameScreen.cs" caret="6157" fromTop="26" />
+      <File id="B1A596F8-B26C-4826-99D1-94C9327AB586/d:Screens/f:MenuScreen.cs" caret="932" fromTop="30" />
+      <File id="B1A596F8-B26C-4826-99D1-94C9327AB586/d:Custom Classes/f:ContextBox.cs" caret="3109" fromTop="65" />
+      <File id="B1A596F8-B26C-4826-99D1-94C9327AB586/d:Screens/f:MainMenuScreen.cs" caret="3722" fromTop="9" />
+    </RecentFiles>
+    <RecentEdits>
+      <File id="B1A596F8-B26C-4826-99D1-94C9327AB586/d:Screens/f:MainMenuScreen.cs" caret="2499" fromTop="81" />
+      <File id="B1A596F8-B26C-4826-99D1-94C9327AB586/d:Custom Classes/f:ContextBox.cs" caret="2870" fromTop="62" />
+      <File id="B1A596F8-B26C-4826-99D1-94C9327AB586/d:Screens/f:MainMenuScreen.cs" caret="2499" fromTop="73" />
+      <File id="B1A596F8-B26C-4826-99D1-94C9327AB586/d:Screens/f:MainMenuScreen.cs" caret="4365" fromTop="30" />
+      <File id="B1A596F8-B26C-4826-99D1-94C9327AB586/d:Custom Classes/f:ContextBox.cs" caret="2672" fromTop="57" />
+      <File id="B1A596F8-B26C-4826-99D1-94C9327AB586/d:Custom Classes/f:ContextBox.cs" caret="2425" fromTop="50" />
+      <File id="B1A596F8-B26C-4826-99D1-94C9327AB586/d:Screens/f:MainMenuScreen.cs" caret="870" fromTop="13" />
+      <File id="B1A596F8-B26C-4826-99D1-94C9327AB586/d:Screens/f:MainMenuScreen.cs" caret="2428" fromTop="22" />
+      <File id="B1A596F8-B26C-4826-99D1-94C9327AB586/d:Screens/f:MainMenuScreen.cs" caret="1025" fromTop="34" />
+      <File id="B1A596F8-B26C-4826-99D1-94C9327AB586/d:Custom Classes/f:ContextBox.cs" caret="2971" fromTop="54" />
+      <File id="B1A596F8-B26C-4826-99D1-94C9327AB586/d:Screens/f:MainMenuScreen.cs" caret="4664" fromTop="12" />
+      <File id="B1A596F8-B26C-4826-99D1-94C9327AB586/d:Screens/f:MainMenuScreen.cs" caret="4825" fromTop="16" />
+      <File id="B1A596F8-B26C-4826-99D1-94C9327AB586/d:Custom Classes/f:ContextBox.cs" caret="3221" fromTop="26" />
+      <File id="B1A596F8-B26C-4826-99D1-94C9327AB586/d:Custom Classes/f:ContextBox.cs" caret="3593" fromTop="35" />
+      <File id="B1A596F8-B26C-4826-99D1-94C9327AB586/d:Screens/f:MainMenuScreen.cs" caret="4916" fromTop="20" />
+    </RecentEdits>
+  </RecentFiles>
+  <UnitTestRunner>
+    <Providers />
+  </UnitTestRunner>
+  <UnitTestRunnerMSTest>
+    <UseTestRunConfigFromMetadataFile>False</UseTestRunConfigFromMetadataFile>
+  </UnitTestRunnerMSTest>
+  <CompletionStatisticsManager>
+    <ItemStatistics item="Default">
+      <Item value="this" priority="0" />
+      <Item value="Int16" priority="0" />
+      <Item value="int" priority="0" />
+      <Item value="menuSize" priority="1" />
+      <Item value="PlayerIndex" priority="0" />
+      <Item value="contentBox" priority="0" />
+      <Item value="MenuEntries" priority="0" />
+      <Item value="ControllingPlayer" priority="1" />
+      <Item value="bool" priority="0" />
+      <Item value="IsActive" priority="0" />
+      <Item value="if" priority="0" />
+      <Item value="active" priority="0" />
+      <Item value="return" priority="0" />
+      <Item value="Texture2D" priority="0" />
+      <Item value="logo" priority="1" />
+      <Item value="content" priority="0" />
+      <Item value="spriteBatch" priority="0" />
+      <Item value="Color" priority="3" />
+      <Item value="new" priority="0" />
+      <Item value="Vector2" priority="1" />
+      <Item value="logoPosition" priority="0" />
+      <Item value="null" priority="0" />
+      <Item value="SpriteEffects" priority="0" />
+      <Item value="TransitionAlpha" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:GameStateManagement.MainMenuScreen">
+      <Item value="IsActive" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:GameStateManagement.ContextBox">
+      <Item value="UpdateBox" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Collections.Generic.IList`1">
+      <Item value="Count" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Microsoft.Xna.Framework.Content.ContentManager">
+      <Item value="Load" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Microsoft.Xna.Framework.Graphics.SpriteBatch">
+      <Item value="Draw" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@Microsoft.Xna.Framework.Graphics.Color">
+      <Item value="White" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@Microsoft.Xna.Framework.Vector2">
+      <Item value="Zero" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@Microsoft.Xna.Framework.Graphics.SpriteEffects">
+      <Item value="None" priority="0" />
+    </ItemStatistics>
+  </CompletionStatisticsManager>
+</Configuration>

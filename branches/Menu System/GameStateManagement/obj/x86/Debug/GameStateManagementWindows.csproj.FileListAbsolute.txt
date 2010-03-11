@@ -1,0 +1,40 @@
+E:\CSC2018\GameStateManagementSample\GameStateManagement\bin\x86\Debug\Content\background.xnb
+E:\CSC2018\GameStateManagementSample\GameStateManagement\bin\x86\Debug\Content\blank.xnb
+E:\CSC2018\GameStateManagementSample\GameStateManagement\bin\x86\Debug\Content\gradient.xnb
+E:\CSC2018\GameStateManagementSample\GameStateManagement\bin\x86\Debug\Content\gamefont.xnb
+E:\CSC2018\GameStateManagementSample\GameStateManagement\bin\x86\Debug\Content\menufont.xnb
+E:\CSC2018\GameStateManagementSample\GameStateManagement\bin\x86\Debug\GameStateManagement.exe
+E:\CSC2018\GameStateManagementSample\GameStateManagement\bin\x86\Debug\GameStateManagement.pdb
+E:\CSC2018\GameStateManagementSample\GameStateManagement\obj\x86\Debug\ResolveAssemblyReference.cache
+E:\CSC2018\GameStateManagementSample\GameStateManagement\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+E:\CSC2018\GameStateManagementSample\GameStateManagement\obj\x86\Debug\GameStateManagement.exe
+E:\CSC2018\GameStateManagementSample\GameStateManagement\obj\x86\Debug\GameStateManagement.pdb
+F:\CSC2018\GameStateManagementSample\GameStateManagement\bin\x86\Debug\Content\background.xnb
+F:\CSC2018\GameStateManagementSample\GameStateManagement\bin\x86\Debug\Content\blank.xnb
+F:\CSC2018\GameStateManagementSample\GameStateManagement\bin\x86\Debug\Content\gradient.xnb
+F:\CSC2018\GameStateManagementSample\GameStateManagement\bin\x86\Debug\Content\gamefont.xnb
+F:\CSC2018\GameStateManagementSample\GameStateManagement\bin\x86\Debug\Content\menufont.xnb
+F:\CSC2018\GameStateManagementSample\GameStateManagement\bin\x86\Debug\GameStateManagement.exe
+F:\CSC2018\GameStateManagementSample\GameStateManagement\bin\x86\Debug\GameStateManagement.pdb
+F:\CSC2018\GameStateManagementSample\GameStateManagement\obj\x86\Debug\ResolveAssemblyReference.cache
+F:\CSC2018\GameStateManagementSample\GameStateManagement\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+F:\CSC2018\GameStateManagementSample\GameStateManagement\obj\x86\Debug\GameStateManagement.exe
+F:\CSC2018\GameStateManagementSample\GameStateManagement\obj\x86\Debug\GameStateManagement.pdb
+F:\CSC2018\GameStateManagementSample\GameStateManagement\bin\x86\Debug\Content\Images\background.xnb
+F:\CSC2018\GameStateManagementSample\GameStateManagement\bin\x86\Debug\Content\Images\hockey_table.xnb
+F:\CSC2018\GameStateManagementSample\GameStateManagement\bin\x86\Debug\Content\Images\logo.xnb
+F:\CSC2018\GameStateManagementSample\GameStateManagement\bin\x86\Debug\Content\Images\Main Menu\Context\box.xnb
+F:\CSC2018\GameStateManagementSample\GameStateManagement\bin\x86\Debug\Content\Images\Main Menu\Context\exit.xnb
+F:\CSC2018\GameStateManagementSample\GameStateManagement\bin\x86\Debug\Content\Images\Main Menu\Context\findgame.xnb
+F:\CSC2018\GameStateManagementSample\GameStateManagement\bin\x86\Debug\Content\Images\Main Menu\Context\multiplayer.xnb
+F:\CSC2018\GameStateManagementSample\GameStateManagement\bin\x86\Debug\Content\Images\Main Menu\Context\options.xnb
+F:\CSC2018\GameStateManagementSample\GameStateManagement\bin\x86\Debug\Content\Images\Main Menu\Context\singleplayer.xnb
+E:\CSC2018\GameStateManagementSample\GameStateManagement\bin\x86\Debug\Content\Images\background.xnb
+E:\CSC2018\GameStateManagementSample\GameStateManagement\bin\x86\Debug\Content\Images\Main Menu\Context\box.xnb
+E:\CSC2018\GameStateManagementSample\GameStateManagement\bin\x86\Debug\Content\Images\Main Menu\Context\exit.xnb
+E:\CSC2018\GameStateManagementSample\GameStateManagement\bin\x86\Debug\Content\Images\Main Menu\Context\findgame.xnb
+E:\CSC2018\GameStateManagementSample\GameStateManagement\bin\x86\Debug\Content\Images\Main Menu\Context\multiplayer.xnb
+E:\CSC2018\GameStateManagementSample\GameStateManagement\bin\x86\Debug\Content\Images\Main Menu\Context\options.xnb
+E:\CSC2018\GameStateManagementSample\GameStateManagement\bin\x86\Debug\Content\Images\Main Menu\Context\singleplayer.xnb
+E:\CSC2018\GameStateManagementSample\GameStateManagement\bin\x86\Debug\Content\Images\hockey_table.xnb
+E:\CSC2018\GameStateManagementSample\GameStateManagement\bin\x86\Debug\Content\Images\logo.xnb
