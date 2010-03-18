@@ -84,6 +84,11 @@
     <Compile Include="Classes\Mouse.cs" />
     <Compile Include="Classes\Paddle.cs" />
     <Compile Include="Classes\Puck.cs" />
+    <Compile Include="Particles\ExplosionParticleSystem.cs" />
+    <Compile Include="Particles\ExplosionSmokeParticleSystem.cs" />
+    <Compile Include="Particles\Particle.cs" />
+    <Compile Include="Particles\ParticleSystem.cs" />
+    <Compile Include="Particles\SmokePlumeParticleSystem.cs" />
     <Compile Include="Screens\MainScreen.cs" />
     <Compile Include="AirHockey.cs" />
     <Compile Include="Program.cs" />
@@ -96,11 +101,6 @@
     </NestedContentProject>
   </ItemGroup>
   <ItemGroup>
-    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
-      <Visible>False</Visible>
-      <ProductName>.NET Framework Client Profile</ProductName>
-      <Install>false</Install>
-    </BootstrapperPackage>
     <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
       <Visible>False</Visible>
       <ProductName>.NET Framework 2.0 %28x86%29</ProductName>

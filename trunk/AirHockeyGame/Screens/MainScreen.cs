@@ -9,7 +9,8 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
-namespace FarseerGames.AirHockeyGame.Screens {
+namespace AirHockeyGame.Screens
+{
     public class MainScreen : GameScreen {
         private Body _circleBody;
         private CircleBrush _circleBrush;
@@ -66,6 +67,16 @@ namespace FarseerGames.AirHockeyGame.Screens {
             }
             HandleKeyboardInput(input);
             base.HandleInput(input);
+
+            //TODO: Make this useful!
+            if(input.IsNewKeyPress(Keys.Space))
+            {
+                ScreenManager.RequestParticleEffect('e', _rectangleBody.Position);
+            }
+            if(input.IsNewKeyPress(Keys.F))
+            {
+                ScreenManager.RequestParticleEffect('s', _circleBody.Position);
+            }
         }
 
         private void HandleKeyboardInput(InputState input)
@@ -119,5 +130,6 @@ namespace FarseerGames.AirHockeyGame.Screens {
             sb.AppendLine("  -Hold down left button and drag");
             return sb.ToString();
         }
+
     }
 }

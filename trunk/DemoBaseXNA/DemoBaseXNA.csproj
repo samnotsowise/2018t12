@@ -98,6 +98,8 @@
     <Compile Include="DrawingSystem\RectangleBrush.cs" />
     <Compile Include="PhysicsSimulatorView.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ScreenSystem\Custom Screen Classes\ContextBox.cs" />
+    <Compile Include="ScreenSystem\Custom Screen Classes\OptionsMenuScreen.cs" />
     <Compile Include="ScreenSystem\GameScreen.cs" />
     <Compile Include="ScreenSystem\InputState.cs" />
     <Compile Include="ScreenSystem\LogoScreen.cs" />

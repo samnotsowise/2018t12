@@ -1,3 +1,5 @@
+using AirHockeyGame;
+
 namespace FarseerGames.AirHockeyGame
 {
     internal static class Program

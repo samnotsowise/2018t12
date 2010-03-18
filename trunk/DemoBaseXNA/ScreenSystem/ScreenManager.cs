@@ -36,7 +36,56 @@ namespace DemoBaseXNA.ScreenSystem
         private List<GameScreen> _screens = new List<GameScreen>();
         private List<GameScreen> _screensToUpdate = new List<GameScreen>();
         private SpriteFonts _spriteFonts;
-        public MainMenuScreen MainMenuScreen = new MainMenuScreen();
+        private bool gameStart;
+        private bool addParticles;
+
+        public enum GameType
+        {
+            SinglePlayer,
+            FindGame,
+            StartMultiplayer
+        }
+        public GameType gameType;
+
+        /// <summary>
+        /// Specifies the range of particle effects available.
+        /// </summary>
+        public enum ParticleType
+        {
+            Smoke,
+            Explosion,
+            None
+        }
+      
+        /// <summary>
+        /// Tells AirHockey class which particles to add.
+        /// </summary>
+        public ParticleType ParticleTypeToAdd { get; set; }
+
+        public SpriteFonts SpriteFonts
+        {
+            get { return _spriteFonts; }
+        }
+
+        public Vector2 ParticleSourcePosition { get; set; }
+
+        /// <summary>
+        /// Returns true if particles are to be added.
+        /// </summary>
+        public bool AddParticles
+        {
+            get { return addParticles; }
+            set { addParticles = value; }
+        }
+
+        /// <summary>
+        /// Returns true if the game should start.
+        /// </summary>
+        public bool StartTheGame
+        {
+            get { return gameStart; }
+            set { gameStart = value; }
+        }
 
         /// <summary>
         /// Constructs a new screen manager component.
@@ -45,6 +94,8 @@ namespace DemoBaseXNA.ScreenSystem
         public ScreenManager(Game game)
             : base(game)
         {
+            gameStart = false;
+
             ContentManager = new ContentManager(game.Services);
             _graphicsDeviceService = (IGraphicsDeviceService) game.Services.GetService(
                                                                   typeof (IGraphicsDeviceService));
@@ -53,10 +104,26 @@ namespace DemoBaseXNA.ScreenSystem
             if (_graphicsDeviceService == null)
                 throw new InvalidOperationException("No graphics device service.");
         }
-
-        public SpriteFonts SpriteFonts
+       
+        /// <summary>
+        /// ScreenManager can't access AirHockey (Game) methods
+        /// So instead, the AirHockey class must poll the ScreenManager
+        /// to see if the game is supposed to start.
+        /// </summary>
+        /// <param name="gameType">'s': single-player, 'm': start multiplayer, 'f': find game</param>
+        public void StartGame(char gameType)
         {
-            get { return _spriteFonts; }
+            gameStart = true;
+
+            switch (gameType)
+            {
+                case 's': this.gameType = GameType.SinglePlayer;
+                    break;
+                case 'f': this.gameType = GameType.FindGame;
+                    break;
+                case 'm': this.gameType = GameType.StartMultiplayer;
+                    break;
+            }
         }
 
         /// <summary>
@@ -107,7 +174,54 @@ namespace DemoBaseXNA.ScreenSystem
             _screens.Clear();
             _screensToUpdate.Clear();
 
-            AddScreen(MainMenuScreen);
+            AddScreen(new MainMenuScreen());
+        }
+        
+        /// <summary>
+        /// Sets variable to tell ScreenManager to start game.
+        /// </summary>
+        public void GoToSinglePlayerGame()
+        {
+            gameStart = true;
+        }
+        
+        /// <summary>
+        /// ScreenManager needs to let AirHockey to add particles but
+        /// cannot access it directly. It therefore sets relevant variables
+        /// and the AirHockey class polls it every update.
+        /// 
+        /// Classes that can access the ScreenManager methods can therefore
+        /// indirectly start a particle effect
+        /// </summary>
+        /// <param name="particleType">'e': explosion, 's': smoke</param>
+        public void RequestParticleEffect(char particleType, Vector2 position)
+        {
+            addParticles = true;
+            switch(particleType)
+            {
+                case 'e':
+                    ParticleTypeToAdd = ParticleType.Explosion;
+                    break;
+                case 's':
+                    ParticleTypeToAdd = ParticleType.Smoke;
+                    break;
+            }
+
+            ParticleSourcePosition = position;
+        }
+
+        /// <summary>
+        /// Sets variable and gametype so that airhockeygame knows which gametype to start
+        /// </summary>
+        /// <param name="startGame">If true, player creates game. If false player, looks for game.</param>
+        public void GoToMultiGameScreen(bool createGame)
+        {
+            gameStart = true;
+         
+            if (createGame)
+                gameType = GameType.StartMultiplayer;
+            else
+                gameType = GameType.FindGame;
         }
 
         private void Game_Exiting(object sender, EventArgs e)

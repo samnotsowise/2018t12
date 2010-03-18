@@ -48,6 +48,7 @@ namespace DemoBaseXNA.ScreenSystem
                     break;
                 case 1:
                     //also remove the screen that called this pausescreen
+                    
                     ScreenManager.GoToMainMenu();
                     break;
             }
