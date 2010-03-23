@@ -1,0 +1,10 @@
+#summary Submitting Issues
+
+= Introduction =
+
+If you are having trouble with bugs in your program or are unsure how to do something, post a new issue so the entire team can help you out.
+
+
+= Details =
+
+Go to the Issues tab on the project site and submit a new issue
