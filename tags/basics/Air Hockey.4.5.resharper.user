@@ -1,0 +1,167 @@
+<Configuration>
+  <SettingsComponent>
+    <string />
+    <integer />
+    <boolean>
+      <setting name="SolutionAnalysisEnabled">False</setting>
+    </boolean>
+  </SettingsComponent>
+  <NAntValidationSettings>
+    <NAntPath value="" />
+  </NAntValidationSettings>
+  <RecentFiles>
+    <RecentFiles>
+      <File id="F7E1D8C1-5AB0-42A9-9AFE-8F3EEEBF1307/f:Program.cs" caret="22" fromTop="1" />
+      <File id="691B7A20-9CD0-486D-87C4-8BD8001FE8FA/d:ScreenSystem/f:MainMenuScreen.cs" caret="0" fromTop="0" />
+      <File id="F7E1D8C1-5AB0-42A9-9AFE-8F3EEEBF1307/d:Particles/f:Particle.cs" caret="3543" fromTop="101" />
+      <File id="F7E1D8C1-5AB0-42A9-9AFE-8F3EEEBF1307/d:Particles/f:ParticleSystem.cs" caret="9869" fromTop="173" />
+      <File id="F7E1D8C1-5AB0-42A9-9AFE-8F3EEEBF1307/f:AirHockey.cs" caret="3898" fromTop="25" />
+      <File id="691B7A20-9CD0-486D-87C4-8BD8001FE8FA/d:ScreenSystem/f:ScreenManager.cs" caret="2409" fromTop="42" />
+      <File id="F7E1D8C1-5AB0-42A9-9AFE-8F3EEEBF1307/d:Particles/f:ExplosionParticleSystem.cs" caret="1546" fromTop="16" />
+      <File id="691B7A20-9CD0-486D-87C4-8BD8001FE8FA/d:ScreenSystem/f:GameScreen.cs" caret="9723" fromTop="80" />
+      <File id="F7E1D8C1-5AB0-42A9-9AFE-8F3EEEBF1307/d:Particles/f:ExplosionSmokeParticleSystem.cs" caret="2093" fromTop="23" />
+      <File id="F7E1D8C1-5AB0-42A9-9AFE-8F3EEEBF1307/d:Particles/f:SmokePlumeParticleSystem.cs" caret="1776" fromTop="21" />
+      <File id="F7E1D8C1-5AB0-42A9-9AFE-8F3EEEBF1307/d:Screens/f:MainScreen.cs" caret="2623" fromTop="55" />
+      <File id="691B7A20-9CD0-486D-87C4-8BD8001FE8FA/d:ScreenSystem/d:Custom Screen Classes/f:OptionsMenuScreen.cs" caret="2815" fromTop="19" />
+    </RecentFiles>
+    <RecentEdits>
+      <File id="691B7A20-9CD0-486D-87C4-8BD8001FE8FA/d:ScreenSystem/f:ScreenManager.cs" caret="2655" fromTop="32" />
+      <File id="691B7A20-9CD0-486D-87C4-8BD8001FE8FA/d:ScreenSystem/f:ScreenManager.cs" caret="1994" fromTop="23" />
+      <File id="691B7A20-9CD0-486D-87C4-8BD8001FE8FA/d:ScreenSystem/f:ScreenManager.cs" caret="6123" fromTop="75" />
+      <File id="691B7A20-9CD0-486D-87C4-8BD8001FE8FA/d:ScreenSystem/f:ScreenManager.cs" caret="7450" fromTop="57" />
+      <File id="691B7A20-9CD0-486D-87C4-8BD8001FE8FA/d:ScreenSystem/f:ScreenManager.cs" caret="7718" fromTop="63" />
+      <File id="691B7A20-9CD0-486D-87C4-8BD8001FE8FA/d:ScreenSystem/f:ScreenManager.cs" caret="7583" fromTop="61" />
+      <File id="691B7A20-9CD0-486D-87C4-8BD8001FE8FA/d:ScreenSystem/f:ScreenManager.cs" caret="7211" fromTop="57" />
+      <File id="691B7A20-9CD0-486D-87C4-8BD8001FE8FA/d:ScreenSystem/f:ScreenManager.cs" caret="6288" fromTop="48" />
+      <File id="F7E1D8C1-5AB0-42A9-9AFE-8F3EEEBF1307/f:AirHockey.cs" caret="2204" fromTop="5" />
+      <File id="F7E1D8C1-5AB0-42A9-9AFE-8F3EEEBF1307/f:AirHockey.cs" caret="3898" fromTop="31" />
+      <File id="691B7A20-9CD0-486D-87C4-8BD8001FE8FA/d:ScreenSystem/f:ScreenManager.cs" caret="6802" fromTop="7" />
+      <File id="691B7A20-9CD0-486D-87C4-8BD8001FE8FA/d:ScreenSystem/f:ScreenManager.cs" caret="1419" fromTop="41" />
+      <File id="691B7A20-9CD0-486D-87C4-8BD8001FE8FA/d:ScreenSystem/f:ScreenManager.cs" caret="2132" fromTop="26" />
+      <File id="691B7A20-9CD0-486D-87C4-8BD8001FE8FA/d:ScreenSystem/f:ScreenManager.cs" caret="7198" fromTop="17" />
+      <File id="691B7A20-9CD0-486D-87C4-8BD8001FE8FA/d:ScreenSystem/f:ScreenManager.cs" caret="1675" fromTop="14" />
+      <File id="691B7A20-9CD0-486D-87C4-8BD8001FE8FA/d:ScreenSystem/f:ScreenManager.cs" caret="1835" fromTop="23" />
+      <File id="F7E1D8C1-5AB0-42A9-9AFE-8F3EEEBF1307/f:AirHockey.cs" caret="3301" fromTop="21" />
+      <File id="F7E1D8C1-5AB0-42A9-9AFE-8F3EEEBF1307/f:AirHockey.cs" caret="3869" fromTop="16" />
+      <File id="691B7A20-9CD0-486D-87C4-8BD8001FE8FA/d:ScreenSystem/f:ScreenManager.cs" caret="2374" fromTop="40" />
+      <File id="F7E1D8C1-5AB0-42A9-9AFE-8F3EEEBF1307/d:Screens/f:MainScreen.cs" caret="5214" fromTop="16" />
+      <File id="691B7A20-9CD0-486D-87C4-8BD8001FE8FA/d:ScreenSystem/f:GameScreen.cs" caret="9723" fromTop="119" />
+      <File id="F7E1D8C1-5AB0-42A9-9AFE-8F3EEEBF1307/d:Screens/f:MainScreen.cs" caret="5206" fromTop="108" />
+      <File id="F7E1D8C1-5AB0-42A9-9AFE-8F3EEEBF1307/d:Screens/f:MainScreen.cs" caret="2967" fromTop="57" />
+      <File id="F7E1D8C1-5AB0-42A9-9AFE-8F3EEEBF1307/d:Particles/f:ExplosionParticleSystem.cs" caret="1884" fromTop="26" />
+      <File id="F7E1D8C1-5AB0-42A9-9AFE-8F3EEEBF1307/d:Particles/f:ExplosionSmokeParticleSystem.cs" caret="2092" fromTop="23" />
+      <File id="F7E1D8C1-5AB0-42A9-9AFE-8F3EEEBF1307/d:Particles/f:SmokePlumeParticleSystem.cs" caret="1775" fromTop="21" />
+      <File id="F7E1D8C1-5AB0-42A9-9AFE-8F3EEEBF1307/d:Screens/f:MainScreen.cs" caret="3049" fromTop="61" />
+      <File id="691B7A20-9CD0-486D-87C4-8BD8001FE8FA/d:ScreenSystem/d:Custom Screen Classes/f:OptionsMenuScreen.cs" caret="2948" fromTop="16" />
+      <File id="691B7A20-9CD0-486D-87C4-8BD8001FE8FA/d:ScreenSystem/d:Custom Screen Classes/f:OptionsMenuScreen.cs" caret="3271" fromTop="26" />
+      <File id="691B7A20-9CD0-486D-87C4-8BD8001FE8FA/d:ScreenSystem/d:Custom Screen Classes/f:OptionsMenuScreen.cs" caret="2815" fromTop="19" />
+    </RecentEdits>
+  </RecentFiles>
+  <UnitTestRunner>
+    <Providers />
+  </UnitTestRunner>
+  <UnitTestRunnerMSTest>
+    <UseTestRunConfigFromMetadataFile>False</UseTestRunConfigFromMetadataFile>
+  </UnitTestRunnerMSTest>
+  <CompletionStatisticsManager>
+    <ItemStatistics item="Default">
+      <Item value="DemoBaseXNA" priority="1" />
+      <Item value="using" priority="3" />
+      <Item value="FarseerGames" priority="0" />
+      <Item value="new" priority="5" />
+      <Item value="ExplosionParticleSystem" priority="1" />
+      <Item value="private" priority="3" />
+      <Item value="ExplosionSmokeParticleSystem" priority="1" />
+      <Item value="explosion" priority="2" />
+      <Item value="this" priority="2" />
+      <Item value="Game" priority="3" />
+      <Item value="AirHockeyGame" priority="0" />
+      <Item value="AirHockey" priority="10" />
+      <Item value="game" priority="1" />
+      <Item value="smoke" priority="3" />
+      <Item value="Components" priority="0" />
+      <Item value="Vector2" priority="9" />
+      <Item value="public" priority="9" />
+      <Item value="bool" priority="2" />
+      <Item value="return" priority="3" />
+      <Item value="addParticles" priority="1" />
+      <Item value="gameStart" priority="2" />
+      <Item value="value" priority="2" />
+      <Item value="AddParticles" priority="0" />
+      <Item value="enum" priority="0" />
+      <Item value="ParticleType" priority="3" />
+      <Item value="particleType" priority="1" />
+      <Item value="true" priority="2" />
+      <Item value="gameType" priority="1" />
+      <Item value="GameType" priority="1" />
+      <Item value="if" priority="3" />
+      <Item value="createGame" priority="0" />
+      <Item value="else" priority="0" />
+      <Item value="void" priority="0" />
+      <Item value="char" priority="0" />
+      <Item value="switch" priority="1" />
+      <Item value="case" priority="2" />
+      <Item value="ParticleTypeToAdd" priority="0" />
+      <Item value="break" priority="2" />
+      <Item value="ScreenManager" priority="23" />
+      <Item value="particlePosition" priority="1" />
+      <Item value="ParticleSourcePosition" priority="0" />
+      <Item value="position" priority="0" />
+      <Item value="false" priority="0" />
+      <Item value="override" priority="1" />
+      <Item value="_circleBody" priority="0" />
+      <Item value="Keyboard" priority="0" />
+      <Item value="Keys" priority="2" />
+      <Item value="input" priority="2" />
+      <Item value="_rectangleBody" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Microsoft.Xna.Framework.GameComponentCollection">
+      <Item value="Add" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:AirHockeyGame.AirHockey">
+      <Item value="ScreenManager" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:DemoBaseXNA.ScreenSystem.ScreenManager">
+      <Item value="SpriteBatch" priority="0" />
+      <Item value="StartTheGame" priority="1" />
+      <Item value="ParticleTypeToAdd" priority="2" />
+      <Item value="AddParticles" priority="5" />
+      <Item value="ParticleType" priority="3" />
+      <Item value="ParticleSourcePosition" priority="1" />
+      <Item value="RequestParticleEffect" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:AirHockeyGame.ExplosionSmokeParticleSystem">
+      <Item value="AddParticles" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@Microsoft.Xna.Framework.Vector2">
+      <Item value="Zero" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@DemoBaseXNA.ScreenSystem.ScreenManager+GameType">
+      <Item value="StartMultiplayer" priority="0" />
+      <Item value="FindGame" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@DemoBaseXNA.ScreenSystem.ScreenManager+ParticleType">
+      <Item value="Explosion" priority="2" />
+      <Item value="Smoke" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:AirHockeyGame.ExplosionParticleSystem">
+      <Item value="AddParticles" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@Microsoft.Xna.Framework.Input.Keyboard">
+      <Item value="GetState" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Microsoft.Xna.Framework.Input.KeyboardState">
+      <Item value="IsKeyDown" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@Microsoft.Xna.Framework.Input.Keys">
+      <Item value="Space" priority="1" />
+      <Item value="S" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:DemoBaseXNA.ScreenSystem.InputState">
+      <Item value="IsNewKeyPress" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:FarseerGames.FarseerPhysics.Dynamics.Body">
+      <Item value="Position" priority="0" />
+    </ItemStatistics>
+  </CompletionStatisticsManager>
+</Configuration>
