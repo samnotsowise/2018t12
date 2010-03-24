@@ -6,7 +6,7 @@ using Microsoft.Xna.Framework.Input;
 namespace FarseerGames.AirHockeyGame {
 
     /// <summary>
-    /// A Paddle object
+    /// A PlayerPaddle object
     /// Extends PaddleObject
     /// </summary>
     class PlayerPaddle: PaddleObject {
@@ -14,7 +14,7 @@ namespace FarseerGames.AirHockeyGame {
         private Vector2 previousMouse, currentMouse;
 
         /// <summary>
-        /// Constructor - used to create a new Paddle object
+        /// Constructor - used to create a new PlayerPaddle object
         /// </summary>
         /// <param name="t">Texture</param>
         /// <param name="c">Circumference</param>
@@ -40,7 +40,7 @@ namespace FarseerGames.AirHockeyGame {
         }
 
         /// <summary>
-        /// Updates the paddle
+        /// Updates the PlayerPaddle
         /// </summary>
         public override void Update() {
 
@@ -70,7 +70,7 @@ namespace FarseerGames.AirHockeyGame {
         }
 
         /// <summary>
-        /// Resets the mouse to the center of the paddle
+        /// Resets the mouse to the center of the PlayerPaddle
         /// </summary>
         public void ResetMouse() {
             Mouse.SetPosition((int)this.body.Position.X, (int)this.body.Position.Y);
