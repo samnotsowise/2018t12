@@ -15,16 +15,14 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 #endregion
 
-namespace AirHockeyGame
-{
+namespace AirHockeyGame {
     /// <summary>
     /// ParticleSystem is an abstract class that provides the basic functionality to
     /// create a particle effect. Different subclasses will have different effects,
     /// such as fire, explosions, and plumes of smoke. To use these subclasses, 
     /// simply call AddParticles, and pass in where the particles should exist
     /// </summary>
-    public abstract class ParticleSystem : DrawableGameComponent
-    {
+    public abstract class ParticleSystem: DrawableGameComponent {
         // these two values control the order that particle systems are drawn in.
         // typically, particles that use additive blending should be drawn on top of
         // particles that use regular alpha blending. ParticleSystems should therefore
@@ -48,7 +46,7 @@ namespace AirHockeyGame
         // will be expected to draw at one time. this is set in the constructor and is
         // used to calculate how many particles we will need.
         private int howManyEffects;
-        
+
         // the array of particles used by this system. these are reused, so that calling
         // AddParticles will not cause any allocations.
         Particle[] particles;
@@ -60,8 +58,7 @@ namespace AirHockeyGame
         /// <summary>
         /// returns the number of particles that are available for a new effect.
         /// </summary>
-        public int FreeParticleCount
-        {
+        public int FreeParticleCount {
             get { return freeParticles.Count; }
         }
 
@@ -80,7 +77,7 @@ namespace AirHockeyGame
         /// </summary>
         protected int minNumParticles;
         protected int maxNumParticles;
-       
+
         /// <summary>
         /// this controls the texture that the particle system uses. It will be used as
         /// an argument to ContentManager.Load.
@@ -141,7 +138,7 @@ namespace AirHockeyGame
         protected SpriteBlendMode spriteBlendMode;
 
         #endregion
-        
+
         /// <summary>
         /// Constructs a new ParticleSystem.
         /// </summary>
@@ -154,8 +151,7 @@ namespace AirHockeyGame
         /// it has a large impact on the amount of memory required, and slows down the
         /// Update and Draw functions.</remarks>
         protected ParticleSystem(AirHockey game, int howManyEffects)
-            : base(game)
-        {            
+            : base(game) {
             this.game = game;
             this.howManyEffects = howManyEffects;
         }
@@ -166,18 +162,16 @@ namespace AirHockeyGame
         /// 
         /// also, the particle array and freeParticles queue are set up here.
         /// </summary>
-        public override void Initialize()
-        {
+        public override void Initialize() {
             InitializeConstants();
-            
+
             // calculate the total number of particles we will ever need, using the
             // max number of effects and the max number of particles per effect.
             // once these particles are allocated, they will be reused, so that
             // we don't put any pressure on the garbage collector.
             particles = new Particle[howManyEffects * maxNumParticles];
             freeParticles = new Queue<Particle>(howManyEffects * maxNumParticles);
-            for (int i = 0; i < particles.Length; i++)
-            {
+            for(int i = 0; i < particles.Length; i++) {
                 particles[i] = new Particle();
                 freeParticles.Enqueue(particles[i]);
             }
@@ -196,11 +190,9 @@ namespace AirHockeyGame
         /// Override the base class LoadContent to load the texture. once it's
         /// loaded, calculate the origin.
         /// </summary>
-        protected override void LoadContent()
-        {
+        protected override void LoadContent() {
             // make sure sub classes properly set textureFilename.
-            if (string.IsNullOrEmpty(textureFilename))
-            {
+            if(string.IsNullOrEmpty(textureFilename)) {
                 string message = "textureFilename wasn't set properly, so the " +
                     "particle system doesn't know what texture to load. Make " +
                     "sure your particle system's InitializeConstants function " +
@@ -208,7 +200,7 @@ namespace AirHockeyGame
                 throw new InvalidOperationException(message);
             }
             // load the texture....
-            texture = game.Content.Load<Texture2D>(@"Content\Particles\"+textureFilename);
+            texture = game.Content.Load<Texture2D>(@"Content\Particles\" + textureFilename);
 
             // ... and calculate the center. this'll be used in the draw call, we
             // always want to rotate and scale around this point.
@@ -225,19 +217,17 @@ namespace AirHockeyGame
         /// AddParticles will have no effect.
         /// </summary>
         /// <param name="where">where the particle effect should be created</param>
-        public void AddParticles(Vector2 where)
-        {
+        public void AddParticles(Vector2 where) {
             // the number of particles we want for this effect is a random number
             // somewhere between the two constants specified by the subclasses.
-            int numParticles = 
+            int numParticles =
                 AirHockey.Random.Next(minNumParticles, maxNumParticles);
 
             // create that many particles, if you can.
-            for (int i = 0; i < numParticles && freeParticles.Count > 0; i++)
-            {
+            for(int i = 0; i < numParticles && freeParticles.Count > 0; i++) {
                 // grab a particle from the freeParticles queue, and Initialize it.
                 Particle p = freeParticles.Dequeue();
-                InitializeParticle(p, where);               
+                InitializeParticle(p, where);
             }
         }
 
@@ -251,14 +241,13 @@ namespace AirHockeyGame
         /// <param name="p">the particle to initialize</param>
         /// <param name="where">the position on the screen that the particle should be
         /// </param>
-        protected virtual void InitializeParticle(Particle p, Vector2 where)
-        {
+        protected virtual void InitializeParticle(Particle p, Vector2 where) {
             // first, call PickRandomDirection to figure out which way the particle
             // will be moving. velocity and acceleration's values will come from this.
             Vector2 direction = PickRandomDirection();
 
             // pick some random values for our particle
-            float velocity = 
+            float velocity =
                 AirHockey.RandomBetween(minInitialSpeed, maxInitialSpeed);
             float acceleration =
                 AirHockey.RandomBetween(minAcceleration, maxAcceleration);
@@ -281,8 +270,7 @@ namespace AirHockeyGame
         /// particles will move. The default implementation is a random vector in a
         /// circular pattern.
         /// </summary>
-        protected virtual Vector2 PickRandomDirection()
-        {
+        protected virtual Vector2 PickRandomDirection() {
             float angle = AirHockey.RandomBetween(0, MathHelper.TwoPi);
             return new Vector2((float)Math.Cos(angle), (float)Math.Sin(angle));
         }
@@ -291,27 +279,23 @@ namespace AirHockeyGame
         /// overriden from DrawableGameComponent, Update will update all of the active
         /// particles.
         /// </summary>
-        public override void Update(GameTime gameTime)
-        {
+        public override void Update(GameTime gameTime) {
             // calculate dt, the change in the since the last frame. the particle
             // updates will use this value.
             float dt = (float)gameTime.ElapsedGameTime.TotalSeconds;
 
             // go through all of the particles...
-            foreach (Particle p in particles)
-            {
-                
-                if (p.Active)
-                {
+            foreach(Particle p in particles) {
+
+                if(p.Active) {
                     // ... and if they're active, update them.
                     p.Update(dt);
                     // if that update finishes them, put them onto the free particles
                     // queue.
-                    if (!p.Active)
-                    {
+                    if(!p.Active) {
                         freeParticles.Enqueue(p);
                     }
-                }   
+                }
             }
 
             base.Update(gameTime);
@@ -321,16 +305,14 @@ namespace AirHockeyGame
         /// overriden from DrawableGameComponent, Draw will use GameScreenManager.ScreenSystemGame's 
         /// sprite batch to render all of the active particles.
         /// </summary>
-        public override void Draw(GameTime gameTime)
-        {
+        public override void Draw(GameTime gameTime) {
             // tell sprite batch to begin, using the spriteBlendMode specified in
             // initializeConstants
             game.ScreenManager.SpriteBatch.Begin(spriteBlendMode);
-            
-            foreach (Particle p in particles)
-            {
+
+            foreach(Particle p in particles) {
                 // skip inactive particles
-                if (!p.Active)
+                if(!p.Active)
                     continue;
 
                 // normalized lifetime is a value from 0 to 1 and represents how far

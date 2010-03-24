@@ -1,8 +1,7 @@
 using System.Text;
-using GameScreenManager;
-using GameScreenManager.DrawingSystem;
-using GameScreenManager.ScreenSystem;
 using FarseerGames.FarseerPhysics;
+using GameScreenManager;
+using GameScreenManager.ScreenSystem;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
@@ -12,7 +11,6 @@ namespace FarseerGames.AirHockeyGame.Screens {
     /// <summary>
     /// The main game screen
     /// </summary>
-
     public class MainScreen: GameScreen {
 
         private PlayerPaddle playerPaddle;
@@ -22,7 +20,6 @@ namespace FarseerGames.AirHockeyGame.Screens {
         /// <summary>
         /// Initialises MainScreen
         /// </summary>
-
         public override void Initialize() {
             PhysicsSimulator = new PhysicsSimulator(new Vector2(0, 0));
             PhysicsSimulatorView = new PhysicsSimulatorView(PhysicsSimulator);
@@ -32,7 +29,6 @@ namespace FarseerGames.AirHockeyGame.Screens {
         /// <summary>
         /// Loads MainScreen content
         /// </summary>
-
         public override void LoadContent() {
             
             //Load board
@@ -49,7 +45,6 @@ namespace FarseerGames.AirHockeyGame.Screens {
         /// <summary>
         /// Handes input to MainScreen
         /// </summary>
-
         public override void HandleInput(InputState input) {
             if(firstRun) {
                 ScreenManager.AddScreen(new PauseScreen(GetTitle(), GetDetails()));
@@ -73,7 +68,6 @@ namespace FarseerGames.AirHockeyGame.Screens {
         /// <summary>
         /// Update MainScreen
         /// </summary>
-
         public override void Update(GameTime gameTime, bool otherScreenHasFocus, bool coveredByOtherScreen) {
 
             //Prevent menu mouse movements passing on to game
@@ -95,7 +89,6 @@ namespace FarseerGames.AirHockeyGame.Screens {
         /// <summary>
         /// Draws the MainScreen
         /// </summary>
-
         public override void Draw(GameTime gameTime) {
             ScreenManager.SpriteBatch.Begin(SpriteBlendMode.AlphaBlend);
             ScreenManager.SpriteBatch.Draw(ScreenManager.ContentManager.Load<Texture2D>("Content\\Core Game\\boardSurface"), this.board.rect, Color.White);
@@ -111,7 +104,6 @@ namespace FarseerGames.AirHockeyGame.Screens {
         /// Get the screen title
         /// </summary>
         /// <returns>Screen title</returns>
-
         public static string GetTitle() {
             return "Play Game";
         }
@@ -120,7 +112,6 @@ namespace FarseerGames.AirHockeyGame.Screens {
         /// Get the screen details
         /// </summary>
         /// <returns>Screen details</returns>
-
         private static string GetDetails() {
             StringBuilder sb = new StringBuilder();
             sb.AppendLine("This is where we wait for all players to be ready");

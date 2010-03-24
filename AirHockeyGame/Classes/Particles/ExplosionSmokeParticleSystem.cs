@@ -16,26 +16,22 @@ using Microsoft.Xna.Framework.Graphics;
 #endregion
 
 
-namespace AirHockeyGame
-{
+namespace AirHockeyGame {
     /// <summary>
     /// ExplosionSmokeParticleSystem is a specialization of ParticleSystem which
     /// creates a circular pattern of smoke. It should be combined with
     /// ExplosionParticleSystem for best effect.
     /// </summary>
-    public class ExplosionSmokeParticleSystem : ParticleSystem
-    {
+    public class ExplosionSmokeParticleSystem: ParticleSystem {
         public ExplosionSmokeParticleSystem(AirHockey game, int howManyEffects)
-            : base(game, howManyEffects)
-        {            
+            : base(game, howManyEffects) {
         }
 
         /// <summary>
         /// Set up the constants that will give this particle system its behavior and
         /// properties.
         /// </summary>
-        protected override void InitializeConstants()
-        {
+        protected override void InitializeConstants() {
             textureFilename = "smoke";
 
             // less initial speed than the explosion itself

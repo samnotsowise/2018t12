@@ -15,26 +15,22 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 #endregion
 
-namespace AirHockeyGame
-{
+namespace AirHockeyGame {
     /// <summary>
     /// ExplosionParticleSystem is a specialization of ParticleSystem which creates a
     /// fiery explosion. It should be combined with ExplosionSmokeParticleSystem for
     /// best effect.
     /// </summary>
-    public class ExplosionParticleSystem : ParticleSystem
-    {
+    public class ExplosionParticleSystem: ParticleSystem {
         public ExplosionParticleSystem(AirHockey game, int howManyEffects)
-            : base(game, howManyEffects)
-        {
+            : base(game, howManyEffects) {
         }
 
         /// <summary>
         /// Set up the constants that will give this particle system its behavior and
         /// properties.
         /// </summary>
-        protected override void InitializeConstants()
-        {
+        protected override void InitializeConstants() {
             textureFilename = "explosion";
 
             // high initial speed with lots of variance.  make the values closer
@@ -66,10 +62,9 @@ namespace AirHockeyGame
             DrawOrder = AdditiveDrawOrder;
         }
 
-        protected override void InitializeParticle(Particle p, Vector2 where)
-        {
+        protected override void InitializeParticle(Particle p, Vector2 where) {
             base.InitializeParticle(p, where);
-            
+
             // The base works fine except for acceleration. Explosions move outwards,
             // then slow down and stop because of air resistance. Let's change
             // acceleration so that when the particle is at max lifetime, the velocity

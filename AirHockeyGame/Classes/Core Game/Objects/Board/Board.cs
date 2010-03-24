@@ -1,18 +1,28 @@
-﻿using Microsoft.Xna.Framework;
-using FarseerGames.FarseerPhysics;
+﻿using FarseerGames.FarseerPhysics;
+using Microsoft.Xna.Framework;
 
 namespace FarseerGames.AirHockeyGame {
+
+    /// <summary>
+    /// The Board object
+    /// Extends GameObject
+    /// </summary>
     class Board: GameObject {
 
         //Boundaries go clockwise from the top leftmost bound (boundaries[0] = top left boundary)
         private Boundary[] boundaries;
         public Restrictor[] restrictors;
 
+
+        /// <summary>
+        /// Constructor - Creates a new Board object
+        /// </summary>
+        /// <param name="pS"></param>
         public Board(PhysicsSimulator pS) {
             this.SetWidth(1024);
             this.SetHeight(672);
-            this.SetMidWidth((int)(this.width / 2));
-            this.SetMidHeight((int)(this.height / 2));
+            this.SetMidWidth(this.width / 2);
+            this.SetMidHeight(this.height / 2);
             this.SetInitialPosition(new Vector2(0, 54));
             this.position = this.initialPosition;
             this.SetRect(new Rectangle((int)this.position.X, (int)this.position.Y, this.width, this.height));

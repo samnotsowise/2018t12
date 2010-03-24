@@ -6,7 +6,6 @@ namespace FarseerGames.AirHockeyGame {
     /// <summary>
     /// An abstract GameObject object
     /// </summary>
-
     public abstract class GameObject {
 
         public Texture2D texture = null;
@@ -78,12 +77,7 @@ namespace FarseerGames.AirHockeyGame {
         /// Updates the GameObject's postion
         /// </summary>
         /// <param name="p">New Position</param>
-
         public virtual void UpdatePosition(Vector2 p) {
-            //this.position.X = (int)p.X - this.width / 2;
-            //this.position.Y = (int)p.Y - this.height / 2;
-            //this.pRect.X = (int)this.position.X;
-            //this.pRect.Y = (int)this.position.Y;
             this.position.X = p.X;
             this.position.Y = p.Y;
             this.pRect.X = (int)this.position.X;
@@ -118,7 +112,7 @@ namespace FarseerGames.AirHockeyGame {
         /// Set midWidth property
         /// </summary>
         /// <param name="mW">midWidth</param>
-        public void SetMidWidth(int mW) {
+        public void SetMidWidth(float mW) {
             this.pMidWidth = mW;
         }
 
@@ -126,7 +120,7 @@ namespace FarseerGames.AirHockeyGame {
         /// Set midHeight property
         /// </summary>
         /// <param name="mH">midHeight</param>
-        public void SetMidHeight(int mH) {
+        public void SetMidHeight(float mH) {
             this.pMidHeight = mH;
         }
 

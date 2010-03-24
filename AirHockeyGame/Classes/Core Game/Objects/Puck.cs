@@ -10,7 +10,6 @@ namespace FarseerGames.AirHockeyGame {
     /// A Puck object
     /// Extends PhysicsObject
     /// </summary>
-
     class Puck: PhysicsObject {
 
         private Restrictor restrictor;
@@ -22,13 +21,12 @@ namespace FarseerGames.AirHockeyGame {
         /// <param name="c">Circumference</param>
         /// <param name="iP">Initial Position</param>
         /// <param name="pS">Physics Simulator</param>
-
         public Puck(Texture2D t, int c, Vector2 iP, PhysicsSimulator pS, Restrictor r) {
             this.texture = t;
             this.SetWidth(c);
             this.SetHeight(c);
-            this.SetMidWidth((int)(c / 2));
-            this.SetMidHeight((int)this.midWidth);
+            this.SetMidWidth(c / 2);
+            this.SetMidHeight(this.midWidth);
             this.SetRect(new Rectangle((int)this.position.X, (int)this.position.Y, this.width, this.height));
             this.SetInitialPosition(iP);
             this.restrictor = r;
@@ -57,13 +55,8 @@ namespace FarseerGames.AirHockeyGame {
         /// <summary>
         /// Updates the Puck
         /// </summary>
-
         public void Update() {
-            //if(this.restrictor.rect.Contains(this.rect) == true) {
-            //    this.MoveInto(this.restrictor.rect, this.rect);
-            //} else {
-                this.UpdatePosition(this.body.Position);
-            //}
+            this.UpdatePosition(this.body.Position);
         }
     }
 }

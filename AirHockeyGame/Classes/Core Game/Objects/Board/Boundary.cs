@@ -1,10 +1,7 @@
 ﻿using FarseerGames.FarseerPhysics;
-using FarseerGames.FarseerPhysics.Dynamics;
-using FarseerGames.FarseerPhysics.Factories;
 using FarseerGames.FarseerPhysics.Collisions;
+using FarseerGames.FarseerPhysics.Factories;
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
 
 namespace FarseerGames.AirHockeyGame {
 
@@ -12,7 +9,6 @@ namespace FarseerGames.AirHockeyGame {
     /// A Boundary object
     /// Extends PhysicsObject
     /// </summary>
-
     class Boundary: PhysicsObject {
 
         /// <summary>
@@ -22,14 +18,13 @@ namespace FarseerGames.AirHockeyGame {
         /// <param name="h">Height</param>
         /// <param name="iP">Initial Position</param>
         /// <param name="pS">Physics Simulator</param>
-
         public Boundary(int w, int h, Vector2 iP, PhysicsSimulator pS) {
 
             //GameObject properties
             this.SetWidth(w);
             this.SetHeight(h);
-            this.SetMidWidth((int)(w / 2));
-            this.SetMidHeight((int)(h / 2));
+            this.SetMidWidth(w / 2);
+            this.SetMidHeight(h / 2);
             this.SetRect(new Rectangle((int)this.position.X, (int)this.position.Y, this.width, this.height));
             this.SetInitialPosition(iP);
 
