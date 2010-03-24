@@ -1,6 +1,4 @@
 ﻿using FarseerGames.FarseerPhysics;
-using FarseerGames.FarseerPhysics.Collisions;
-using FarseerGames.FarseerPhysics.Factories;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
@@ -11,7 +9,6 @@ namespace FarseerGames.AirHockeyGame {
     /// A Paddle object
     /// Extends PaddleObject
     /// </summary>
-
     class PlayerPaddle: PaddleObject {
 
         private Vector2 previousMouse, currentMouse;
@@ -23,21 +20,19 @@ namespace FarseerGames.AirHockeyGame {
         /// <param name="c">Circumference</param>
         /// <param name="iP">Initial Position</param>
         /// <param name="pS">Physics Simulator</param>
-
         public PlayerPaddle(Texture2D t, int c, Vector2 iP, PhysicsSimulator pS) {
 
             //GameObject properties
             this.texture = t;
             this.SetWidth(c);
             this.SetHeight(c);
-            this.SetMidWidth((int)(c / 2));
-            this.SetMidHeight((int)this.midWidth);
+            this.SetMidWidth(c / 2);
+            this.SetMidHeight(this.midWidth);
             this.SetRect(new Rectangle((int)this.position.X, (int)this.position.Y, this.width, this.height));
             this.SetInitialPosition(iP);
 
             //Create a physics body
             this.CreateBody(pS);
-
 
             //Set the object to it's initial position, along with the mouse pointer
             this.UpdatePosition(this.initialPosition);
@@ -47,7 +42,6 @@ namespace FarseerGames.AirHockeyGame {
         /// <summary>
         /// Updates the paddle
         /// </summary>
-
         public override void Update() {
 
             //Saves multiple calls to GetState later on
@@ -78,7 +72,6 @@ namespace FarseerGames.AirHockeyGame {
         /// <summary>
         /// Resets the mouse to the center of the paddle
         /// </summary>
-
         public void ResetMouse() {
             Mouse.SetPosition((int)this.body.Position.X, (int)this.body.Position.Y);
         }
