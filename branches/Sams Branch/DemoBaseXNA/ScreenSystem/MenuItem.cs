@@ -1,4 +1,4 @@
-﻿namespace DemoBaseXNA.ScreenSystem
+﻿namespace GameScreenManager.ScreenSystem
 {
     public class MenuItem
     {

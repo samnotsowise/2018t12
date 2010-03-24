@@ -7,7 +7,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Sam\Desktop\2018t12\trunk\DemoBaseXNA\bin\x86\Debug\Content\blank.xnb</Output>
+      <Output>C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\branches\Sams Branch\DemoBaseXNA\bin\x86\Debug\Content\blank.xnb</Output>
       <Time>2010-03-18T10:40:26.542404+00:00</Time>
     </Item>
     <Item>
@@ -16,7 +16,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Sam\Desktop\2018t12\trunk\DemoBaseXNA\bin\x86\Debug\Content\gradient.xnb</Output>
+      <Output>C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\branches\Sams Branch\DemoBaseXNA\bin\x86\Debug\Content\gradient.xnb</Output>
       <Time>2010-03-18T10:40:26.542404+00:00</Time>
     </Item>
     <Item>
@@ -25,7 +25,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Sam\Desktop\2018t12\trunk\DemoBaseXNA\bin\x86\Debug\Content\Images\Main Menu\Context\box.xnb</Output>
+      <Output>C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\branches\Sams Branch\DemoBaseXNA\bin\x86\Debug\Content\Images\Main Menu\Context\box.xnb</Output>
       <Time>2010-03-18T10:40:26.542404+00:00</Time>
     </Item>
     <Item>
@@ -34,7 +34,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Sam\Desktop\2018t12\trunk\DemoBaseXNA\bin\x86\Debug\Content\Images\Main Menu\Context\exit.xnb</Output>
+      <Output>C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\branches\Sams Branch\DemoBaseXNA\bin\x86\Debug\Content\Images\Main Menu\Context\exit.xnb</Output>
       <Time>2010-03-18T10:40:26.542404+00:00</Time>
     </Item>
     <Item>
@@ -43,7 +43,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Sam\Desktop\2018t12\trunk\DemoBaseXNA\bin\x86\Debug\Content\Images\Main Menu\Context\findgame.xnb</Output>
+      <Output>C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\branches\Sams Branch\DemoBaseXNA\bin\x86\Debug\Content\Images\Main Menu\Context\findgame.xnb</Output>
       <Time>2010-03-18T10:40:26.542404+00:00</Time>
     </Item>
     <Item>
@@ -52,7 +52,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Sam\Desktop\2018t12\trunk\DemoBaseXNA\bin\x86\Debug\Content\Images\Main Menu\Context\multiplayer.xnb</Output>
+      <Output>C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\branches\Sams Branch\DemoBaseXNA\bin\x86\Debug\Content\Images\Main Menu\Context\multiplayer.xnb</Output>
       <Time>2010-03-18T10:40:26.542404+00:00</Time>
     </Item>
     <Item>
@@ -61,7 +61,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Sam\Desktop\2018t12\trunk\DemoBaseXNA\bin\x86\Debug\Content\Images\Main Menu\Context\options.xnb</Output>
+      <Output>C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\branches\Sams Branch\DemoBaseXNA\bin\x86\Debug\Content\Images\Main Menu\Context\options.xnb</Output>
       <Time>2010-03-18T10:40:26.542404+00:00</Time>
     </Item>
     <Item>
@@ -70,7 +70,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Sam\Desktop\2018t12\trunk\DemoBaseXNA\bin\x86\Debug\Content\Images\Main Menu\Context\singleplayer.xnb</Output>
+      <Output>C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\branches\Sams Branch\DemoBaseXNA\bin\x86\Debug\Content\Images\Main Menu\Context\singleplayer.xnb</Output>
       <Time>2010-03-18T10:40:26.542404+00:00</Time>
     </Item>
     <Item>
@@ -79,7 +79,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Sam\Desktop\2018t12\trunk\DemoBaseXNA\bin\x86\Debug\Content\Images\Main Menu\logo.xnb</Output>
+      <Output>C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\branches\Sams Branch\DemoBaseXNA\bin\x86\Debug\Content\Images\Main Menu\logo.xnb</Output>
       <Time>2010-03-18T10:40:26.542404+00:00</Time>
     </Item>
     <Item>
@@ -88,7 +88,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Sam\Desktop\2018t12\trunk\DemoBaseXNA\bin\x86\Debug\Content\Images\Main Menu\background.xnb</Output>
+      <Output>C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\branches\Sams Branch\DemoBaseXNA\bin\x86\Debug\Content\Images\Main Menu\background.xnb</Output>
       <Time>2010-03-18T10:40:26.542404+00:00</Time>
     </Item>
     <Item>
@@ -97,25 +97,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Sam\Desktop\2018t12\trunk\DemoBaseXNA\bin\x86\Debug\Content\Images\backgroundOrange.xnb</Output>
-      <Time>2010-03-18T10:40:26.542404+00:00</Time>
-    </Item>
-    <Item>
-      <Source>gamefont.spritefont</Source>
-      <Name>gamefont</Name>
-      <Importer>FontDescriptionImporter</Importer>
-      <Processor>FontDescriptionProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Sam\Desktop\2018t12\trunk\DemoBaseXNA\bin\x86\Debug\Content\gamefont.xnb</Output>
-      <Time>2010-03-18T10:40:26.542404+00:00</Time>
-    </Item>
-    <Item>
-      <Source>menufont.spritefont</Source>
-      <Name>menufont</Name>
-      <Importer>FontDescriptionImporter</Importer>
-      <Processor>FontDescriptionProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Sam\Desktop\2018t12\trunk\DemoBaseXNA\bin\x86\Debug\Content\menufont.xnb</Output>
+      <Output>C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\branches\Sams Branch\DemoBaseXNA\bin\x86\Debug\Content\Images\backgroundOrange.xnb</Output>
       <Time>2010-03-18T10:40:26.542404+00:00</Time>
     </Item>
     <Item>
@@ -124,7 +106,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Sam\Desktop\2018t12\trunk\DemoBaseXNA\bin\x86\Debug\Content\Particles\explosion.xnb</Output>
+      <Output>C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\branches\Sams Branch\DemoBaseXNA\bin\x86\Debug\Content\Particles\explosion.xnb</Output>
       <Time>2010-03-24T12:04:46.2921209+00:00</Time>
     </Item>
     <Item>
@@ -133,8 +115,26 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Sam\Desktop\2018t12\trunk\DemoBaseXNA\bin\x86\Debug\Content\Particles\smoke.xnb</Output>
+      <Output>C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\branches\Sams Branch\DemoBaseXNA\bin\x86\Debug\Content\Particles\smoke.xnb</Output>
       <Time>2010-03-24T12:04:46.2921209+00:00</Time>
+    </Item>
+    <Item>
+      <Source>gamefont.spritefont</Source>
+      <Name>gamefont</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\branches\Sams Branch\DemoBaseXNA\bin\x86\Debug\Content\gamefont.xnb</Output>
+      <Time>2010-03-18T10:40:26.542404+00:00</Time>
+    </Item>
+    <Item>
+      <Source>menufont.spritefont</Source>
+      <Name>menufont</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\branches\Sams Branch\DemoBaseXNA\bin\x86\Debug\Content\menufont.xnb</Output>
+      <Time>2010-03-18T10:40:26.542404+00:00</Time>
     </Item>
     <Item>
       <Source>Particles\Arial.spritefont</Source>
@@ -142,7 +142,7 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Sam\Desktop\2018t12\trunk\DemoBaseXNA\bin\x86\Debug\Content\Particles\Arial.xnb</Output>
+      <Output>C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\branches\Sams Branch\DemoBaseXNA\bin\x86\Debug\Content\Particles\Arial.xnb</Output>
       <Time>2010-03-24T12:04:46.2921209+00:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
@@ -150,10 +150,10 @@
       <TargetPlatform>Windows</TargetPlatform>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>C:\Users\Sam\Desktop\2018t12\trunk\DemoBaseXNA\Content\</RootDirectory>
-      <LoggerRootDirectory>C:\Users\Sam\Desktop\2018t12\trunk\DemoBaseXNA\</LoggerRootDirectory>
-      <IntermediateDirectory>C:\Users\Sam\Desktop\2018t12\trunk\DemoBaseXNA\Content\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>C:\Users\Sam\Desktop\2018t12\trunk\DemoBaseXNA\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\branches\Sams Branch\DemoBaseXNA\Content\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\branches\Sams Branch\DemoBaseXNA\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\branches\Sams Branch\DemoBaseXNA\Content\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\branches\Sams Branch\DemoBaseXNA\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>

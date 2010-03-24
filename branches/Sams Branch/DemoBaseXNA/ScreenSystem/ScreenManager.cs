@@ -20,7 +20,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 #endregion
 
-namespace DemoBaseXNA.ScreenSystem {
+namespace GameScreenManager.ScreenSystem {
     /// <summary>
     /// The screen manager is a component which manages one or more <see cref="GameScreen"/>
     /// instances. It maintains a stack of _screens, calls their Update and Draw

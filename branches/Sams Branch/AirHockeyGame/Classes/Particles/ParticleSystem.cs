@@ -318,7 +318,7 @@ namespace AirHockeyGame
         }
 
         /// <summary>
-        /// overriden from DrawableGameComponent, Draw will use DemoBaseXNA.ScreenSystemGame's 
+        /// overriden from DrawableGameComponent, Draw will use GameScreenManager.ScreenSystemGame's 
         /// sprite batch to render all of the active particles.
         /// </summary>
         public override void Draw(GameTime gameTime)

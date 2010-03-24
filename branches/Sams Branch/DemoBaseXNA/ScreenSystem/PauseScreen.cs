@@ -1,9 +1,9 @@
 using System;
-using DemoBaseXNA.DrawingSystem;
+using GameScreenManager.DrawingSystem;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace DemoBaseXNA.ScreenSystem
+namespace GameScreenManager.ScreenSystem
 {
     public class PauseScreen : MenuScreen
     {

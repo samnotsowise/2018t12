@@ -80,8 +80,12 @@ namespace FarseerGames.AirHockeyGame {
         /// <param name="p">New Position</param>
 
         public virtual void UpdatePosition(Vector2 p) {
-            this.position.X = (int)p.X - this.width / 2;
-            this.position.Y = (int)p.Y - this.height / 2;
+            //this.position.X = (int)p.X - this.width / 2;
+            //this.position.Y = (int)p.Y - this.height / 2;
+            //this.pRect.X = (int)this.position.X;
+            //this.pRect.Y = (int)this.position.Y;
+            this.position.X = p.X;
+            this.position.Y = p.Y;
             this.pRect.X = (int)this.position.X;
             this.pRect.Y = (int)this.position.Y;
         }

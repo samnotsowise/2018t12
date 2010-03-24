@@ -3,7 +3,7 @@ using FarseerGames.FarseerPhysics.Mathematics;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace DemoBaseXNA.DrawingSystem
+namespace GameScreenManager.DrawingSystem
 {
     public class LineBrush
     {

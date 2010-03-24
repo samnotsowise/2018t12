@@ -14,7 +14,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Input;
 
-namespace DemoBaseXNA.ScreenSystem {
+namespace GameScreenManager.ScreenSystem {
     /// <summary>
     /// The options screen is brought up over the top of the main menu
     /// screen, and gives the user a chance to configure the game

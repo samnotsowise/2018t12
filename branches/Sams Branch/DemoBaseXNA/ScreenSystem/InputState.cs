@@ -12,7 +12,7 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 
-namespace DemoBaseXNA.ScreenSystem {
+namespace GameScreenManager.ScreenSystem {
     /// <summary>
     /// Helper for reading input from keyboard and gamepad. This class tracks both
     /// the current and previous state of both input devices, and implements query

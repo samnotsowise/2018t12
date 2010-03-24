@@ -4,7 +4,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Content;
 
-namespace DemoBaseXNA.ScreenSystem
+namespace GameScreenManager.ScreenSystem
 {
     /// <summary>
     /// The main menu screen is the first thing displayed when the game starts up.

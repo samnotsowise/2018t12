@@ -1,6 +1,5 @@
 using System;
-using DemoBaseXNA.DemoShare;
-using DemoBaseXNA.DrawingSystem;
+using GameScreenManager.DrawingSystem;
 using FarseerGames.FarseerPhysics;
 using FarseerGames.FarseerPhysics.Collisions;
 using FarseerGames.FarseerPhysics.Dynamics.Springs;
@@ -9,7 +8,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
-namespace DemoBaseXNA.ScreenSystem {
+namespace GameScreenManager.ScreenSystem {
     /// <summary>
     /// Enum describes the screen transition state.
     /// </summary>
