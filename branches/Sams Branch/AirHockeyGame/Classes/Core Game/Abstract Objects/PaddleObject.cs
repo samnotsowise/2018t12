@@ -2,8 +2,6 @@
 using FarseerGames.FarseerPhysics.Collisions;
 using FarseerGames.FarseerPhysics.Factories;
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
 
 namespace FarseerGames.AirHockeyGame {
 
@@ -11,7 +9,6 @@ namespace FarseerGames.AirHockeyGame {
     /// A PaddleObject object
     /// Extends PhysicsObject
     /// </summary>
-
     public abstract class PaddleObject: PhysicsObject {
 
         public Vector2 force;
@@ -19,7 +16,6 @@ namespace FarseerGames.AirHockeyGame {
         /// <summary>
         /// Constructor - used to create a new PaddleObject object
         /// </summary>
-
         public PaddleObject() {
             this.force = new Vector2(0, 0);
         }
@@ -27,7 +23,6 @@ namespace FarseerGames.AirHockeyGame {
         /// <summary>
         /// Updates the PaddleObject
         /// </summary>
-
         public virtual void Update() {
 
             //Apply force

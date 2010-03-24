@@ -7,7 +7,6 @@ namespace FarseerGames.AirHockeyGame {
     /// An abstract PhysicsObject object
     /// Extends GameObject
     /// </summary>
-
     public abstract class PhysicsObject: GameObject {
 
         public Body body;
@@ -15,7 +14,6 @@ namespace FarseerGames.AirHockeyGame {
         /// <summary>
         /// Constructor - used to extend PhysicsObject
         /// </summary>
-
         public PhysicsObject() {
             this.body = null;
         }
@@ -24,7 +22,6 @@ namespace FarseerGames.AirHockeyGame {
         /// Updates the PhysicsObject's postion
         /// </summary>
         /// <param name="p">New Position</param>
-
         public override void UpdatePosition(Vector2 p) {
             this.body.Position = p;
             base.UpdatePosition(new Vector2(p.X - this.midWidth, p.Y - this.midHeight));

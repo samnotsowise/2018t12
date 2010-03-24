@@ -15,25 +15,21 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 #endregion
 
-namespace AirHockeyGame
-{
+namespace AirHockeyGame {
     /// <summary>
     /// SmokePlumeParticleSystem is a specialization of ParticleSystem which sends up a
     /// plume of smoke. The smoke is blown to the right by the wind.
     /// </summary>
-    public class SmokePlumeParticleSystem : ParticleSystem
-    {
+    public class SmokePlumeParticleSystem: ParticleSystem {
         public SmokePlumeParticleSystem(AirHockey game, int howManyEffects)
-            : base(game,howManyEffects)
-        {
+            : base(game, howManyEffects) {
         }
 
         /// <summary>
         /// Set up the constants that will give this particle system its behavior and
         /// properties.
         /// </summary>
-        protected override void InitializeConstants()
-        {
+        protected override void InitializeConstants() {
             textureFilename = "smoke";
 
             minInitialSpeed = 20;
@@ -69,8 +65,7 @@ namespace AirHockeyGame
         /// move have an initial velocity pointing up.
         /// </summary>
         /// <returns>a random direction which points basically up.</returns>
-        protected override Vector2 PickRandomDirection()
-        {
+        protected override Vector2 PickRandomDirection() {
             // Point the particles somewhere between 80 and 100 degrees.
             // tweak this to make the smoke have more or less spread.
             float radians = AirHockey.RandomBetween(
@@ -90,8 +85,7 @@ namespace AirHockeyGame
         /// </summary>
         /// <param name="p">the particle to set up</param>
         /// <param name="where">where the particle should be placed</param>
-        protected override void InitializeParticle(Particle p, Vector2 where)
-        {
+        protected override void InitializeParticle(Particle p, Vector2 where) {
             base.InitializeParticle(p, where);
 
             // the base is mostly good, but we want to simulate a little bit of wind
