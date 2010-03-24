@@ -86,6 +86,7 @@
     <Compile Include="Classes\Core Game\Objects\Board\Restrictor.cs" />
     <Compile Include="Classes\Core Game\Abstract Objects\GameObject.cs" />
     <Compile Include="Classes\Core Game\Abstract Objects\PaddleObject.cs" />
+    <Compile Include="Classes\Core Game\Objects\Paddles\NetPaddle.cs" />
     <Compile Include="Classes\Core Game\Objects\Paddles\PlayerPaddle.cs" />
     <Compile Include="Classes\Core Game\Objects\Puck.cs" />
     <Compile Include="Classes\Particles\ExplosionParticleSystem.cs" />

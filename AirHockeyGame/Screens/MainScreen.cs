@@ -14,6 +14,7 @@ namespace FarseerGames.AirHockeyGame.Screens {
     public class MainScreen: GameScreen {
 
         private PlayerPaddle playerPaddle;
+        private NetPaddle netPaddle;
         private Puck puck;
         private Board board;
 
@@ -37,8 +38,10 @@ namespace FarseerGames.AirHockeyGame.Screens {
             //Load puck
             this.puck = new Puck(ScreenManager.ContentManager.Load<Texture2D>("Content\\Core Game\\puck"), 48, new Vector2(512, 384), PhysicsSimulator, this.board.restrictors[0]);
 
-            //Load playerPaddle
+            //Load Paddles
             this.playerPaddle = new PlayerPaddle(ScreenManager.ContentManager.Load<Texture2D>("Content\\Core Game\\playerPaddle"), 82, new Vector2(256, 384), PhysicsSimulator);
+            this.netPaddle = new NetPaddle(ScreenManager.ContentManager.Load<Texture2D>("Content\\Core Game\\opponentPaddle"), 82, new Vector2(768, 384), PhysicsSimulator);
+            
             base.LoadContent();
         }
 
@@ -75,8 +78,9 @@ namespace FarseerGames.AirHockeyGame.Screens {
                 this.playerPaddle.ResetMouse();
             }
 
-            //Update playerPaddle and puck objects
+            //Update Paddles and puck objects
             this.playerPaddle.Update();
+            this.netPaddle.Update();
             this.puck.Update();
 
             if(this.playerPaddle.rect.Contains(this.puck.rect)) {
@@ -94,6 +98,7 @@ namespace FarseerGames.AirHockeyGame.Screens {
             ScreenManager.SpriteBatch.Draw(ScreenManager.ContentManager.Load<Texture2D>("Content\\Core Game\\boardSurface"), this.board.rect, Color.White);
             ScreenManager.SpriteBatch.Draw(this.puck.texture, this.puck.rect, Color.White);
             ScreenManager.SpriteBatch.Draw(this.playerPaddle.texture, this.playerPaddle.rect, Color.White);
+            ScreenManager.SpriteBatch.Draw(this.netPaddle.texture, this.netPaddle.rect, Color.White);
             ScreenManager.SpriteBatch.Draw(ScreenManager.ContentManager.Load<Texture2D>("Content\\Core Game\\boardEdges"), this.board.rect, Color.White);
             ScreenManager.SpriteBatch.End();
 
