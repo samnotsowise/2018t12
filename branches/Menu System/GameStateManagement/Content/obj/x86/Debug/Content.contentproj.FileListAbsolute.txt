@@ -1,2 +1,0 @@
-E:\CSC2018\GameStateManagementSample\GameStateManagement\Content\obj\x86\Debug\ResolveAssemblyReference.cache
-F:\CSC2018\GameStateManagementSample\GameStateManagement\Content\obj\x86\Debug\ResolveAssemblyReference.cache
