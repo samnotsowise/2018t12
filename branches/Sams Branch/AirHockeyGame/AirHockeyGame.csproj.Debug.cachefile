@@ -1,0 +1,27 @@
+Content\Common\background.xnb
+Content\Common\blank.xnb
+Content\Common\gradient.xnb
+Content\Common\logo.xnb
+Content\Fonts\detailsFont.xnb
+Content\Fonts\diagnosticFont.xnb
+Content\Fonts\frameRateCounterFont.xnb
+Content\Fonts\gamefont.xnb
+Content\Fonts\menufont.xnb
+Content\Core Game\opponentPaddle.xnb
+Content\Core Game\playerPaddle.xnb
+Content\Core Game\puck.xnb
+Content\Core Game\boardEdges.xnb
+Content\Core Game\boardSurface.xnb
+Content\blank.xnb
+Content\gradient.xnb
+Content\Images\Main Menu\Context\box.xnb
+Content\Images\Main Menu\Context\exit.xnb
+Content\Images\Main Menu\Context\findgame.xnb
+Content\Images\Main Menu\Context\multiplayer.xnb
+Content\Images\Main Menu\Context\options.xnb
+Content\Images\Main Menu\Context\singleplayer.xnb
+Content\Images\Main Menu\logo.xnb
+Content\Images\Main Menu\background.xnb
+Content\Images\backgroundOrange.xnb
+Content\gamefont.xnb
+Content\menufont.xnb
