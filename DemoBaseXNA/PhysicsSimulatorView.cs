@@ -1,5 +1,5 @@
 using System;
-using DemoBaseXNA.DrawingSystem;
+using GameScreenManager.DrawingSystem;
 using FarseerGames.FarseerPhysics;
 using FarseerGames.FarseerPhysics.Dynamics.Joints;
 using FarseerGames.FarseerPhysics.Dynamics.Springs;
@@ -7,7 +7,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace DemoBaseXNA
+namespace GameScreenManager
 {
     /// <summary>
     /// Draws the elements inside a <see cref="PhysicsSimulator"/>. Great for debugging physics related problems.

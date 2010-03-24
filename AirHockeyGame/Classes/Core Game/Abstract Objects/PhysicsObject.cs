@@ -27,14 +27,7 @@ namespace FarseerGames.AirHockeyGame {
 
         public override void UpdatePosition(Vector2 p) {
             this.body.Position = p;
-            base.UpdatePosition(p);
+            base.UpdatePosition(new Vector2(p.X - this.midWidth, p.Y - this.midHeight));
         }
-
-        public void MoveInto(Rectangle dest, Rectangle obj) {
-            this.body.ClearForce();
-            this.body.ClearImpulse();
-            this.body.ClearTorque();
-        }
-
     }
 }

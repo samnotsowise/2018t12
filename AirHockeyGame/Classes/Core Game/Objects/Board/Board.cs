@@ -13,7 +13,7 @@ namespace FarseerGames.AirHockeyGame {
             this.SetHeight(672);
             this.SetMidWidth((int)(this.width / 2));
             this.SetMidHeight((int)(this.height / 2));
-            this.SetInitialPosition(new Vector2(0, 48));
+            this.SetInitialPosition(new Vector2(0, 54));
             this.position = this.initialPosition;
             this.SetRect(new Rectangle((int)this.position.X, (int)this.position.Y, this.width, this.height));
 

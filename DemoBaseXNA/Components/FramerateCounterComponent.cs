@@ -1,10 +1,10 @@
 using System;
 using System.Globalization;
-using DemoBaseXNA.ScreenSystem;
+using GameScreenManager.ScreenSystem;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace DemoBaseXNA.Components
+namespace GameScreenManager.Components
 {
     /// <summary>
     /// Displays the FPS

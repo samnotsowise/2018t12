@@ -1,7 +1,7 @@
 using System.Text;
-using DemoBaseXNA;
-using DemoBaseXNA.DrawingSystem;
-using DemoBaseXNA.ScreenSystem;
+using GameScreenManager;
+using GameScreenManager.DrawingSystem;
+using GameScreenManager.ScreenSystem;
 using FarseerGames.FarseerPhysics;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
@@ -39,7 +39,7 @@ namespace FarseerGames.AirHockeyGame.Screens {
             this.board = new Board(PhysicsSimulator);
 
             //Load puck
-            this.puck = new Puck(ScreenManager.ContentManager.Load<Texture2D>("Content\\Core Game\\puck"), 48, new Vector2(725, 384), PhysicsSimulator, this.board.restrictors[0]);
+            this.puck = new Puck(ScreenManager.ContentManager.Load<Texture2D>("Content\\Core Game\\puck"), 48, new Vector2(512, 384), PhysicsSimulator, this.board.restrictors[0]);
 
             //Load playerPaddle
             this.playerPaddle = new PlayerPaddle(ScreenManager.ContentManager.Load<Texture2D>("Content\\Core Game\\playerPaddle"), 82, new Vector2(256, 384), PhysicsSimulator);
@@ -86,7 +86,7 @@ namespace FarseerGames.AirHockeyGame.Screens {
             this.puck.Update();
 
             if(this.playerPaddle.rect.Contains(this.puck.rect)) {
-                this.puck.body.ApplyForce(this.playerPaddle.force);
+                this.puck.UpdatePosition(this.puck.initialPosition);
             }
 
             base.Update(gameTime, otherScreenHasFocus, coveredByOtherScreen);

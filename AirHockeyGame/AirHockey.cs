@@ -1,7 +1,7 @@
 using System;
 using FarseerGames.AirHockeyGame.Screens;
-using DemoBaseXNA.Components;
-using DemoBaseXNA.ScreenSystem;
+using GameScreenManager.Components;
+using GameScreenManager.ScreenSystem;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
