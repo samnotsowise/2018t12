@@ -53,13 +53,13 @@
     <NoStdLib>true</NoStdLib>
     <UseVSHostingProcess>false</UseVSHostingProcess>
     <PlatformTarget>x86</PlatformTarget>
-    <XnaCompressContent>false</XnaCompressContent>
+    <XnaCompressContent>True</XnaCompressContent>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\x86\Release</OutputPath>
-    <DefineConstants>TRACE;WINDOWS</DefineConstants>
+    <DefineConstants>WINDOWS</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <NoStdLib>true</NoStdLib>
@@ -94,7 +94,7 @@
     <Compile Include="Classes\Particles\Particle.cs" />
     <Compile Include="Classes\Particles\ParticleSystem.cs" />
     <Compile Include="Classes\Particles\SmokePlumeParticleSystem.cs" />
-    <Compile Include="Screens\MainScreen.cs" />
+    <Compile Include="Screens\MainGameScreen.cs" />
     <Compile Include="AirHockey.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
