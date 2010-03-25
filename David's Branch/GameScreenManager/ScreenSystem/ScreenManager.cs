@@ -50,7 +50,6 @@ namespace GameScreenManager.ScreenSystem {
         public enum ParticleType {
             Smoke,
             Explosion,
-            Stars,
             None
         }
 
@@ -189,7 +188,7 @@ namespace GameScreenManager.ScreenSystem {
         /// Classes that can access the ScreenManager methods can therefore
         /// indirectly start a particle effect
         /// </summary>
-        /// <param name="particleType">'e': explosion, 's': smoke, 'r': stars</param>
+        /// <param name="particleType">'e': explosion, 's': smoke</param>
         public void RequestParticleEffect(char particleType, Vector2 position) {
             addParticles = true;
             switch(particleType) {
@@ -198,9 +197,6 @@ namespace GameScreenManager.ScreenSystem {
                     break;
                 case 's':
                     ParticleTypeToAdd = ParticleType.Smoke;
-                    break;
-                case 'r':
-                    ParticleTypeToAdd = ParticleType.Stars;
                     break;
             }
 
