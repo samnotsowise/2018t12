@@ -79,7 +79,6 @@
     <Compile Include="Components\FramerateCounterComponent.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Components\ScoreBox.cs" />
     <Compile Include="DrawingSystem\CircleBrush.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -100,9 +99,9 @@
     </Compile>
     <Compile Include="PhysicsSimulatorView.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Components\ContextBox.cs" />
+    <Compile Include="ScreenSystem\Custom Screen Classes\ContextBox.cs" />
     <Compile Include="ScreenSystem\Custom Screen Classes\OptionsMenuScreen.cs" />
-    <Compile Include="Components\Settings.cs" />
+    <Compile Include="ScreenSystem\Custom Screen Classes\Settings.cs" />
     <Compile Include="ScreenSystem\GameScreen.cs" />
     <Compile Include="ScreenSystem\InputState.cs" />
     <Compile Include="ScreenSystem\LogoScreen.cs" />
