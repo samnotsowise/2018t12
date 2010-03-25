@@ -7,8 +7,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Gary\Documents\Visual Studio 2008\Projects\2018t12\branches\Garys Branch\GameScreenManager\bin\x86\Debug\Content\blank.xnb</Output>
-      <Time>2010-03-24T20:24:56.316+00:00</Time>
+      <Output>C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\branches\Gary\Garys Branch\GameScreenManager\bin\x86\Debug\Content\blank.xnb</Output>
+      <Time>2010-03-25T02:36:10.143277+00:00</Time>
     </Item>
     <Item>
       <Source>gradient.png</Source>
@@ -16,8 +16,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Gary\Documents\Visual Studio 2008\Projects\2018t12\branches\Garys Branch\GameScreenManager\bin\x86\Debug\Content\gradient.xnb</Output>
-      <Time>2010-03-24T20:24:56.278+00:00</Time>
+      <Output>C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\branches\Gary\Garys Branch\GameScreenManager\bin\x86\Debug\Content\gradient.xnb</Output>
+      <Time>2010-03-25T02:36:10.143277+00:00</Time>
     </Item>
     <Item>
       <Source>Images\Main Menu\Context\box.png</Source>
@@ -25,8 +25,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Gary\Documents\Visual Studio 2008\Projects\2018t12\branches\Garys Branch\GameScreenManager\bin\x86\Debug\Content\Images\Main Menu\Context\box.xnb</Output>
-      <Time>2010-03-24T20:24:41.354+00:00</Time>
+      <Output>C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\branches\Gary\Garys Branch\GameScreenManager\bin\x86\Debug\Content\Images\Main Menu\Context\box.xnb</Output>
+      <Time>2010-03-25T02:36:10.143277+00:00</Time>
     </Item>
     <Item>
       <Source>Images\Main Menu\Context\exit.png</Source>
@@ -34,8 +34,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Gary\Documents\Visual Studio 2008\Projects\2018t12\branches\Garys Branch\GameScreenManager\bin\x86\Debug\Content\Images\Main Menu\Context\exit.xnb</Output>
-      <Time>2010-03-24T20:24:41.375+00:00</Time>
+      <Output>C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\branches\Gary\Garys Branch\GameScreenManager\bin\x86\Debug\Content\Images\Main Menu\Context\exit.xnb</Output>
+      <Time>2010-03-25T02:36:10.143277+00:00</Time>
     </Item>
     <Item>
       <Source>Images\Main Menu\Context\findgame.png</Source>
@@ -43,8 +43,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Gary\Documents\Visual Studio 2008\Projects\2018t12\branches\Garys Branch\GameScreenManager\bin\x86\Debug\Content\Images\Main Menu\Context\findgame.xnb</Output>
-      <Time>2010-03-24T20:24:41.392+00:00</Time>
+      <Output>C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\branches\Gary\Garys Branch\GameScreenManager\bin\x86\Debug\Content\Images\Main Menu\Context\findgame.xnb</Output>
+      <Time>2010-03-25T02:36:10.143277+00:00</Time>
     </Item>
     <Item>
       <Source>Images\Main Menu\Context\multiplayer.png</Source>
@@ -52,8 +52,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Gary\Documents\Visual Studio 2008\Projects\2018t12\branches\Garys Branch\GameScreenManager\bin\x86\Debug\Content\Images\Main Menu\Context\multiplayer.xnb</Output>
-      <Time>2010-03-24T20:24:41.298+00:00</Time>
+      <Output>C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\branches\Gary\Garys Branch\GameScreenManager\bin\x86\Debug\Content\Images\Main Menu\Context\multiplayer.xnb</Output>
+      <Time>2010-03-25T02:36:10.143277+00:00</Time>
     </Item>
     <Item>
       <Source>Images\Main Menu\Context\options.png</Source>
@@ -61,8 +61,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Gary\Documents\Visual Studio 2008\Projects\2018t12\branches\Garys Branch\GameScreenManager\bin\x86\Debug\Content\Images\Main Menu\Context\options.xnb</Output>
-      <Time>2010-03-24T20:24:41.408+00:00</Time>
+      <Output>C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\branches\Gary\Garys Branch\GameScreenManager\bin\x86\Debug\Content\Images\Main Menu\Context\options.xnb</Output>
+      <Time>2010-03-25T02:36:10.143277+00:00</Time>
     </Item>
     <Item>
       <Source>Images\Main Menu\Context\singleplayer.png</Source>
@@ -70,8 +70,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Gary\Documents\Visual Studio 2008\Projects\2018t12\branches\Garys Branch\GameScreenManager\bin\x86\Debug\Content\Images\Main Menu\Context\singleplayer.xnb</Output>
-      <Time>2010-03-24T20:24:41.281+00:00</Time>
+      <Output>C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\branches\Gary\Garys Branch\GameScreenManager\bin\x86\Debug\Content\Images\Main Menu\Context\singleplayer.xnb</Output>
+      <Time>2010-03-25T02:36:10.143277+00:00</Time>
     </Item>
     <Item>
       <Source>Images\Main Menu\logo.png</Source>
@@ -79,8 +79,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Gary\Documents\Visual Studio 2008\Projects\2018t12\branches\Garys Branch\GameScreenManager\bin\x86\Debug\Content\Images\Main Menu\logo.xnb</Output>
-      <Time>2010-03-24T20:24:41.664+00:00</Time>
+      <Output>C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\branches\Gary\Garys Branch\GameScreenManager\bin\x86\Debug\Content\Images\Main Menu\logo.xnb</Output>
+      <Time>2010-03-25T02:36:10.143277+00:00</Time>
     </Item>
     <Item>
       <Source>Images\Main Menu\background.jpg</Source>
@@ -88,8 +88,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Gary\Documents\Visual Studio 2008\Projects\2018t12\branches\Garys Branch\GameScreenManager\bin\x86\Debug\Content\Images\Main Menu\background.xnb</Output>
-      <Time>2010-03-24T20:24:41.68+00:00</Time>
+      <Output>C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\branches\Gary\Garys Branch\GameScreenManager\bin\x86\Debug\Content\Images\Main Menu\background.xnb</Output>
+      <Time>2010-03-25T02:36:10.143277+00:00</Time>
     </Item>
     <Item>
       <Source>Images\backgroundOrange.png</Source>
@@ -97,8 +97,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Gary\Documents\Visual Studio 2008\Projects\2018t12\branches\Garys Branch\GameScreenManager\bin\x86\Debug\Content\Images\backgroundOrange.xnb</Output>
-      <Time>2010-03-24T20:24:44.63+00:00</Time>
+      <Output>C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\branches\Gary\Garys Branch\GameScreenManager\bin\x86\Debug\Content\Images\backgroundOrange.xnb</Output>
+      <Time>2010-03-25T02:36:10.143277+00:00</Time>
     </Item>
     <Item>
       <Source>Particles\explosion.png</Source>
@@ -106,8 +106,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Gary\Documents\Visual Studio 2008\Projects\2018t12\branches\Garys Branch\GameScreenManager\bin\x86\Debug\Content\Particles\explosion.xnb</Output>
-      <Time>2010-03-24T20:24:47.907+00:00</Time>
+      <Output>C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\branches\Gary\Garys Branch\GameScreenManager\bin\x86\Debug\Content\Particles\explosion.xnb</Output>
+      <Time>2010-03-25T02:36:10.143277+00:00</Time>
     </Item>
     <Item>
       <Source>Particles\smoke.bmp</Source>
@@ -115,8 +115,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Gary\Documents\Visual Studio 2008\Projects\2018t12\branches\Garys Branch\GameScreenManager\bin\x86\Debug\Content\Particles\smoke.xnb</Output>
-      <Time>2010-03-24T20:24:48.062+00:00</Time>
+      <Output>C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\branches\Gary\Garys Branch\GameScreenManager\bin\x86\Debug\Content\Particles\smoke.xnb</Output>
+      <Time>2010-03-25T02:36:10.143277+00:00</Time>
     </Item>
     <Item>
       <Source>gamefont.spritefont</Source>
@@ -124,8 +124,8 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Gary\Documents\Visual Studio 2008\Projects\2018t12\branches\Garys Branch\GameScreenManager\bin\x86\Debug\Content\gamefont.xnb</Output>
-      <Time>2010-03-24T20:24:56.328+00:00</Time>
+      <Output>C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\branches\Gary\Garys Branch\GameScreenManager\bin\x86\Debug\Content\gamefont.xnb</Output>
+      <Time>2010-03-25T02:36:10.143277+00:00</Time>
     </Item>
     <Item>
       <Source>menufont.spritefont</Source>
@@ -133,8 +133,8 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Gary\Documents\Visual Studio 2008\Projects\2018t12\branches\Garys Branch\GameScreenManager\bin\x86\Debug\Content\menufont.xnb</Output>
-      <Time>2010-03-24T20:24:56.301+00:00</Time>
+      <Output>C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\branches\Gary\Garys Branch\GameScreenManager\bin\x86\Debug\Content\menufont.xnb</Output>
+      <Time>2010-03-25T02:36:10.143277+00:00</Time>
     </Item>
     <Item>
       <Source>Particles\Arial.spritefont</Source>
@@ -142,47 +142,47 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Gary\Documents\Visual Studio 2008\Projects\2018t12\branches\Garys Branch\GameScreenManager\bin\x86\Debug\Content\Particles\Arial.xnb</Output>
-      <Time>2010-03-24T20:24:47.917+00:00</Time>
+      <Output>C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\branches\Gary\Garys Branch\GameScreenManager\bin\x86\Debug\Content\Particles\Arial.xnb</Output>
+      <Time>2010-03-25T02:36:10.143277+00:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>C:\Users\Gary\Documents\Visual Studio 2008\Projects\2018t12\branches\Garys Branch\GameScreenManager\Content\</RootDirectory>
-      <LoggerRootDirectory>C:\Users\Gary\Documents\Visual Studio 2008\Projects\2018t12\branches\Garys Branch\GameScreenManager\</LoggerRootDirectory>
-      <IntermediateDirectory>C:\Users\Gary\Documents\Visual Studio 2008\Projects\2018t12\branches\Garys Branch\GameScreenManager\Content\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>C:\Users\Gary\Documents\Visual Studio 2008\Projects\2018t12\branches\Garys Branch\GameScreenManager\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\branches\Gary\Garys Branch\GameScreenManager\Content\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\branches\Gary\Garys Branch\GameScreenManager\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\branches\Gary\Garys Branch\GameScreenManager\Content\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\branches\Gary\Garys Branch\GameScreenManager\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>
         <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v3.1\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>
-        <Value>2009-05-28T00:16:14+01:00</Value>
+        <Value>2009-05-28T01:16:14+01:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v3.1\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.VideoImporters.dll</Key>
-        <Value>2009-05-28T00:16:06+01:00</Value>
+        <Value>2009-05-28T01:16:06+01:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v3.1\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.TextureImporter.dll</Key>
-        <Value>2009-05-28T00:16:16+01:00</Value>
+        <Value>2009-05-28T01:16:16+01:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v3.1\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.FBXImporter.dll</Key>
-        <Value>2009-05-28T00:16:26+01:00</Value>
+        <Value>2009-05-28T01:16:26+01:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v3.1\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.EffectImporter.dll</Key>
-        <Value>2009-05-28T00:16:12+01:00</Value>
+        <Value>2009-05-28T01:16:12+01:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v3.1\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.AudioImporters.dll</Key>
-        <Value>2009-05-28T00:16:06+01:00</Value>
+        <Value>2009-05-28T01:16:06+01:00</Value>
       </Assembly>
       <Assembly>
-        <Key>C:\windows\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\3.1.0.0__6d5c3888ef60e27d\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
-        <Value>2009-09-30T18:25:54.6932+01:00</Value>
+        <Key>C:\Windows\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\3.1.0.0__6d5c3888ef60e27d\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
+        <Value>2009-11-12T11:18:08.2360138+00:00</Value>
       </Assembly>
     </Assemblies>
   </Asset>
