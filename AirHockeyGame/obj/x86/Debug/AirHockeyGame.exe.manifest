@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1">
-  <asmv1:assemblyIdentity name="AirHockeyGame.exe" version="1.0.0.0" publicKeyToken="0000000000000000" language="en-GB" processorArchitecture="x86" type="win32" />
+  <asmv1:assemblyIdentity name="AirHockeyGame.exe" version="1.0.0.1" publicKeyToken="0000000000000000" language="en-GB" processorArchitecture="x86" type="win32" />
   <application />
   <entryPoint>
     <assemblyIdentity name="AirHockeyGame" version="2.1.3.0" language="neutral" processorArchitecture="x86" />
@@ -54,7 +54,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>g8haTT1rh7IvQDCZri8sC5S/80M=</dsig:DigestValue>
+        <dsig:DigestValue>M39yBYcaKgxT2VeL4n+sPQJjZEA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
