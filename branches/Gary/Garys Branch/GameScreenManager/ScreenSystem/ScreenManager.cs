@@ -189,7 +189,8 @@ namespace GameScreenManager.ScreenSystem {
         private void findNetworkGame()
         {
             // Emit discovery signal
-            client.DiscoverLocalServers(14242);
+            //client.DiscoverLocalServers(14242);
+            client.DiscoverKnownServer(Dns.GetHostName(), 14242);
 
             // create a buffer to read data into
             NetBuffer buffer = client.CreateBuffer();
@@ -236,12 +237,15 @@ namespace GameScreenManager.ScreenSystem {
         private void startNetworkGame()
         {
             // create a configuration for the server
-            NetConfiguration ServerConfig = new NetConfiguration("T12AirHockey");
-            ServerConfig.MaxConnections = 128;
-            ServerConfig.Port = 14242;
+            NetConfiguration serverConfig = new NetConfiguration("T12AirHockey");
+            serverConfig.MaxConnections = 128;
+            serverConfig.Port = 14242;
+            IPHostEntry ipEntry = Dns.GetHostEntry(Dns.GetHostName());
+            IPAddress[] addr = ipEntry.AddressList;
+            serverConfig.Address = addr[0];
 
             // create server and start listening for connections
-            server = new NetServer(ServerConfig);
+            server = new NetServer(serverConfig);
             server.SetMessageTypeEnabled(NetMessageType.ConnectionApproval, true);
             server.Start();
             //Allow time for server to start
@@ -256,8 +260,7 @@ namespace GameScreenManager.ScreenSystem {
                 strMsg = "Server not started";
             }
         }
-
-
+        
         /// <summary>
         /// A content manager used to load data that is shared between multiple
         /// screens. This is never unloaded, so if a screen requires a large amount
