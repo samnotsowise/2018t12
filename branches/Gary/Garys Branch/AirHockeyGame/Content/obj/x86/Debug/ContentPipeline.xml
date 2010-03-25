@@ -7,8 +7,13 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
+<<<<<<< .mine
+      <Output>I:\2018t12\branches\Gary\Garys Branch\AirHockeyGame\bin\x86\Debug\Content\Common\background.xnb</Output>
+      <Time>2010-03-25T10:33:08.2952139+00:00</Time>
+=======
       <Output>C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\branches\Gary\Garys Branch\AirHockeyGame\bin\x86\Debug\Content\Common\background.xnb</Output>
       <Time>2010-03-25T02:36:10.143277+00:00</Time>
+>>>>>>> .r70
     </Item>
     <Item>
       <Source>Common\blank.png</Source>
@@ -16,8 +21,13 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
+<<<<<<< .mine
+      <Output>I:\2018t12\branches\Gary\Garys Branch\AirHockeyGame\bin\x86\Debug\Content\Common\blank.xnb</Output>
+      <Time>2010-03-25T10:33:08.4045924+00:00</Time>
+=======
       <Output>C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\branches\Gary\Garys Branch\AirHockeyGame\bin\x86\Debug\Content\Common\blank.xnb</Output>
       <Time>2010-03-25T02:36:10.143277+00:00</Time>
+>>>>>>> .r70
     </Item>
     <Item>
       <Source>Common\gradient.png</Source>
@@ -25,8 +35,13 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
+<<<<<<< .mine
+      <Output>I:\2018t12\branches\Gary\Garys Branch\AirHockeyGame\bin\x86\Debug\Content\Common\gradient.xnb</Output>
+      <Time>2010-03-25T10:33:08.2327119+00:00</Time>
+=======
       <Output>C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\branches\Gary\Garys Branch\AirHockeyGame\bin\x86\Debug\Content\Common\gradient.xnb</Output>
       <Time>2010-03-25T02:36:10.143277+00:00</Time>
+>>>>>>> .r70
     </Item>
     <Item>
       <Source>Common\logo.png</Source>
@@ -34,8 +49,13 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
+<<<<<<< .mine
+      <Output>I:\2018t12\branches\Gary\Garys Branch\AirHockeyGame\bin\x86\Debug\Content\Common\logo.xnb</Output>
+      <Time>2010-03-25T10:33:08.3577159+00:00</Time>
+=======
       <Output>C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\branches\Gary\Garys Branch\AirHockeyGame\bin\x86\Debug\Content\Common\logo.xnb</Output>
       <Time>2010-03-25T02:36:10.143277+00:00</Time>
+>>>>>>> .r70
     </Item>
     <Item>
       <Source>Core Game\opponentPaddle.png</Source>
@@ -43,8 +63,13 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
+<<<<<<< .mine
+      <Output>I:\2018t12\branches\Gary\Garys Branch\AirHockeyGame\bin\x86\Debug\Content\Core Game\opponentPaddle.xnb</Output>
+      <Time>2010-03-25T10:33:06.9045444+00:00</Time>
+=======
       <Output>C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\branches\Gary\Garys Branch\AirHockeyGame\bin\x86\Debug\Content\Core Game\opponentPaddle.xnb</Output>
       <Time>2010-03-25T02:36:10.143277+00:00</Time>
+>>>>>>> .r70
     </Item>
     <Item>
       <Source>Core Game\playerPaddle.png</Source>
@@ -52,8 +77,13 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
+<<<<<<< .mine
+      <Output>I:\2018t12\branches\Gary\Garys Branch\AirHockeyGame\bin\x86\Debug\Content\Core Game\playerPaddle.xnb</Output>
+      <Time>2010-03-25T10:33:07.1389269+00:00</Time>
+=======
       <Output>C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\branches\Gary\Garys Branch\AirHockeyGame\bin\x86\Debug\Content\Core Game\playerPaddle.xnb</Output>
       <Time>2010-03-25T02:36:10.143277+00:00</Time>
+>>>>>>> .r70
     </Item>
     <Item>
       <Source>Core Game\puck.png</Source>
@@ -61,8 +91,13 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
+<<<<<<< .mine
+      <Output>I:\2018t12\branches\Gary\Garys Branch\AirHockeyGame\bin\x86\Debug\Content\Core Game\puck.xnb</Output>
+      <Time>2010-03-25T10:33:07.0920504+00:00</Time>
+=======
       <Output>C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\branches\Gary\Garys Branch\AirHockeyGame\bin\x86\Debug\Content\Core Game\puck.xnb</Output>
       <Time>2010-03-25T02:36:10.143277+00:00</Time>
+>>>>>>> .r70
     </Item>
     <Item>
       <Source>Core Game\boardEdges.png</Source>
@@ -70,8 +105,13 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
+<<<<<<< .mine
+      <Output>I:\2018t12\branches\Gary\Garys Branch\AirHockeyGame\bin\x86\Debug\Content\Core Game\boardEdges.xnb</Output>
+      <Time>2010-03-25T10:33:06.9670464+00:00</Time>
+=======
       <Output>C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\branches\Gary\Garys Branch\AirHockeyGame\bin\x86\Debug\Content\Core Game\boardEdges.xnb</Output>
       <Time>2010-03-25T02:36:10.143277+00:00</Time>
+>>>>>>> .r70
     </Item>
     <Item>
       <Source>Core Game\boardSurface.png</Source>
@@ -79,8 +119,13 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
+<<<<<<< .mine
+      <Output>I:\2018t12\branches\Gary\Garys Branch\AirHockeyGame\bin\x86\Debug\Content\Core Game\boardSurface.xnb</Output>
+      <Time>2010-03-25T10:33:07.0295484+00:00</Time>
+=======
       <Output>C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\branches\Gary\Garys Branch\AirHockeyGame\bin\x86\Debug\Content\Core Game\boardSurface.xnb</Output>
       <Time>2010-03-25T02:36:10.143277+00:00</Time>
+>>>>>>> .r70
     </Item>
     <Item>
       <Source>Fonts\detailsFont.spritefont</Source>
@@ -88,8 +133,13 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
+<<<<<<< .mine
+      <Output>I:\2018t12\branches\Gary\Garys Branch\AirHockeyGame\bin\x86\Debug\Content\Fonts\detailsFont.xnb</Output>
+      <Time>2010-03-25T10:33:08.7952299+00:00</Time>
+=======
       <Output>C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\branches\Gary\Garys Branch\AirHockeyGame\bin\x86\Debug\Content\Fonts\detailsFont.xnb</Output>
       <Time>2010-03-25T02:36:10.143277+00:00</Time>
+>>>>>>> .r70
     </Item>
     <Item>
       <Source>Fonts\diagnosticFont.spritefont</Source>
@@ -97,8 +147,13 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
+<<<<<<< .mine
+      <Output>I:\2018t12\branches\Gary\Garys Branch\AirHockeyGame\bin\x86\Debug\Content\Fonts\diagnosticFont.xnb</Output>
+      <Time>2010-03-25T10:33:08.7327279+00:00</Time>
+=======
       <Output>C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\branches\Gary\Garys Branch\AirHockeyGame\bin\x86\Debug\Content\Fonts\diagnosticFont.xnb</Output>
       <Time>2010-03-25T02:36:10.143277+00:00</Time>
+>>>>>>> .r70
     </Item>
     <Item>
       <Source>Fonts\frameRateCounterFont.spritefont</Source>
@@ -106,8 +161,13 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
+<<<<<<< .mine
+      <Output>I:\2018t12\branches\Gary\Garys Branch\AirHockeyGame\bin\x86\Debug\Content\Fonts\frameRateCounterFont.xnb</Output>
+      <Time>2010-03-25T10:33:08.8264809+00:00</Time>
+=======
       <Output>C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\branches\Gary\Garys Branch\AirHockeyGame\bin\x86\Debug\Content\Fonts\frameRateCounterFont.xnb</Output>
       <Time>2010-03-25T02:36:10.143277+00:00</Time>
+>>>>>>> .r70
     </Item>
     <Item>
       <Source>Fonts\gamefont.spritefont</Source>
@@ -115,8 +175,13 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
+<<<<<<< .mine
+      <Output>I:\2018t12\branches\Gary\Garys Branch\AirHockeyGame\bin\x86\Debug\Content\Fonts\gamefont.xnb</Output>
+      <Time>2010-03-25T10:33:08.8733574+00:00</Time>
+=======
       <Output>C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\branches\Gary\Garys Branch\AirHockeyGame\bin\x86\Debug\Content\Fonts\gamefont.xnb</Output>
       <Time>2010-03-25T02:36:10.143277+00:00</Time>
+>>>>>>> .r70
     </Item>
     <Item>
       <Source>Fonts\menufont.spritefont</Source>
@@ -124,18 +189,30 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
+<<<<<<< .mine
+      <Output>I:\2018t12\branches\Gary\Garys Branch\AirHockeyGame\bin\x86\Debug\Content\Fonts\menufont.xnb</Output>
+      <Time>2010-03-25T10:33:08.7639789+00:00</Time>
+=======
       <Output>C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\branches\Gary\Garys Branch\AirHockeyGame\bin\x86\Debug\Content\Fonts\menufont.xnb</Output>
       <Time>2010-03-25T02:36:10.143277+00:00</Time>
+>>>>>>> .r70
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
+<<<<<<< .mine
+      <RootDirectory>I:\2018t12\branches\Gary\Garys Branch\AirHockeyGame\Content\</RootDirectory>
+      <LoggerRootDirectory>I:\2018t12\branches\Gary\Garys Branch\AirHockeyGame\</LoggerRootDirectory>
+      <IntermediateDirectory>I:\2018t12\branches\Gary\Garys Branch\AirHockeyGame\Content\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>I:\2018t12\branches\Gary\Garys Branch\AirHockeyGame\bin\x86\Debug\Content\</OutputDirectory>
+=======
       <RootDirectory>C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\branches\Gary\Garys Branch\AirHockeyGame\Content\</RootDirectory>
       <LoggerRootDirectory>C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\branches\Gary\Garys Branch\AirHockeyGame\</LoggerRootDirectory>
       <IntermediateDirectory>C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\branches\Gary\Garys Branch\AirHockeyGame\Content\obj\x86\Debug\</IntermediateDirectory>
       <OutputDirectory>C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\branches\Gary\Garys Branch\AirHockeyGame\bin\x86\Debug\Content\</OutputDirectory>
+>>>>>>> .r70
     </Settings>
     <Assemblies>
       <Assembly>
@@ -163,8 +240,13 @@
         <Value>2009-05-28T01:16:06+01:00</Value>
       </Assembly>
       <Assembly>
+<<<<<<< .mine
+        <Key>C:\WINDOWS\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\3.1.0.0__6d5c3888ef60e27d\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
+        <Value>2009-07-03T14:34:33.59375+01:00</Value>
+=======
         <Key>C:\Windows\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\3.1.0.0__6d5c3888ef60e27d\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
         <Value>2009-11-12T11:18:08.2360138+00:00</Value>
+>>>>>>> .r70
       </Assembly>
     </Assemblies>
   </Asset>

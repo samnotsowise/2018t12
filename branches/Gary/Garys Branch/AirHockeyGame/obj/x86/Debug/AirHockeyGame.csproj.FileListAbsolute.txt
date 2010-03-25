@@ -401,6 +401,50 @@ C:\Users\Gary\Documents\Visual Studio 2008\Projects\2018t12\branches\Garys Branc
 C:\Users\Gary\Documents\Visual Studio 2008\Projects\2018t12\branches\Garys Branch\AirHockeyGame\bin\x86\Debug\Lidgren.Network.Xna.dll
 C:\Users\Gary\Documents\Visual Studio 2008\Projects\2018t12\branches\Garys Branch\AirHockeyGame\bin\x86\Debug\Lidgren.Network.Xna.pdb
 C:\Users\Gary\Documents\Visual Studio 2008\Projects\2018t12\branches\Garys Branch\AirHockeyGame\bin\x86\Debug\Lidgren.Network.pdb
+<<<<<<< .mine
+I:\2018t12\branches\Gary\Garys Branch\AirHockeyGame\bin\x86\Debug\Content\blank.xnb
+I:\2018t12\branches\Gary\Garys Branch\AirHockeyGame\bin\x86\Debug\Content\gradient.xnb
+I:\2018t12\branches\Gary\Garys Branch\AirHockeyGame\bin\x86\Debug\Content\Images\Main Menu\Context\box.xnb
+I:\2018t12\branches\Gary\Garys Branch\AirHockeyGame\bin\x86\Debug\Content\Images\Main Menu\Context\exit.xnb
+I:\2018t12\branches\Gary\Garys Branch\AirHockeyGame\bin\x86\Debug\Content\Images\Main Menu\Context\findgame.xnb
+I:\2018t12\branches\Gary\Garys Branch\AirHockeyGame\bin\x86\Debug\Content\Images\Main Menu\Context\multiplayer.xnb
+I:\2018t12\branches\Gary\Garys Branch\AirHockeyGame\bin\x86\Debug\Content\Images\Main Menu\Context\options.xnb
+I:\2018t12\branches\Gary\Garys Branch\AirHockeyGame\bin\x86\Debug\Content\Images\Main Menu\Context\singleplayer.xnb
+I:\2018t12\branches\Gary\Garys Branch\AirHockeyGame\bin\x86\Debug\Content\Images\Main Menu\logo.xnb
+I:\2018t12\branches\Gary\Garys Branch\AirHockeyGame\bin\x86\Debug\Content\Images\Main Menu\background.xnb
+I:\2018t12\branches\Gary\Garys Branch\AirHockeyGame\bin\x86\Debug\Content\Images\backgroundOrange.xnb
+I:\2018t12\branches\Gary\Garys Branch\AirHockeyGame\bin\x86\Debug\Content\Particles\explosion.xnb
+I:\2018t12\branches\Gary\Garys Branch\AirHockeyGame\bin\x86\Debug\Content\Particles\smoke.xnb
+I:\2018t12\branches\Gary\Garys Branch\AirHockeyGame\bin\x86\Debug\Content\gamefont.xnb
+I:\2018t12\branches\Gary\Garys Branch\AirHockeyGame\bin\x86\Debug\Content\menufont.xnb
+I:\2018t12\branches\Gary\Garys Branch\AirHockeyGame\bin\x86\Debug\Content\Particles\Arial.xnb
+I:\2018t12\branches\Gary\Garys Branch\AirHockeyGame\bin\x86\Debug\Content\Common\background.xnb
+I:\2018t12\branches\Gary\Garys Branch\AirHockeyGame\bin\x86\Debug\Content\Common\blank.xnb
+I:\2018t12\branches\Gary\Garys Branch\AirHockeyGame\bin\x86\Debug\Content\Common\gradient.xnb
+I:\2018t12\branches\Gary\Garys Branch\AirHockeyGame\bin\x86\Debug\Content\Common\logo.xnb
+I:\2018t12\branches\Gary\Garys Branch\AirHockeyGame\bin\x86\Debug\Content\Core Game\opponentPaddle.xnb
+I:\2018t12\branches\Gary\Garys Branch\AirHockeyGame\bin\x86\Debug\Content\Core Game\playerPaddle.xnb
+I:\2018t12\branches\Gary\Garys Branch\AirHockeyGame\bin\x86\Debug\Content\Core Game\puck.xnb
+I:\2018t12\branches\Gary\Garys Branch\AirHockeyGame\bin\x86\Debug\Content\Core Game\boardEdges.xnb
+I:\2018t12\branches\Gary\Garys Branch\AirHockeyGame\bin\x86\Debug\Content\Core Game\boardSurface.xnb
+I:\2018t12\branches\Gary\Garys Branch\AirHockeyGame\bin\x86\Debug\Content\Fonts\detailsFont.xnb
+I:\2018t12\branches\Gary\Garys Branch\AirHockeyGame\bin\x86\Debug\Content\Fonts\diagnosticFont.xnb
+I:\2018t12\branches\Gary\Garys Branch\AirHockeyGame\bin\x86\Debug\Content\Fonts\frameRateCounterFont.xnb
+I:\2018t12\branches\Gary\Garys Branch\AirHockeyGame\bin\x86\Debug\Content\Fonts\gamefont.xnb
+I:\2018t12\branches\Gary\Garys Branch\AirHockeyGame\bin\x86\Debug\Content\Fonts\menufont.xnb
+I:\2018t12\branches\Gary\Garys Branch\AirHockeyGame\bin\x86\Debug\AirHockeyGame.exe
+I:\2018t12\branches\Gary\Garys Branch\AirHockeyGame\bin\x86\Debug\AirHockeyGame.pdb
+I:\2018t12\branches\Gary\Garys Branch\AirHockeyGame\bin\x86\Debug\FarseerPhysics.dll
+I:\2018t12\branches\Gary\Garys Branch\AirHockeyGame\bin\x86\Debug\GameScreenManager.dll
+I:\2018t12\branches\Gary\Garys Branch\AirHockeyGame\bin\x86\Debug\Lidgren.Network.Xna.pdb
+I:\2018t12\branches\Gary\Garys Branch\AirHockeyGame\bin\x86\Debug\GameScreenManager.pdb
+I:\2018t12\branches\Gary\Garys Branch\AirHockeyGame\bin\x86\Debug\FarseerPhysics.pdb
+I:\2018t12\branches\Gary\Garys Branch\AirHockeyGame\bin\x86\Debug\Lidgren.Network.pdb
+I:\2018t12\branches\Gary\Garys Branch\AirHockeyGame\obj\x86\Debug\ResolveAssemblyReference.cache
+I:\2018t12\branches\Gary\Garys Branch\AirHockeyGame\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+I:\2018t12\branches\Gary\Garys Branch\AirHockeyGame\obj\x86\Debug\AirHockeyGame.exe
+I:\2018t12\branches\Gary\Garys Branch\AirHockeyGame\obj\x86\Debug\AirHockeyGame.pdb
+=======
 C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\branches\Gary\Garys Branch\AirHockeyGame\bin\x86\Debug\Content\blank.xnb
 C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\branches\Gary\Garys Branch\AirHockeyGame\bin\x86\Debug\Content\gradient.xnb
 C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\branches\Gary\Garys Branch\AirHockeyGame\bin\x86\Debug\Content\Images\Main Menu\Context\box.xnb
@@ -443,3 +487,4 @@ C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\branches\Gary\Garys B
 C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\branches\Gary\Garys Branch\AirHockeyGame\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\branches\Gary\Garys Branch\AirHockeyGame\obj\x86\Debug\AirHockeyGame.exe
 C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\branches\Gary\Garys Branch\AirHockeyGame\obj\x86\Debug\AirHockeyGame.pdb
+>>>>>>> .r70

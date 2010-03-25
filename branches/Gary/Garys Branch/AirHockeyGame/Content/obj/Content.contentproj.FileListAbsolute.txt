@@ -12,4 +12,8 @@ C:\Users\Sam\Desktop\2018t12\trunk\AirHockeyGame\Content\obj\x86\Debug\ResolveAs
 C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\branches\Sams Branch\AirHockeyGame\Content\obj\x86\Debug\ResolveAssemblyReference.cache
 C:\Users\Gary\Documents\Visual Studio 2008\Projects\2018t12\branches\Sams Branch\AirHockeyGame\Content\obj\x86\Debug\ResolveAssemblyReference.cache
 C:\Users\Gary\Documents\Visual Studio 2008\Projects\2018t12\branches\Garys Branch\AirHockeyGame\Content\obj\x86\Debug\ResolveAssemblyReference.cache
+<<<<<<< .mine
+I:\2018t12\branches\Gary\Garys Branch\AirHockeyGame\Content\obj\x86\Debug\ResolveAssemblyReference.cache
+=======
 C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\branches\Gary\Garys Branch\AirHockeyGame\Content\obj\x86\Debug\ResolveAssemblyReference.cache
+>>>>>>> .r70

@@ -7,13 +7,15 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
-namespace FarseerGames.AirHockeyGame.Screens {
+namespace FarseerGames.AirHockeyGame.Screens
+{
 
     /// <summary>
     /// The main game screen
     /// </summary>
 
-    public class MainScreen: GameScreen {
+    public class MainScreen : GameScreen
+    {
 
         private PlayerPaddle playerPaddle;
         private NetworkPaddle networkPaddle;
@@ -24,7 +26,8 @@ namespace FarseerGames.AirHockeyGame.Screens {
         /// Initialises MainScreen
         /// </summary>
 
-        public override void Initialize() {
+        public override void Initialize()
+        {
             PhysicsSimulator = new PhysicsSimulator(new Vector2(0, 0));
             PhysicsSimulatorView = new PhysicsSimulatorView(PhysicsSimulator);
             base.Initialize();
@@ -34,8 +37,9 @@ namespace FarseerGames.AirHockeyGame.Screens {
         /// Loads MainScreen content
         /// </summary>
 
-        public override void LoadContent() {
-            
+        public override void LoadContent()
+        {
+
             //Load board
             this.board = new Board(PhysicsSimulator);
 
@@ -45,8 +49,8 @@ namespace FarseerGames.AirHockeyGame.Screens {
             //Load playerPaddle
             this.playerPaddle = new PlayerPaddle(ScreenManager.ContentManager.Load<Texture2D>("Content\\Core Game\\playerPaddle"), 82, new Vector2(256, 384), PhysicsSimulator);
 
-           //Load networkPaddle
-           this.networkPaddle = new NetworkPaddle(ScreenManager.ContentManager.Load<Texture2D>("Content\\Core Game\\opponentPaddle"), 82, new Vector2(556, 384), PhysicsSimulator);
+            //Load networkPaddle
+            this.networkPaddle = new NetworkPaddle(ScreenManager.ContentManager.Load<Texture2D>("Content\\Core Game\\opponentPaddle"), 82, new Vector2(556, 384), PhysicsSimulator);
 
             base.LoadContent();
         }
@@ -55,20 +59,25 @@ namespace FarseerGames.AirHockeyGame.Screens {
         /// Handes input to MainScreen
         /// </summary>
 
-        public override void HandleInput(InputState input) {
-            if(firstRun) {
+        public override void HandleInput(InputState input)
+        {
+            if (firstRun)
+            {
                 ScreenManager.AddScreen(new PauseScreen(GetTitle(), GetDetails()));
                 firstRun = false;
             }
-            if(input.PauseGame) {
+            if (input.PauseGame)
+            {
                 ScreenManager.AddScreen(new PauseScreen(GetTitle(), GetDetails()));
             }
 
             //Particles
-            if(input.IsNewKeyPress(Keys.Space)) {
+            if (input.IsNewKeyPress(Keys.Space))
+            {
                 ScreenManager.RequestParticleEffect('e', this.playerPaddle.position);
             }
-            if(input.IsNewKeyPress(Keys.F)) {
+            if (input.IsNewKeyPress(Keys.F))
+            {
                 ScreenManager.RequestParticleEffect('s', this.puck.position);
             }
 
@@ -79,7 +88,8 @@ namespace FarseerGames.AirHockeyGame.Screens {
         /// Update MainScreen
         /// </summary>
 
-        public override void Update(GameTime gameTime, bool otherScreenHasFocus, bool coveredByOtherScreen) {
+        public override void Update(GameTime gameTime, bool otherScreenHasFocus, bool coveredByOtherScreen)
+        {
 
             //Prevent menu mouse movements passing on to game
             if (coveredByOtherScreen || otherScreenHasFocus)
@@ -93,12 +103,18 @@ namespace FarseerGames.AirHockeyGame.Screens {
                 if (ScreenManager.gameType == ScreenManager.GameType.StartMultiplayer)
                 {
                     this.playerPaddle.Update();
-                    //this.networkPaddle.UpdatePaddle(ScreenManager.NetworkMouseX, ScreenManager.NetworkMouseY);
+                    if (ScreenManager.blnConnected)
+                    {
+                        //this.networkPaddle.UpdatePaddle(ScreenManager.NetworkMouseX, ScreenManager.NetworkMouseY);
+                    }
                 }
                 else if (ScreenManager.gameType == ScreenManager.GameType.FindGame)
                 {
                     this.networkPaddle.Update();
-                    //this.playerPaddle.UpdatePaddle(ScreenManager.NetworkMouseX, ScreenManager.NetworkMouseY);
+                    if (ScreenManager.blnConnected)
+                    {
+                        //this.playerPaddle.UpdatePaddle(ScreenManager.NetworkMouseX, ScreenManager.NetworkMouseY);
+                    }
                 }
 
                 this.puck.Update();
@@ -116,7 +132,8 @@ namespace FarseerGames.AirHockeyGame.Screens {
         /// Draws the MainScreen
         /// </summary>
 
-        public override void Draw(GameTime gameTime) {
+        public override void Draw(GameTime gameTime)
+        {
             ScreenManager.SpriteBatch.Begin(SpriteBlendMode.AlphaBlend);
             ScreenManager.SpriteBatch.Draw(ScreenManager.ContentManager.Load<Texture2D>("Content\\Core Game\\boardSurface"), this.board.rect, Color.White);
             ScreenManager.SpriteBatch.Draw(this.puck.texture, this.puck.rect, Color.White);
@@ -140,7 +157,8 @@ namespace FarseerGames.AirHockeyGame.Screens {
         /// </summary>
         /// <returns>Screen title</returns>
 
-        public static string GetTitle() {
+        public static string GetTitle()
+        {
             return "Play Game";
         }
 
@@ -149,7 +167,8 @@ namespace FarseerGames.AirHockeyGame.Screens {
         /// </summary>
         /// <returns>Screen details</returns>
 
-        private static string GetDetails() {
+        private static string GetDetails()
+        {
             StringBuilder sb = new StringBuilder();
             sb.AppendLine("This is where we wait for all players to be ready");
             sb.AppendLine(string.Empty);
