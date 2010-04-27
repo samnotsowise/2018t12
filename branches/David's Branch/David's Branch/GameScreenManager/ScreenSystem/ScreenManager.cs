@@ -50,6 +50,7 @@ namespace GameScreenManager.ScreenSystem {
         public enum ParticleType {
             Smoke,
             Explosion,
+            Stars,
             None
         }
 

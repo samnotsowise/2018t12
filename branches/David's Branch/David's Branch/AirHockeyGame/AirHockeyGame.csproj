@@ -90,6 +90,7 @@
     <Compile Include="Classes\Core Game\Objects\Paddles\PlayerPaddle.cs" />
     <Compile Include="Classes\Core Game\Objects\Puck.cs" />
     <Compile Include="Classes\Core Game\Objects\ScoreBox.cs" />
+    <Compile Include="Classes\Core Game\User\Profile.cs" />
     <Compile Include="Classes\Particles\ExplosionParticleSystem.cs" />
     <Compile Include="Classes\Particles\ExplosionSmokeParticleSystem.cs" />
     <Compile Include="Classes\Particles\Particle.cs" />
