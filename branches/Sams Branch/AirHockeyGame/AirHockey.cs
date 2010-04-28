@@ -14,6 +14,7 @@ namespace AirHockeyGame {
         private GraphicsDeviceManager _graphics;
         private ExplosionParticleSystem explosion;
         private ExplosionSmokeParticleSystem smoke;
+        private GameState gameState = new GameState();
 
         // a random number generator for the particle system
         private static Random random = new Random();
