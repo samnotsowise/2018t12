@@ -17,6 +17,7 @@ namespace AirHockeyGame
         #region fields
         String name;
         int win, lost, draw;
+        public const int MaxNameLength = 15;
         #endregion
 
         #region Properties
