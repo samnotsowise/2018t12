@@ -8,69 +8,92 @@ namespace FarseerGames.AirHockeyGame {
     /// </summary>
     public abstract class GameObject {
 
-        public Texture2D texture = null;
+        public Texture2D texture;
 
         //Rectangle
-        private Rectangle pRect = new Rectangle(0, 0, 0, 0);
         public Rectangle rect {
+            set {
+                this.rect = value;
+            }
             get {
-                return this.pRect;
+                return this.rect;
             }
         }
 
         //Width & Height
-        private int pWidth, pHeight = 0;
-        private float pMidWidth, pMidHeight = 0;
         /// <summary>
         /// Readonly int
         /// </summary>
         public int width {
+            set {
+                this.width = value;
+            }
             get {
-                return this.pWidth;
+                return this.width;
             }
         }
         /// <summary>
         /// Readonly int
         /// </summary>
         public int height {
+            set {
+                this.height = value;
+            }
             get {
-                return this.pHeight;
+                return this.height;
             }
         }
+
         /// <summary>
         /// Readonly float
         /// </summary>
         public float midWidth {
+            set {
+                this.midWidth = value;
+            }
             get {
-                return this.pMidWidth;
+                return this.midWidth;
             }
         }
         /// <summary>
         /// Readonly float
         /// </summary>
         public float midHeight {
+            set {
+                this.midHeight = value;
+            }
             get {
-                return this.pMidHeight;
+                return this.midHeight;
             }
         }
 
         //Position
-        private Vector2 pInitialPosition = new Vector2(0, 0);
         /// <summary>
         /// Readonly Vector2
         /// </summary>
         public Vector2 initialPosition {
+            set {
+                this.initialPosition = value;
+            }
             get {
-                return this.pInitialPosition;
+                return this.initialPosition;
             }
         }
-        public Vector2 position = new Vector2(0, 0);
+        public Vector2 position;
 
         /// <summary>
         /// Constructor - used to extend GameObject
         /// </summary>
 
         public GameObject() {
+            this.width = 0;
+            this.height = 0;
+            this.midWidth = 0;
+            this.midHeight = 0;
+            this.rect = new Rectangle(0, 0, 0, 0);
+            this.initialPosition = new Vector2(0, 0);
+            this.position = this.initialPosition;
+            this.texture = null;
         }
 
         /// <summary>
@@ -80,57 +103,8 @@ namespace FarseerGames.AirHockeyGame {
         public virtual void UpdatePosition(Vector2 p) {
             this.position.X = p.X;
             this.position.Y = p.Y;
-            this.pRect.X = (int)this.position.X;
-            this.pRect.Y = (int)this.position.Y;
+            //this.rect.X = (int)this.position.X;
+            //this.rect.Y = (int)this.position.Y;
         }
-
-        /// <summary>
-        /// Set rect property
-        /// </summary>
-        /// <param name="r">Rectangle</param>
-        public void SetRect(Rectangle r) {
-            this.pRect = r;
-        }
-
-        /// <summary>
-        /// Set width property
-        /// </summary>
-        /// <param name="w">Width</param>
-        public void SetWidth(int w) {
-            this.pWidth = w;
-        }
-
-        /// <summary>
-        /// Set height property
-        /// </summary>
-        /// <param name="h">Height</param>
-        public void SetHeight(int h) {
-            this.pHeight = h;
-        }
-
-        /// <summary>
-        /// Set midWidth property
-        /// </summary>
-        /// <param name="mW">midWidth</param>
-        public void SetMidWidth(float mW) {
-            this.pMidWidth = mW;
-        }
-
-        /// <summary>
-        /// Set midHeight property
-        /// </summary>
-        /// <param name="mH">midHeight</param>
-        public void SetMidHeight(float mH) {
-            this.pMidHeight = mH;
-        }
-
-        /// <summary>
-        /// Set initialPosition property
-        /// </summary>
-        /// <param name="iP">initialPosition</param>
-        public void SetInitialPosition(Vector2 iP) {
-            this.pInitialPosition = iP;
-        }
-
     }
 }

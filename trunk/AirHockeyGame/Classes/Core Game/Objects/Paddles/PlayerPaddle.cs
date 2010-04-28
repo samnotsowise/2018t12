@@ -24,12 +24,12 @@ namespace FarseerGames.AirHockeyGame {
 
             //GameObject properties
             this.texture = t;
-            this.SetWidth(c);
-            this.SetHeight(c);
-            this.SetMidWidth(c / 2);
-            this.SetMidHeight(this.midWidth);
-            this.SetRect(new Rectangle((int)this.position.X, (int)this.position.Y, this.width, this.height));
-            this.SetInitialPosition(iP);
+            this.width = c;
+            this.height = c;
+            this.midWidth = c / 2;
+            this.midHeight = this.midWidth;
+            this.rect = new Rectangle((int)this.position.X, (int)this.position.Y, this.width, this.height);
+            this.initialPosition = iP;
 
             //Create a physics body
             this.CreateBody(pS);
