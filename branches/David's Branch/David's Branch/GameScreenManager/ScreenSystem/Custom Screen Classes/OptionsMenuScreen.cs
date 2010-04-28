@@ -2,8 +2,9 @@
 //-----------------------------------------------------------------------------
 // OptionsMenuScreen.cs
 //
-// Microsoft XNA Community Game Platform
-// Copyright (C) Microsoft Corporation. All rights reserved.
+//  Author(s):
+//      David Valente
+//
 //-----------------------------------------------------------------------------
 #endregion
 
@@ -14,7 +15,9 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Input;
 
-namespace GameScreenManager.ScreenSystem {
+
+namespace GameScreenManager.ScreenSystem
+{
     /// <summary>
     /// The options screen is brought up over the top of the main menu
     /// screen, and gives the user a chance to configure the game
@@ -45,10 +48,7 @@ namespace GameScreenManager.ScreenSystem {
         /// </summary>
         public OptionsMenuScreen()
             : base() {
-            // Create our menu entries.
-            //AddOptionsSetting("AI difficulty");
 
-            //AddOptionsItem("Return", null, true);
             exitTimer = 0.0f;
             exitAllowed = false;
 
@@ -148,5 +148,5 @@ namespace GameScreenManager.ScreenSystem {
 
 
         #endregion
-    }
+    }  
 }

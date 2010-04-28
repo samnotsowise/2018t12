@@ -13,19 +13,20 @@ Content\Fonts\diagnosticFont.xnb
 Content\Fonts\frameRateCounterFont.xnb
 Content\Fonts\gamefont.xnb
 Content\Fonts\menufont.xnb
-Content\blank.xnb
-Content\gradient.xnb
-Content\Images\Main Menu\Context\box.xnb
-Content\Images\Main Menu\Context\exit.xnb
-Content\Images\Main Menu\Context\findgame.xnb
-Content\Images\Main Menu\Context\multiplayer.xnb
-Content\Images\Main Menu\Context\options.xnb
-Content\Images\Main Menu\Context\singleplayer.xnb
-Content\Images\Main Menu\logo.xnb
-Content\Images\Main Menu\background.xnb
-Content\Images\backgroundOrange.xnb
-Content\Particles\explosion.xnb
-Content\Particles\smoke.xnb
-Content\gamefont.xnb
-Content\menufont.xnb
-Content\Particles\Arial.xnb
+Content\ScreenSystem\Images\backgroundOrange.xnb
+Content\ScreenSystem\Images\Main Menu\background.xnb
+Content\ScreenSystem\Images\Main Menu\Context\box.xnb
+Content\ScreenSystem\Images\Main Menu\Context\exit.xnb
+Content\ScreenSystem\Images\Main Menu\Context\findgame.xnb
+Content\ScreenSystem\Images\Main Menu\Context\multiplayer.xnb
+Content\ScreenSystem\Images\Main Menu\Context\options.xnb
+Content\ScreenSystem\Images\Main Menu\Context\singleplayer.xnb
+Content\ScreenSystem\Images\Main Menu\logo.xnb
+Content\ScreenSystem\Particles\explosion.xnb
+Content\ScreenSystem\Particles\smoke.xnb
+Content\ScreenSystem\blank.xnb
+Content\ScreenSystem\gradient.xnb
+Content\ScreenSystem\menufont.xnb
+Content\ScreenSystem\Particles\Arial.xnb
+Content\ScreenSystem\gamefont.xnb
+Content\ScreenSystem\Particles\star.xnb

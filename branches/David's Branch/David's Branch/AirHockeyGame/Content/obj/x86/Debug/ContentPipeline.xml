@@ -8,7 +8,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Public\Documents\CSC 2018 Project\branches\David's Branch\David's Branch\AirHockeyGame\bin\x86\Debug\Content\Common\background.xnb</Output>
-      <Time>2010-04-22T17:33:11.6313833+01:00</Time>
+      <Time>2010-04-28T14:08:30.1924681+01:00</Time>
     </Item>
     <Item>
       <Source>Common\blank.png</Source>
@@ -17,7 +17,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Public\Documents\CSC 2018 Project\branches\David's Branch\David's Branch\AirHockeyGame\bin\x86\Debug\Content\Common\blank.xnb</Output>
-      <Time>2010-04-22T17:33:11.6413834+01:00</Time>
+      <Time>2010-04-28T14:08:30.8855078+01:00</Time>
     </Item>
     <Item>
       <Source>Common\gradient.png</Source>
@@ -26,7 +26,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Public\Documents\CSC 2018 Project\branches\David's Branch\David's Branch\AirHockeyGame\bin\x86\Debug\Content\Common\gradient.xnb</Output>
-      <Time>2010-04-22T17:33:11.6263832+01:00</Time>
+      <Time>2010-04-28T14:08:30.1874678+01:00</Time>
     </Item>
     <Item>
       <Source>Common\logo.png</Source>
@@ -35,7 +35,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Public\Documents\CSC 2018 Project\branches\David's Branch\David's Branch\AirHockeyGame\bin\x86\Debug\Content\Common\logo.xnb</Output>
-      <Time>2010-04-22T17:33:11.6363833+01:00</Time>
+      <Time>2010-04-28T14:08:30.3544774+01:00</Time>
     </Item>
     <Item>
       <Source>Core Game\opponentPaddle.png</Source>
@@ -44,7 +44,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Public\Documents\CSC 2018 Project\branches\David's Branch\David's Branch\AirHockeyGame\bin\x86\Debug\Content\Core Game\opponentPaddle.xnb</Output>
-      <Time>2010-04-22T17:33:11.2368673+01:00</Time>
+      <Time>2010-04-28T14:08:29.7204411+01:00</Time>
     </Item>
     <Item>
       <Source>Core Game\playerPaddle.png</Source>
@@ -53,7 +53,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Public\Documents\CSC 2018 Project\branches\David's Branch\David's Branch\AirHockeyGame\bin\x86\Debug\Content\Core Game\playerPaddle.xnb</Output>
-      <Time>2010-04-22T17:33:11.3181208+01:00</Time>
+      <Time>2010-04-28T14:08:29.7584433+01:00</Time>
     </Item>
     <Item>
       <Source>Core Game\puck.png</Source>
@@ -62,7 +62,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Public\Documents\CSC 2018 Project\branches\David's Branch\David's Branch\AirHockeyGame\bin\x86\Debug\Content\Core Game\puck.xnb</Output>
-      <Time>2010-04-22T17:33:11.265869+01:00</Time>
+      <Time>2010-04-28T14:08:29.7494428+01:00</Time>
     </Item>
     <Item>
       <Source>Core Game\boardEdges.png</Source>
@@ -71,7 +71,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Public\Documents\CSC 2018 Project\branches\David's Branch\David's Branch\AirHockeyGame\bin\x86\Debug\Content\Core Game\boardEdges.xnb</Output>
-      <Time>2010-04-22T17:33:11.248868+01:00</Time>
+      <Time>2010-04-28T14:08:29.7324418+01:00</Time>
     </Item>
     <Item>
       <Source>Core Game\boardSurface.png</Source>
@@ -80,7 +80,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Public\Documents\CSC 2018 Project\branches\David's Branch\David's Branch\AirHockeyGame\bin\x86\Debug\Content\Core Game\boardSurface.xnb</Output>
-      <Time>2010-04-22T17:33:11.2598686+01:00</Time>
+      <Time>2010-04-28T14:08:29.7424424+01:00</Time>
     </Item>
     <Item>
       <Source>Core Game\score_overlay.png</Source>
@@ -89,7 +89,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Public\Documents\CSC 2018 Project\branches\David's Branch\David's Branch\AirHockeyGame\bin\x86\Debug\Content\Core Game\score_overlay.xnb</Output>
-      <Time>2010-04-22T17:33:11.2418676+01:00</Time>
+      <Time>2010-04-28T14:08:29.7264415+01:00</Time>
     </Item>
     <Item>
       <Source>Fonts\detailsFont.spritefont</Source>
@@ -98,7 +98,7 @@
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Public\Documents\CSC 2018 Project\branches\David's Branch\David's Branch\AirHockeyGame\bin\x86\Debug\Content\Fonts\detailsFont.xnb</Output>
-      <Time>2010-04-22T17:33:11.7726369+01:00</Time>
+      <Time>2010-04-28T14:08:31.7925597+01:00</Time>
     </Item>
     <Item>
       <Source>Fonts\diagnosticFont.spritefont</Source>
@@ -107,7 +107,7 @@
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Public\Documents\CSC 2018 Project\branches\David's Branch\David's Branch\AirHockeyGame\bin\x86\Debug\Content\Fonts\diagnosticFont.xnb</Output>
-      <Time>2010-04-22T17:33:11.7636364+01:00</Time>
+      <Time>2010-04-28T14:08:31.7845592+01:00</Time>
     </Item>
     <Item>
       <Source>Fonts\frameRateCounterFont.spritefont</Source>
@@ -116,7 +116,7 @@
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Public\Documents\CSC 2018 Project\branches\David's Branch\David's Branch\AirHockeyGame\bin\x86\Debug\Content\Fonts\frameRateCounterFont.xnb</Output>
-      <Time>2010-04-22T17:33:11.7776372+01:00</Time>
+      <Time>2010-04-28T14:08:31.7975599+01:00</Time>
     </Item>
     <Item>
       <Source>Fonts\gamefont.spritefont</Source>
@@ -125,7 +125,7 @@
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Public\Documents\CSC 2018 Project\branches\David's Branch\David's Branch\AirHockeyGame\bin\x86\Debug\Content\Fonts\gamefont.xnb</Output>
-      <Time>2010-04-22T17:33:11.7816374+01:00</Time>
+      <Time>2010-04-28T14:08:31.8005601+01:00</Time>
     </Item>
     <Item>
       <Source>Fonts\menufont.spritefont</Source>
@@ -134,7 +134,160 @@
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Public\Documents\CSC 2018 Project\branches\David's Branch\David's Branch\AirHockeyGame\bin\x86\Debug\Content\Fonts\menufont.xnb</Output>
-      <Time>2010-04-22T17:33:11.7676366+01:00</Time>
+      <Time>2010-04-28T14:08:31.7885594+01:00</Time>
+    </Item>
+    <Item>
+      <Source>ScreenSystem\Images\backgroundOrange.png</Source>
+      <Name>ScreenSystem\Images\backgroundOrange</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Public\Documents\CSC 2018 Project\branches\David's Branch\David's Branch\AirHockeyGame\bin\x86\Debug\Content\ScreenSystem\Images\backgroundOrange.xnb</Output>
+      <Time>2010-04-28T14:41:30.739749+01:00</Time>
+    </Item>
+    <Item>
+      <Source>ScreenSystem\Images\Main Menu\background.jpg</Source>
+      <Name>ScreenSystem\Images\Main Menu\background</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Public\Documents\CSC 2018 Project\branches\David's Branch\David's Branch\AirHockeyGame\bin\x86\Debug\Content\ScreenSystem\Images\Main Menu\background.xnb</Output>
+      <Time>2010-04-28T14:41:30.8227537+01:00</Time>
+    </Item>
+    <Item>
+      <Source>ScreenSystem\Images\Main Menu\Context\box.png</Source>
+      <Name>ScreenSystem\Images\Main Menu\Context\box</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Public\Documents\CSC 2018 Project\branches\David's Branch\David's Branch\AirHockeyGame\bin\x86\Debug\Content\ScreenSystem\Images\Main Menu\Context\box.xnb</Output>
+      <Time>2010-04-28T14:41:30.9917634+01:00</Time>
+    </Item>
+    <Item>
+      <Source>ScreenSystem\Images\Main Menu\Context\exit.png</Source>
+      <Name>ScreenSystem\Images\Main Menu\Context\exit</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Public\Documents\CSC 2018 Project\branches\David's Branch\David's Branch\AirHockeyGame\bin\x86\Debug\Content\ScreenSystem\Images\Main Menu\Context\exit.xnb</Output>
+      <Time>2010-04-28T14:41:30.9937635+01:00</Time>
+    </Item>
+    <Item>
+      <Source>ScreenSystem\Images\Main Menu\Context\findgame.png</Source>
+      <Name>ScreenSystem\Images\Main Menu\Context\findgame</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Public\Documents\CSC 2018 Project\branches\David's Branch\David's Branch\AirHockeyGame\bin\x86\Debug\Content\ScreenSystem\Images\Main Menu\Context\findgame.xnb</Output>
+      <Time>2010-04-28T14:41:31.0107645+01:00</Time>
+    </Item>
+    <Item>
+      <Source>ScreenSystem\Images\Main Menu\Context\multiplayer.png</Source>
+      <Name>ScreenSystem\Images\Main Menu\Context\multiplayer</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Public\Documents\CSC 2018 Project\branches\David's Branch\David's Branch\AirHockeyGame\bin\x86\Debug\Content\ScreenSystem\Images\Main Menu\Context\multiplayer.xnb</Output>
+      <Time>2010-04-28T14:41:31.0247653+01:00</Time>
+    </Item>
+    <Item>
+      <Source>ScreenSystem\Images\Main Menu\Context\options.png</Source>
+      <Name>ScreenSystem\Images\Main Menu\Context\options</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Public\Documents\CSC 2018 Project\branches\David's Branch\David's Branch\AirHockeyGame\bin\x86\Debug\Content\ScreenSystem\Images\Main Menu\Context\options.xnb</Output>
+      <Time>2010-04-28T14:41:31.0267654+01:00</Time>
+    </Item>
+    <Item>
+      <Source>ScreenSystem\Images\Main Menu\Context\singleplayer.png</Source>
+      <Name>ScreenSystem\Images\Main Menu\Context\singleplayer</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Public\Documents\CSC 2018 Project\branches\David's Branch\David's Branch\AirHockeyGame\bin\x86\Debug\Content\ScreenSystem\Images\Main Menu\Context\singleplayer.xnb</Output>
+      <Time>2010-04-28T14:41:31.0277654+01:00</Time>
+    </Item>
+    <Item>
+      <Source>ScreenSystem\Images\Main Menu\logo.png</Source>
+      <Name>ScreenSystem\Images\Main Menu\logo</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Public\Documents\CSC 2018 Project\branches\David's Branch\David's Branch\AirHockeyGame\bin\x86\Debug\Content\ScreenSystem\Images\Main Menu\logo.xnb</Output>
+      <Time>2010-04-28T14:41:31.0577672+01:00</Time>
+    </Item>
+    <Item>
+      <Source>ScreenSystem\Particles\explosion.png</Source>
+      <Name>ScreenSystem\Particles\explosion</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Public\Documents\CSC 2018 Project\branches\David's Branch\David's Branch\AirHockeyGame\bin\x86\Debug\Content\ScreenSystem\Particles\explosion.xnb</Output>
+      <Time>2010-04-28T14:41:31.2757796+01:00</Time>
+    </Item>
+    <Item>
+      <Source>ScreenSystem\Particles\smoke.bmp</Source>
+      <Name>ScreenSystem\Particles\smoke</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Public\Documents\CSC 2018 Project\branches\David's Branch\David's Branch\AirHockeyGame\bin\x86\Debug\Content\ScreenSystem\Particles\smoke.xnb</Output>
+      <Time>2010-04-28T14:41:31.3357831+01:00</Time>
+    </Item>
+    <Item>
+      <Source>ScreenSystem\blank.png</Source>
+      <Name>ScreenSystem\blank</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Public\Documents\CSC 2018 Project\branches\David's Branch\David's Branch\AirHockeyGame\bin\x86\Debug\Content\ScreenSystem\blank.xnb</Output>
+      <Time>2010-04-28T14:41:31.3387832+01:00</Time>
+    </Item>
+    <Item>
+      <Source>ScreenSystem\gradient.png</Source>
+      <Name>ScreenSystem\gradient</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Public\Documents\CSC 2018 Project\branches\David's Branch\David's Branch\AirHockeyGame\bin\x86\Debug\Content\ScreenSystem\gradient.xnb</Output>
+      <Time>2010-04-28T14:41:31.3437835+01:00</Time>
+    </Item>
+    <Item>
+      <Source>ScreenSystem\menufont.spritefont</Source>
+      <Name>ScreenSystem\menufont</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Public\Documents\CSC 2018 Project\branches\David's Branch\David's Branch\AirHockeyGame\bin\x86\Debug\Content\ScreenSystem\menufont.xnb</Output>
+      <Time>2010-04-28T14:41:31.0597673+01:00</Time>
+    </Item>
+    <Item>
+      <Source>ScreenSystem\Particles\Arial.spritefont</Source>
+      <Name>ScreenSystem\Particles\Arial</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Public\Documents\CSC 2018 Project\branches\David's Branch\David's Branch\AirHockeyGame\bin\x86\Debug\Content\ScreenSystem\Particles\Arial.xnb</Output>
+      <Time>2010-04-28T14:41:31.2717794+01:00</Time>
+    </Item>
+    <Item>
+      <Source>ScreenSystem\gamefont.spritefont</Source>
+      <Name>ScreenSystem\gamefont</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Public\Documents\CSC 2018 Project\branches\David's Branch\David's Branch\AirHockeyGame\bin\x86\Debug\Content\ScreenSystem\gamefont.xnb</Output>
+      <Time>2010-04-28T14:41:31.3417834+01:00</Time>
+    </Item>
+    <Item>
+      <Source>ScreenSystem\Particles\star.png</Source>
+      <Name>ScreenSystem\Particles\star</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Public\Documents\CSC 2018 Project\branches\David's Branch\David's Branch\AirHockeyGame\bin\x86\Debug\Content\ScreenSystem\Particles\star.xnb</Output>
+      <Time>2010-04-28T14:43:54.436968+01:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
