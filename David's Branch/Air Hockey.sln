@@ -1,11 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 10.00
-# Visual Studio 2008
+# Visual C# Express 2008
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AirHockeyGame", "AirHockeyGame\AirHockeyGame.csproj", "{F7E1D8C1-5AB0-42A9-9AFE-8F3EEEBF1307}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FarseerPhysics", "FarseerPhysics\FarseerPhysics.csproj", "{3CA74E02-3210-4BF8-85E9-024E9AD6F18D}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameScreenManager", "GameScreenManager\GameScreenManager.csproj", "{691B7A20-9CD0-486D-87C4-8BD8001FE8FA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,16 +18,10 @@ Global
 		{3CA74E02-3210-4BF8-85E9-024E9AD6F18D}.Debug|x86.ActiveCfg = Debug|x86
 		{3CA74E02-3210-4BF8-85E9-024E9AD6F18D}.Release|x86.ActiveCfg = Release|x86
 		{3CA74E02-3210-4BF8-85E9-024E9AD6F18D}.Release|x86.Build.0 = Release|x86
-		{691B7A20-9CD0-486D-87C4-8BD8001FE8FA}.Debug|x86.ActiveCfg = Debug|x86
-		{691B7A20-9CD0-486D-87C4-8BD8001FE8FA}.Debug|x86.Build.0 = Debug|x86
-		{691B7A20-9CD0-486D-87C4-8BD8001FE8FA}.Release|x86.ActiveCfg = Release|x86
-		{691B7A20-9CD0-486D-87C4-8BD8001FE8FA}.Release|x86.Build.0 = Release|x86
 		{D02CA378-A184-49AD-91D5-C017D1559CAC}.Debug|x86.ActiveCfg = Debug|x86
 		{D02CA378-A184-49AD-91D5-C017D1559CAC}.Release|x86.ActiveCfg = Release|x86
 		{5DB75E98-A054-4091-AB49-F5DB0F17F771}.Debug|x86.ActiveCfg = Debug|x86
 		{5DB75E98-A054-4091-AB49-F5DB0F17F771}.Release|x86.ActiveCfg = Release|x86
-		{DE1C7B50-5EB5-475E-8091-102C3ADAD27E}.Debug|x86.ActiveCfg = Debug|x86
-		{DE1C7B50-5EB5-475E-8091-102C3ADAD27E}.Release|x86.ActiveCfg = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

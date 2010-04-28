@@ -1,4 +1,11 @@
-﻿using System;
+﻿/*
+ * Displays icons for whichever menu option is selected.
+ * 
+ * Author(s)
+ *  David Valente
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 using Microsoft.Xna.Framework.Content;

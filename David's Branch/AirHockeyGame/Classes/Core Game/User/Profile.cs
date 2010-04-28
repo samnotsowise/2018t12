@@ -1,4 +1,10 @@
-﻿using System;
+﻿/*
+ * Holds information on the user and can be written to and read from file.
+ * 
+ * Author(s):
+ *  David Valente
+ */
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.IO;
@@ -6,7 +12,7 @@ using System.Xml.Serialization;
 
 namespace AirHockeyGame
 {
-    class Profile
+    public class Profile
     {
         #region fields
         String name;
@@ -15,22 +21,25 @@ namespace AirHockeyGame
 
         #region Properties
 
-        String Name
+        public String Name
         {
             get { return name;  }
             set { name = value; }
         }
 
-        int Win
+        public int Win
         { get { return win; } }
 
-        int Lost
+        public int Lost
         { get { return lost; } }           
 
-        int Draw
+        public int Draw
         { get { return draw; } }
 
-        int TotalGamesPlayed
+        public string WonLostDrawn
+        { get { return ""+win+"/"+lost+"/"+draw; } }
+        
+        public int TotalGamesPlayed
         { get { return win + lost + draw; } }
 #endregion
 
@@ -39,7 +48,7 @@ namespace AirHockeyGame
         /// <summary>
         /// Constructor to create a "blank" profile.
         /// </summary>
-        public Profile() : this("")
+        public Profile() : this("Player Name")
         {
         }
 
@@ -82,7 +91,7 @@ namespace AirHockeyGame
         /// </summary>
         /// <param name="fileName"></param>
         /// <returns></returns>
-        public Profile ReadProfile(String fileName)
+        public static Profile ReadProfile(String fileName)
         {
             //To read file
             if (!File.Exists(fileName))
@@ -119,6 +128,31 @@ namespace AirHockeyGame
 
             //Close stream
             stream.Close();
+        }
+
+        /// <summary>
+        /// Compares this profile with another to check for a match.
+        /// </summary>
+        /// <param name="p"></param>
+        /// <returns></returns>
+        public bool Matches(Profile p)
+        {
+            if (p.name.Equals(this.name) && p.WonLostDrawn.Equals(this.WonLostDrawn))
+                return true;
+            else
+                return false;
+        }
+
+        /// <summary>
+        /// Copies another profile's variables to create a copy.
+        /// </summary>
+        /// <param name="p"></param>
+        public void Copy(Profile p)
+        {
+            this.win = p.win;
+            this.lost = p.lost;
+            this.draw = p.draw;
+            this.name = p.name;
         }
 
         #endregion

@@ -80,6 +80,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Core Game\GameState.cs" />
     <Compile Include="Classes\Core Game\Objects\Board\Board.cs" />
     <Compile Include="Classes\Core Game\Objects\Board\Boundary.cs" />
     <Compile Include="Classes\Core Game\Abstract Objects\PhysicsObject.cs" />
@@ -97,10 +98,30 @@
     <Compile Include="Classes\Particles\ParticleSystem.cs" />
     <Compile Include="Classes\Particles\SmokePlumeParticleSystem.cs" />
     <Compile Include="Classes\Particles\StarParticleSystem.cs" />
-    <Compile Include="Screens\MainScreen.cs" />
+    <Compile Include="Screen System\Components\FramerateCounterComponent.cs" />
+    <Compile Include="Screen System\DrawingSystem\CircleBrush.cs" />
+    <Compile Include="Screen System\DrawingSystem\DrawingHelper.cs" />
+    <Compile Include="Screen System\DrawingSystem\EllipseBrush.cs" />
+    <Compile Include="Screen System\DrawingSystem\LineBrush.cs" />
+    <Compile Include="Screen System\DrawingSystem\PolygonBrush.cs" />
+    <Compile Include="Screen System\DrawingSystem\RectangleBrush.cs" />
+    <Compile Include="Screen System\MainScreen.cs" />
     <Compile Include="AirHockey.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Screen System\PhysicsSimulatorView.cs" />
+    <Compile Include="Screen System\ScreenSystem\Custom Screen Classes\ContextBox.cs" />
+    <Compile Include="Screen System\ScreenSystem\Custom Screen Classes\OptionsMenuScreen.cs" />
+    <Compile Include="Screen System\ScreenSystem\Custom Screen Classes\Settings.cs" />
+    <Compile Include="Screen System\ScreenSystem\GameScreen.cs" />
+    <Compile Include="Screen System\ScreenSystem\InputState.cs" />
+    <Compile Include="Screen System\ScreenSystem\LogoScreen.cs" />
+    <Compile Include="Screen System\ScreenSystem\MainMenuScreen.cs" />
+    <Compile Include="Screen System\ScreenSystem\MenuItem.cs" />
+    <Compile Include="Screen System\ScreenSystem\MenuScreen.cs" />
+    <Compile Include="Screen System\ScreenSystem\PauseScreen.cs" />
+    <Compile Include="Screen System\ScreenSystem\ScreenManager.cs" />
+    <Compile Include="Screen System\ScreenSystem\SpriteFonts.cs" />
   </ItemGroup>
   <ItemGroup>
     <NestedContentProject Include="Content\Content.contentproj">
@@ -146,10 +167,6 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\GameScreenManager\GameScreenManager.csproj">
-      <Project>{691B7A20-9CD0-486D-87C4-8BD8001FE8FA}</Project>
-      <Name>GameScreenManager</Name>
-    </ProjectReference>
     <ProjectReference Include="..\FarseerPhysics\FarseerPhysics.csproj">
       <Project>{3CA74E02-3210-4BF8-85E9-024E9AD6F18D}</Project>
       <Name>FarseerPhysics</Name>

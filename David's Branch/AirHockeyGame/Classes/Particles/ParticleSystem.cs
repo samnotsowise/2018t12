@@ -200,7 +200,7 @@ namespace AirHockeyGame {
                 throw new InvalidOperationException(message);
             }
             // load the texture....
-            texture = game.Content.Load<Texture2D>(@"Content\Particles\" + textureFilename);
+            texture = game.Content.Load<Texture2D>(@"Content\ScreenSystem\Particles\" + textureFilename);
 
             // ... and calculate the center. this'll be used in the draw call, we
             // always want to rotate and scale around this point.
