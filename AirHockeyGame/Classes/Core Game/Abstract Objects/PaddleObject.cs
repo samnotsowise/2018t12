@@ -11,19 +11,32 @@ namespace FarseerGames.AirHockeyGame {
     /// </summary>
     public abstract class PaddleObject: PhysicsObject {
 
-        public Vector2 force;
+        public Vector2 force = new Vector2(0, 0);
+
+        //Previous Location
+        public Vector2 prevPos {
+            set {
+                this.prevPos = value;
+            }
+            get {
+                return this.prevPos;
+            }
+        }
 
         /// <summary>
         /// Constructor - used to create a new PaddleObject object
         /// </summary>
         public PaddleObject() {
-            this.force = new Vector2(0, 0);
+            this.prevPos = this.initialPosition;
         }
 
         /// <summary>
         /// Updates the PaddleObject
         /// </summary>
         public virtual void Update() {
+
+            //Keep track of where we've been
+            //this.SetPrevPos(this.body.Position);
 
             //Apply force
             this.body.ApplyForce(this.force);

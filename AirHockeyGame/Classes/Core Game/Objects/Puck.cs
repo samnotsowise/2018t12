@@ -12,6 +12,16 @@ namespace FarseerGames.AirHockeyGame {
     /// </summary>
     class Puck: PhysicsObject {
 
+        //Previous Location
+        public Vector2 prevPos {
+            set {
+                this.prevPos = value;
+            }
+            get {
+                return this.prevPos;
+            }
+        }
+
         private Restrictor restrictor;
 
         /// <summary>
@@ -23,12 +33,13 @@ namespace FarseerGames.AirHockeyGame {
         /// <param name="pS">Physics Simulator</param>
         public Puck(Texture2D t, int c, Vector2 iP, PhysicsSimulator pS, Restrictor r) {
             this.texture = t;
-            this.SetWidth(c);
-            this.SetHeight(c);
-            this.SetMidWidth(c / 2);
-            this.SetMidHeight(this.midWidth);
-            this.SetRect(new Rectangle((int)this.position.X, (int)this.position.Y, this.width, this.height));
-            this.SetInitialPosition(iP);
+            this.width = c;
+            this.height = c;
+            this.midWidth = c / 2;
+            this.midHeight =  this.midWidth;
+            this.rect = new Rectangle((int)this.position.X, (int)this.position.Y, this.width, this.height);
+            this.initialPosition = iP;
+            this.prevPos = iP;
             this.restrictor = r;
 
             //-------------------
@@ -56,6 +67,10 @@ namespace FarseerGames.AirHockeyGame {
         /// Updates the Puck
         /// </summary>
         public void Update() {
+
+            //Keep track of where we've been
+            //this.SetPrevPos(this.body.Position);
+
             this.UpdatePosition(this.body.Position);
         }
     }

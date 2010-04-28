@@ -7,7 +7,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\branches\Sams Branch\AirHockeyGame\bin\x86\Debug\Content\Common\background.xnb</Output>
+      <Output>C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\branches\Sams Branch\AirHockeyGame\bin\x86\Release\Content\Common\background.xnb</Output>
       <Time>2010-03-18T10:40:26.542404+00:00</Time>
     </Item>
     <Item>
@@ -16,7 +16,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\branches\Sams Branch\AirHockeyGame\bin\x86\Debug\Content\Common\blank.xnb</Output>
+      <Output>C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\branches\Sams Branch\AirHockeyGame\bin\x86\Release\Content\Common\blank.xnb</Output>
       <Time>2010-03-18T10:40:26.542404+00:00</Time>
     </Item>
     <Item>
@@ -25,7 +25,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\branches\Sams Branch\AirHockeyGame\bin\x86\Debug\Content\Common\gradient.xnb</Output>
+      <Output>C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\branches\Sams Branch\AirHockeyGame\bin\x86\Release\Content\Common\gradient.xnb</Output>
       <Time>2010-03-18T10:40:26.542404+00:00</Time>
     </Item>
     <Item>
@@ -34,7 +34,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\branches\Sams Branch\AirHockeyGame\bin\x86\Debug\Content\Common\logo.xnb</Output>
+      <Output>C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\branches\Sams Branch\AirHockeyGame\bin\x86\Release\Content\Common\logo.xnb</Output>
       <Time>2010-03-18T10:40:26.542404+00:00</Time>
     </Item>
     <Item>
@@ -43,7 +43,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\branches\Sams Branch\AirHockeyGame\bin\x86\Debug\Content\Core Game\opponentPaddle.xnb</Output>
+      <Output>C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\branches\Sams Branch\AirHockeyGame\bin\x86\Release\Content\Core Game\opponentPaddle.xnb</Output>
       <Time>2010-03-22T22:01:01.25464+00:00</Time>
     </Item>
     <Item>
@@ -52,7 +52,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\branches\Sams Branch\AirHockeyGame\bin\x86\Debug\Content\Core Game\playerPaddle.xnb</Output>
+      <Output>C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\branches\Sams Branch\AirHockeyGame\bin\x86\Release\Content\Core Game\playerPaddle.xnb</Output>
       <Time>2010-03-22T22:01:01.25464+00:00</Time>
     </Item>
     <Item>
@@ -61,7 +61,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\branches\Sams Branch\AirHockeyGame\bin\x86\Debug\Content\Core Game\puck.xnb</Output>
+      <Output>C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\branches\Sams Branch\AirHockeyGame\bin\x86\Release\Content\Core Game\puck.xnb</Output>
       <Time>2010-03-22T22:01:01.25464+00:00</Time>
     </Item>
     <Item>
@@ -70,7 +70,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\branches\Sams Branch\AirHockeyGame\bin\x86\Debug\Content\Core Game\boardEdges.xnb</Output>
+      <Output>C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\branches\Sams Branch\AirHockeyGame\bin\x86\Release\Content\Core Game\boardEdges.xnb</Output>
       <Time>2010-03-23T22:52:26.0321367+00:00</Time>
     </Item>
     <Item>
@@ -79,7 +79,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\branches\Sams Branch\AirHockeyGame\bin\x86\Debug\Content\Core Game\boardSurface.xnb</Output>
+      <Output>C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\branches\Sams Branch\AirHockeyGame\bin\x86\Release\Content\Core Game\boardSurface.xnb</Output>
       <Time>2010-03-23T22:52:26.0321367+00:00</Time>
     </Item>
     <Item>
@@ -88,7 +88,7 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\branches\Sams Branch\AirHockeyGame\bin\x86\Debug\Content\Fonts\detailsFont.xnb</Output>
+      <Output>C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\branches\Sams Branch\AirHockeyGame\bin\x86\Release\Content\Fonts\detailsFont.xnb</Output>
       <Time>2010-03-18T10:40:26.542404+00:00</Time>
     </Item>
     <Item>
@@ -97,7 +97,7 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\branches\Sams Branch\AirHockeyGame\bin\x86\Debug\Content\Fonts\diagnosticFont.xnb</Output>
+      <Output>C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\branches\Sams Branch\AirHockeyGame\bin\x86\Release\Content\Fonts\diagnosticFont.xnb</Output>
       <Time>2010-03-18T10:40:26.542404+00:00</Time>
     </Item>
     <Item>
@@ -106,7 +106,7 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\branches\Sams Branch\AirHockeyGame\bin\x86\Debug\Content\Fonts\frameRateCounterFont.xnb</Output>
+      <Output>C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\branches\Sams Branch\AirHockeyGame\bin\x86\Release\Content\Fonts\frameRateCounterFont.xnb</Output>
       <Time>2010-03-18T10:40:26.542404+00:00</Time>
     </Item>
     <Item>
@@ -115,7 +115,7 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\branches\Sams Branch\AirHockeyGame\bin\x86\Debug\Content\Fonts\gamefont.xnb</Output>
+      <Output>C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\branches\Sams Branch\AirHockeyGame\bin\x86\Release\Content\Fonts\gamefont.xnb</Output>
       <Time>2010-03-18T10:40:26.542404+00:00</Time>
     </Item>
     <Item>
@@ -124,18 +124,18 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\branches\Sams Branch\AirHockeyGame\bin\x86\Debug\Content\Fonts\menufont.xnb</Output>
+      <Output>C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\branches\Sams Branch\AirHockeyGame\bin\x86\Release\Content\Fonts\menufont.xnb</Output>
       <Time>2010-03-18T10:40:26.542404+00:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>
-      <BuildConfiguration>Debug</BuildConfiguration>
-      <CompressContent>false</CompressContent>
+      <BuildConfiguration>Release</BuildConfiguration>
+      <CompressContent>true</CompressContent>
       <RootDirectory>C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\branches\Sams Branch\AirHockeyGame\Content\</RootDirectory>
       <LoggerRootDirectory>C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\branches\Sams Branch\AirHockeyGame\</LoggerRootDirectory>
-      <IntermediateDirectory>C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\branches\Sams Branch\AirHockeyGame\Content\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\branches\Sams Branch\AirHockeyGame\bin\x86\Debug\Content\</OutputDirectory>
+      <IntermediateDirectory>C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\branches\Sams Branch\AirHockeyGame\Content\obj\x86\Release\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\branches\Sams Branch\AirHockeyGame\bin\x86\Release\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>

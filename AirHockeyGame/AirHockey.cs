@@ -14,6 +14,7 @@ namespace AirHockeyGame {
         private GraphicsDeviceManager _graphics;
         private ExplosionParticleSystem explosion;
         private ExplosionSmokeParticleSystem smoke;
+        private GameState gameState = new GameState();
 
         // a random number generator for the particle system
         private static Random random = new Random();
@@ -56,26 +57,26 @@ namespace AirHockeyGame {
         }
 
         public void PlaySinglePlayer() {
-            ScreenManager.AddScreen(new MainScreen());
+            ScreenManager.AddScreen(new MainGameScreen());
         }
 
         public ScreenManager ScreenManager { get; set; }
 
         protected override void Update(GameTime gameTime) {
             #region Menu Options
-            //The ScreenManager can't access the MainScreen class
+            //The ScreenManager can't access the MainGameScreen class
             //It also can't send requests to the AirHockey class
             //Therefore, the airhockey class detects when it wants to start a game
             if(ScreenManager.StartTheGame) {
                 switch(ScreenManager.gameType) {
                     case ScreenManager.GameType.FindGame:
-                        ScreenManager.AddScreen(new MainScreen());
+                        ScreenManager.AddScreen(new MainGameScreen());
                         break;
                     case ScreenManager.GameType.SinglePlayer:
-                        ScreenManager.AddScreen(new MainScreen());
+                        ScreenManager.AddScreen(new MainGameScreen());
                         break;
                     case ScreenManager.GameType.StartMultiplayer:
-                        ScreenManager.AddScreen(new MainScreen());
+                        ScreenManager.AddScreen(new MainGameScreen());
                         break;
                 }
 
