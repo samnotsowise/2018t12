@@ -21,12 +21,12 @@ namespace FarseerGames.AirHockeyGame {
         public Boundary(int w, int h, Vector2 iP, PhysicsSimulator pS) {
 
             //GameObject properties
-            this.SetWidth(w);
-            this.SetHeight(h);
-            this.SetMidWidth(w / 2);
-            this.SetMidHeight(h / 2);
-            this.SetRect(new Rectangle((int)this.position.X, (int)this.position.Y, this.width, this.height));
-            this.SetInitialPosition(iP);
+            this.width = w;
+            this.height = h;
+            this.midWidth = w / 2;
+            this.midHeight = h / 2;
+            this.rect = new Rectangle((int)this.position.X, (int)this.position.Y, this.width, this.height);
+            this.initialPosition = iP;
 
             //-------------------
             //Physics Properties

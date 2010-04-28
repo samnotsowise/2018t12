@@ -43,6 +43,9 @@ namespace FarseerGames.AirHockeyGame.Screens {
             this.netPaddle = new NetPaddle(ScreenManager.ContentManager.Load<Texture2D>("Content\\Core Game\\opponentPaddle"), 82, new Vector2(768, 384), PhysicsSimulator);
             
             base.LoadContent();
+
+            this.board.restrictors[0].AddToRestrictor(this.puck, "puck");
+
         }
 
         /// <summary>
@@ -79,13 +82,31 @@ namespace FarseerGames.AirHockeyGame.Screens {
             }
 
             //Update Paddles and puck objects
+            //this.playerPaddle.Update();
+            //this.netPaddle.Update();
+            //this.puck.Update();
             this.playerPaddle.Update();
             this.netPaddle.Update();
             this.puck.Update();
 
-            if(this.playerPaddle.rect.Contains(this.puck.rect)) {
-                this.puck.UpdatePosition(this.puck.initialPosition);
+            //Update the board (operates restrictors)
+
+            this.board.Update();
+
+            if(this.playerPaddle.rect.Contains((int)this.puck.body.Position.X, (int)this.puck.body.Position.Y) && this.puck.body.Position != this.puck.prevPos) {
+                this.puck.UpdatePosition(this.puck.prevPos);
+                this.playerPaddle.UpdatePosition(this.playerPaddle.prevPos);
+
+            } else {
+                //this.playerPaddle.Update();
+                //this.netPaddle.Update();
+                //this.puck.Update();
             }
+            if(!this.playerPaddle.rect.Contains((int)this.puck.prevPos.X, (int)this.puck.prevPos.Y) && this.board.restrictors[0].rect.Contains((int)this.puck.prevPos.X, (int)this.puck.prevPos.Y)) {
+                this.playerPaddle.prevPos = this.playerPaddle.body.Position;
+                this.puck.prevPos = this.puck.body.Position;
+            }
+            
 
             base.Update(gameTime, otherScreenHasFocus, coveredByOtherScreen);
         }
