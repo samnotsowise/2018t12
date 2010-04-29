@@ -1,5 +1,0 @@
-#summary Guide to excluding directories from svn
-
-bin directories are large. They can increase the size of your commits ten fold. to avoid this, go into each project's directory in your branch, right click on the bin dir and select  "delete and add to ignore list" from the svn menu. Then commit the bin folder. If any errors are returned, simply update the bin folder, the commit again. You should then commit your branch, again apply the update on error, recommit method. You should commit your branch BEFORE you exclude a directory, so that if errors occur, you can update your entire branch to reset it.
-
-Note that excluding directories means that you need to rebuild each project if you are not the person who excluded the directory. Projects need to be rebuilt in build order
