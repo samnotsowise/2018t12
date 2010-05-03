@@ -1,0 +1,333 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XnaContent xmlns:Pipeline="Microsoft.Xna.Framework.Content.Pipeline">
+  <Asset Type="Pipeline:BuildItemCollection">
+    <Item>
+      <Source>Common\background.png</Source>
+      <Name>Common\background</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Sam\Desktop\2018t12\branches\David's Branch\David's Branch\AirHockeyGame\bin\x86\Debug\Content\Common\background.xnb</Output>
+      <Time>2010-03-25T10:35:25.011312+00:00</Time>
+    </Item>
+    <Item>
+      <Source>Common\blank.png</Source>
+      <Name>Common\blank</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Sam\Desktop\2018t12\branches\David's Branch\David's Branch\AirHockeyGame\bin\x86\Debug\Content\Common\blank.xnb</Output>
+      <Time>2010-03-25T10:35:25.011312+00:00</Time>
+    </Item>
+    <Item>
+      <Source>Common\gradient.png</Source>
+      <Name>Common\gradient</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Sam\Desktop\2018t12\branches\David's Branch\David's Branch\AirHockeyGame\bin\x86\Debug\Content\Common\gradient.xnb</Output>
+      <Time>2010-03-25T10:35:25.011312+00:00</Time>
+    </Item>
+    <Item>
+      <Source>Common\logo.png</Source>
+      <Name>Common\logo</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Sam\Desktop\2018t12\branches\David's Branch\David's Branch\AirHockeyGame\bin\x86\Debug\Content\Common\logo.xnb</Output>
+      <Time>2010-03-25T10:35:25.011312+00:00</Time>
+    </Item>
+    <Item>
+      <Source>Core Game\opponentPaddle.png</Source>
+      <Name>Core Game\opponentPaddle</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Sam\Desktop\2018t12\branches\David's Branch\David's Branch\AirHockeyGame\bin\x86\Debug\Content\Core Game\opponentPaddle.xnb</Output>
+      <Time>2010-03-25T10:35:25.011312+00:00</Time>
+    </Item>
+    <Item>
+      <Source>Core Game\playerPaddle.png</Source>
+      <Name>Core Game\playerPaddle</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Sam\Desktop\2018t12\branches\David's Branch\David's Branch\AirHockeyGame\bin\x86\Debug\Content\Core Game\playerPaddle.xnb</Output>
+      <Time>2010-03-25T10:35:25.011312+00:00</Time>
+    </Item>
+    <Item>
+      <Source>Core Game\puck.png</Source>
+      <Name>Core Game\puck</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Sam\Desktop\2018t12\branches\David's Branch\David's Branch\AirHockeyGame\bin\x86\Debug\Content\Core Game\puck.xnb</Output>
+      <Time>2010-03-25T10:35:25.011312+00:00</Time>
+    </Item>
+    <Item>
+      <Source>Core Game\boardEdges.png</Source>
+      <Name>Core Game\boardEdges</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Sam\Desktop\2018t12\branches\David's Branch\David's Branch\AirHockeyGame\bin\x86\Debug\Content\Core Game\boardEdges.xnb</Output>
+      <Time>2010-03-25T10:35:25.011312+00:00</Time>
+    </Item>
+    <Item>
+      <Source>Core Game\boardSurface.png</Source>
+      <Name>Core Game\boardSurface</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Sam\Desktop\2018t12\branches\David's Branch\David's Branch\AirHockeyGame\bin\x86\Debug\Content\Core Game\boardSurface.xnb</Output>
+      <Time>2010-03-25T10:35:25.011312+00:00</Time>
+    </Item>
+    <Item>
+      <Source>Core Game\score_overlay.png</Source>
+      <Name>Core Game\score_overlay</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Sam\Desktop\2018t12\branches\David's Branch\David's Branch\AirHockeyGame\bin\x86\Debug\Content\Core Game\score_overlay.xnb</Output>
+      <Time>2010-03-25T12:07:16.231406+00:00</Time>
+    </Item>
+    <Item>
+      <Source>ScreenSystem\Images\backgroundOrange.png</Source>
+      <Name>ScreenSystem\Images\backgroundOrange</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Sam\Desktop\2018t12\branches\David's Branch\David's Branch\AirHockeyGame\bin\x86\Debug\Content\ScreenSystem\Images\backgroundOrange.xnb</Output>
+      <Time>2010-04-28T16:59:39.644783+01:00</Time>
+    </Item>
+    <Item>
+      <Source>ScreenSystem\Images\Main Menu\background.jpg</Source>
+      <Name>ScreenSystem\Images\Main Menu\background</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Sam\Desktop\2018t12\branches\David's Branch\David's Branch\AirHockeyGame\bin\x86\Debug\Content\ScreenSystem\Images\Main Menu\background.xnb</Output>
+      <Time>2010-04-28T16:59:39.644783+01:00</Time>
+    </Item>
+    <Item>
+      <Source>ScreenSystem\Images\Main Menu\Context\box.png</Source>
+      <Name>ScreenSystem\Images\Main Menu\Context\box</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Sam\Desktop\2018t12\branches\David's Branch\David's Branch\AirHockeyGame\bin\x86\Debug\Content\ScreenSystem\Images\Main Menu\Context\box.xnb</Output>
+      <Time>2010-04-28T16:59:39.644783+01:00</Time>
+    </Item>
+    <Item>
+      <Source>ScreenSystem\Images\Main Menu\Context\exit.png</Source>
+      <Name>ScreenSystem\Images\Main Menu\Context\exit</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Sam\Desktop\2018t12\branches\David's Branch\David's Branch\AirHockeyGame\bin\x86\Debug\Content\ScreenSystem\Images\Main Menu\Context\exit.xnb</Output>
+      <Time>2010-04-28T16:59:39.644783+01:00</Time>
+    </Item>
+    <Item>
+      <Source>ScreenSystem\Images\Main Menu\Context\findgame.png</Source>
+      <Name>ScreenSystem\Images\Main Menu\Context\findgame</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Sam\Desktop\2018t12\branches\David's Branch\David's Branch\AirHockeyGame\bin\x86\Debug\Content\ScreenSystem\Images\Main Menu\Context\findgame.xnb</Output>
+      <Time>2010-04-28T16:59:39.644783+01:00</Time>
+    </Item>
+    <Item>
+      <Source>ScreenSystem\Images\Main Menu\Context\multiplayer.png</Source>
+      <Name>ScreenSystem\Images\Main Menu\Context\multiplayer</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Sam\Desktop\2018t12\branches\David's Branch\David's Branch\AirHockeyGame\bin\x86\Debug\Content\ScreenSystem\Images\Main Menu\Context\multiplayer.xnb</Output>
+      <Time>2010-04-28T16:59:39.644783+01:00</Time>
+    </Item>
+    <Item>
+      <Source>ScreenSystem\Images\Main Menu\Context\options.png</Source>
+      <Name>ScreenSystem\Images\Main Menu\Context\options</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Sam\Desktop\2018t12\branches\David's Branch\David's Branch\AirHockeyGame\bin\x86\Debug\Content\ScreenSystem\Images\Main Menu\Context\options.xnb</Output>
+      <Time>2010-04-28T16:59:39.644783+01:00</Time>
+    </Item>
+    <Item>
+      <Source>ScreenSystem\Images\Main Menu\Context\singleplayer.png</Source>
+      <Name>ScreenSystem\Images\Main Menu\Context\singleplayer</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Sam\Desktop\2018t12\branches\David's Branch\David's Branch\AirHockeyGame\bin\x86\Debug\Content\ScreenSystem\Images\Main Menu\Context\singleplayer.xnb</Output>
+      <Time>2010-04-28T16:59:39.644783+01:00</Time>
+    </Item>
+    <Item>
+      <Source>ScreenSystem\Images\Main Menu\logo.png</Source>
+      <Name>ScreenSystem\Images\Main Menu\logo</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Sam\Desktop\2018t12\branches\David's Branch\David's Branch\AirHockeyGame\bin\x86\Debug\Content\ScreenSystem\Images\Main Menu\logo.xnb</Output>
+      <Time>2010-04-28T16:59:39.644783+01:00</Time>
+    </Item>
+    <Item>
+      <Source>ScreenSystem\Particles\explosion.png</Source>
+      <Name>ScreenSystem\Particles\explosion</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Sam\Desktop\2018t12\branches\David's Branch\David's Branch\AirHockeyGame\bin\x86\Debug\Content\ScreenSystem\Particles\explosion.xnb</Output>
+      <Time>2010-04-28T16:59:39.644783+01:00</Time>
+    </Item>
+    <Item>
+      <Source>ScreenSystem\Particles\smoke.bmp</Source>
+      <Name>ScreenSystem\Particles\smoke</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Sam\Desktop\2018t12\branches\David's Branch\David's Branch\AirHockeyGame\bin\x86\Debug\Content\ScreenSystem\Particles\smoke.xnb</Output>
+      <Time>2010-04-28T16:59:39.644783+01:00</Time>
+    </Item>
+    <Item>
+      <Source>ScreenSystem\blank.png</Source>
+      <Name>ScreenSystem\blank</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Sam\Desktop\2018t12\branches\David's Branch\David's Branch\AirHockeyGame\bin\x86\Debug\Content\ScreenSystem\blank.xnb</Output>
+      <Time>2010-04-28T15:54:41.767031+01:00</Time>
+    </Item>
+    <Item>
+      <Source>ScreenSystem\gradient.png</Source>
+      <Name>ScreenSystem\gradient</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Sam\Desktop\2018t12\branches\David's Branch\David's Branch\AirHockeyGame\bin\x86\Debug\Content\ScreenSystem\gradient.xnb</Output>
+      <Time>2010-04-28T15:54:41.767031+01:00</Time>
+    </Item>
+    <Item>
+      <Source>ScreenSystem\Particles\star.png</Source>
+      <Name>ScreenSystem\Particles\star</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Sam\Desktop\2018t12\branches\David's Branch\David's Branch\AirHockeyGame\bin\x86\Debug\Content\ScreenSystem\Particles\star.xnb</Output>
+      <Time>2010-04-28T16:59:39.644783+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Fonts\detailsFont.spritefont</Source>
+      <Name>Fonts\detailsFont</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Sam\Desktop\2018t12\branches\David's Branch\David's Branch\AirHockeyGame\bin\x86\Debug\Content\Fonts\detailsFont.xnb</Output>
+      <Time>2010-03-25T10:35:25.011312+00:00</Time>
+    </Item>
+    <Item>
+      <Source>Fonts\diagnosticFont.spritefont</Source>
+      <Name>Fonts\diagnosticFont</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Sam\Desktop\2018t12\branches\David's Branch\David's Branch\AirHockeyGame\bin\x86\Debug\Content\Fonts\diagnosticFont.xnb</Output>
+      <Time>2010-03-25T10:35:25.011312+00:00</Time>
+    </Item>
+    <Item>
+      <Source>Fonts\frameRateCounterFont.spritefont</Source>
+      <Name>Fonts\frameRateCounterFont</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Sam\Desktop\2018t12\branches\David's Branch\David's Branch\AirHockeyGame\bin\x86\Debug\Content\Fonts\frameRateCounterFont.xnb</Output>
+      <Time>2010-03-25T10:35:25.011312+00:00</Time>
+    </Item>
+    <Item>
+      <Source>Fonts\gamefont.spritefont</Source>
+      <Name>Fonts\gamefont</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Sam\Desktop\2018t12\branches\David's Branch\David's Branch\AirHockeyGame\bin\x86\Debug\Content\Fonts\gamefont.xnb</Output>
+      <Time>2010-03-25T10:35:25.011312+00:00</Time>
+    </Item>
+    <Item>
+      <Source>Fonts\menufont.spritefont</Source>
+      <Name>Fonts\menufont</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Sam\Desktop\2018t12\branches\David's Branch\David's Branch\AirHockeyGame\bin\x86\Debug\Content\Fonts\menufont.xnb</Output>
+      <Time>2010-03-25T10:35:25.011312+00:00</Time>
+    </Item>
+    <Item>
+      <Source>ScreenSystem\menufont.spritefont</Source>
+      <Name>ScreenSystem\menufont</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Sam\Desktop\2018t12\branches\David's Branch\David's Branch\AirHockeyGame\bin\x86\Debug\Content\ScreenSystem\menufont.xnb</Output>
+      <Time>2010-04-28T15:54:41.767031+01:00</Time>
+    </Item>
+    <Item>
+      <Source>ScreenSystem\Particles\Arial.spritefont</Source>
+      <Name>ScreenSystem\Particles\Arial</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Sam\Desktop\2018t12\branches\David's Branch\David's Branch\AirHockeyGame\bin\x86\Debug\Content\ScreenSystem\Particles\Arial.xnb</Output>
+      <Time>2010-04-28T16:59:39.644783+01:00</Time>
+    </Item>
+    <Item>
+      <Source>ScreenSystem\gamefont.spritefont</Source>
+      <Name>ScreenSystem\gamefont</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Sam\Desktop\2018t12\branches\David's Branch\David's Branch\AirHockeyGame\bin\x86\Debug\Content\ScreenSystem\gamefont.xnb</Output>
+      <Time>2010-04-28T15:54:41.767031+01:00</Time>
+    </Item>
+    <BuildSuccessful>true</BuildSuccessful>
+    <Settings>
+      <TargetPlatform>Windows</TargetPlatform>
+      <BuildConfiguration>Debug</BuildConfiguration>
+      <CompressContent>false</CompressContent>
+      <RootDirectory>C:\Users\Sam\Desktop\2018t12\branches\David's Branch\David's Branch\AirHockeyGame\Content\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\Sam\Desktop\2018t12\branches\David's Branch\David's Branch\AirHockeyGame\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\Sam\Desktop\2018t12\branches\David's Branch\David's Branch\AirHockeyGame\Content\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\Sam\Desktop\2018t12\branches\David's Branch\David's Branch\AirHockeyGame\bin\x86\Debug\Content\</OutputDirectory>
+    </Settings>
+    <Assemblies>
+      <Assembly>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v3.1\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>
+        <Value>2009-05-28T01:16:14+01:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v3.1\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.VideoImporters.dll</Key>
+        <Value>2009-05-28T01:16:06+01:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v3.1\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.TextureImporter.dll</Key>
+        <Value>2009-05-28T01:16:16+01:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v3.1\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.FBXImporter.dll</Key>
+        <Value>2009-05-28T01:16:26+01:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v3.1\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.EffectImporter.dll</Key>
+        <Value>2009-05-28T01:16:12+01:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v3.1\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.AudioImporters.dll</Key>
+        <Value>2009-05-28T01:16:06+01:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Windows\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\3.1.0.0__6d5c3888ef60e27d\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
+        <Value>2009-11-12T11:18:08.2360138+00:00</Value>
+      </Assembly>
+    </Assemblies>
+  </Asset>
+</XnaContent>

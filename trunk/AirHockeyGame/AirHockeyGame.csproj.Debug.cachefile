@@ -1,0 +1,32 @@
+Content\Common\background.xnb
+Content\Common\blank.xnb
+Content\Common\gradient.xnb
+Content\Common\logo.xnb
+Content\Core Game\opponentPaddle.xnb
+Content\Core Game\playerPaddle.xnb
+Content\Core Game\puck.xnb
+Content\Core Game\boardEdges.xnb
+Content\Core Game\boardSurface.xnb
+Content\Core Game\score_overlay.xnb
+Content\ScreenSystem\Images\backgroundOrange.xnb
+Content\ScreenSystem\Images\Main Menu\background.xnb
+Content\ScreenSystem\Images\Main Menu\Context\box.xnb
+Content\ScreenSystem\Images\Main Menu\Context\exit.xnb
+Content\ScreenSystem\Images\Main Menu\Context\findgame.xnb
+Content\ScreenSystem\Images\Main Menu\Context\multiplayer.xnb
+Content\ScreenSystem\Images\Main Menu\Context\options.xnb
+Content\ScreenSystem\Images\Main Menu\Context\singleplayer.xnb
+Content\ScreenSystem\Images\Main Menu\logo.xnb
+Content\ScreenSystem\Particles\explosion.xnb
+Content\ScreenSystem\Particles\smoke.xnb
+Content\ScreenSystem\blank.xnb
+Content\ScreenSystem\gradient.xnb
+Content\ScreenSystem\Particles\star.xnb
+Content\Fonts\detailsFont.xnb
+Content\Fonts\diagnosticFont.xnb
+Content\Fonts\frameRateCounterFont.xnb
+Content\Fonts\gamefont.xnb
+Content\Fonts\menufont.xnb
+Content\ScreenSystem\menufont.xnb
+Content\ScreenSystem\Particles\Arial.xnb
+Content\ScreenSystem\gamefont.xnb
