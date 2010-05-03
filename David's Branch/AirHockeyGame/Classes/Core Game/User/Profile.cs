@@ -18,6 +18,7 @@ namespace AirHockeyGame
         String name;
         int win, lost, draw;
         public const int MaxNameLength = 15;
+        int picture;
         #endregion
 
         #region Properties
@@ -39,6 +40,12 @@ namespace AirHockeyGame
 
         public string WonLostDrawn
         { get { return ""+win+"/"+lost+"/"+draw; } }
+
+        public int PictureIndex 
+        {
+            get { return picture; }
+            set { picture = value; }
+        }
         
         public int TotalGamesPlayed
         { get { return win + lost + draw; } }
@@ -138,7 +145,7 @@ namespace AirHockeyGame
         /// <returns></returns>
         public bool Matches(Profile p)
         {
-            if (p.name.Equals(this.name) && p.WonLostDrawn.Equals(this.WonLostDrawn))
+            if (p.name.Equals(this.name) && p.WonLostDrawn.Equals(this.WonLostDrawn) && p.PictureIndex == this.PictureIndex)
                 return true;
             else
                 return false;
