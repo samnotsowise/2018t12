@@ -1,16 +1,14 @@
 using System;
 using System.Collections.Generic;
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Content;
+using Microsoft.Xna.Framework.Graphics;
 
-namespace GameScreenManager.ScreenSystem
-{
+namespace GameScreenManager.ScreenSystem {
     /// <summary>
     /// The main menu screen is the first thing displayed when the game starts up.
     /// </summary>
-    public class MainMenuScreen : MenuScreen
-    {
+    public class MainMenuScreen: MenuScreen {
         public int _id;
         private Dictionary<int, MenuItem> _mainMenuItems = new Dictionary<int, MenuItem>();
         private Texture2D background;
@@ -26,8 +24,7 @@ namespace GameScreenManager.ScreenSystem
         /// <summary>
         /// Constructor fills in the menu contents.
         /// </summary>
-        public MainMenuScreen()
-        {
+        public MainMenuScreen() {
             LeftBorder = 100;
             MenuEntries.Add("Play Single Player Game");
             MenuEntries.Add("Start Multiplayer Game");
@@ -39,10 +36,8 @@ namespace GameScreenManager.ScreenSystem
         /// <summary>
         /// Responds to user menu selections.
         /// </summary>
-        protected override void OnSelectEntry(int entryIndex)
-        {
-            switch (entryIndex)
-            {
+        protected override void OnSelectEntry(int entryIndex) {
+            switch(entryIndex) {
                 case 0:
                     ScreenManager.StartGame('s');
                     break;
@@ -66,33 +61,28 @@ namespace GameScreenManager.ScreenSystem
         /// Updates the contentBox
         /// </summary>
         /// <param name="input"></param>
-        public override void HandleInput(InputState input)
-        {
+        public override void HandleInput(InputState input) {
             // Move to the previous menu entry?
-            if (input.MenuUp)
-            {
-                contentBox.Cycle(false, MenuEntries.Count); 
+            if(input.MenuUp) {
+                contentBox.Cycle(false, MenuEntries.Count);
             }
 
             // Move to the next menu entry?
-            if (input.MenuDown)
-            {
+            if(input.MenuDown) {
                 contentBox.Cycle(true, MenuEntries.Count);
             }
 
             base.HandleInput(input);
         }
 
-        public override void Initialize()
-        {
+        public override void Initialize() {
             contentBox = new ContextBox(new Vector2(boxPosX, boxPosY));
             contentBox.Initialise();
             base.Initialize();
         }
 
-        public override void LoadContent()
-        {
-            if (content == null)
+        public override void LoadContent() {
+            if(content == null)
                 content = new ContentManager(ScreenManager.Game.Services, "Content");
 
             background = content.Load<Texture2D>(@"ScreenSystem\Images\Main Menu\background");
@@ -101,8 +91,7 @@ namespace GameScreenManager.ScreenSystem
             base.LoadContent();
         }
 
-        public override void Draw(GameTime gameTime)
-        {
+        public override void Draw(GameTime gameTime) {
             float transitionOffset = (float)Math.Pow(TransitionPosition, 2);
             Color fade = new Color(255, 255, 255, TransitionAlpha); //anything drawn with this color will fade properly
             Viewport viewport = ScreenManager.GraphicsDevice.Viewport;
@@ -112,7 +101,7 @@ namespace GameScreenManager.ScreenSystem
             ScreenManager.SpriteBatch.Begin(SpriteBlendMode.AlphaBlend);
 
             ScreenManager.SpriteBatch.Draw(background, fullscreen, fade);
-            
+
             ScreenManager.SpriteBatch.DrawString(ScreenManager.SpriteFonts.DiagnosticSpriteFont,
                                                  "1) Toggle between debug and normal view using either F1 on the keyboard or 'Y' on the controller",
                                                  new Vector2(100, ScreenManager.ScreenHeight - 116), Color.White);
@@ -128,7 +117,7 @@ namespace GameScreenManager.ScreenSystem
             contentBox.Draw(ScreenManager.SpriteBatch, fade, transitionOffset);
 
             base.Draw(gameTime);
-            
+
             ScreenManager.SpriteBatch.End();
         }
     }

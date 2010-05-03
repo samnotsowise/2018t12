@@ -1,4 +1,16 @@
-﻿using FarseerGames.FarseerPhysics;
+﻿/*
+ *      Boundary Class
+ * 
+ * Description:
+ *      Boundaries are physics board objects.
+ *      Other physics objects will bounce off
+ *      of them.
+ *      
+ * Author(s):
+ *      Sam Thompson
+ */
+
+using FarseerGames.FarseerPhysics;
 using FarseerGames.FarseerPhysics.Collisions;
 using FarseerGames.FarseerPhysics.Factories;
 using Microsoft.Xna.Framework;
@@ -39,10 +51,10 @@ namespace FarseerGames.AirHockeyGame {
 
             //Create a Geom
             Geom rectGeom = GeomFactory.Instance.CreateRectangleGeom(this.body, this.width, this.height);
-            
+
             //Bounciness
             rectGeom.RestitutionCoefficient = (float)0.6;
-            
+
             //Friction with objects
             rectGeom.FrictionCoefficient = .5f;
 

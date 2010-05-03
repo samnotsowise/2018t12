@@ -6,17 +6,14 @@ using FarseerGames.FarseerPhysics.Interfaces;
 using Microsoft.Xna.Framework.Content;
 #endif
 
-namespace FarseerGames.FarseerPhysics
-{
-    public class GenericList<T> : List<T> where T : IIsDisposable
-    {
+namespace FarseerGames.FarseerPhysics {
+    public class GenericList<T>: List<T> where T: IIsDisposable {
         public delegate void ContentsChangedEventHandler(T element);
         private List<T> _markedForRemovalList = new List<T>();
         private int _numberDisposed;
         private int _count;
 
-        public GenericList(int capacity)
-        {
+        public GenericList(int capacity) {
             Capacity = capacity;
         }
 
@@ -32,20 +29,16 @@ namespace FarseerGames.FarseerPhysics
         [XmlIgnore]
         public ContentsChangedEventHandler Removed;
 
-        public new void Add(T element)
-        {
+        public new void Add(T element) {
             base.Add(element);
-            if (Added != null)
-            {
+            if(Added != null) {
                 Added(element);
             }
         }
 
-        public new void Remove(T element)
-        {
+        public new void Remove(T element) {
             base.Remove(element);
-            if (Removed != null)
-            {
+            if(Removed != null) {
                 Removed(element);
             }
         }
@@ -56,19 +49,15 @@ namespace FarseerGames.FarseerPhysics
         /// IsDisposed property on the item.
         /// </summary>
         /// <returns>The number of items that was removed</returns>
-        public int RemoveDisposed()
-        {
-            for (int i = 0; i < Count; i++)
-            {
-                if (this[i].IsDisposed)
-                {
+        public int RemoveDisposed() {
+            for(int i = 0; i < Count; i++) {
+                if(this[i].IsDisposed) {
                     _markedForRemovalList.Add(this[i]);
                 }
             }
 
             _count = _markedForRemovalList.Count;
-            for (int j = 0; j < _count; j++)
-            {
+            for(int j = 0; j < _count; j++) {
                 Remove(_markedForRemovalList[j]);
             }
             _numberDisposed = _markedForRemovalList.Count;

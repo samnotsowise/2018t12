@@ -1,13 +1,11 @@
 using System;
 using FarseerGames.FarseerPhysics.Interfaces;
 
-namespace FarseerGames.FarseerPhysics.Dynamics.Springs
-{
+namespace FarseerGames.FarseerPhysics.Dynamics.Springs {
     /// <summary>
     /// Provides common functionality for springs.
     /// </summary>
-    public abstract class Spring : IIsDisposable
-    {
+    public abstract class Spring: IIsDisposable {
         /// <summary>
         /// The Breakpoint simply indicates the maximum Value the JointError can be before it breaks.
         /// The default value is float.MaxValue
@@ -48,26 +46,23 @@ namespace FarseerGames.FarseerPhysics.Dynamics.Springs
 
         public abstract void Validate();
 
-        public virtual void Update(float dt)
-        {
-            if (!Enabled || Math.Abs(SpringError) <= Breakpoint)
+        public virtual void Update(float dt) {
+            if(!Enabled || Math.Abs(SpringError) <= Breakpoint)
                 return;
 
             Enabled = false;
 
-            if (Broke != null)
+            if(Broke != null)
                 Broke(this, EventArgs.Empty);
         }
 
-        protected virtual void Dispose(bool disposing)
-        {
+        protected virtual void Dispose(bool disposing) {
             IsDisposed = true;
         }
 
         #region IDisposable Members
 
-        public void Dispose()
-        {
+        public void Dispose() {
             Dispose(true);
             GC.SuppressFinalize(this);
         }
@@ -78,8 +73,7 @@ namespace FarseerGames.FarseerPhysics.Dynamics.Springs
 
         private bool _isDisposed;
 
-        public bool IsDisposed
-        {
+        public bool IsDisposed {
             get { return _isDisposed; }
             set { _isDisposed = value; }
         }

@@ -1,19 +1,17 @@
 using System;
-using GameScreenManager.DrawingSystem;
 using FarseerGames.FarseerPhysics;
 using FarseerGames.FarseerPhysics.Dynamics.Joints;
 using FarseerGames.FarseerPhysics.Dynamics.Springs;
+using GameScreenManager.DrawingSystem;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace GameScreenManager
-{
+namespace GameScreenManager {
     /// <summary>
     /// Draws the elements inside a <see cref="PhysicsSimulator"/>. Great for debugging physics related problems.
     /// </summary>
-    public sealed class PhysicsSimulatorView
-    {
+    public sealed class PhysicsSimulatorView {
         private PhysicsSimulator _physicsSimulator;
 
         //Performance panel
@@ -105,222 +103,187 @@ namespace GameScreenManager
         private Vector2 _worldAttachPoint;
         private Vector2 _vectorTemp1;
 
-        public PhysicsSimulatorView(PhysicsSimulator physicsSimulator)
-        {
+        public PhysicsSimulatorView(PhysicsSimulator physicsSimulator) {
             _physicsSimulator = physicsSimulator;
 
-            if (_performancePanelCount)
+            if(_performancePanelCount)
                 _performancePanelWidth = 360;
         }
 
         //aabb
-        public Color AABBColor
-        {
+        public Color AABBColor {
             get { return _aabbColor; }
             set { _aabbColor = value; }
         }
 
-        public int AABBLineThickness
-        {
+        public int AABBLineThickness {
             get { return _aabbLineThickness; }
             set { _aabbLineThickness = value; }
         }
 
-        public bool EnableAABBView
-        {
+        public bool EnableAABBView {
             get { return _enableAABBView; }
             set { _enableAABBView = value; }
         }
 
         //vertices
-        public int VerticeRadius
-        {
+        public int VerticeRadius {
             get { return _verticeRadius; }
             set { _verticeRadius = value; }
         }
 
-        public Color VerticeColor
-        {
+        public Color VerticeColor {
             get { return _verticeColor; }
             set { _verticeColor = value; }
         }
 
-        public bool EnableVerticeView
-        {
+        public bool EnableVerticeView {
             get { return _enableVerticeView; }
             set { _enableVerticeView = value; }
         }
 
         //edges
-        public int EdgeLineThickness
-        {
+        public int EdgeLineThickness {
             get { return _edgeLineThickness; }
             set { _edgeLineThickness = value; }
         }
 
-        public Color EdgeColor
-        {
+        public Color EdgeColor {
             get { return _edgeColor; }
             set { _edgeColor = value; }
         }
 
-        public bool EnableEdgeView
-        {
+        public bool EnableEdgeView {
             get { return _enableEdgeView; }
             set { _enableEdgeView = value; }
         }
 
         //coordinate axis
-        public int CoordinateAxisLineThickness
-        {
+        public int CoordinateAxisLineThickness {
             get { return _coordinateAxisLineThickness; }
             set { _coordinateAxisLineThickness = value; }
         }
 
-        public Color CoordinateAxisColor
-        {
+        public Color CoordinateAxisColor {
             get { return _coordinateAxisColor; }
             set { _coordinateAxisColor = value; }
         }
 
-        public int CoordinateAxisLineLength
-        {
+        public int CoordinateAxisLineLength {
             get { return _coordinateAxisLineLength; }
             set { _coordinateAxisLineLength = value; }
         }
 
-        public bool EnableCoordinateAxisView
-        {
+        public bool EnableCoordinateAxisView {
             get { return _enableCoordinateAxisView; }
             set { _enableCoordinateAxisView = value; }
         }
 
         //contacts
-        public int ContactRadius
-        {
+        public int ContactRadius {
             get { return _contactRadius; }
             set { _contactRadius = value; }
         }
 
-        public Color ContactColor
-        {
+        public Color ContactColor {
             get { return _contactColor; }
             set { _contactColor = value; }
         }
 
-        public bool EnableContactView
-        {
+        public bool EnableContactView {
             get { return _enableContactView; }
             set { _enableContactView = value; }
         }
 
         //springs
-        public Color SpringLineColor
-        {
+        public Color SpringLineColor {
             get { return _springLineColor; }
             set { _springLineColor = value; }
         }
 
-        public int SpringLineThickness
-        {
+        public int SpringLineThickness {
             get { return _springLineThickness; }
             set { _springLineThickness = value; }
         }
 
-        public bool EnableSpringView
-        {
+        public bool EnableSpringView {
             get { return _enableSpringView; }
             set { _enableSpringView = value; }
         }
 
         //revolute joint
-        public Color RevoluteJointLineColor
-        {
+        public Color RevoluteJointLineColor {
             get { return _revoluteJointColor; }
             set { _revoluteJointColor = value; }
         }
 
-        public int RevoluteJointLineThickness
-        {
+        public int RevoluteJointLineThickness {
             get { return _revoluteJointLineThickness; }
             set { _revoluteJointLineThickness = value; }
         }
 
-        public bool EnableRevoluteJointView
-        {
+        public bool EnableRevoluteJointView {
             get { return _enableRevoluteJointView; }
             set { _enableRevoluteJointView = value; }
         }
 
         //pin joint
-        public Color PinJointLineColor
-        {
+        public Color PinJointLineColor {
             get { return _pinJointColor; }
             set { _pinJointColor = value; }
         }
 
-        public int PinJointLineThickness
-        {
+        public int PinJointLineThickness {
             get { return _pinJointLineThickness; }
             set { _pinJointLineThickness = value; }
         }
 
-        public bool EnablePinJointView
-        {
+        public bool EnablePinJointView {
             get { return _enablePinJointView; }
             set { _enablePinJointView = value; }
         }
 
         //slider joint
-        public Color SliderJointLineColor
-        {
+        public Color SliderJointLineColor {
             get { return _sliderJointColor; }
             set { _sliderJointColor = value; }
         }
 
-        public int SliderJointLineThickness
-        {
+        public int SliderJointLineThickness {
             get { return _sliderJointLineThickness; }
             set { _sliderJointLineThickness = value; }
         }
 
-        public bool EnableSliderJointView
-        {
+        public bool EnableSliderJointView {
             get { return _enableSliderJointView; }
             set { _enableSliderJointView = value; }
         }
 
         //performance panel
-        public Color PerformancePanelColor
-        {
+        public Color PerformancePanelColor {
             get { return _performancePanelColor; }
             set { _performancePanelColor = value; }
         }
 
-        public Color PerformancePanelTextColor
-        {
+        public Color PerformancePanelTextColor {
             get { return _performancePanelTextColor; }
             set { _performancePanelTextColor = value; }
         }
 
-        public bool EnablePerformancePanelView
-        {
+        public bool EnablePerformancePanelView {
             get { return _enablePerformancePanelView; }
             set { _enablePerformancePanelView = value; }
         }
 
-        public bool EnablePerformancePanelBodyCount
-        {
+        public bool EnablePerformancePanelBodyCount {
             get { return _performancePanelCount; }
-            set
-            {
+            set {
                 _performancePanelWidth = value ? 360 : 220;
                 _performancePanelCount = value;
             }
         }
 
-        public void LoadContent(GraphicsDevice graphicsDevice, ContentManager content)
-        {
+        public void LoadContent(GraphicsDevice graphicsDevice, ContentManager content) {
             LoadVerticeContent(graphicsDevice);
             LoadEdgeContent(graphicsDevice);
             LoadAABBContent(graphicsDevice);
@@ -333,8 +296,7 @@ namespace GameScreenManager
             LoadSliderJointContent(graphicsDevice);
         }
 
-        public void UnloadContent(GraphicsDevice graphicsDevice, ContentManager content)
-        {
+        public void UnloadContent(GraphicsDevice graphicsDevice, ContentManager content) {
             //UnloadVerticeContent();
             //UnloadEdgeContent();
             //UnloadAABBContent();
@@ -347,47 +309,40 @@ namespace GameScreenManager
             //UnloadSliderJointContent();
         }
 
-        private void LoadPerformancePanelContent(GraphicsDevice graphicsDevice, ContentManager content)
-        {
+        private void LoadPerformancePanelContent(GraphicsDevice graphicsDevice, ContentManager content) {
             _performancePanelTexture = DrawingHelper.CreateRectangleTexture(graphicsDevice, _performancePanelWidth,
                                                                             _performancePanelHeight,
                                                                             new Color(0, 0, 0, 155));
             _spriteFont = content.Load<SpriteFont>(@"Content\Fonts\diagnosticFont");
         }
 
-        private void LoadContactContent(GraphicsDevice graphicsDevice)
-        {
+        private void LoadContactContent(GraphicsDevice graphicsDevice) {
             _contactCircleBrush = new CircleBrush(_contactRadius, _contactColor, _contactColor);
             _contactCircleBrush.Load(graphicsDevice);
         }
 
-        private void LoadVerticeContent(GraphicsDevice graphicsDevice)
-        {
+        private void LoadVerticeContent(GraphicsDevice graphicsDevice) {
             _verticeCircleBrush = new CircleBrush(_verticeRadius, _verticeColor, _verticeColor);
             _verticeCircleBrush.Load(graphicsDevice);
         }
 
-        private void LoadEdgeContent(GraphicsDevice graphicsDevice)
-        {
+        private void LoadEdgeContent(GraphicsDevice graphicsDevice) {
             _edgeLineBrush = new LineBrush(_edgeLineThickness, _edgeColor);
             _edgeLineBrush.Load(graphicsDevice);
         }
 
-        private void LoadAABBContent(GraphicsDevice graphicsDevice)
-        {
+        private void LoadAABBContent(GraphicsDevice graphicsDevice) {
             //load aabb texture
             _aabbLineBrush = new LineBrush(_aabbLineThickness, _aabbColor);
             _aabbLineBrush.Load(graphicsDevice);
         }
 
-        private void LoadCoordinateAxisContent(GraphicsDevice graphicsDevice)
-        {
+        private void LoadCoordinateAxisContent(GraphicsDevice graphicsDevice) {
             _coordinateAxisLineBrush = new LineBrush(_coordinateAxisLineThickness, _coordinateAxisColor);
             _coordinateAxisLineBrush.Load(graphicsDevice);
         }
 
-        private void LoadSpringContent(GraphicsDevice graphicsDevice)
-        {
+        private void LoadSpringContent(GraphicsDevice graphicsDevice) {
             _springLineBrush = new LineBrush(_springLineThickness, _springLineColor);
             _springCircleBrush = new CircleBrush(2, _springLineColor, _springLineColor);
 
@@ -395,8 +350,7 @@ namespace GameScreenManager
             _springCircleBrush.Load(graphicsDevice);
         }
 
-        private void LoadRevoluteJointContent(GraphicsDevice graphicsDevice)
-        {
+        private void LoadRevoluteJointContent(GraphicsDevice graphicsDevice) {
             _revoluteJointLineBrush = new LineBrush(_revoluteJointLineThickness, _revoluteJointColor);
             _revoluteJointRectangleBrush = new RectangleBrush(10, 10, _revoluteJointColor, _revoluteJointColor);
 
@@ -404,8 +358,7 @@ namespace GameScreenManager
             _revoluteJointRectangleBrush.Load(graphicsDevice);
         }
 
-        private void LoadPinJointContent(GraphicsDevice graphicsDevice)
-        {
+        private void LoadPinJointContent(GraphicsDevice graphicsDevice) {
             _pinJointLineBrush = new LineBrush(_pinJointLineThickness, _pinJointColor);
             _pinJointRectangleBrush = new RectangleBrush(10, 10, _pinJointColor, _pinJointColor);
 
@@ -413,8 +366,7 @@ namespace GameScreenManager
             _pinJointRectangleBrush.Load(graphicsDevice);
         }
 
-        private void LoadSliderJointContent(GraphicsDevice graphicsDevice)
-        {
+        private void LoadSliderJointContent(GraphicsDevice graphicsDevice) {
             _sliderJointLineBrush = new LineBrush(_sliderJointLineThickness, _sliderJointColor);
             _sliderJointRectangleBrush = new RectangleBrush(10, 10, _sliderJointColor, _sliderJointColor);
 
@@ -422,48 +374,37 @@ namespace GameScreenManager
             _sliderJointRectangleBrush.Load(graphicsDevice);
         }
 
-        public void Draw(SpriteBatch spriteBatch)
-        {
-            if (_enableVerticeView || _enableEdgeView)
-            {
+        public void Draw(SpriteBatch spriteBatch) {
+            if(_enableVerticeView || _enableEdgeView) {
                 DrawVerticesAndEdges(spriteBatch);
             }
-            if (_enableAABBView)
-            {
+            if(_enableAABBView) {
                 DrawAABB(spriteBatch);
             }
-            if (_enableCoordinateAxisView)
-            {
+            if(_enableCoordinateAxisView) {
                 DrawCoordinateAxis(spriteBatch);
             }
-            if (_enableContactView)
-            {
+            if(_enableContactView) {
                 DrawContacts(spriteBatch);
             }
-            if (_enablePerformancePanelView)
-            {
+            if(_enablePerformancePanelView) {
                 DrawPerformancePanel(spriteBatch);
             }
-            if (EnableSpringView)
-            {
+            if(EnableSpringView) {
                 DrawSprings(spriteBatch);
             }
-            if (EnableRevoluteJointView)
-            {
+            if(EnableRevoluteJointView) {
                 DrawRevoluteJoints(spriteBatch);
             }
-            if (EnablePinJointView)
-            {
+            if(EnablePinJointView) {
                 DrawPinJoints(spriteBatch);
             }
-            if (EnableSliderJointView)
-            {
+            if(EnableSliderJointView) {
                 DrawSliderJoints(spriteBatch);
             }
         }
 
-        private void DrawPerformancePanel(SpriteBatch spriteBatch)
-        {
+        private void DrawPerformancePanel(SpriteBatch spriteBatch) {
             spriteBatch.Draw(_performancePanelTexture, _performancePanelPosition, _performancePanelColor);
 
             spriteBatch.DrawString(_spriteFont,
@@ -517,52 +458,39 @@ namespace GameScreenManager
             //spriteBatch.DrawString(_spriteFont, String.Format("Broadphase Pairs: {0}",this._physicsSimulator.sweepAndPrune.collisionPairs.Keys.Count), new Vector2(120, 215), Color.White);
         }
 
-        private void DrawContacts(SpriteBatch spriteBatch)
-        {
+        private void DrawContacts(SpriteBatch spriteBatch) {
             //draw contact textures
-            for (int i = 0; i < _physicsSimulator.ArbiterList.Count; i++)
-            {
-                for (int j = 0; j < _physicsSimulator.ArbiterList[i].ContactList.Count; j++)
-                {
+            for(int i = 0; i < _physicsSimulator.ArbiterList.Count; i++) {
+                for(int j = 0; j < _physicsSimulator.ArbiterList[i].ContactList.Count; j++) {
                     _contactCircleBrush.Draw(spriteBatch, _physicsSimulator.ArbiterList[i].ContactList[j].Position);
                 }
             }
         }
 
-        private void DrawVerticesAndEdges(SpriteBatch spriteBatch)
-        {
+        private void DrawVerticesAndEdges(SpriteBatch spriteBatch) {
             //draw vertice texture
-            for (int i = 0; i < _physicsSimulator.GeomList.Count; i++)
-            {
+            for(int i = 0; i < _physicsSimulator.GeomList.Count; i++) {
                 int verticeCount = _physicsSimulator.GeomList[i].LocalVertices.Count;
-                for (int j = 0; j < verticeCount; j++)
-                {
-                    if (_enableEdgeView)
-                    {
-                        if (j < verticeCount - 1)
-                        {
+                for(int j = 0; j < verticeCount; j++) {
+                    if(_enableEdgeView) {
+                        if(j < verticeCount - 1) {
                             _edgeLineBrush.Draw(spriteBatch, _physicsSimulator.GeomList[i].WorldVertices[j],
                                                 _physicsSimulator.GeomList[i].WorldVertices[j + 1]);
-                        }
-                        else
-                        {
+                        } else {
                             _edgeLineBrush.Draw(spriteBatch, _physicsSimulator.GeomList[i].WorldVertices[j],
                                                 _physicsSimulator.GeomList[i].WorldVertices[0]);
                         }
                     }
-                    if (_enableVerticeView)
-                    {
+                    if(_enableVerticeView) {
                         _verticeCircleBrush.Draw(spriteBatch, _physicsSimulator.GeomList[i].WorldVertices[j]);
                     }
                 }
             }
         }
 
-        private void DrawAABB(SpriteBatch spriteBatch)
-        {
+        private void DrawAABB(SpriteBatch spriteBatch) {
             //draw aabb
-            for (int i = 0; i < _physicsSimulator.GeomList.Count; i++)
-            {
+            for(int i = 0; i < _physicsSimulator.GeomList.Count; i++) {
                 Vector2 min = _physicsSimulator.GeomList[i].AABB.Min;
                 Vector2 max = _physicsSimulator.GeomList[i].AABB.Max;
 
@@ -575,10 +503,8 @@ namespace GameScreenManager
             }
         }
 
-        private void DrawCoordinateAxis(SpriteBatch spriteBatch)
-        {
-            for (int i = 0; i < _physicsSimulator.BodyList.Count; i++)
-            {
+        private void DrawCoordinateAxis(SpriteBatch spriteBatch) {
+            for(int i = 0; i < _physicsSimulator.BodyList.Count; i++) {
                 Vector2 startX =
                     _physicsSimulator.BodyList[i].GetWorldPosition(new Vector2(-_coordinateAxisLineLength / 2f, 0));
                 Vector2 endX =
@@ -593,11 +519,9 @@ namespace GameScreenManager
             }
         }
 
-        private void DrawSprings(SpriteBatch spriteBatch)
-        {
-            for (int i = 0; i < _physicsSimulator.SpringList.Count; i++)
-            {
-                if (!(_physicsSimulator.SpringList[i] is FixedLinearSpring))
+        private void DrawSprings(SpriteBatch spriteBatch) {
+            for(int i = 0; i < _physicsSimulator.SpringList.Count; i++) {
+                if(!(_physicsSimulator.SpringList[i] is FixedLinearSpring))
                     continue;
 
                 FixedLinearSpring fixedLinearSpring = (FixedLinearSpring)_physicsSimulator.SpringList[i];
@@ -620,9 +544,8 @@ namespace GameScreenManager
                                       fixedLinearSpring.WorldAttachPoint);
             }
 
-            for (int i = 0; i < _physicsSimulator.SpringList.Count; i++)
-            {
-                if (!(_physicsSimulator.SpringList[i] is LinearSpring)) continue;
+            for(int i = 0; i < _physicsSimulator.SpringList.Count; i++) {
+                if(!(_physicsSimulator.SpringList[i] is LinearSpring)) continue;
 
                 LinearSpring linearSpring = (LinearSpring)_physicsSimulator.SpringList[i];
                 _attachPoint1 = linearSpring.AttachPoint1;
@@ -649,17 +572,14 @@ namespace GameScreenManager
             }
         }
 
-        private void DrawRevoluteJoints(SpriteBatch spriteBatch)
-        {
-            for (int i = 0; i < _physicsSimulator.JointList.Count; i++)
-            {
-                if (_physicsSimulator.JointList[i] is FixedRevoluteJoint)
-                {
+        private void DrawRevoluteJoints(SpriteBatch spriteBatch) {
+            for(int i = 0; i < _physicsSimulator.JointList.Count; i++) {
+                if(_physicsSimulator.JointList[i] is FixedRevoluteJoint) {
                     FixedRevoluteJoint fixedRevoluteJoint = (FixedRevoluteJoint)_physicsSimulator.JointList[i];
                     _revoluteJointRectangleBrush.Draw(spriteBatch, fixedRevoluteJoint.Anchor, 0);
                 }
 
-                if (!(_physicsSimulator.JointList[i] is RevoluteJoint)) continue;
+                if(!(_physicsSimulator.JointList[i] is RevoluteJoint)) continue;
 
                 RevoluteJoint revoluteJoint = (RevoluteJoint)_physicsSimulator.JointList[i];
                 _revoluteJointRectangleBrush.Draw(spriteBatch, revoluteJoint.CurrentAnchor, 0);
@@ -668,11 +588,9 @@ namespace GameScreenManager
             }
         }
 
-        private void DrawPinJoints(SpriteBatch spriteBatch)
-        {
-            for (int i = 0; i < _physicsSimulator.JointList.Count; i++)
-            {
-                if (!(_physicsSimulator.JointList[i] is PinJoint))
+        private void DrawPinJoints(SpriteBatch spriteBatch) {
+            for(int i = 0; i < _physicsSimulator.JointList.Count; i++) {
+                if(!(_physicsSimulator.JointList[i] is PinJoint))
                     continue;
 
                 PinJoint pinJoint = (PinJoint)_physicsSimulator.JointList[i];
@@ -682,11 +600,9 @@ namespace GameScreenManager
             }
         }
 
-        private void DrawSliderJoints(SpriteBatch spriteBatch)
-        {
-            for (int i = 0; i < _physicsSimulator.JointList.Count; i++)
-            {
-                if (!(_physicsSimulator.JointList[i] is SliderJoint))
+        private void DrawSliderJoints(SpriteBatch spriteBatch) {
+            for(int i = 0; i < _physicsSimulator.JointList.Count; i++) {
+                if(!(_physicsSimulator.JointList[i] is SliderJoint))
                     continue;
 
                 SliderJoint sliderJoint = (SliderJoint)_physicsSimulator.JointList[i];

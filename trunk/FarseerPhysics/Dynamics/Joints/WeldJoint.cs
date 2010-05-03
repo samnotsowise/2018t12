@@ -8,13 +8,11 @@ using Microsoft.Xna.Framework;
 using FarseerGames.FarseerPhysics.Mathematics;
 #endif
 
-namespace FarseerGames.FarseerPhysics.Dynamics.Joints
-{
+namespace FarseerGames.FarseerPhysics.Dynamics.Joints {
     /// <summary>
     /// 
     /// </summary>
-    public class WeldJoint : Joint
-    {
+    public class WeldJoint: Joint {
         public event JointDelegate JointUpdated;
 
         private Body _body1;
@@ -38,12 +36,10 @@ namespace FarseerGames.FarseerPhysics.Dynamics.Joints
         private Vector2 _r2;
         private Vector2 _velocityBiasRev;
 
-        public WeldJoint()
-        {
+        public WeldJoint() {
         }
 
-        public WeldJoint(Body body1, Body body2, Vector2 anchor)
-        {
+        public WeldJoint(Body body1, Body body2, Vector2 anchor) {
             _body1 = body1;
             _body2 = body2;
 
@@ -60,8 +56,7 @@ namespace FarseerGames.FarseerPhysics.Dynamics.Joints
         /// Gets or sets the fist body.
         /// </summary>
         /// <Value>The body1.</Value>
-        public Body Body1
-        {
+        public Body Body1 {
             get { return _body1; }
             set { _body1 = value; }
         }
@@ -70,8 +65,7 @@ namespace FarseerGames.FarseerPhysics.Dynamics.Joints
         /// Gets or sets the second body.
         /// </summary>
         /// <Value>The body2.</Value>
-        public Body Body2
-        {
+        public Body Body2 {
             get { return _body2; }
             set { _body2 = value; }
         }
@@ -80,8 +74,7 @@ namespace FarseerGames.FarseerPhysics.Dynamics.Joints
         /// Gets or sets the max impulse.
         /// </summary>
         /// <Value>The max impulse.</Value>
-        public float MaxImpulse
-        {
+        public float MaxImpulse {
             get { return _maxImpulse; }
             set { _maxImpulse = value; }
         }
@@ -90,11 +83,9 @@ namespace FarseerGames.FarseerPhysics.Dynamics.Joints
         /// Gets or sets the anchor.
         /// </summary>
         /// <Value>The anchor.</Value>
-        public Vector2 Anchor
-        {
+        public Vector2 Anchor {
             get { return _anchor; }
-            set
-            {
+            set {
                 _anchor = value;
                 _body1.GetLocalPosition(ref _anchor, out _localAnchor1);
                 _body2.GetLocalPosition(ref _anchor, out _localAnchor2);
@@ -105,10 +96,8 @@ namespace FarseerGames.FarseerPhysics.Dynamics.Joints
         /// This gives the anchor position after the simulation starts
         /// </summary>
         /// <Value>The current anchor.</Value>
-        public Vector2 CurrentAnchor
-        {
-            get
-            {
+        public Vector2 CurrentAnchor {
+            get {
                 Vector2.Add(ref _body1.position, ref _r1, out _currentAnchor); //_anchor moves once simulator starts
                 return _currentAnchor;
             }
@@ -119,11 +108,9 @@ namespace FarseerGames.FarseerPhysics.Dynamics.Joints
         /// </summary>
         /// <param name="initialAnchor">The initial anchor.</param>
         /// <exception cref="ArgumentNullException"><c>_body1</c> is null.</exception>
-        public void SetInitialAnchor(Vector2 initialAnchor)
-        {
+        public void SetInitialAnchor(Vector2 initialAnchor) {
             _anchor = initialAnchor;
-            if (_body1 == null)
-            {
+            if(_body1 == null) {
                 throw new ArgumentNullException("initialAnchor",
                                                 "Body must be set prior to setting the _anchor of the Weld Joint");
             }
@@ -131,20 +118,17 @@ namespace FarseerGames.FarseerPhysics.Dynamics.Joints
             _body2.GetLocalPosition(ref initialAnchor, out _localAnchor2);
         }
 
-        public override void Validate()
-        {
-            if (_body1.IsDisposed || _body2.IsDisposed)
-            {
+        public override void Validate() {
+            if(_body1.IsDisposed || _body2.IsDisposed) {
                 Dispose();
             }
         }
 
-        public override void PreStep(float inverseDt)
-        {
-            if (_body1.isStatic && _body2.isStatic)
+        public override void PreStep(float inverseDt) {
+            if(_body1.isStatic && _body2.isStatic)
                 return;
 
-            if (!_body1.Enabled && !_body2.Enabled)
+            if(!_body1.Enabled && !_body2.Enabled)
                 return;
 
             JointError = (_body2.totalRotation - _body1.totalRotation) - _targetAngle;
@@ -207,8 +191,7 @@ namespace FarseerGames.FarseerPhysics.Dynamics.Joints
             _body1.ApplyAngularImpulse(-_floatTemp1);
         }
 
-        private void MatrixInvert2D(ref Matrix matrix, out Matrix invertedMatrix)
-        {
+        private void MatrixInvert2D(ref Matrix matrix, out Matrix invertedMatrix) {
             float a = matrix.M11, b = matrix.M12, c = matrix.M21, d = matrix.M22;
             float det = a * d - b * c;
             Debug.Assert(det != 0.0f);
@@ -220,20 +203,18 @@ namespace FarseerGames.FarseerPhysics.Dynamics.Joints
             invertedMatrix = _b;
         }
 
-        public override void Update()
-        {
+        public override void Update() {
             base.Update();
 
-            if (_body1.isStatic && _body2.isStatic)
+            if(_body1.isStatic && _body2.isStatic)
                 return;
-          
-            if (!_body1.Enabled && !_body2.Enabled)
+
+            if(!_body1.Enabled && !_body2.Enabled)
                 return;
 
             float angularImpulse = (_velocityBias - _body2.AngularVelocity + _body1.AngularVelocity) * _massFactor;
 
-            if (angularImpulse != 0f)
-            {
+            if(angularImpulse != 0f) {
                 _body1.AngularVelocity -= _body1.inverseMomentOfInertia * Math.Sign(angularImpulse) *
                                           Math.Min(Math.Abs(angularImpulse), _maxImpulse);
                 _body2.AngularVelocity += _body2.inverseMomentOfInertia * Math.Sign(angularImpulse) *
@@ -312,8 +293,7 @@ namespace FarseerGames.FarseerPhysics.Dynamics.Joints
 
             #endregion
 
-            if (_impulse != Vector2.Zero)
-            {
+            if(_impulse != Vector2.Zero) {
                 #region INLINE: _body2.ApplyImpulse(ref _impulse);
 
 
@@ -369,7 +349,7 @@ namespace FarseerGames.FarseerPhysics.Dynamics.Joints
 
                 #endregion
 
-                if (JointUpdated != null)
+                if(JointUpdated != null)
                     JointUpdated(this, _body1, _body2);
             }
         }

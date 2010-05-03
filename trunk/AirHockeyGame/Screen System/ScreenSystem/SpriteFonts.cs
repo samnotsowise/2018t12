@@ -1,18 +1,15 @@
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace GameScreenManager.ScreenSystem
-{
-    public class SpriteFonts
-    {
+namespace GameScreenManager.ScreenSystem {
+    public class SpriteFonts {
         private SpriteFont _detailsFont;
         private SpriteFont _diagnosticSpriteFont;
         private SpriteFont _frameRateCounterFont;
         private SpriteFont _gameSpriteFont;
         private SpriteFont _menuSpriteFont;
 
-        public SpriteFonts(ContentManager contentManager)
-        {
+        public SpriteFonts(ContentManager contentManager) {
             _diagnosticSpriteFont = contentManager.Load<SpriteFont>("Content/Fonts/diagnosticFont");
             _menuSpriteFont = contentManager.Load<SpriteFont>("Content/Fonts/menuFont");
             _frameRateCounterFont = contentManager.Load<SpriteFont>("Content/Fonts/frameRateCounterFont");
@@ -20,28 +17,23 @@ namespace GameScreenManager.ScreenSystem
             _detailsFont = contentManager.Load<SpriteFont>("Content/Fonts/detailsFont");
         }
 
-        public SpriteFont DetailsFont
-        {
+        public SpriteFont DetailsFont {
             get { return _detailsFont; }
         }
 
-        public SpriteFont DiagnosticSpriteFont
-        {
+        public SpriteFont DiagnosticSpriteFont {
             get { return _diagnosticSpriteFont; }
         }
 
-        public SpriteFont FrameRateCounterFont
-        {
+        public SpriteFont FrameRateCounterFont {
             get { return _frameRateCounterFont; }
         }
 
-        public SpriteFont GameSpriteFont
-        {
+        public SpriteFont GameSpriteFont {
             get { return _gameSpriteFont; }
         }
 
-        public SpriteFont MenuSpriteFont
-        {
+        public SpriteFont MenuSpriteFont {
             get { return _menuSpriteFont; }
         }
     }

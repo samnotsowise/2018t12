@@ -4,13 +4,11 @@ using Microsoft.Xna.Framework;
 using FarseerGames.FarseerPhysics.Mathematics;
 #endif
 
-namespace FarseerGames.FarseerPhysics.Dynamics.Joints
-{
+namespace FarseerGames.FarseerPhysics.Dynamics.Joints {
     /// <summary>
     /// Angle limit joint joins together 2 bodies at an upper and lower angel limit.
     /// </summary>
-    public class AngleLimitJoint : Joint
-    {
+    public class AngleLimitJoint: Joint {
         public event JointDelegate JointUpdated;
 
         private float _accumlatedAngularImpulseOld;
@@ -28,12 +26,10 @@ namespace FarseerGames.FarseerPhysics.Dynamics.Joints
         private bool _upperLimitViolated;
         private float _velocityBias;
 
-        public AngleLimitJoint()
-        {
+        public AngleLimitJoint() {
         }
 
-        public AngleLimitJoint(Body body1, Body body2, float lowerLimit, float upperLimit)
-        {
+        public AngleLimitJoint(Body body1, Body body2, float lowerLimit, float upperLimit) {
             _body1 = body1;
             _body2 = body2;
             _lowerLimit = lowerLimit;
@@ -44,8 +40,7 @@ namespace FarseerGames.FarseerPhysics.Dynamics.Joints
         /// Gets or sets the first body
         /// </summary>
         /// <Value>The body1.</Value>
-        public Body Body1
-        {
+        public Body Body1 {
             get { return _body1; }
             set { _body1 = value; }
         }
@@ -54,8 +49,7 @@ namespace FarseerGames.FarseerPhysics.Dynamics.Joints
         /// Gets or sets the second body.
         /// </summary>
         /// <Value>The body2.</Value>
-        public Body Body2
-        {
+        public Body Body2 {
             get { return _body2; }
             set { _body2 = value; }
         }
@@ -64,8 +58,7 @@ namespace FarseerGames.FarseerPhysics.Dynamics.Joints
         /// Gets or sets the slop.
         /// </summary>
         /// <Value>The slop.</Value>
-        public float Slop
-        {
+        public float Slop {
             get { return _slop; }
             set { _slop = value; }
         }
@@ -74,8 +67,7 @@ namespace FarseerGames.FarseerPhysics.Dynamics.Joints
         /// Gets or sets the upper limit.
         /// </summary>
         /// <Value>The upper limit.</Value>
-        public float UpperLimit
-        {
+        public float UpperLimit {
             get { return _upperLimit; }
             set { _upperLimit = value; }
         }
@@ -84,67 +76,50 @@ namespace FarseerGames.FarseerPhysics.Dynamics.Joints
         /// Gets or sets the lower limit.
         /// </summary>
         /// <Value>The lower limit.</Value>
-        public float LowerLimit
-        {
+        public float LowerLimit {
             get { return _lowerLimit; }
             set { _lowerLimit = value; }
         }
 
-        public override void Validate()
-        {
-            if (_body1.IsDisposed || _body2.IsDisposed)
-            {
+        public override void Validate() {
+            if(_body1.IsDisposed || _body2.IsDisposed) {
                 Dispose();
             }
         }
 
-        public override void PreStep(float inverseDt)
-        {
-            if (_body1.isStatic && _body2.isStatic)
+        public override void PreStep(float inverseDt) {
+            if(_body1.isStatic && _body2.isStatic)
                 return;
 
-            if (!_body1.Enabled && !_body2.Enabled)
+            if(!_body1.Enabled && !_body2.Enabled)
                 return;
 
             _difference = (_body2.totalRotation - _body1.totalRotation);
             JointError = 0;
 
-            if (_difference > _upperLimit)
-            {
-                if (_lowerLimitViolated)
-                {
+            if(_difference > _upperLimit) {
+                if(_lowerLimitViolated) {
                     _accumulatedAngularImpulse = 0;
                     _lowerLimitViolated = false;
                 }
                 _upperLimitViolated = true;
-                if (_difference < _upperLimit + _slop)
-                {
+                if(_difference < _upperLimit + _slop) {
                     JointError = 0;
-                }
-                else
-                {
+                } else {
                     JointError = _difference - _upperLimit;
                 }
-            }
-            else if (_difference < _lowerLimit)
-            {
-                if (_upperLimitViolated)
-                {
+            } else if(_difference < _lowerLimit) {
+                if(_upperLimitViolated) {
                     _accumulatedAngularImpulse = 0;
                     _upperLimitViolated = false;
                 }
                 _lowerLimitViolated = true;
-                if (_difference > _lowerLimit - _slop)
-                {
+                if(_difference > _lowerLimit - _slop) {
                     JointError = 0;
-                }
-                else
-                {
+                } else {
                     JointError = _difference - _lowerLimit;
                 }
-            }
-            else
-            {
+            } else {
                 _upperLimitViolated = false;
                 _lowerLimitViolated = false;
                 JointError = 0;
@@ -158,17 +133,16 @@ namespace FarseerGames.FarseerPhysics.Dynamics.Joints
             _body2.AngularVelocity += _body2.inverseMomentOfInertia * _accumulatedAngularImpulse;
         }
 
-        public override void Update()
-        {
+        public override void Update() {
             base.Update();
 
-            if (_body1.isStatic && _body2.isStatic)
+            if(_body1.isStatic && _body2.isStatic)
                 return;
 
-            if (!_body1.Enabled && !_body2.Enabled)
+            if(!_body1.Enabled && !_body2.Enabled)
                 return;
 
-            if (!_upperLimitViolated && !_lowerLimitViolated)
+            if(!_upperLimitViolated && !_lowerLimitViolated)
                 return;
 
             _angularImpulse = 0;
@@ -179,23 +153,19 @@ namespace FarseerGames.FarseerPhysics.Dynamics.Joints
 
             _accumlatedAngularImpulseOld = _accumulatedAngularImpulse;
 
-            if (_upperLimitViolated)
-            {
+            if(_upperLimitViolated) {
                 _accumulatedAngularImpulse = MathHelper.Min(_accumlatedAngularImpulseOld + _angularImpulse, 0);
-            }
-            else if (_lowerLimitViolated)
-            {
+            } else if(_lowerLimitViolated) {
                 _accumulatedAngularImpulse = MathHelper.Max(_accumlatedAngularImpulseOld + _angularImpulse, 0);
             }
 
             _angularImpulse = _accumulatedAngularImpulse - _accumlatedAngularImpulseOld;
 
-            if (_angularImpulse != 0f)
-            {
+            if(_angularImpulse != 0f) {
                 _body1.AngularVelocity -= _body1.inverseMomentOfInertia * _angularImpulse;
                 _body2.AngularVelocity += _body2.inverseMomentOfInertia * _angularImpulse;
 
-                if (JointUpdated != null)
+                if(JointUpdated != null)
                     JointUpdated(this, _body1, _body2);
             }
         }

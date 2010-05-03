@@ -5,23 +5,17 @@
  *  David Valente
  */
 
-using System;
-using System.Collections.Generic;
-using System.Text;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework;
 
-namespace GameScreenManager.ScreenSystem
-{
-    class ContextBox
-    {
+namespace GameScreenManager.ScreenSystem {
+    class ContextBox {
         Texture2D box;      //background box that images are overlayed onto
         Texture2D[] images; //holds different context images
         Vector2 originalPosition;
         private const float scale = 0.8f;
-        enum MenuOption
-        {
+        enum MenuOption {
             SinglePlayer,
             Multiplayer,
             FindGame,
@@ -30,19 +24,16 @@ namespace GameScreenManager.ScreenSystem
         }
         private MenuOption currentOption;
 
-        public ContextBox(Vector2 position)
-        {
+        public ContextBox(Vector2 position) {
             originalPosition = position;
         }
 
-        public void Initialise()
-        {
+        public void Initialise() {
             images = new Texture2D[5];
             currentOption = MenuOption.SinglePlayer;
         }
 
-        public void LoadContent(ContentManager content)
-        {
+        public void LoadContent(ContentManager content) {
             box = content.Load<Texture2D>(@"ScreenSystem\Images\Main Menu\Context\box");
             images[0] = content.Load<Texture2D>(@"ScreenSystem\Images\Main Menu\Context\singleplayer");
             images[1] = content.Load<Texture2D>(@"ScreenSystem\Images\Main Menu\Context\multiplayer");
@@ -56,18 +47,17 @@ namespace GameScreenManager.ScreenSystem
         /// </summary>
         /// <param name="forward"></param>
         /// <param name="listSize"></param>
-        public void Cycle(bool forward, int listSize)
-        {
-            if (forward)
+        public void Cycle(bool forward, int listSize) {
+            if(forward)
                 currentOption++;
             else
                 currentOption--;
 
             //User can cycle through menu options
-            if ((int) currentOption >= listSize)//loop back to start
-                currentOption = (MenuOption) 0;
-            else if((int) currentOption < 0)//loop backwards to exit option
-                currentOption = (MenuOption) listSize - 1;
+            if((int)currentOption >= listSize)//loop back to start
+                currentOption = (MenuOption)0;
+            else if((int)currentOption < 0)//loop backwards to exit option
+                currentOption = (MenuOption)listSize - 1;
         }
 
         /// <summary>
@@ -75,19 +65,17 @@ namespace GameScreenManager.ScreenSystem
         /// Does not update if the screen is transitionining or otherwise not active.
         /// </summary>
         /// <param name="input"></param>
-        public void UpdateBox(InputState input, int menuSize, PlayerIndex? ControllingPlayer, bool active)
-        {
+        public void UpdateBox(InputState input, int menuSize, PlayerIndex? ControllingPlayer, bool active) {
             if(!active)
                 return;
 
-            if (input.MenuUp)
+            if(input.MenuUp)
                 Cycle(false, menuSize);
-            else if (input.MenuDown)
+            else if(input.MenuDown)
                 Cycle(true, menuSize);
-        }   
+        }
 
-        public void Draw(SpriteBatch spriteBatch, Color color, float transitionOffset)
-        {
+        public void Draw(SpriteBatch spriteBatch, Color color, float transitionOffset) {
             Vector2 position = originalPosition;
 
             position.X += transitionOffset * 100;

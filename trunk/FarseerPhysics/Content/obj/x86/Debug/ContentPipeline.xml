@@ -6,15 +6,15 @@
       <TargetPlatform>Windows</TargetPlatform>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>I:\CSC2018\2018t12\branches\David's Branch\trunk\FarseerPhysics\Content\</RootDirectory>
-      <LoggerRootDirectory>I:\CSC2018\2018t12\branches\David's Branch\trunk\FarseerPhysics\</LoggerRootDirectory>
-      <IntermediateDirectory>I:\CSC2018\2018t12\branches\David's Branch\trunk\FarseerPhysics\Content\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>I:\CSC2018\2018t12\branches\David's Branch\trunk\FarseerPhysics\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\trunk\FarseerPhysics\Content\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\trunk\FarseerPhysics\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\trunk\FarseerPhysics\Content\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\trunk\FarseerPhysics\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>
-        <Key>C:\WINDOWS\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\3.1.0.0__6d5c3888ef60e27d\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
-        <Value>2009-07-03T14:34:33.59375+01:00</Value>
+        <Key>C:\Windows\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\3.1.0.0__6d5c3888ef60e27d\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
+        <Value>2009-11-12T11:18:08.2360138+00:00</Value>
       </Assembly>
     </Assemblies>
   </Asset>

@@ -16,3 +16,9 @@ I:\CSC2018\2018t12\branches\David's Branch\trunk\FarseerPhysics\obj\x86\Debug\Re
 I:\CSC2018\2018t12\branches\David's Branch\trunk\FarseerPhysics\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 I:\CSC2018\2018t12\branches\David's Branch\trunk\FarseerPhysics\obj\x86\Debug\FarseerPhysics.dll
 I:\CSC2018\2018t12\branches\David's Branch\trunk\FarseerPhysics\obj\x86\Debug\FarseerPhysics.pdb
+C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\trunk\FarseerPhysics\bin\x86\Debug\FarseerPhysics.dll
+C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\trunk\FarseerPhysics\bin\x86\Debug\FarseerPhysics.pdb
+C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\trunk\FarseerPhysics\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\trunk\FarseerPhysics\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\trunk\FarseerPhysics\obj\x86\Debug\FarseerPhysics.dll
+C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\trunk\FarseerPhysics\obj\x86\Debug\FarseerPhysics.pdb

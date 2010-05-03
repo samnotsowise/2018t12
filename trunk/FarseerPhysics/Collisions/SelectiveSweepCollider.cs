@@ -1,14 +1,11 @@
 using System.Collections.Generic;
-using FarseerGames.FarseerPhysics.Dynamics;
 using FarseerGames.FarseerPhysics.Interfaces;
 
-namespace FarseerGames.FarseerPhysics.Collisions
-{
+namespace FarseerGames.FarseerPhysics.Collisions {
     /// <summary>
     /// A broad phase collider that uses the Selective Sweep algorithm
     /// </summary>
-    public sealed class SelectiveSweepCollider : IBroadPhaseCollider
-    {
+    public sealed class SelectiveSweepCollider: IBroadPhaseCollider {
         private static StubComparer _comparer = new StubComparer();
         private LinkedList<Wrapper> _currentBodies = new LinkedList<Wrapper>();
 
@@ -17,8 +14,7 @@ namespace FarseerGames.FarseerPhysics.Collisions
         private List<Stub> _xStubs;
         private List<Stub> _yStubs;
 
-        public SelectiveSweepCollider(PhysicsSimulator physicsSimulator)
-        {
+        public SelectiveSweepCollider(PhysicsSimulator physicsSimulator) {
             _physicsSimulator = physicsSimulator;
             _wrappers = new List<Wrapper>();
             _xStubs = new List<Stub>();
@@ -36,8 +32,7 @@ namespace FarseerGames.FarseerPhysics.Collisions
         /// Adds the specified geom.
         /// </summary>
         /// <param name="geom">The geom.</param>
-        public void Add(Geom geom)
-        {
+        public void Add(Geom geom) {
             Wrapper wrapper = new Wrapper(geom);
             _wrappers.Add(wrapper);
             wrapper.AddStubs(_xStubs, _yStubs);
@@ -47,10 +42,8 @@ namespace FarseerGames.FarseerPhysics.Collisions
         /// <summary>
         /// Processes the removed geoms.
         /// </summary>
-        public void ProcessRemovedGeoms()
-        {
-            if (_wrappers.RemoveAll(WrapperIsRemoved) > 0)
-            {
+        public void ProcessRemovedGeoms() {
+            if(_wrappers.RemoveAll(WrapperIsRemoved) > 0) {
                 _xStubs.RemoveAll(StubIsRemoved);
                 _yStubs.RemoveAll(StubIsRemoved);
             }
@@ -59,10 +52,8 @@ namespace FarseerGames.FarseerPhysics.Collisions
         /// <summary>
         /// Processes the disposed geoms.
         /// </summary>
-        public void ProcessDisposedGeoms()
-        {
-            if (_wrappers.RemoveAll(WrapperIsDisposed) > 0)
-            {
+        public void ProcessDisposedGeoms() {
+            if(_wrappers.RemoveAll(WrapperIsDisposed) > 0) {
                 _xStubs.RemoveAll(StubIsDisposed);
                 _yStubs.RemoveAll(StubIsDisposed);
             }
@@ -140,8 +131,7 @@ namespace FarseerGames.FarseerPhysics.Collisions
         /// <summary>
         /// Updates this instance.
         /// </summary>
-        public void Update()
-        {
+        public void Update() {
             InternalUpdate();
             DetectInternal(ShouldDoX());
         }
@@ -151,40 +141,33 @@ namespace FarseerGames.FarseerPhysics.Collisions
         /// <summary>
         /// Clears this instance.
         /// </summary>
-        public void Clear()
-        {
+        public void Clear() {
             _wrappers.Clear();
             _xStubs.Clear();
             _yStubs.Clear();
         }
 
-        private static bool WrapperIsDisposed(Wrapper wrapper)
-        {
+        private static bool WrapperIsDisposed(Wrapper wrapper) {
             return wrapper.Geom.IsDisposed;
         }
 
-        private static bool StubIsDisposed(Stub stub)
-        {
+        private static bool StubIsDisposed(Stub stub) {
             return stub.Wrapper.Geom.IsDisposed;
         }
 
-        private static bool WrapperIsRemoved(Wrapper wrapper)
-        {
+        private static bool WrapperIsRemoved(Wrapper wrapper) {
             return !wrapper.Geom.InSimulation;
         }
 
-        private static bool StubIsRemoved(Stub stub)
-        {
+        private static bool StubIsRemoved(Stub stub) {
             return !stub.Wrapper.Geom.InSimulation;
         }
 
         /// <summary>
         /// Updates all the nodes to their new values and sorts the lists
         /// </summary>
-        private void InternalUpdate()
-        {
-            for (int index = 0; index < _wrappers.Count; ++index)
-            {
+        private void InternalUpdate() {
+            for(int index = 0; index < _wrappers.Count; ++index) {
                 _wrappers[index].Update();
             }
             _xStubs.Sort(_comparer);
@@ -195,86 +178,69 @@ namespace FarseerGames.FarseerPhysics.Collisions
         /// Finds how many collisions there are on the x and y and returns if
         /// the x axis has the least
         /// </summary>
-        private bool ShouldDoX()
-        {
+        private bool ShouldDoX() {
             int xCount = 0;
             int xDepth = 0;
             int yCount = 0;
             int yDepth = 0;
-            for (int index = 0; index < _xStubs.Count; index++)
-            {
-                if (_xStubs[index].Begin)
-                {
+            for(int index = 0; index < _xStubs.Count; index++) {
+                if(_xStubs[index].Begin) {
                     xCount += xDepth++;
-                }
-                else
-                {
+                } else {
                     xDepth--;
                 }
 
-                if (_yStubs[index].Begin)
-                {
+                if(_yStubs[index].Begin) {
                     yCount += yDepth++;
-                }
-                else
-                {
+                } else {
                     yDepth--;
                 }
             }
             return xCount < yCount;
         }
 
-        private void DetectInternal(bool doX)
-        {
+        private void DetectInternal(bool doX) {
             List<Stub> stubs = (doX) ? (_xStubs) : (_yStubs);
             _currentBodies.Clear();
-            for (int index = 0; index < stubs.Count; index++)
-            {
+            for(int index = 0; index < stubs.Count; index++) {
                 Stub stub = stubs[index];
                 Wrapper wrapper1 = stub.Wrapper;
-                if (stub.Begin)
-                {
+                if(stub.Begin) {
                     //set the min and max values
-                    if (doX)
-                    {
+                    if(doX) {
                         wrapper1.SetY();
-                    }
-                    else
-                    {
+                    } else {
                         wrapper1.SetX();
                     }
 
                     Geom geometryA = wrapper1.Geom;
 
-                    for (LinkedListNode<Wrapper> node = _currentBodies.First; node != null; node = node.Next)
-                    {
+                    for(LinkedListNode<Wrapper> node = _currentBodies.First; node != null; node = node.Next) {
                         Wrapper wrapper2 = node.Value;
                         Geom geometryB = wrapper2.Geom;
 
-                        if (wrapper1.Min <= wrapper2.Max && wrapper2.Min <= wrapper1.Max)
-                        {
-                            if (!geometryA.body.Enabled || !geometryB.body.Enabled)
+                        if(wrapper1.Min <= wrapper2.Max && wrapper2.Min <= wrapper1.Max) {
+                            if(!geometryA.body.Enabled || !geometryB.body.Enabled)
                                 continue;
 
-                            if ((geometryA.CollisionGroup == geometryB.CollisionGroup) &&
+                            if((geometryA.CollisionGroup == geometryB.CollisionGroup) &&
                                 geometryA.CollisionGroup != 0 && geometryB.CollisionGroup != 0)
                                 continue;
 
-                            if (!geometryA.CollisionEnabled || !geometryB.CollisionEnabled)
+                            if(!geometryA.CollisionEnabled || !geometryB.CollisionEnabled)
                                 continue;
 
-                            if (geometryA.body.isStatic && geometryB.body.isStatic)
+                            if(geometryA.body.isStatic && geometryB.body.isStatic)
                                 continue;
 
-                            if (geometryA.body == geometryB.body)
+                            if(geometryA.body == geometryB.body)
                                 continue;
 
-                            if (((geometryA.CollisionCategories & geometryB.CollidesWith) == CollisionCategory.None) &
+                            if(((geometryA.CollisionCategories & geometryB.CollidesWith) == CollisionCategory.None) &
                                 ((geometryB.CollisionCategories & geometryA.CollidesWith) == CollisionCategory.None))
                                 continue;
 
-                            if (geometryA.IsGeometryIgnored(geometryB) || geometryB.IsGeometryIgnored(geometryA))
-                            {
+                            if(geometryA.IsGeometryIgnored(geometryB) || geometryB.IsGeometryIgnored(geometryA)) {
                                 continue;
                             }
 
@@ -282,24 +248,20 @@ namespace FarseerGames.FarseerPhysics.Collisions
 
                             //Call the OnBroadPhaseCollision event first. If the user aborts the collision
                             //it will not create an arbiter
-                            if (OnBroadPhaseCollision != null)
+                            if(OnBroadPhaseCollision != null)
                                 intersection = OnBroadPhaseCollision(geometryA, geometryB);
 
-                            if (!intersection)
+                            if(!intersection)
                                 continue;
 
                             _physicsSimulator.ArbiterList.AddArbiterForGeomPair(_physicsSimulator, geometryA, geometryB);
                         }
                     }
-                    if (wrapper1.ShouldAddNode)
-                    {
+                    if(wrapper1.ShouldAddNode) {
                         _currentBodies.AddLast(wrapper1.Node);
                     }
-                }
-                else
-                {
-                    if (wrapper1.ShouldAddNode)
-                    {
+                } else {
+                    if(wrapper1.ShouldAddNode) {
                         _currentBodies.Remove(wrapper1.Node);
                     }
                 }
@@ -308,14 +270,12 @@ namespace FarseerGames.FarseerPhysics.Collisions
 
         #region Nested type: Stub
 
-        private sealed class Stub
-        {
+        private sealed class Stub {
             public bool Begin;
             public float Value;
             public Wrapper Wrapper;
 
-            public Stub(Wrapper wrapper, bool begin)
-            {
+            public Stub(Wrapper wrapper, bool begin) {
                 Wrapper = wrapper;
                 Begin = begin;
             }
@@ -325,18 +285,14 @@ namespace FarseerGames.FarseerPhysics.Collisions
 
         #region Nested type: StubComparer
 
-        private sealed class StubComparer : IComparer<Stub>
-        {
+        private sealed class StubComparer: IComparer<Stub> {
             #region IComparer<Stub> Members
 
-            public int Compare(Stub left, Stub right)
-            {
-                if (left.Value < right.Value)
-                {
+            public int Compare(Stub left, Stub right) {
+                if(left.Value < right.Value) {
                     return -1;
                 }
-                if (left.Value > right.Value)
-                {
+                if(left.Value > right.Value) {
                     return 1;
                 }
                 return ((left == right) ? (0) : ((left.Begin) ? (-1) : (1)));
@@ -349,8 +305,7 @@ namespace FarseerGames.FarseerPhysics.Collisions
 
         #region Nested type: Wrapper
 
-        private sealed class Wrapper
-        {
+        private sealed class Wrapper {
             private Stub _xBegin;
             private Stub _xEnd;
             private Stub _yBegin;
@@ -361,8 +316,7 @@ namespace FarseerGames.FarseerPhysics.Collisions
             public LinkedListNode<Wrapper> Node;
             public bool ShouldAddNode;
 
-            public Wrapper(Geom body)
-            {
+            public Wrapper(Geom body) {
                 Geom = body;
                 Node = new LinkedListNode<Wrapper>(this);
                 _xBegin = new Stub(this, true);
@@ -371,8 +325,7 @@ namespace FarseerGames.FarseerPhysics.Collisions
                 _yEnd = new Stub(this, false);
             }
 
-            public void AddStubs(List<Stub> xStubs, List<Stub> yStubs)
-            {
+            public void AddStubs(List<Stub> xStubs, List<Stub> yStubs) {
                 xStubs.Add(_xBegin);
                 xStubs.Add(_xEnd);
 
@@ -380,8 +333,7 @@ namespace FarseerGames.FarseerPhysics.Collisions
                 yStubs.Add(_yEnd);
             }
 
-            public void Update()
-            {
+            public void Update() {
                 AABB rect = Geom.AABB;
                 //if it is a single point in space
                 //then dont even add it to the link list.
@@ -394,14 +346,12 @@ namespace FarseerGames.FarseerPhysics.Collisions
                 _yEnd.Value = rect.Max.Y;
             }
 
-            public void SetX()
-            {
+            public void SetX() {
                 Min = _xBegin.Value;
                 Max = _xEnd.Value;
             }
 
-            public void SetY()
-            {
+            public void SetY() {
                 Min = _yBegin.Value;
                 Max = _yEnd.Value;
             }

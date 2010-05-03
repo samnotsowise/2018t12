@@ -1,13 +1,11 @@
 using System;
 using FarseerGames.FarseerPhysics.Interfaces;
 
-namespace FarseerGames.FarseerPhysics.Controllers
-{
+namespace FarseerGames.FarseerPhysics.Controllers {
     /// <summary>
     /// Provides common functionality for controllers.
     /// </summary>
-    public abstract class Controller : IIsDisposable
-    {
+    public abstract class Controller: IIsDisposable {
         /// <summary>
         /// If false, this controller will not be processed/updated.
         /// </summary>
@@ -23,19 +21,16 @@ namespace FarseerGames.FarseerPhysics.Controllers
 
         private bool _isDisposed;
 
-        public bool IsDisposed
-        {
+        public bool IsDisposed {
             get { return _isDisposed; }
             set { _isDisposed = value; }
         }
 
-        protected virtual void Dispose(bool disposing)
-        {
+        protected virtual void Dispose(bool disposing) {
             IsDisposed = true;
         }
 
-        public void Dispose()
-        {
+        public void Dispose() {
             Dispose(true);
             GC.SuppressFinalize(this);
         }

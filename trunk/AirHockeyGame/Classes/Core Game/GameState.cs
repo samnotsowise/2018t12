@@ -8,14 +8,13 @@
  *      Try to keep it's size to a minimum for the
  *      sake of efficiency
  *      
- * Authors:
+ * Author(s):
  *      Sam Thompson
  *      David Valente
  */
 
-using Microsoft.Xna.Framework;
-
 using GameScreenManager.ScreenSystem;//for Settings class
+using Microsoft.Xna.Framework;
 
 namespace AirHockeyGame {
 

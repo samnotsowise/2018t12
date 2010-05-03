@@ -8,26 +8,20 @@ using Microsoft.Xna.Framework;
 using FarseerGames.FarseerPhysics.Mathematics;
 #endif
 
-namespace FarseerGames.FarseerPhysics.Collisions
-{
+namespace FarseerGames.FarseerPhysics.Collisions {
     /// <summary>
     /// Grid is used to test for intersection.
     /// Computation of the grid may take a long time, depending on the grid cell size provided.
     /// </summary>
-    public class DistanceGrid : INarrowPhaseCollider
-    {
+    public class DistanceGrid: INarrowPhaseCollider {
         private static DistanceGrid _instance;
 
-        private DistanceGrid()
-        {
+        private DistanceGrid() {
         }
 
-        public static DistanceGrid Instance
-        {
-            get
-            {
-                if (_instance == null)
-                {
+        public static DistanceGrid Instance {
+            get {
+                if(_instance == null) {
                     _instance = new DistanceGrid();
                 }
                 return _instance;
@@ -49,17 +43,15 @@ namespace FarseerGames.FarseerPhysics.Collisions
         /// <param name="geomA">The first geom.</param>
         /// <param name="geomB">The second geom.</param>
         /// <param name="contactList">The contact list.</param>
-        public void Collide(Geom geomA, Geom geomB, ContactList contactList)
-        {
+        public void Collide(Geom geomA, Geom geomB, ContactList contactList) {
             int vertexIndex = -1;
 
             //Lookup distancegrid A data from list
             DistanceGridData geomAGridData = _distanceGrids[geomA.id];
 
             //Iterate the second geometry vertices
-            for (int i = 0; i < geomB.worldVertices.Count; i++)
-            {
-                if (contactList.Count == PhysicsSimulator.MaxContactsToDetect)
+            for(int i = 0; i < geomB.worldVertices.Count; i++) {
+                if(contactList.Count == PhysicsSimulator.MaxContactsToDetect)
                     break;
 
                 vertexIndex += 1;
@@ -68,12 +60,11 @@ namespace FarseerGames.FarseerPhysics.Collisions
 
                 //The geometry intersects when distance <= 0
                 //Continue in the list if the current vector does not intersect
-                if (!geomAGridData.Intersect(ref _localVertex, out _feature))
+                if(!geomAGridData.Intersect(ref _localVertex, out _feature))
                     continue;
 
                 //If the geometries collide, create a new contact and add it to the contact list.
-                if (_feature.Distance < 0f)
-                {
+                if(_feature.Distance < 0f) {
                     geomA.TransformNormalToWorld(ref _feature.Normal, out _feature.Normal);
 
                     Contact contact = new Contact(geomB.WorldVertices[i], _feature.Normal, _feature.Distance, new ContactId(geomB.id, vertexIndex, geomA.id));
@@ -85,24 +76,22 @@ namespace FarseerGames.FarseerPhysics.Collisions
             DistanceGridData geomBGridData = _distanceGrids[geomB.id];
 
             //Iterate the first geometry vertices
-            for (int i = 0; i < geomA.WorldVertices.Count; i++)
-            {
-                if (contactList.Count == PhysicsSimulator.MaxContactsToDetect)
+            for(int i = 0; i < geomA.WorldVertices.Count; i++) {
+                if(contactList.Count == PhysicsSimulator.MaxContactsToDetect)
                     break;
 
                 vertexIndex += 1;
                 _vertRef = geomA.WorldVertices[i];
                 geomB.TransformToLocalCoordinates(ref _vertRef, out _localVertex);
 
-                if (!geomBGridData.Intersect(ref _localVertex, out _feature))
+                if(!geomBGridData.Intersect(ref _localVertex, out _feature))
                     continue;
 
-                if (_feature.Distance < 0f)
-                {
+                if(_feature.Distance < 0f) {
                     geomB.TransformNormalToWorld(ref _feature.Normal, out _feature.Normal);
                     _feature.Normal = -_feature.Normal;
 
-                    Contact contact = new Contact( geomA.WorldVertices[i], _feature.Normal, _feature.Distance, new ContactId(geomA.id, vertexIndex, geomB.id));
+                    Contact contact = new Contact(geomA.WorldVertices[i], _feature.Normal, _feature.Distance, new ContactId(geomA.id, vertexIndex, geomB.id));
                     contactList.Add(contact);
                 }
             }
@@ -113,18 +102,17 @@ namespace FarseerGames.FarseerPhysics.Collisions
         /// </summary>
         /// <param name="geom">The geometry.</param>
         /// <exception cref="ArgumentNullException"><c>geometry</c> is null.</exception>
-        public void CreateDistanceGrid(Geom geom)
-        {
-            if (geom == null)
+        public void CreateDistanceGrid(Geom geom) {
+            if(geom == null)
                 throw new ArgumentNullException("geom", "Geometry can't be null");
 
             //Don't create distancegrid for geometry that already have one.
             //NOTE: This should be used to -update- the geometry's distance grid (if grid cell size has changed).
-            if (_distanceGrids.ContainsKey(geom.id))
+            if(_distanceGrids.ContainsKey(geom.id))
                 return;
 
             //By default, calculate the gridcellsize from the AABB
-            if (geom.GridCellSize <= 0)
+            if(geom.GridCellSize <= 0)
                 geom.GridCellSize = CalculateGridCellSizeFromAABB(ref geom.AABB);
 
             //Prepare the geometry. Reset the geometry matrix
@@ -141,11 +129,9 @@ namespace FarseerGames.FarseerPhysics.Collisions
 
             float[,] nodes = new float[xSize, ySize];
             Vector2 vector = aabb.Min;
-            for (int x = 0; x < xSize; ++x, vector.X += geom.GridCellSize)
-            {
+            for(int x = 0; x < xSize; ++x, vector.X += geom.GridCellSize) {
                 vector.Y = aabb.Min.Y;
-                for (int y = 0; y < ySize; ++y, vector.Y += geom.GridCellSize)
-                {
+                for(int y = 0; y < ySize; ++y, vector.Y += geom.GridCellSize) {
                     nodes[x, y] = geom.GetNearestDistance(ref vector); // shape.GetDistance(vector);
                 }
             }
@@ -165,8 +151,7 @@ namespace FarseerGames.FarseerPhysics.Collisions
         /// Removes a distance grid from the cache.
         /// </summary>
         /// <param name="geom">The geom.</param>
-        public void RemoveDistanceGrid(Geom geom)
-        {
+        public void RemoveDistanceGrid(Geom geom) {
             _distanceGrids.Remove(geom.id);
         }
 
@@ -175,8 +160,7 @@ namespace FarseerGames.FarseerPhysics.Collisions
         /// </summary>
         /// <param name="fromId">From id.</param>
         /// <param name="toId">To id.</param>
-        public void Copy(int fromId, int toId)
-        {
+        public void Copy(int fromId, int toId) {
             _distanceGrids.Add(toId, _distanceGrids[fromId]);
         }
 
@@ -185,8 +169,7 @@ namespace FarseerGames.FarseerPhysics.Collisions
         /// </summary>
         /// <param name="aabb">The AABB.</param>
         /// <returns></returns>
-        private float CalculateGridCellSizeFromAABB(ref AABB aabb)
-        {
+        private float CalculateGridCellSizeFromAABB(ref AABB aabb) {
             return aabb.GetShortestSide() * _gridCellSizeAABBFactor;
         }
 
@@ -196,8 +179,7 @@ namespace FarseerGames.FarseerPhysics.Collisions
         /// <param name="geom">The geom.</param>
         /// <param name="point">The point.</param>
         /// <returns></returns>
-        public bool Intersect(Geom geom, ref Vector2 point)
-        {
+        public bool Intersect(Geom geom, ref Vector2 point) {
             //Lookup the geometry's distancegrid
             DistanceGridData gridData = _distanceGrids[geom.id];
 
@@ -217,8 +199,7 @@ namespace FarseerGames.FarseerPhysics.Collisions
     /// <summary>
     /// Class that holds the distancegrid data
     /// </summary>
-    public struct DistanceGridData
-    {
+    public struct DistanceGridData {
         public AABB AABB;
         public float GridCellSize;
         public float GridCellSizeInv;
@@ -230,12 +211,10 @@ namespace FarseerGames.FarseerPhysics.Collisions
         /// <param name="vector">The vector.</param>
         /// <param name="feature">The feature.</param>
         /// <returns></returns>
-        public bool Intersect(ref Vector2 vector, out Feature feature)
-        {
+        public bool Intersect(ref Vector2 vector, out Feature feature) {
             //TODO: Keep and eye out for floating point accuracy issues here. Possibly some
             //VERY intermittent errors exist?
-            if (AABB.Contains(ref vector))
-            {
+            if(AABB.Contains(ref vector)) {
                 int x = (int)Math.Floor((vector.X - AABB.Min.X) * GridCellSizeInv);
                 int y = (int)Math.Floor((vector.Y - AABB.Min.Y) * GridCellSizeInv);
 
@@ -244,11 +223,10 @@ namespace FarseerGames.FarseerPhysics.Collisions
                 float topLeft = Nodes[x, y + 1];
                 float topRight = Nodes[x + 1, y + 1];
 
-                if (bottomLeft <= 0 ||
+                if(bottomLeft <= 0 ||
                     bottomRight <= 0 ||
                     topLeft <= 0 ||
-                    topRight <= 0)
-                {
+                    topRight <= 0) {
                     float xPercent = (vector.X - (GridCellSize * x + AABB.Min.X)) * GridCellSizeInv;
                     float yPercent = (vector.Y - (GridCellSize * y + AABB.Min.Y)) * GridCellSizeInv;
 
@@ -256,8 +234,7 @@ namespace FarseerGames.FarseerPhysics.Collisions
                     float bottom = MathHelper.Lerp(bottomLeft, bottomRight, xPercent);
                     float distance = MathHelper.Lerp(bottom, top, yPercent);
 
-                    if (distance <= 0)
-                    {
+                    if(distance <= 0) {
                         float right = MathHelper.Lerp(bottomRight, topRight, yPercent);
                         float left = MathHelper.Lerp(bottomLeft, topLeft, yPercent);
 
@@ -267,8 +244,7 @@ namespace FarseerGames.FarseerPhysics.Collisions
 
                         //Uncommented by Daniel Pramel 08/17/08
                         //make sure the normal is not zero length.
-                        if (normal.X != 0 || normal.Y != 0)
-                        {
+                        if(normal.X != 0 || normal.Y != 0) {
                             Vector2.Normalize(ref normal, out normal);
                             feature = new Feature(ref vector, ref normal, distance);
                             return true;

@@ -6,14 +6,12 @@ using Microsoft.Xna.Framework;
 using FarseerGames.FarseerPhysics.Mathematics;
 #endif
 
-namespace FarseerGames.FarseerPhysics.Collisions
-{
+namespace FarseerGames.FarseerPhysics.Collisions {
     /// <summary>
     /// Used internal in collision detection.
     /// Represents a contact point between 2 geoms.
     /// </summary>
-    public struct Contact : IEquatable<Contact>
-    {
+    public struct Contact: IEquatable<Contact> {
         /// <summary>
         /// Id of the contact
         /// </summary>
@@ -44,8 +42,7 @@ namespace FarseerGames.FarseerPhysics.Collisions
         internal Vector2 r2;
         internal float tangentImpulse;
 
-        public Contact(Vector2 position, Vector2 normal, float separation, ContactId contactId)
-        {
+        public Contact(Vector2 position, Vector2 normal, float separation, ContactId contactId) {
             ContactId = contactId;
             Position = position;
             Normal = normal;
@@ -63,38 +60,32 @@ namespace FarseerGames.FarseerPhysics.Collisions
 
         #region IEquatable<Contact> Members
 
-        public bool Equals(Contact other)
-        {
+        public bool Equals(Contact other) {
             return (ContactId.Equals(ref other.ContactId));
         }
 
         #endregion
 
-        public bool Equals(ref Contact other)
-        {
+        public bool Equals(ref Contact other) {
             return (ContactId.Equals(ref other.ContactId));
         }
 
-        public override bool Equals(object obj)
-        {
-            if (!(obj is Contact))
+        public override bool Equals(object obj) {
+            if(!(obj is Contact))
                 return false;
 
             return Equals((Contact)obj);
         }
 
-        public static bool operator ==(Contact contact1, Contact contact2)
-        {
+        public static bool operator ==(Contact contact1, Contact contact2) {
             return contact1.Equals(ref contact2);
         }
 
-        public static bool operator !=(Contact contact1, Contact contact2)
-        {
+        public static bool operator !=(Contact contact1, Contact contact2) {
             return !contact1.Equals(ref contact2);
         }
 
-        public override int GetHashCode()
-        {
+        public override int GetHashCode() {
             return base.GetHashCode();
         }
     }

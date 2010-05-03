@@ -4,7 +4,7 @@
  * Description:
  *      Used to create paddles
  *      
- * Authors:
+ * Author(s):
  *      Sam Thompson
  */
 
@@ -52,6 +52,10 @@ namespace FarseerGames.AirHockeyGame {
             this.force.Y = 0;
         }
 
+        /// <summary>
+        /// Creates a physics body for this paddle
+        /// </summary>
+        /// <param name="pS">Physics Simulator</param>
         public override void CreateBody(PhysicsSimulator pS) {
 
             //Create a physics body
@@ -59,7 +63,7 @@ namespace FarseerGames.AirHockeyGame {
 
             //Create a Geom
             Geom circleGeom = GeomFactory.Instance.CreateCircleGeom(this.body, (int)this.midWidth, (int)this.width);
-            
+
             //Bounciness
             circleGeom.RestitutionCoefficient = 0;
 

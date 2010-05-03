@@ -1,8 +1,21 @@
-﻿using FarseerGames.FarseerPhysics;
+﻿/*
+ *      OpponentPaddle Class
+ * 
+ * Description:
+ *      This class is for the opponent's
+ *      paddle control. If there is a
+ *      network connection, that is used
+ *      to control this paddle. If not, 
+ *      this becomes an AI paddle.
+ *      
+ * Author(s):
+ *      Sam Thompson
+ */
+
+using AirHockeyGame;
+using FarseerGames.FarseerPhysics;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
-using AirHockeyGame;
 
 namespace FarseerGames.AirHockeyGame {
 
@@ -44,20 +57,34 @@ namespace FarseerGames.AirHockeyGame {
         public override void Update() {
 
             if(GameState.gotOpponent == true) {
+
                 //NetUpdate code goes in here
+
+                #region Network Control
+
+                #endregion
+
             } else {
+
                 //AI takes over
+
+                #region AI Control
 
                 Vector2 diff = GameState.puckPos - this.body.Position;
 
                 //If the puck is in AI's half, hit it
                 if(GameState.puckPos.X > 512) {
-                    this.force = new Vector2(diff.X + 48, diff.Y) * (30 * ((int)GameState.gameSettings.difficulty + 1));
-
-                //Otherwise, just match it's Y position
+                    if(diff.X > 0) {
+                        this.force = new Vector2(2000, diff.Y) * (30 * ((int)GameState.gameSettings.difficulty + 1));
+                    } else {
+                        this.force = new Vector2(diff.X + 48, diff.Y) * (50 * ((int)GameState.gameSettings.difficulty + 1));
+                    }
+                    //Otherwise, just match it's Y position
                 } else {
                     this.force = new Vector2(2000, (diff.Y) * 40);
                 }
+
+                #endregion
 
             }
             base.Update();

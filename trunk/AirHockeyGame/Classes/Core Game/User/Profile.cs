@@ -1,19 +1,21 @@
 ﻿/*
- * Holds information on the user and can be written to and read from file.
+ *      Profile Class
+ *      
+ * Description:
+ *      Holds information on the user
+ *      and can be written to and read
+ *      from file.
  * 
  * Author(s):
- *  David Valente
+ *      David Valente
  */
+
 using System;
-using System.Collections.Generic;
-using System.Text;
 using System.IO;
 using System.Xml.Serialization;
 
-namespace AirHockeyGame
-{
-    public class Profile
-    {
+namespace AirHockeyGame {
+    public class Profile {
         #region fields
         String name;
         int win, lost, draw;
@@ -22,43 +24,36 @@ namespace AirHockeyGame
 
         #region Properties
 
-        public String Name
-        {
-            get { return name;  }
+        public String Name {
+            get { return name; }
             set { name = value; }
         }
 
-        public int Win
-        { get { return win; } }
+        public int Win { get { return win; } }
 
-        public int Lost
-        { get { return lost; } }           
+        public int Lost { get { return lost; } }
 
-        public int Draw
-        { get { return draw; } }
+        public int Draw { get { return draw; } }
 
-        public string WonLostDrawn
-        { get { return ""+win+"/"+lost+"/"+draw; } }
-        
-        public int TotalGamesPlayed
-        { get { return win + lost + draw; } }
-#endregion
+        public string WonLostDrawn { get { return "" + win + "/" + lost + "/" + draw; } }
+
+        public int TotalGamesPlayed { get { return win + lost + draw; } }
+        #endregion
 
         #region Methods
 
         /// <summary>
         /// Constructor to create a "blank" profile.
         /// </summary>
-        public Profile() : this("Player Name")
-        {
+        public Profile()
+            : this("Player Name") {
         }
 
         /// <summary>
         /// Overloaded constructor.
         /// </summary>
         /// <param name="name"></param>
-        public Profile(String name)
-        {
+        public Profile(String name) {
             this.name = name;
             win = lost = draw = 0;
         }
@@ -66,24 +61,21 @@ namespace AirHockeyGame
         /// <summary>
         /// Increments games won counter
         /// </summary>
-        public void GameWon()
-        {
+        public void GameWon() {
             win++;
         }
 
         /// <summary>
         /// Increments games lost counter
         /// </summary>
-        public void GameLost()
-        {
+        public void GameLost() {
             lost++;
         }
 
         /// <summary>
         /// Increments games drawn counter
         /// </summary>
-        public void GameDrawn()
-        {
+        public void GameDrawn() {
             draw++;
         }
 
@@ -92,10 +84,9 @@ namespace AirHockeyGame
         /// </summary>
         /// <param name="fileName"></param>
         /// <returns></returns>
-        public static Profile ReadProfile(String fileName)
-        {
+        public static Profile ReadProfile(String fileName) {
             //To read file
-            if (!File.Exists(fileName))
+            if(!File.Exists(fileName))
                 return null;
 
             //Open file
@@ -117,8 +108,7 @@ namespace AirHockeyGame
         /// Writes profile to path with specified filename.
         /// </summary>
         /// <param name="fileName"></param>
-        public void WriteProfile(String fileName)
-        {
+        public void WriteProfile(String fileName) {
             //Open filestream
             File.Delete(fileName);
             FileStream stream = File.Open(fileName, FileMode.OpenOrCreate);
@@ -136,9 +126,8 @@ namespace AirHockeyGame
         /// </summary>
         /// <param name="p"></param>
         /// <returns></returns>
-        public bool Matches(Profile p)
-        {
-            if (p.name.Equals(this.name) && p.WonLostDrawn.Equals(this.WonLostDrawn))
+        public bool Matches(Profile p) {
+            if(p.name.Equals(this.name) && p.WonLostDrawn.Equals(this.WonLostDrawn))
                 return true;
             else
                 return false;
@@ -148,8 +137,7 @@ namespace AirHockeyGame
         /// Copies another profile's variables to create a copy.
         /// </summary>
         /// <param name="p"></param>
-        public void Copy(Profile p)
-        {
+        public void Copy(Profile p) {
             this.win = p.win;
             this.lost = p.lost;
             this.draw = p.draw;

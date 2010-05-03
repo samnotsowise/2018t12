@@ -7,8 +7,7 @@ using FarseerGames.FarseerPhysics.Mathematics;
 using Microsoft.Xna.Framework;
 #endif
 
-namespace FarseerGames.FarseerPhysics.Controllers
-{
+namespace FarseerGames.FarseerPhysics.Controllers {
     /// <summary>
     /// The WaveController simulates wave motion. It's driven by a mathematical algorithm (not physics) which dynamically 
     /// alters a polygonal shape to mimic waves.
@@ -38,8 +37,7 @@ namespace FarseerGames.FarseerPhysics.Controllers
     /// http://www.gamedev.net/reference/articles/article915.asp
     ///  
     /// </summary>
-    public class WaveController : Controller, IFluidContainer
-    {
+    public class WaveController: Controller, IFluidContainer {
         private AABB _aabb;
         private float _aabbMin = float.MaxValue;
         private float[] _currentWave;
@@ -73,8 +71,7 @@ namespace FarseerGames.FarseerPhysics.Controllers
         /// <summary>
         /// The width of the wave area.
         /// </summary>
-        public float Width
-        {
+        public float Width {
             get { return _width; }
             set { _width = value; }
         }
@@ -82,8 +79,7 @@ namespace FarseerGames.FarseerPhysics.Controllers
         /// <summary>
         /// The height of the wave area. Best thought of as the depth of the water.
         /// </summary>
-        public float Height
-        {
+        public float Height {
             get { return _height; }
             set { _height = value; }
         }
@@ -91,8 +87,7 @@ namespace FarseerGames.FarseerPhysics.Controllers
         /// <summary>
         /// Top left position of wave area
         /// </summary>
-        public Vector2 Position
-        {
+        public Vector2 Position {
             get { return _position; }
             set { _position = value; }
         }
@@ -100,8 +95,7 @@ namespace FarseerGames.FarseerPhysics.Controllers
         /// <summary>
         /// How many vertices to use for the surface of the water. Determines, along with other parameters, the shape of the waves.
         /// </summary>
-        public int NodeCount
-        {
+        public int NodeCount {
             get { return _nodeCount; }
             set { _nodeCount = value; }
         }
@@ -110,8 +104,7 @@ namespace FarseerGames.FarseerPhysics.Controllers
         /// Determines how quickly the waves dissipate.  A Value of zero will cause any disturbance in the water surface to ripple forever. 
         /// Values closer to 1 will cause the waves to smooth out quickly.
         /// </summary>
-        public float DampingCoefficient
-        {
+        public float DampingCoefficient {
             get { return _dampningCoefficient; }
             set { _dampningCoefficient = value; }
         }
@@ -120,16 +113,14 @@ namespace FarseerGames.FarseerPhysics.Controllers
         /// An array representing the current y-offset of each vertice from its rest position.  The "rest" position is the same as the
         /// y-component of the "Position" property of the <see cref="WaveController"/>.  These Value can be used to visually represent the wave.
         /// </summary>
-        public float[] CurrentWave
-        {
+        public float[] CurrentWave {
             get { return _currentWave; }
         }
 
         /// <summary>
         /// Used by the algorithm but not really needed externally.
         /// </summary>
-        public float[] PreviousWave
-        {
+        public float[] PreviousWave {
             get { return _previousWave; }
         }
 
@@ -137,8 +128,7 @@ namespace FarseerGames.FarseerPhysics.Controllers
         /// An array of x positions that represents the x position of the vertices that make up the wave.
         /// This can be used to create the visuals for your wave.
         /// </summary>
-        public float[] XPosition
-        {
+        public float[] XPosition {
             get { return _xPosition; }
             set { _xPosition = value; }
         }
@@ -146,8 +136,7 @@ namespace FarseerGames.FarseerPhysics.Controllers
         /// <summary>
         /// The max offset that you want the wave generator to move the control vertice
         /// </summary>
-        public float WaveGeneratorMax
-        {
+        public float WaveGeneratorMax {
             get { return _waveGeneratorMax; }
             set { _waveGeneratorMax = value; }
         }
@@ -155,8 +144,7 @@ namespace FarseerGames.FarseerPhysics.Controllers
         /// <summary>
         /// The min offset that you want the wave generator to move the control vertice
         /// </summary>
-        public float WaveGeneratorMin
-        {
+        public float WaveGeneratorMin {
             get { return _waveGeneratorMin; }
             set { _waveGeneratorMin = value; }
         }
@@ -166,8 +154,7 @@ namespace FarseerGames.FarseerPhysics.Controllers
         /// min and max.  The vertice will be moved every time Update(..) runs which in-turn is controlled by the 
         /// Frequency property.
         /// </summary>
-        public float WaveGeneratorStep
-        {
+        public float WaveGeneratorStep {
             get { return _waveGeneratorStep; }
             set { _waveGeneratorStep = value; }
         }
@@ -176,8 +163,7 @@ namespace FarseerGames.FarseerPhysics.Controllers
         /// Determines how fast the wave algorithm (NOT the wave generator) runs. The best way to understand this property 
         /// is to try some different values and watch the affect.
         /// </summary>
-        public float Frequency
-        {
+        public float Frequency {
             get { return _frequency; }
             set { _frequency = value; }
         }
@@ -186,20 +172,18 @@ namespace FarseerGames.FarseerPhysics.Controllers
 
         #region IFluidContainer Members
 
-        public bool Intersect(ref AABB aabb)
-        {
+        public bool Intersect(ref AABB aabb) {
             return AABB.Intersect(ref aabb, ref  _aabb);
         }
 
-        public bool Contains(ref Vector2 vector)
-        {
+        public bool Contains(ref Vector2 vector) {
             //try
             //{
             int index = (int)Math.Floor((vector.X - _xPosition[0]) / _singleWaveWidth);
 
             //handle the boundry conditions
-            if (index > _nodeCount - 2) index = _nodeCount - 2;
-            if (index < 0) index = 0;
+            if(index > _nodeCount - 2) index = _nodeCount - 2;
+            if(index < 0) index = 0;
 
             VectorNearWaveEdge.X = _xPosition[index];
             VectorNearWaveEdge.Y = _position.Y + _currentWave[index];
@@ -218,8 +202,7 @@ namespace FarseerGames.FarseerPhysics.Controllers
             float perpDot;
             Calculator.Cross(ref _waveEdgeVector, ref _pointVector, out perpDot);
 
-            if (perpDot < 0)
-            {
+            if(perpDot < 0) {
                 return false;
             }
             return true;
@@ -240,13 +223,11 @@ namespace FarseerGames.FarseerPhysics.Controllers
         /// </summary>
         /// <param name="x">The node to change the height of</param>
         /// <param name="offset">The amount to move the node up or down (negative values moves the node up, positive moves it down)</param>
-        public void Disturb(float x, float offset)
-        {
+        public void Disturb(float x, float offset) {
             int i = 0;
 
-            for (i = 0; i < _nodeCount - 1; i++)
-            {
-                if (x >= _xPosition[i] && x <= _xPosition[i + 1])
+            for(i = 0; i < _nodeCount - 1; i++) {
+                if(x >= _xPosition[i] && x <= _xPosition[i + 1])
                     _currentWave[i] = _currentWave[i] + offset;
             }
         }
@@ -254,15 +235,13 @@ namespace FarseerGames.FarseerPhysics.Controllers
         /// <summary>
         /// Initialize the wave controller.
         /// </summary>
-        public void Initialize()
-        {
+        public void Initialize() {
             _xPosition = new float[_nodeCount];
             _currentWave = new float[_nodeCount];
             _previousWave = new float[_nodeCount];
             _resultWave = new float[_nodeCount];
 
-            for (int i = 0; i < _nodeCount; i++)
-            {
+            for(int i = 0; i < _nodeCount; i++) {
                 _xPosition[i] = MathHelper.Lerp(_position.X, _position.X + _width, (float)i / (_nodeCount - 1));
                 _currentWave[i] = 0;
                 _previousWave[i] = 0;
@@ -280,10 +259,8 @@ namespace FarseerGames.FarseerPhysics.Controllers
         /// </summary>
         /// <param name="dt">The time since last update.</param>
         /// <param name="dtReal">The real time since last update.</param>
-        public override void Update(float dt, float dtReal)
-        {
-            if (_timePassed < _frequency)
-            {
+        public override void Update(float dt, float dtReal) {
+            if(_timePassed < _frequency) {
                 _timePassed += dt;
                 return;
             }
@@ -291,14 +268,12 @@ namespace FarseerGames.FarseerPhysics.Controllers
 
             _aabbMin = float.MaxValue;
             _aabb.min.Y = _aabbMin;
-            for (int i = 1; i < _nodeCount - 1; i++)
-            {
+            for(int i = 1; i < _nodeCount - 1; i++) {
                 _resultWave[i] = (_currentWave[i - 1] + _currentWave[i + 1]) - _previousWave[i];
                 _resultWave[i] = _resultWave[i] * _dampningCoefficient;
 
                 //keep track of _aabb min Value                
-                if (_resultWave[i] + _position.Y < _aabbMin)
-                {
+                if(_resultWave[i] + _position.Y < _aabbMin) {
                     _aabbMin = _resultWave[i] + _position.Y;
                 }
             }
@@ -306,33 +281,23 @@ namespace FarseerGames.FarseerPhysics.Controllers
             _currentWave.CopyTo(_previousWave, 0);
             _resultWave.CopyTo(_currentWave, 0);
 
-            if (_goingUp)
-            {
-                if (_waveGeneratorCount > _waveGeneratorMax)
-                {
+            if(_goingUp) {
+                if(_waveGeneratorCount > _waveGeneratorMax) {
                     _goingUp = false;
-                }
-                else
-                {
+                } else {
                     _waveGeneratorCount += _waveGeneratorStep;
                 }
-            }
-            else
-            {
-                if (_waveGeneratorCount < _waveGeneratorMin)
-                {
+            } else {
+                if(_waveGeneratorCount < _waveGeneratorMin) {
                     _goingUp = true;
-                }
-                else
-                {
+                } else {
                     _waveGeneratorCount -= _waveGeneratorStep;
                 }
             }
             _currentWave[_currentWave.Length - 1] = _waveGeneratorCount;
         }
 
-        public override void Validate()
-        {
+        public override void Validate() {
             //just do nothing for now. will revisit later.
         }
     }
