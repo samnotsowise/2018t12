@@ -481,3 +481,13 @@ C:\Users\David\Desktop\new branch\branches\David's Branch\David's Branch\AirHock
 C:\Users\David\Desktop\new branch\branches\David's Branch\David's Branch\AirHockeyGame\bin\x86\Debug\AirHockeyGame.pdb
 C:\Users\David\Desktop\new branch\branches\David's Branch\David's Branch\AirHockeyGame\bin\x86\Debug\FarseerPhysics.dll
 C:\Users\David\Desktop\new branch\branches\David's Branch\David's Branch\AirHockeyGame\bin\x86\Debug\FarseerPhysics.pdb
+C:\Users\Public\Documents\CSC 2018 Project\branches\David's Branch\David's Branch\AirHockeyGame\bin\x86\Debug\Content\ProfilePics\profilepic1.xnb
+C:\Users\Public\Documents\CSC 2018 Project\branches\David's Branch\David's Branch\AirHockeyGame\bin\x86\Debug\Content\ProfilePics\profilepic2.xnb
+C:\Users\Public\Documents\CSC 2018 Project\branches\David's Branch\David's Branch\AirHockeyGame\bin\x86\Debug\Content\ProfilePics\profilepic3.xnb
+C:\Users\Public\Documents\CSC 2018 Project\branches\David's Branch\David's Branch\AirHockeyGame\bin\x86\Debug\Content\ProfilePics\profilepic4.xnb
+C:\Users\Public\Documents\CSC 2018 Project\branches\David's Branch\David's Branch\AirHockeyGame\bin\x86\Debug\Content\ProfilePics\profilepic5.xnb
+C:\Users\Public\Documents\CSC 2018 Project\branches\David's Branch\David's Branch\AirHockeyGame\bin\x86\Debug\Content\ProfilePics\profilepic6.xnb
+C:\Users\Public\Documents\CSC 2018 Project\branches\David's Branch\David's Branch\AirHockeyGame\bin\x86\Debug\Content\ProfilePics\profilepic7.xnb
+C:\Users\Public\Documents\CSC 2018 Project\branches\David's Branch\David's Branch\AirHockeyGame\bin\x86\Debug\Content\ProfilePics\profilepic8.xnb
+C:\Users\Public\Documents\CSC 2018 Project\branches\David's Branch\David's Branch\AirHockeyGame\bin\x86\Debug\Content\ProfilePics\profilepic0.xnb
+C:\Users\Public\Documents\CSC 2018 Project\branches\David's Branch\David's Branch\AirHockeyGame\bin\x86\Debug\Content\ScreenSystem\Images\Main Menu\profileBoard.xnb

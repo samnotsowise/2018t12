@@ -30,3 +30,13 @@ Content\Fonts\menufont.xnb
 Content\ScreenSystem\menufont.xnb
 Content\ScreenSystem\Particles\Arial.xnb
 Content\ScreenSystem\gamefont.xnb
+Content\ProfilePics\profilepic1.xnb
+Content\ProfilePics\profilepic2.xnb
+Content\ProfilePics\profilepic3.xnb
+Content\ProfilePics\profilepic4.xnb
+Content\ProfilePics\profilepic5.xnb
+Content\ProfilePics\profilepic6.xnb
+Content\ProfilePics\profilepic7.xnb
+Content\ProfilePics\profilepic8.xnb
+Content\ProfilePics\profilepic0.xnb
+Content\ScreenSystem\Images\Main Menu\profileBoard.xnb

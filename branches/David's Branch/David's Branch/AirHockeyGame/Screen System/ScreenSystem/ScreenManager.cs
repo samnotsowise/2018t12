@@ -256,6 +256,8 @@ namespace GameScreenManager.ScreenSystem {
         /// </summary>
         protected override void LoadContent() {
             // Load content belonging to the screen manager.
+            GameState.LoadContent(this.ContentManager);
+              
             SpriteBatch = new SpriteBatch(GraphicsDevice);
             _blankTexture = ContentManager.Load<Texture2D>("Content/Common/blank");
 

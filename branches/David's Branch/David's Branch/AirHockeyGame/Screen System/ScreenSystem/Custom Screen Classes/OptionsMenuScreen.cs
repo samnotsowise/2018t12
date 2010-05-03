@@ -35,7 +35,8 @@ namespace GameScreenManager.ScreenSystem
         const float timeBeforeExitAllowed = 100.0f;
         bool exitAllowed;
         bool nameChanging;
-        
+
+        Vector2 picturePos;
         private Settings oldSettings;
         private Profile oldProfile;
         #endregion
@@ -53,6 +54,8 @@ namespace GameScreenManager.ScreenSystem
             exitTimer = 0.0f;
             exitAllowed = false;
 
+            picturePos = new Vector2(400, 300);
+
             //Copying current settings allows the system to
             //check for changes.
             oldSettings = new Settings();
@@ -69,7 +72,7 @@ namespace GameScreenManager.ScreenSystem
             MenuEntries.Add("Ai Difficulty: " + GameState.gameSettings.difficulty);
             MenuEntries.Add("Screen Mode: " + GameState.gameSettings.screenSize);
             MenuEntries.Add("Name: " + GameState.playerProfile.Name);
-            MenuEntries.Add("Win/Lose/Draw: " + GameState.playerProfile.WonLostDrawn);
+            MenuEntries.Add("Profile Picture: " + GameState.playerProfile.PictureIndex);
             MenuEntries.Add("Return");
         }
 
@@ -99,7 +102,11 @@ namespace GameScreenManager.ScreenSystem
             if (oldProfile == null || !oldProfile.Matches(GameState.playerProfile))
             {
                 //If new name is empty, old name is inserted
-                if (GameState.playerProfile.Name.Equals(""))
+                string empty = "";
+                for (int i = 0; i < GameState.playerProfile.Name.Length; i++)
+                    empty += " ";
+
+                if (GameState.playerProfile.Name.Equals("") || GameState.playerProfile.Name.Equals(empty))
                     if (!oldProfile.Name.Equals(""))
                         GameState.playerProfile.Name = oldProfile.Name;
                     else
@@ -137,12 +144,16 @@ namespace GameScreenManager.ScreenSystem
                     {
                         nameChanging = true;
                         GameState.playerProfile.Name = "";
-
                         MenuEntries[2] = ("Name: " + GameState.playerProfile.Name + "|");
                     }
                     break;
-                //Won/Lost/Drawn
+                //Profile picture
                 case 3:
+                    GameState.playerProfile.PictureIndex++;
+                    if (GameState.playerProfile.PictureIndex > 8)
+                        GameState.playerProfile.PictureIndex = 0;
+
+                    MenuEntries[3] = "Profile Picture: " + GameState.playerProfile.PictureIndex;
                     break;
                 //Exit
                 case 4:
@@ -174,12 +185,37 @@ namespace GameScreenManager.ScreenSystem
             //If player is changing the name displayed
             if (nameChanging)
             {
-                Keys[] pressedKeys = keyboard.GetPressedKeys();
+                GameState.playerProfile.Name = GetText(keyboard, GameState.playerProfile.Name);
+                MenuEntries[2] = ("Name: " + GameState.playerProfile.Name + "|");
+
+                //If player presses up or down, they stop editing the name
+                if (keyboard.IsKeyDown(Keys.Enter)|| keyboard.IsKeyDown(Keys.Down) || keyboard.IsKeyDown(Keys.Up))
+                {
+                    nameChanging = false;
+                    MenuEntries[2] = ("Name: " + GameState.playerProfile.Name);
+                }
+            }
+            
+            prevKeyboardState = keyboard;
+
+            base.Update(gameTime, otherScreenHasFocus, coveredByOtherScreen);
+
+        }
+
+        /// <summary>
+        /// Returns the string used as the parameter with any input from the keyboard.
+        /// </summary>
+        /// <param name="kb"></param>
+        /// <param name="?"></param>
+        /// <returns></returns>
+        public string GetText(KeyboardState kb, string text)
+        {
+            Keys[] pressedKeys = kb.GetPressedKeys();
                 for (int i = 0; i < pressedKeys.Length; i++)
                 {
-                    if (GameState.playerProfile.Name.Length < Profile.MaxNameLength)
+                    if (text.Length < Profile.MaxNameLength)
                     {
-                        //Checks it's an alphabet character
+                        //Checks it's an alphabetic character
                         if ((int)pressedKeys[i] >= 65 && (int)pressedKeys[i] <= 90)
                         {
                             //Check it was not held down
@@ -189,45 +225,43 @@ namespace GameScreenManager.ScreenSystem
                                 String character = pressedKeys[i].ToString().ToLower();
 
                                 //If shift is held, it's changed to upperspace
-                                if (keyboard.IsKeyDown(Keys.RightShift) || keyboard.IsKeyDown(Keys.LeftShift))
+                                if (kb.IsKeyDown(Keys.RightShift) || kb.IsKeyDown(Keys.LeftShift))
                                     character = character.ToUpper();
 
                                 //Appends character to name
-                                GameState.playerProfile.Name += character;
-
-                                //Displays new name
-                                MenuEntries[2] = ("Name: " + GameState.playerProfile.Name + "|");
+                                text += character;
                             }
                         }
+                        
+                        //Numeric characters
+                        if (pressedKeys[i] >= Keys.D0 && pressedKeys[i] <= Keys.D9)
+                        {
+                            if (!prevKeyboardState.IsKeyDown(pressedKeys[i]))
+                            {
+                                //Appends character to name
+                                text += (int) pressedKeys[i] % 48;
+                            }
+                        }
+
+
                         //Adds space if player presses spacebar
                         if (pressedKeys[i] == Keys.Space && !prevKeyboardState.IsKeyDown(Keys.Space))
                         {
-                            GameState.playerProfile.Name += " ";
-                            //Displays new name
-                            MenuEntries[2] = ("Name: " + GameState.playerProfile.Name + "|");
+                            text += " ";
                         }
                     }
                     //User can press backspace to delete last character
                     if (pressedKeys[i] == Keys.Back && !prevKeyboardState.IsKeyDown(Keys.Back) && GameState.playerProfile.Name.Length > 0)
                     {
-                        GameState.playerProfile.Name = GameState.playerProfile.Name.Substring(0, GameState.playerProfile.Name.Length - 1);
-                        MenuEntries[2] = ("Name: " + GameState.playerProfile.Name + "|");
+                        text = text.Substring(0, text.Length - 1);
                     }
                 }
+
+                return text;
             }
 
-            //If player presses up or down, they stop editing the name
-            if (keyboard.IsKeyDown(Keys.Down) || keyboard.IsKeyDown(Keys.Up))
-            {
-                nameChanging = false;
-                MenuEntries[2] = ("Name: " + GameState.playerProfile.Name);
-            }
 
-            prevKeyboardState = keyboard;
-
-            base.Update(gameTime, otherScreenHasFocus, coveredByOtherScreen);
-
-        }
+        
 
         public override void Draw(GameTime gameTime) {
             ScreenManager.SpriteBatch.Begin();
@@ -236,6 +270,9 @@ namespace GameScreenManager.ScreenSystem
             Viewport viewport = ScreenManager.GraphicsDevice.Viewport;
             Rectangle fullscreen = new Rectangle(0, 0, viewport.Width, viewport.Height);
             ScreenManager.SpriteBatch.Draw(background, fullscreen, fade);
+
+            //Draws current profile pic
+            ScreenManager.SpriteBatch.Draw(GameState.profilePictures[GameState.playerProfile.PictureIndex], picturePos, Color.White);
 
             base.Draw(gameTime);
             ScreenManager.SpriteBatch.End();

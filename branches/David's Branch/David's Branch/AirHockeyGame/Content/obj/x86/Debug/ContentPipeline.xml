@@ -289,6 +289,96 @@
       <Output>C:\Users\Public\Documents\CSC 2018 Project\branches\David's Branch\David's Branch\AirHockeyGame\bin\x86\Debug\Content\ScreenSystem\gamefont.xnb</Output>
       <Time>2010-04-28T17:07:59.9094607+01:00</Time>
     </Item>
+    <Item>
+      <Source>ProfilePics\profilepic1.png</Source>
+      <Name>ProfilePics\profilepic1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Public\Documents\CSC 2018 Project\branches\David's Branch\David's Branch\AirHockeyGame\bin\x86\Debug\Content\ProfilePics\profilepic1.xnb</Output>
+      <Time>2010-05-03T22:06:48.1813151+01:00</Time>
+    </Item>
+    <Item>
+      <Source>ProfilePics\profilepic2.png</Source>
+      <Name>ProfilePics\profilepic2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Public\Documents\CSC 2018 Project\branches\David's Branch\David's Branch\AirHockeyGame\bin\x86\Debug\Content\ProfilePics\profilepic2.xnb</Output>
+      <Time>2010-05-03T22:06:48.1843152+01:00</Time>
+    </Item>
+    <Item>
+      <Source>ProfilePics\profilepic3.png</Source>
+      <Name>ProfilePics\profilepic3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Public\Documents\CSC 2018 Project\branches\David's Branch\David's Branch\AirHockeyGame\bin\x86\Debug\Content\ProfilePics\profilepic3.xnb</Output>
+      <Time>2010-05-03T22:06:48.1883155+01:00</Time>
+    </Item>
+    <Item>
+      <Source>ProfilePics\profilepic4.png</Source>
+      <Name>ProfilePics\profilepic4</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Public\Documents\CSC 2018 Project\branches\David's Branch\David's Branch\AirHockeyGame\bin\x86\Debug\Content\ProfilePics\profilepic4.xnb</Output>
+      <Time>2010-05-03T22:06:48.1903156+01:00</Time>
+    </Item>
+    <Item>
+      <Source>ProfilePics\profilepic5.png</Source>
+      <Name>ProfilePics\profilepic5</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Public\Documents\CSC 2018 Project\branches\David's Branch\David's Branch\AirHockeyGame\bin\x86\Debug\Content\ProfilePics\profilepic5.xnb</Output>
+      <Time>2010-05-03T22:06:48.1923157+01:00</Time>
+    </Item>
+    <Item>
+      <Source>ProfilePics\profilepic6.png</Source>
+      <Name>ProfilePics\profilepic6</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Public\Documents\CSC 2018 Project\branches\David's Branch\David's Branch\AirHockeyGame\bin\x86\Debug\Content\ProfilePics\profilepic6.xnb</Output>
+      <Time>2010-05-03T22:06:48.1963159+01:00</Time>
+    </Item>
+    <Item>
+      <Source>ProfilePics\profilepic7.png</Source>
+      <Name>ProfilePics\profilepic7</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Public\Documents\CSC 2018 Project\branches\David's Branch\David's Branch\AirHockeyGame\bin\x86\Debug\Content\ProfilePics\profilepic7.xnb</Output>
+      <Time>2010-05-03T22:06:48.198316+01:00</Time>
+    </Item>
+    <Item>
+      <Source>ProfilePics\profilepic8.png</Source>
+      <Name>ProfilePics\profilepic8</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Public\Documents\CSC 2018 Project\branches\David's Branch\David's Branch\AirHockeyGame\bin\x86\Debug\Content\ProfilePics\profilepic8.xnb</Output>
+      <Time>2010-05-03T22:06:48.2003161+01:00</Time>
+    </Item>
+    <Item>
+      <Source>ProfilePics\profilepic0.png</Source>
+      <Name>ProfilePics\profilepic0</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Public\Documents\CSC 2018 Project\branches\David's Branch\David's Branch\AirHockeyGame\bin\x86\Debug\Content\ProfilePics\profilepic0.xnb</Output>
+      <Time>2010-05-03T22:08:07.0148241+01:00</Time>
+    </Item>
+    <Item>
+      <Source>ScreenSystem\Images\Main Menu\profileBoard.png</Source>
+      <Name>ScreenSystem\Images\Main Menu\profileBoard</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Public\Documents\CSC 2018 Project\branches\David's Branch\David's Branch\AirHockeyGame\bin\x86\Debug\Content\ScreenSystem\Images\Main Menu\profileBoard.xnb</Output>
+      <Time>2010-05-03T22:27:51.5955782+01:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>

@@ -74,12 +74,6 @@ namespace AirHockeyGame.Screens
             {
                 scoreBox.Scored();
                 //Moves the particle effects further right if the number is two digits long
-                int horOffset = 10;
-                if (scoreBox.thisScore >= 10)
-                    horOffset += 10;
-
-                ScreenManager.RequestParticleEffect('r', 
-                    new Vector2(this.scoreBox.ScoreTextPosition.X + horOffset, this.scoreBox.ScoreTextPosition.Y + 15));
             }
             base.HandleInput(input);
         }
@@ -102,6 +96,9 @@ namespace AirHockeyGame.Screens
             if(this.playerPaddle.rect.Contains(this.puck.rect)) {
                 this.puck.UpdatePosition(this.puck.initialPosition);
             }
+
+            //Update scorebox
+            scoreBox.Update(gameTime);
 
             base.Update(gameTime, otherScreenHasFocus, coveredByOtherScreen);
         }

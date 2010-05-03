@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Content;
+using AirHockeyGame;
 
 namespace GameScreenManager.ScreenSystem
 {
@@ -15,7 +16,9 @@ namespace GameScreenManager.ScreenSystem
         private Dictionary<int, MenuItem> _mainMenuItems = new Dictionary<int, MenuItem>();
         private Texture2D background;
         private Texture2D logo;
+        private Texture2D profileBoard;
         private ContextBox contentBox;
+        private SpriteFont font;
         private const float boxPosX = 600.0f;
         private const float boxPosY = 300.0f;
         private const float logoPosX = 150.0f;
@@ -97,6 +100,8 @@ namespace GameScreenManager.ScreenSystem
 
             background = content.Load<Texture2D>(@"ScreenSystem\Images\Main Menu\background");
             logo = content.Load<Texture2D>(@"ScreenSystem\Images\Main Menu\logo");
+            profileBoard = content.Load<Texture2D>(@"ScreenSystem\Images\Main Menu\profileBoard");
+            font = content.Load<SpriteFont>(@"Fonts\gamefont");
             contentBox.LoadContent(content);
             base.LoadContent();
         }
@@ -113,19 +118,19 @@ namespace GameScreenManager.ScreenSystem
 
             ScreenManager.SpriteBatch.Draw(background, fullscreen, fade);
             
-            ScreenManager.SpriteBatch.DrawString(ScreenManager.SpriteFonts.DiagnosticSpriteFont,
-                                                 "1) Toggle between debug and normal view using either F1 on the keyboard or 'Y' on the controller",
-                                                 new Vector2(100, ScreenManager.ScreenHeight - 116), Color.White);
-            ScreenManager.SpriteBatch.DrawString(ScreenManager.SpriteFonts.DiagnosticSpriteFont,
-                                                 "2) Keyboard users, use arrows and enter to navigate menus",
-                                                 new Vector2(100, ScreenManager.ScreenHeight - 100), Color.White);
-
-
+            //Draw logo
             Vector2 logoPosition = new Vector2(logoPosX, logoPosY);
             logoPosition.Y -= transitionOffset * 150;
             ScreenManager.SpriteBatch.Draw(logo, logoPosition, null, fade, 0.0f, Vector2.Zero, 1.0f, SpriteEffects.None, 0.0f);
 
+            //Draw contentbox
             contentBox.Draw(ScreenManager.SpriteBatch, fade, transitionOffset);
+
+            ////Draw profile and profile details
+            ScreenManager.SpriteBatch.Draw(profileBoard, new Vector2(100, 525), null, fade, 0.0f, Vector2.Zero, 1.0f, SpriteEffects.None, 0.0f);
+            ScreenManager.SpriteBatch.Draw(GameState.profilePictures[GameState.playerProfile.PictureIndex], new Vector2(121, 547), null, fade, 0.0f, Vector2.Zero, 1.0f, SpriteEffects.None, 0.0f);
+            ScreenManager.SpriteBatch.DrawString(font, "Name: " + GameState.playerProfile.Name, new Vector2(225, 550), Color.White, 0, Vector2.Zero, 0.7f, SpriteEffects.None, 0);
+            ScreenManager.SpriteBatch.DrawString(font, "W/L/D: " + GameState.playerProfile.WonLostDrawn, new Vector2(225, 600), Color.White, 0, Vector2.Zero, 0.7f, SpriteEffects.None, 0);
 
             base.Draw(gameTime);
             
