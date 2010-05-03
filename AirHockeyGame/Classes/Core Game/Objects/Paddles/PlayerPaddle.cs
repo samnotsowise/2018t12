@@ -1,4 +1,15 @@
-﻿using FarseerGames.FarseerPhysics;
+﻿/*
+ *      PlayerPaddle Class
+ * 
+ * Description:
+ *      A player paddle is controlled by
+ *      the user's mouse
+ *      
+ * Author(s):
+ *      Sam Thompson
+ */
+
+using FarseerGames.FarseerPhysics;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;

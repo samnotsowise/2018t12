@@ -6,14 +6,12 @@ using Microsoft.Xna.Framework;
 using FarseerGames.FarseerPhysics.Mathematics;
 #endif
 
-namespace FarseerGames.FarseerPhysics.Collisions
-{
+namespace FarseerGames.FarseerPhysics.Collisions {
     /// <summary>
     /// Collection of helper methods for misc collisions.
     /// Does float tolerance and line collisions with lines and AABBs.
     /// </summary>
-    public static class RayHelper
-    {
+    public static class RayHelper {
         private const float _epsilon = .00001f;
 
         /// <summary>
@@ -24,8 +22,7 @@ namespace FarseerGames.FarseerPhysics.Collisions
         /// <param name="value2">The second floating point Value.</param>
         /// <param name="delta">The floating point tolerance.</param>
         /// <returns>True if the values are "equal", false otherwise.</returns>
-        public static bool FloatEquals(float value1, float value2, float delta)
-        {
+        public static bool FloatEquals(float value1, float value2, float delta) {
             return FloatInRange(value1, value2 - delta, value2 + delta);
         }
 
@@ -38,8 +35,7 @@ namespace FarseerGames.FarseerPhysics.Collisions
         /// <param name="max">The maximum Value.</param>
         /// <returns>True if the Value is within the range specified,
         /// false otherwise.</returns>
-        public static bool FloatInRange(float value, float min, float max)
-        {
+        public static bool FloatInRange(float value, float min, float max) {
             return (value >= min && value <= max);
         }
 
@@ -73,8 +69,7 @@ namespace FarseerGames.FarseerPhysics.Collisions
         /// <returns>True if an intersection is detected, false otherwise.</returns>
         public static bool LineIntersect(ref Vector2 point1, ref Vector2 point2, ref Vector2 point3, ref Vector2 point4,
                                  bool firstIsSegment, bool secondIsSegment, float floatTolerance,
-                                 out Vector2 point)
-        {
+                                 out Vector2 point) {
             point = new Vector2();
 
             // these are reused later.
@@ -89,8 +84,7 @@ namespace FarseerGames.FarseerPhysics.Collisions
             float denom = (a * b) - (c * d);
 
             // if denominator is 0, then lines are parallel
-            if (!(denom >= -_epsilon && denom <= _epsilon))
-            {
+            if(!(denom >= -_epsilon && denom <= _epsilon)) {
                 float e = point1.Y - point3.Y;
                 float f = point1.X - point3.X;
                 float oneOverDenom = 1.0f / denom;
@@ -100,8 +94,7 @@ namespace FarseerGames.FarseerPhysics.Collisions
                 ua *= oneOverDenom;
 
                 // check if intersection point of the two lines is on line segment 1
-                if (!firstIsSegment || ua >= 0.0f && ua <= 1.0f)
-                {
+                if(!firstIsSegment || ua >= 0.0f && ua <= 1.0f) {
                     // numerator of second equation
                     float ub = (b * e) - (d * f);
                     ub *= oneOverDenom;
@@ -109,11 +102,9 @@ namespace FarseerGames.FarseerPhysics.Collisions
                     // check if intersection point of the two lines is on line segment 2
                     // means the line segments intersect, since we know it is on
                     // segment 1 as well.
-                    if (!secondIsSegment || ub >= 0.0f && ub <= 1.0f)
-                    {
+                    if(!secondIsSegment || ub >= 0.0f && ub <= 1.0f) {
                         // check if they are coincident (no collision in this case)
-                        if (ua != 0f && ub != 0f)
-                        {
+                        if(ua != 0f && ub != 0f) {
                             //There is an intersection
                             point.X = point1.X + ua * b;
                             point.Y = point1.Y + ua * d;
@@ -155,8 +146,7 @@ namespace FarseerGames.FarseerPhysics.Collisions
         /// or - <paramref name="floatTolerance"/>)</param>
         /// <returns>True if an intersection is detected, false otherwise.</returns>
         public static bool LineIntersect(Vector2 point1, Vector2 point2, Vector2 point3, Vector2 point4, bool firstIsSegment,
-                                         bool secondIsSegment, float floatTolerance, out Vector2 intersectionPoint)
-        {
+                                         bool secondIsSegment, float floatTolerance, out Vector2 intersectionPoint) {
             return LineIntersect(ref point1, ref point2, ref point3, ref point4, firstIsSegment, secondIsSegment, floatTolerance,
                                  out intersectionPoint);
         }
@@ -176,8 +166,7 @@ namespace FarseerGames.FarseerPhysics.Collisions
         /// point if an intersection is detected.</param>
         /// <returns>True if an intersection is detected, false otherwise.</returns>
         public static bool LineIntersect(ref Vector2 point1, ref Vector2 point2, ref Vector2 point3, ref Vector2 point4,
-                                         out Vector2 intersectionPoint)
-        {
+                                         out Vector2 intersectionPoint) {
             return LineIntersect(ref point1, ref point2, ref point3, ref point4, true, true, _epsilon, out intersectionPoint);
         }
 
@@ -195,8 +184,7 @@ namespace FarseerGames.FarseerPhysics.Collisions
         /// <param name="intersectionPoint">This is set to the intersection
         /// point if an intersection is detected.</param>
         /// <returns>True if an intersection is detected, false otherwise.</returns>
-        public static bool LineIntersect(Vector2 point1, Vector2 point2, Vector2 point3, Vector2 point4, out Vector2 intersectionPoint)
-        {
+        public static bool LineIntersect(Vector2 point1, Vector2 point2, Vector2 point3, Vector2 point4, out Vector2 intersectionPoint) {
             return LineIntersect(ref point1, ref point2, ref point3, ref point4, true, true, _epsilon, out intersectionPoint);
         }
 
@@ -213,14 +201,11 @@ namespace FarseerGames.FarseerPhysics.Collisions
         /// <param name="intersectionPoints">An list of intersection points. Any intersection points
         /// found will be added to this list.</param>
         public static void LineSegmentVerticesIntersect(ref Vector2 point1, ref Vector2 point2, Vertices vertices,
-                                                        ref List<Vector2> intersectionPoints)
-        {
-            for (int i = 0; i < vertices.Count; i++)
-            {
+                                                        ref List<Vector2> intersectionPoints) {
+            for(int i = 0; i < vertices.Count; i++) {
                 Vector2 point;
-                if (LineIntersect(vertices[i], vertices[vertices.NextIndex(i)],
-                                  point1, point2, true, true, _epsilon, out point))
-                {
+                if(LineIntersect(vertices[i], vertices[vertices.NextIndex(i)],
+                                  point1, point2, true, true, _epsilon, out point)) {
                     intersectionPoints.Add(point);
                 }
             }
@@ -233,8 +218,7 @@ namespace FarseerGames.FarseerPhysics.Collisions
         /// <param name="point2">The second point of the line segment to test.</param>
         /// <param name="aabb">The AABB that is used for testing intersection.</param>
         /// <param name="intersectionPoints">An list of intersection points. Any intersection points found will be added to this list.</param>
-        public static void LineSegmentAABBIntersect(ref Vector2 point1, ref Vector2 point2, AABB aabb, ref List<Vector2> intersectionPoints)
-        {
+        public static void LineSegmentAABBIntersect(ref Vector2 point1, ref Vector2 point2, AABB aabb, ref List<Vector2> intersectionPoints) {
             LineSegmentVerticesIntersect(ref point1, ref point2, aabb.GetVertices(), ref intersectionPoints);
         }
 
@@ -250,8 +234,7 @@ namespace FarseerGames.FarseerPhysics.Collisions
         /// <param name="intersectionPoints">An existing points info list to add to
         /// </param>
         public static void LineSegmentGeomIntersect(Vector2 point1, Vector2 point2, Geom geom, bool detectUsingAABB,
-                                                    ref List<Vector2> intersectionPoints)
-        {
+                                                    ref List<Vector2> intersectionPoints) {
             LineSegmentGeomIntersect(ref point1, ref point2, geom, detectUsingAABB, ref intersectionPoints);
         }
 
@@ -265,14 +248,10 @@ namespace FarseerGames.FarseerPhysics.Collisions
         /// <param name="detectUsingAABB">If true, intersection will be tested using the Geoms AABB. If false, the Geoms vertices will be used.</param>
         /// <param name="intersectionPoints">An existing point list to add to</param>
         public static void LineSegmentGeomIntersect(ref Vector2 point1, ref Vector2 point2, Geom geom, bool detectUsingAABB,
-                                                    ref List<Vector2> intersectionPoints)
-        {
-            if (detectUsingAABB)
-            {
+                                                    ref List<Vector2> intersectionPoints) {
+            if(detectUsingAABB) {
                 LineSegmentAABBIntersect(ref point1, ref point2, geom.AABB, ref intersectionPoints);
-            }
-            else
-            {
+            } else {
                 LineSegmentVerticesIntersect(ref point1, ref point2, geom.WorldVertices, ref intersectionPoints);
             }
         }
@@ -285,8 +264,7 @@ namespace FarseerGames.FarseerPhysics.Collisions
         /// <param name="simulator">The simulator.</param>
         /// <param name="detectUsingAABB">if set to <c>true</c> [detect using AABB].</param>
         /// <returns></returns>
-        public static List<GeomPointPair> LineSegmentAllGeomsIntersect(Vector2 point1, Vector2 point2, PhysicsSimulator simulator, bool detectUsingAABB)
-        {
+        public static List<GeomPointPair> LineSegmentAllGeomsIntersect(Vector2 point1, Vector2 point2, PhysicsSimulator simulator, bool detectUsingAABB) {
             return LineSegmentAllGeomsIntersect(ref point1, ref point2, simulator, detectUsingAABB);
         }
 
@@ -298,26 +276,20 @@ namespace FarseerGames.FarseerPhysics.Collisions
         /// <param name="simulator">The simulator.</param>
         /// <param name="detectUsingAABB">if set to <c>true</c> [detect using AABB].</param>
         /// <returns></returns>
-        public static List<GeomPointPair> LineSegmentAllGeomsIntersect(ref Vector2 point1, ref Vector2 point2, PhysicsSimulator simulator, bool detectUsingAABB)
-        {
+        public static List<GeomPointPair> LineSegmentAllGeomsIntersect(ref Vector2 point1, ref Vector2 point2, PhysicsSimulator simulator, bool detectUsingAABB) {
             List<Vector2> intSecPoints = new List<Vector2>();
             List<GeomPointPair> geoms = new List<GeomPointPair>();
 
-            foreach (Geom geom in simulator.GeomList)
-            {
+            foreach(Geom geom in simulator.GeomList) {
                 intSecPoints.Clear();
 
-                if (detectUsingAABB)
-                {
+                if(detectUsingAABB) {
                     LineSegmentAABBIntersect(ref point1, ref point2, geom.AABB, ref intSecPoints);
-                }
-                else
-                {
+                } else {
                     LineSegmentVerticesIntersect(ref point1, ref point2, geom.WorldVertices, ref intSecPoints);
                 }
 
-                if (intSecPoints.Count > 0)
-                {
+                if(intSecPoints.Count > 0) {
                     _tempPair = new GeomPointPair();
                     _tempPair.Geom = geom;
                     _tempPair.Points = new List<Vector2>(intSecPoints);
@@ -331,8 +303,7 @@ namespace FarseerGames.FarseerPhysics.Collisions
         private static GeomPointPair _tempPair;
     }
 
-    public struct GeomPointPair
-    {
+    public struct GeomPointPair {
         public Geom Geom;
         public List<Vector2> Points;
     }

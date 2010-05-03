@@ -6,13 +6,11 @@ using FarseerGames.FarseerPhysics.Interfaces;
 using Microsoft.Xna.Framework.Content;
 #endif
 
-namespace FarseerGames.FarseerPhysics.Dynamics.Joints
-{
+namespace FarseerGames.FarseerPhysics.Dynamics.Joints {
     /// <summary>
     /// Provides common functionality for joints.
     /// </summary>
-    public abstract class Joint : IIsDisposable
-    {
+    public abstract class Joint: IIsDisposable {
         public float BiasFactor = .2f;
 
         /// <summary>
@@ -49,19 +47,17 @@ namespace FarseerGames.FarseerPhysics.Dynamics.Joints
         public abstract void Validate();
         public abstract void PreStep(float inverseDt);
 
-        public virtual void Update()
-        {
-            if (!Enabled || Math.Abs(JointError) <= Breakpoint)
+        public virtual void Update() {
+            if(!Enabled || Math.Abs(JointError) <= Breakpoint)
                 return;
 
             Enabled = false;
 
-            if (Broke != null)
+            if(Broke != null)
                 Broke(this, EventArgs.Empty);
         }
 
-        protected virtual void Dispose(bool disposing)
-        {
+        protected virtual void Dispose(bool disposing) {
             IsDisposed = true;
         }
 
@@ -69,8 +65,7 @@ namespace FarseerGames.FarseerPhysics.Dynamics.Joints
 
         private bool _isDisposed;
 
-        public void Dispose()
-        {
+        public void Dispose() {
             Dispose(true);
             GC.SuppressFinalize(this);
         }
@@ -83,8 +78,7 @@ namespace FarseerGames.FarseerPhysics.Dynamics.Joints
         [ContentSerializerIgnore]
 #endif
         [XmlIgnore]
-        public bool IsDisposed
-        {
+        public bool IsDisposed {
             get { return _isDisposed; }
             set { _isDisposed = value; }
         }

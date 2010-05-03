@@ -5,14 +5,10 @@
  *  David Valente
  */
 
-using System;
-using System.Collections.Generic;
-using System.Text;
 using System.IO;
 using System.Xml.Serialization;
 
-namespace GameScreenManager.ScreenSystem
-{
+namespace GameScreenManager.ScreenSystem {
     public class Settings {
         static string fileName = "settings.xml";
 

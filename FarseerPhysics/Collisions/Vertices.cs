@@ -8,13 +8,11 @@ using FarseerGames.FarseerPhysics.Dynamics;
 using Microsoft.Xna.Framework;
 #endif
 
-namespace FarseerGames.FarseerPhysics.Collisions
-{
+namespace FarseerGames.FarseerPhysics.Collisions {
     /// <summary>
     /// Provides an implementation of a strongly typed List with Vector2
     /// </summary>
-    public class Vertices : List<Vector2>
-    {
+    public class Vertices: List<Vector2> {
         private Vector2 _res;
         private Vector2 _vectorTemp1 = Vector2.Zero;
         private Vector2 _vectorTemp2 = Vector2.Zero;
@@ -22,27 +20,21 @@ namespace FarseerGames.FarseerPhysics.Collisions
         private Vector2 _vectorTemp4 = Vector2.Zero;
         private Vector2 _vectorTemp5 = Vector2.Zero;
 
-        public Vertices()
-        {
+        public Vertices() {
         }
 
-        public Vertices(int capacity)
-        {
+        public Vertices(int capacity) {
             Capacity = capacity;
         }
 
-        public Vertices(ref Vector2[] vector2)
-        {
-            for (int i = 0; i < vector2.Length; i++)
-            {
+        public Vertices(ref Vector2[] vector2) {
+            for(int i = 0; i < vector2.Length; i++) {
                 Add(vector2[i]);
             }
         }
 
-        public Vertices(IList<Vector2> vertices)
-        {
-            for (int i = 0; i < vertices.Count; i++)
-            {
+        public Vertices(IList<Vector2> vertices) {
+            for(int i = 0; i < vertices.Count; i++) {
                 Add(vertices[i]);
             }
         }
@@ -51,8 +43,7 @@ namespace FarseerGames.FarseerPhysics.Collisions
         /// Gets an array of vertices.
         /// </summary>
         /// <returns></returns>
-        public Vector2[] GetVerticesArray()
-        {
+        public Vector2[] GetVerticesArray() {
             return ToArray();
         }
 
@@ -61,10 +52,8 @@ namespace FarseerGames.FarseerPhysics.Collisions
         /// </summary>
         /// <param name="index">The index.</param>
         /// <returns></returns>
-        public int NextIndex(int index)
-        {
-            if (index == Count - 1)
-            {
+        public int NextIndex(int index) {
+            if(index == Count - 1) {
                 return 0;
             }
             return index + 1;
@@ -75,10 +64,8 @@ namespace FarseerGames.FarseerPhysics.Collisions
         /// </summary>
         /// <param name="index">The index.</param>
         /// <returns></returns>
-        public int PreviousIndex(int index)
-        {
-            if (index == 0)
-            {
+        public int PreviousIndex(int index) {
+            if(index == 0) {
                 return Count - 1;
             }
             return index - 1;
@@ -89,8 +76,7 @@ namespace FarseerGames.FarseerPhysics.Collisions
         /// </summary>
         /// <param name="index">The index.</param>
         /// <returns></returns>
-        public Vector2 GetEdge(int index)
-        {
+        public Vector2 GetEdge(int index) {
             int nextIndex = NextIndex(index);
             _vectorTemp2 = this[nextIndex];
             _vectorTemp3 = this[index];
@@ -103,8 +89,7 @@ namespace FarseerGames.FarseerPhysics.Collisions
         /// </summary>
         /// <param name="index">The index.</param>
         /// <param name="edge">The edge.</param>
-        public void GetEdge(int index, out Vector2 edge)
-        {
+        public void GetEdge(int index, out Vector2 edge) {
             int nextIndex = NextIndex(index);
             _vectorTemp2 = this[nextIndex];
             _vectorTemp3 = this[index];
@@ -116,8 +101,7 @@ namespace FarseerGames.FarseerPhysics.Collisions
         /// </summary>
         /// <param name="index">The index.</param>
         /// <returns></returns>
-        public Vector2 GetEdgeMidPoint(int index)
-        {
+        public Vector2 GetEdgeMidPoint(int index) {
             GetEdge(index, out _vectorTemp1);
             Vector2.Multiply(ref _vectorTemp1, .5f, out _vectorTemp2);
 
@@ -132,8 +116,7 @@ namespace FarseerGames.FarseerPhysics.Collisions
         /// </summary>
         /// <param name="index">The index.</param>
         /// <param name="midPoint">The mid point.</param>
-        public void GetEdgeMidPoint(int index, out Vector2 midPoint)
-        {
+        public void GetEdgeMidPoint(int index, out Vector2 midPoint) {
             GetEdge(index, out _vectorTemp1);
             Vector2.Multiply(ref _vectorTemp1, .5f, out _vectorTemp2);
             _vectorTemp3 = this[index];
@@ -145,8 +128,7 @@ namespace FarseerGames.FarseerPhysics.Collisions
         /// </summary>
         /// <param name="index">The index.</param>
         /// <returns></returns>
-        public Vector2 GetEdgeNormal(int index)
-        {
+        public Vector2 GetEdgeNormal(int index) {
             GetEdge(index, out _vectorTemp1);
 
             _vectorTemp2.X = -_vectorTemp1.Y;
@@ -162,8 +144,7 @@ namespace FarseerGames.FarseerPhysics.Collisions
         /// </summary>
         /// <param name="index">The index.</param>
         /// <param name="edgeNormal">The edge normal.</param>
-        public void GetEdgeNormal(int index, out Vector2 edgeNormal)
-        {
+        public void GetEdgeNormal(int index, out Vector2 edgeNormal) {
             GetEdge(index, out _vectorTemp4);
             _vectorTemp5.X = -_vectorTemp4.Y;
             _vectorTemp5.Y = _vectorTemp4.X;
@@ -175,8 +156,7 @@ namespace FarseerGames.FarseerPhysics.Collisions
         /// </summary>
         /// <param name="index">The index.</param>
         /// <returns></returns>
-        public Vector2 GetVertexNormal(int index)
-        {
+        public Vector2 GetVertexNormal(int index) {
             GetEdgeNormal(index, out _vectorTemp1);
 
             int prevIndex = PreviousIndex(index);
@@ -194,8 +174,7 @@ namespace FarseerGames.FarseerPhysics.Collisions
         /// </summary>
         /// <param name="index">The index.</param>
         /// <param name="vertexNormal">The vertex normal.</param>
-        public void GetVertexNormal(int index, out Vector2 vertexNormal)
-        {
+        public void GetVertexNormal(int index, out Vector2 vertexNormal) {
             GetEdgeNormal(index, out _vectorTemp1);
             int prevIndex = PreviousIndex(index);
             GetEdgeNormal(prevIndex, out _vectorTemp2);
@@ -207,15 +186,12 @@ namespace FarseerGames.FarseerPhysics.Collisions
         /// Finds the shortest edge.
         /// </summary>
         /// <returns></returns>
-        public float GetShortestEdge()
-        {
+        public float GetShortestEdge() {
             float shortestEdge = float.MaxValue;
-            for (int i = 0; i < Count; i++)
-            {
+            for(int i = 0; i < Count; i++) {
                 GetEdge(i, out _vectorTemp1);
                 float length = _vectorTemp1.Length();
-                if (length < shortestEdge)
-                {
+                if(length < shortestEdge) {
                     shortestEdge = length;
                 }
             }
@@ -226,11 +202,9 @@ namespace FarseerGames.FarseerPhysics.Collisions
         /// Divides the edges up into the specified length.
         /// </summary>
         /// <param name="maxEdgeLength">Length of the max edge.</param>
-        public void SubDivideEdges(float maxEdgeLength)
-        {
+        public void SubDivideEdges(float maxEdgeLength) {
             Vertices verticesTemp = new Vertices();
-            for (int i = 0; i < Count; i++)
-            {
+            for(int i = 0; i < Count; i++) {
                 Vector2 vertA = this[i];
                 Vector2 vertB = this[NextIndex(i)];
                 Vector2 edge;
@@ -238,12 +212,11 @@ namespace FarseerGames.FarseerPhysics.Collisions
                 float edgeLength = edge.Length();
 
                 verticesTemp.Add(vertA);
-                if (edgeLength > maxEdgeLength) //need to subdivide
+                if(edgeLength > maxEdgeLength) //need to subdivide
                 {
                     double edgeCount = Math.Ceiling(edgeLength / (double)maxEdgeLength);
 
-                    for (int j = 0; j < edgeCount - 1; j++)
-                    {
+                    for(int j = 0; j < edgeCount - 1; j++) {
                         Vector2 vert = Vector2.Lerp(vertA, vertB, (j + 1) / (float)edgeCount);
                         verticesTemp.Add(vert);
                     }
@@ -251,8 +224,7 @@ namespace FarseerGames.FarseerPhysics.Collisions
             }
 
             Clear();
-            for (int k = 0; k < verticesTemp.Count; k++)
-            {
+            for(int k = 0; k < verticesTemp.Count; k++) {
                 Add(verticesTemp[k]);
             }
         }
@@ -260,13 +232,11 @@ namespace FarseerGames.FarseerPhysics.Collisions
         /// <summary>
         /// Forces counter clock wise order.
         /// </summary>
-        public void ForceCounterClockWiseOrder()
-        {
+        public void ForceCounterClockWiseOrder() {
             // the sign of the 'area' of the polygon is all
             // we are interested in.
             float area = GetSignedArea();
-            if (area > 0)
-            {
+            if(area > 0) {
                 Reverse();
             }
         }
@@ -275,13 +245,11 @@ namespace FarseerGames.FarseerPhysics.Collisions
         /// Gets the signed area.
         /// </summary>
         /// <returns></returns>
-        private float GetSignedArea()
-        {
+        private float GetSignedArea() {
             int i;
             float area = 0;
 
-            for (i = 0; i < Count; i++)
-            {
+            for(i = 0; i < Count; i++) {
                 int j = (i + 1) % Count;
                 area += this[i].X * this[j].Y;
                 area -= this[i].Y * this[j].X;
@@ -294,13 +262,11 @@ namespace FarseerGames.FarseerPhysics.Collisions
         /// Gets the area.
         /// </summary>
         /// <returns></returns>
-        public float GetArea()
-        {
+        public float GetArea() {
             int i;
             float area = 0;
 
-            for (i = 0; i < Count; i++)
-            {
+            for(i = 0; i < Count; i++) {
                 int j = (i + 1) % Count;
                 area += this[i].X * this[j].Y;
                 area -= this[i].Y * this[j].X;
@@ -313,8 +279,7 @@ namespace FarseerGames.FarseerPhysics.Collisions
         /// Gets the centroid.
         /// </summary>
         /// <returns></returns>
-        public Vector2 GetCentroid()
-        {
+        public Vector2 GetCentroid() {
             float area = GetArea();
             return GetCentroid(area);
         }
@@ -324,8 +289,7 @@ namespace FarseerGames.FarseerPhysics.Collisions
         /// </summary>
         /// <param name="area">The area.</param>
         /// <returns></returns>
-        public Vector2 GetCentroid(float area)
-        {
+        public Vector2 GetCentroid(float area) {
             Vertices verts = this;
 
             float cx = 0, cy = 0;
@@ -334,24 +298,20 @@ namespace FarseerGames.FarseerPhysics.Collisions
             float signedarea = GetSignedArea();
             float factor;
 
-            if (signedarea > 0)	//if it's meant to be reversed, go through the vertices backwards
+            if(signedarea > 0)	//if it's meant to be reversed, go through the vertices backwards
             {
-                for (i = Count - 1; i >= 0; i--)
-                {
+                for(i = Count - 1; i >= 0; i--) {
                     int j = (i - 1) % Count;
 
-                    if (j < 0) { j += Count; }
+                    if(j < 0) { j += Count; }
 
                     factor = -(verts[i].X * verts[j].Y - verts[j].X * verts[i].Y);
                     cx += (verts[i].X + verts[j].X) * factor;
                     cy += (verts[i].Y + verts[j].Y) * factor;
                 }
 
-            }
-            else
-            {
-                for (i = 0; i < Count; i++)
-                {
+            } else {
+                for(i = 0; i < Count; i++) {
                     int j = (i + 1) % Count;
 
                     factor = -(verts[i].X * verts[j].Y - verts[j].X * verts[i].Y);
@@ -375,8 +335,7 @@ namespace FarseerGames.FarseerPhysics.Collisions
         /// </summary>
         /// <returns></returns>
         /// <exception cref="ArgumentException">Can't calculate MOI on zero vertices</exception>
-        public float GetMomentOfInertia()
-        {
+        public float GetMomentOfInertia() {
             Vertices verts = new Vertices(this);
 
             //Make sure that the vertices are in counter clockwise order.
@@ -389,18 +348,17 @@ namespace FarseerGames.FarseerPhysics.Collisions
 
             verts.Translate(ref centroid);
 
-            if (verts.Count == 0)
+            if(verts.Count == 0)
                 throw new ArgumentException("Can't calculate MOI on zero vertices");
 
-            if (verts.Count == 1)
+            if(verts.Count == 1)
                 return 0;
 
             float denom = 0;
             float numer = 0;
             Vector2 v2;
             Vector2 v1 = verts[verts.Count - 1];
-            for (int index = 0; index < verts.Count; index++, v1 = v2)
-            {
+            for(int index = 0; index < verts.Count; index++, v1 = v2) {
                 v2 = verts[index];
                 float a;
                 Vector2.Dot(ref v2, ref v2, out a);
@@ -424,24 +382,18 @@ namespace FarseerGames.FarseerPhysics.Collisions
         /// <param name="axis">The axis.</param>
         /// <param name="min">The min.</param>
         /// <param name="max">The max.</param>
-        public void ProjectToAxis(ref Vector2 axis, out float min, out float max)
-        {
+        public void ProjectToAxis(ref Vector2 axis, out float min, out float max) {
             // To project a point on an axis use the dot product
             float dotProduct = Vector2.Dot(axis, this[0]);
             min = dotProduct;
             max = dotProduct;
 
-            for (int i = 0; i < Count; i++)
-            {
+            for(int i = 0; i < Count; i++) {
                 dotProduct = Vector2.Dot(this[i], axis);
-                if (dotProduct < min)
-                {
+                if(dotProduct < min) {
                     min = dotProduct;
-                }
-                else
-                {
-                    if (dotProduct > max)
-                    {
+                } else {
+                    if(dotProduct > max) {
                         max = dotProduct;
                     }
                 }
@@ -452,9 +404,8 @@ namespace FarseerGames.FarseerPhysics.Collisions
         /// Translates the vertices with the specified vector.
         /// </summary>
         /// <param name="vector">The vector.</param>
-        public void Translate(ref Vector2 vector)
-        {
-            for (int i = 0; i < Count; i++)
+        public void Translate(ref Vector2 vector) {
+            for(int i = 0; i < Count; i++)
                 this[i] = Vector2.Add(this[i], vector);
         }
 
@@ -462,9 +413,8 @@ namespace FarseerGames.FarseerPhysics.Collisions
         /// Scales the vertices with the specified vector.
         /// </summary>
         /// <param name="value">The Value.</param>
-        public void Scale(ref Vector2 value)
-        {
-            for (int i = 0; i < Count; i++)
+        public void Scale(ref Vector2 value) {
+            for(int i = 0; i < Count; i++)
                 this[i] = Vector2.Multiply(this[i], value);
         }
 
@@ -472,12 +422,11 @@ namespace FarseerGames.FarseerPhysics.Collisions
         /// Rotate the vertices with the defined value in radians.
         /// </summary>
         /// <param name="value">The amount to rotate by in radians.</param>
-        public void Rotate(float value)
-        {
+        public void Rotate(float value) {
             Matrix rotationMatrix;
             Matrix.CreateRotationZ(value, out rotationMatrix);
 
-            for (int i = 0; i < Count; i++)
+            for(int i = 0; i < Count; i++)
                 this[i] = Vector2.Transform(this[i], rotationMatrix);
         }
 
@@ -487,11 +436,9 @@ namespace FarseerGames.FarseerPhysics.Collisions
         /// <returns>
         /// 	<c>true</c> if this instance is convex; otherwise, <c>false</c>.
         /// </returns>
-        public bool IsConvex()
-        {
+        public bool IsConvex() {
             bool isPositive = false;
-            for (int i = 0; i < Count; ++i)
-            {
+            for(int i = 0; i < Count; ++i) {
                 int lower = (i == 0) ? (Count - 1) : (i - 1);
                 int middle = i;
                 int upper = (i == Count - 1) ? (0) : (i + 1);
@@ -505,12 +452,9 @@ namespace FarseerGames.FarseerPhysics.Collisions
                 // Cross product should have same sign
                 // for each vertex if poly is convex.
                 bool newIsP = (cross >= 0) ? true : false;
-                if (i == 0)
-                {
+                if(i == 0) {
                     isPositive = newIsP;
-                }
-                else if (isPositive != newIsP)
-                {
+                } else if(isPositive != newIsP) {
                     return false;
                 }
             }
@@ -524,8 +468,7 @@ namespace FarseerGames.FarseerPhysics.Collisions
         /// <param name="width">The width.</param>
         /// <param name="height">The height.</param>
         /// <returns>The vertices that define a rectangle</returns>
-        public static Vertices CreateRectangle(float width, float height)
-        {
+        public static Vertices CreateRectangle(float width, float height) {
             //Note: The rectangle has vertices along the edges. This is to support the distance grid better.
             Vertices vertices = new Vertices();
             vertices.Add(new Vector2(-width * .5f, -height * .5f));
@@ -555,8 +498,7 @@ namespace FarseerGames.FarseerPhysics.Collisions
         /// <param name="width">The width.</param>
         /// <param name="height">The height.</param>
         /// <returns>The vertices that define a rectangle</returns>
-        public static Vertices CreateSimpleRectangle(float width, float height)
-        {
+        public static Vertices CreateSimpleRectangle(float width, float height) {
             Vertices vertices = new Vertices();
             vertices.Add(new Vector2(-width * .5f, -height * .5f));
             vertices.Add(new Vector2(-width * .5f, height * .5f));
@@ -572,8 +514,7 @@ namespace FarseerGames.FarseerPhysics.Collisions
         /// <param name="radius">The radius.</param>
         /// <param name="numberOfEdges">The number of edges. The more edges, the more it resembles a circle</param>
         /// <returns></returns>
-        public static Vertices CreateCircle(float radius, int numberOfEdges)
-        {
+        public static Vertices CreateCircle(float radius, int numberOfEdges) {
             return CreateEllipse(radius, radius, numberOfEdges);
         }
 
@@ -584,14 +525,13 @@ namespace FarseerGames.FarseerPhysics.Collisions
         /// <param name="yRadius">Height of the ellipse.</param>
         /// <param name="numberOfEdges">The number of edges. The more edges, the more it resembles an ellipse</param>
         /// <returns></returns>
-        public static Vertices CreateEllipse(float xRadius, float yRadius, int numberOfEdges)
-        {
+        public static Vertices CreateEllipse(float xRadius, float yRadius, int numberOfEdges) {
             Vertices vertices = new Vertices();
 
             float stepSize = MathHelper.TwoPi / numberOfEdges;
 
             vertices.Add(new Vector2(xRadius, 0));
-            for (int i = 1; i < numberOfEdges; i++)
+            for(int i = 1; i < numberOfEdges; i++)
                 vertices.Add(new Vector2(xRadius * Calculator.Cos(stepSize * i), -yRadius * Calculator.Sin(stepSize * i)));
 
             return vertices;
@@ -605,8 +545,7 @@ namespace FarseerGames.FarseerPhysics.Collisions
         /// <param name="tipPercentage">The tip percentage.</param>
         /// <param name="toothHeight">Height of the tooth.</param>
         /// <returns></returns>
-        public static Vertices CreateGear(float radius, int numberOfTeeth, float tipPercentage, float toothHeight)
-        {
+        public static Vertices CreateGear(float radius, int numberOfTeeth, float tipPercentage, float toothHeight) {
             Vertices vertices = new Vertices();
 
             float stepSize = MathHelper.TwoPi / numberOfTeeth;
@@ -615,8 +554,7 @@ namespace FarseerGames.FarseerPhysics.Collisions
 
             float toothAngleStepSize = (stepSize - (toothTipStepSize * 2f)) / 2f;
 
-            for (int i = 0; i < numberOfTeeth; i++)
-            {
+            for(int i = 0; i < numberOfTeeth; i++) {
                 vertices.Add(new Vector2((radius) * Calculator.Cos(stepSize * i),
                     -(radius) * Calculator.Sin(stepSize * i)));
 
@@ -633,14 +571,11 @@ namespace FarseerGames.FarseerPhysics.Collisions
             return vertices;
         }
 
-        public override string ToString()
-        {
+        public override string ToString() {
             StringBuilder builder = new StringBuilder();
-            for (int i = 0; i < Count; i++)
-            {
+            for(int i = 0; i < Count; i++) {
                 builder.Append(this[i].ToString());
-                if (i < Count - 1)
-                {
+                if(i < Count - 1) {
                     builder.Append(" ");
                 }
             }
@@ -654,15 +589,14 @@ namespace FarseerGames.FarseerPhysics.Collisions
         /// <param name="firstVector">First Vector2.</param>
         /// <param name="secondVector">Other Vector2.</param>
         /// <returns>Mid-point Vector2.</returns>
-        public static Vector2 FindMidpoint(Vector2 firstVector, Vector2 secondVector)
-        {
+        public static Vector2 FindMidpoint(Vector2 firstVector, Vector2 secondVector) {
             float midDeltaX, midDeltaY;
 
-            if (firstVector.X < secondVector.X)
+            if(firstVector.X < secondVector.X)
                 midDeltaX = Math.Abs((firstVector.X - secondVector.X) * 0.5f); // find x axis midpoint
             else
                 midDeltaX = (secondVector.X - firstVector.X) * 0.5f; // find x axis midpoint
-            if (firstVector.Y < secondVector.Y)
+            if(firstVector.Y < secondVector.Y)
                 midDeltaY = Math.Abs((firstVector.Y - secondVector.Y) * 0.5f); // find y axis midpoint
             else
                 midDeltaY = (secondVector.Y - firstVector.Y) * 0.5f; // find y axis midpoint
@@ -676,8 +610,7 @@ namespace FarseerGames.FarseerPhysics.Collisions
         /// <param name="first">The first vector</param>
         /// <param name="second">The second vector</param>
         /// <returns></returns>
-        public static Vector2 FindEdgeNormal(Vector2 first, Vector2 second)
-        {
+        public static Vector2 FindEdgeNormal(Vector2 first, Vector2 second) {
             //Xbox360 need this variable to be initialized to Vector2.Zero
             Vector2 normal = Vector2.Zero;
 
@@ -691,8 +624,7 @@ namespace FarseerGames.FarseerPhysics.Collisions
             return normal;
         }
 
-        public static Vector2 FindVertexNormal(Vector2 first, Vector2 second, Vector2 c)
-        {
+        public static Vector2 FindVertexNormal(Vector2 first, Vector2 second, Vector2 c) {
             Vector2 temp;
             Vector2 one = FindEdgeNormal(first, second);
             Vector2 two = FindEdgeNormal(second, c);
@@ -705,18 +637,17 @@ namespace FarseerGames.FarseerPhysics.Collisions
         /// Finds the angle of the vector.
         /// </summary>
         /// <returns>Angle of the vector.</returns>
-        public static float FindNormalAngle(Vector2 n)
-        {
-            if ((n.Y > 0.0f) && (n.X > 0.0f))
+        public static float FindNormalAngle(Vector2 n) {
+            if((n.Y > 0.0f) && (n.X > 0.0f))
                 return (float)Math.Atan(n.X / -n.Y);
 
-            if ((n.Y < 0.0f) && (n.X > 0.0f))
+            if((n.Y < 0.0f) && (n.X > 0.0f))
                 return (float)Math.Atan(n.X / -n.Y); // good
 
-            if ((n.Y > 0.0f) && (n.X < 0.0f))
+            if((n.Y > 0.0f) && (n.X < 0.0f))
                 return (float)Math.Atan(-n.X / n.Y);
 
-            if ((n.Y < 0.0f) && (n.X < 0.0f))
+            if((n.Y < 0.0f) && (n.X < 0.0f))
                 return (float)Math.Atan(-n.X / n.Y); // good
 
             return 0.0f;
@@ -739,8 +670,7 @@ namespace FarseerGames.FarseerPhysics.Collisions
         /// <param name="width">The width.</param>
         /// <param name="height">The height.</param>
         /// <returns></returns>
-        public static Vertices CreatePolygon(uint[] data, int width, int height)
-        {
+        public static Vertices CreatePolygon(uint[] data, int width, int height) {
             PolygonCreationAssistance pca = new PolygonCreationAssistance(data, width, height);
             List<Vertices> verts = CreatePolygon(ref pca);
 
@@ -758,8 +688,7 @@ namespace FarseerGames.FarseerPhysics.Collisions
         /// <param name="multiPartDetection">if set to <c>true</c> [multi part detection].</param>
         /// <param name="holeDetection">if set to <c>true</c> [hole detection].</param>
         /// <returns></returns>
-        public static List<Vertices> CreatePolygon(uint[] data, int width, int height, float hullTolerance, byte alphaTolerance, bool multiPartDetection, bool holeDetection)
-        {
+        public static List<Vertices> CreatePolygon(uint[] data, int width, int height, float hullTolerance, byte alphaTolerance, bool multiPartDetection, bool holeDetection) {
             PolygonCreationAssistance pca = new PolygonCreationAssistance(data, width, height);
             pca.HullTolerance = hullTolerance;
             pca.AlphaTolerance = alphaTolerance;
@@ -773,8 +702,7 @@ namespace FarseerGames.FarseerPhysics.Collisions
         /// </summary>
         /// <param name="pca">The pca.</param>
         /// <returns></returns>
-        public static List<Vertices> CreatePolygon(ref PolygonCreationAssistance pca)
-        {
+        public static List<Vertices> CreatePolygon(ref PolygonCreationAssistance pca) {
             List<Vertices> polygons = new List<Vertices>();
 
             Vertices polygon;
@@ -792,92 +720,68 @@ namespace FarseerGames.FarseerPhysics.Collisions
             bool searchOn;
 
             // First of all: Check the array you just got.
-            if (pca.IsValid())
-            {
-                do
-                {
-                    if (polygons.Count == 0)
-                    {
+            if(pca.IsValid()) {
+                do {
+                    if(polygons.Count == 0) {
                         polygon = CreateSimplePolygon(ref pca, Vector2.Zero, Vector2.Zero);
 
-                        if (polygon != null && polygon.Count > 2)
-                        {
+                        if(polygon != null && polygon.Count > 2) {
                             polygonEntrance = GetTopMostVertex(ref polygon);
                         }
-                    }
-                    else if (polygonEntrance.HasValue)
-                    {
+                    } else if(polygonEntrance.HasValue) {
                         polygon = CreateSimplePolygon(ref pca, polygonEntrance.Value, new Vector2(polygonEntrance.Value.X - 1f, polygonEntrance.Value.Y));
-                    }
-                    else
-                    {
+                    } else {
                         break;
                     }
 
                     searchOn = false;
 
-                    if (polygon != null && polygon.Count > 2)
-                    {
-                        if (pca.HoleDetection)
-                        {
-                            do
-                            {
+                    if(polygon != null && polygon.Count > 2) {
+                        if(pca.HoleDetection) {
+                            do {
                                 holeEntrance = GetHoleHullEntrance(ref pca, ref polygon, holeEntrance);
 
-                                if (holeEntrance.HasValue)
-                                {
-                                    if (!blackList.Contains(holeEntrance.Value))
-                                    {
+                                if(holeEntrance.HasValue) {
+                                    if(!blackList.Contains(holeEntrance.Value)) {
                                         blackList.Add(holeEntrance.Value);
                                         holePolygon = CreateSimplePolygon(ref pca, holeEntrance.Value, new Vector2(holeEntrance.Value.X + 1, holeEntrance.Value.Y));
 
-                                        if (holePolygon != null && holePolygon.Count > 2)
-                                        {
+                                        if(holePolygon != null && holePolygon.Count > 2) {
                                             holePolygon.Add(holePolygon[0]);
 
-                                            if (SplitPolygonEdge(ref polygon, EdgeAlignment.Vertical, holeEntrance.Value, out vertex1Index, out vertex2Index))
-                                            {
+                                            if(SplitPolygonEdge(ref polygon, EdgeAlignment.Vertical, holeEntrance.Value, out vertex1Index, out vertex2Index)) {
                                                 polygon.InsertRange(vertex2Index, holePolygon);
                                             }
                                         }
-                                    }
-                                    else
-                                    {
+                                    } else {
                                         break;
                                     }
-                                }
-                                else
-                                {
+                                } else {
                                     break;
                                 }
 
-                            } while (true);
+                            } while(true);
                         }
 
                         polygons.Add(polygon);
 
-                        if (pca.MultipartDetection)
-                        {
+                        if(pca.MultipartDetection) {
                             /// 1:  95 / 151
                             /// 2: 232 / 252
                             /// 
-                            while (GetNextHullEntrance(ref pca, polygonEntrance.Value, out polygonEntrance))
-                            {
+                            while(GetNextHullEntrance(ref pca, polygonEntrance.Value, out polygonEntrance)) {
                                 inPolygon = false;
 
-                                for (int i = 0; i < polygons.Count; i++)
-                                {
+                                for(int i = 0; i < polygons.Count; i++) {
                                     polygon = polygons[i];
 
-                                    if (InPolygon(ref pca, ref polygon, polygonEntrance.Value))
-                                    {
+                                    if(InPolygon(ref pca, ref polygon, polygonEntrance.Value)) {
                                         inPolygon = true;
                                         break;
                                     }
                                 }
 
-                                if (!inPolygon)
-                                {
+                                if(!inPolygon) {
                                     searchOn = true;
                                     break;
                                 }
@@ -885,18 +789,15 @@ namespace FarseerGames.FarseerPhysics.Collisions
                         }
                     }
 
-                } while (searchOn);
-            }
-            else
-            {
+                } while(searchOn);
+            } else {
                 throw new Exception("Sizes don't match: Color array must contain texture width * texture height elements.");
             }
 
             return polygons;
         }
 
-        private static Vector2? GetHoleHullEntrance(ref PolygonCreationAssistance pca, ref Vertices polygon, Vector2? startVertex)
-        {
+        private static Vector2? GetHoleHullEntrance(ref PolygonCreationAssistance pca, ref Vertices polygon, Vector2? startVertex) {
             List<CrossingEdgeInfo> edges = new List<CrossingEdgeInfo>();
             Vector2? entrance;
 
@@ -907,60 +808,44 @@ namespace FarseerGames.FarseerPhysics.Collisions
             bool foundSolid;
             bool foundTransparent;
 
-            if (polygon != null && polygon.Count > 0)
-            {
-                if (startVertex.HasValue)
-                {
+            if(polygon != null && polygon.Count > 0) {
+                if(startVertex.HasValue) {
                     startLine = (int)startVertex.Value.Y;
-                }
-                else
-                {
+                } else {
                     startLine = (int)GetTopMostCoord(ref polygon);
                 }
                 endLine = (int)GetBottomMostCoord(ref polygon);
 
-                if (startLine > 0 && startLine < pca.Height && endLine > 0 && endLine < pca.Height)
-                {
+                if(startLine > 0 && startLine < pca.Height && endLine > 0 && endLine < pca.Height) {
                     // go from top to bottom of the polygon
-                    for (int y = startLine; y <= endLine; y += pca.HoleDetectionLineStepSize)
-                    {
+                    for(int y = startLine; y <= endLine; y += pca.HoleDetectionLineStepSize) {
                         // get x-coord of every polygon edge which crosses y
                         edges = GetCrossingEdges(ref polygon, EdgeAlignment.Vertical, y);
 
                         // we need an even number of crossing edges
-                        if (edges.Count > 1 && edges.Count % 2 == 0)
-                        {
-                            for (int i = 0; i < edges.Count; i += 2)
-                            {
+                        if(edges.Count > 1 && edges.Count % 2 == 0) {
+                            for(int i = 0; i < edges.Count; i += 2) {
                                 foundSolid = false;
                                 foundTransparent = false;
 
-                                for (int x = (int)edges[i].CrossingPoint.X; x <= (int)edges[i + 1].CrossingPoint.X; x++)
-                                {
-                                    if (pca.IsSolid(x, y))
-                                    {
-                                        if (!foundTransparent)
-                                        {
+                                for(int x = (int)edges[i].CrossingPoint.X; x <= (int)edges[i + 1].CrossingPoint.X; x++) {
+                                    if(pca.IsSolid(x, y)) {
+                                        if(!foundTransparent) {
                                             foundSolid = true;
                                             lastSolid = x;
                                         }
 
-                                        if (foundSolid && foundTransparent)
-                                        {
+                                        if(foundSolid && foundTransparent) {
                                             entrance = new Vector2(lastSolid, y);
 
-                                            if (DistanceToHullAcceptable(ref pca, ref polygon, entrance.Value, true))
-                                            {
+                                            if(DistanceToHullAcceptable(ref pca, ref polygon, entrance.Value, true)) {
                                                 return entrance;
                                             }
                                             entrance = null;
                                             break;
                                         }
-                                    }
-                                    else
-                                    {
-                                        if (foundSolid)
-                                        {
+                                    } else {
+                                        if(foundSolid) {
                                             foundTransparent = true;
                                         }
                                     }
@@ -974,24 +859,19 @@ namespace FarseerGames.FarseerPhysics.Collisions
             return null;
         }
 
-        private static bool DistanceToHullAcceptable(ref PolygonCreationAssistance pca, ref Vertices polygon, Vector2 point, bool higherDetail)
-        {
+        private static bool DistanceToHullAcceptable(ref PolygonCreationAssistance pca, ref Vertices polygon, Vector2 point, bool higherDetail) {
             Vector2 edgeVertex1;
             Vector2 edgeVertex2;
 
-            if (polygon != null && polygon.Count > 2)
-            {
+            if(polygon != null && polygon.Count > 2) {
                 edgeVertex2 = polygon[polygon.Count - 1];
 
-                if (higherDetail)
-                {
-                    for (int i = 0; i < polygon.Count; i++)
-                    {
+                if(higherDetail) {
+                    for(int i = 0; i < polygon.Count; i++) {
                         edgeVertex1 = polygon[i];
 
-                        if (Calculator.DistanceBetweenPointAndLineSegment(ref point, ref edgeVertex1, ref edgeVertex2) <= pca.HullTolerance ||
-                            Calculator.DistanceBetweenPointAndPoint(ref point, ref edgeVertex1) <= pca.HullTolerance)
-                        {
+                        if(Calculator.DistanceBetweenPointAndLineSegment(ref point, ref edgeVertex1, ref edgeVertex2) <= pca.HullTolerance ||
+                            Calculator.DistanceBetweenPointAndPoint(ref point, ref edgeVertex1) <= pca.HullTolerance) {
                             return false;
                         }
 
@@ -999,15 +879,11 @@ namespace FarseerGames.FarseerPhysics.Collisions
                     }
 
                     return true;
-                }
-                else
-                {
-                    for (int i = 0; i < polygon.Count; i++)
-                    {
+                } else {
+                    for(int i = 0; i < polygon.Count; i++) {
                         edgeVertex1 = polygon[i];
 
-                        if (Calculator.DistanceBetweenPointAndLineSegment(ref point, ref edgeVertex1, ref edgeVertex2) <= pca.HullTolerance)
-                        {
+                        if(Calculator.DistanceBetweenPointAndLineSegment(ref point, ref edgeVertex1, ref edgeVertex2) <= pca.HullTolerance) {
                             return false;
                         }
 
@@ -1021,20 +897,15 @@ namespace FarseerGames.FarseerPhysics.Collisions
             return false;
         }
 
-        private static bool InPolygon(ref PolygonCreationAssistance pca, ref Vertices polygon, Vector2 point)
-        {
+        private static bool InPolygon(ref PolygonCreationAssistance pca, ref Vertices polygon, Vector2 point) {
             bool inPolygon = !DistanceToHullAcceptable(ref pca, ref polygon, point, true);
 
-            if (!inPolygon)
-            {
+            if(!inPolygon) {
                 List<CrossingEdgeInfo> edges = GetCrossingEdges(ref polygon, EdgeAlignment.Vertical, (int)point.Y);
 
-                if (edges.Count > 0 && edges.Count % 2 == 0)
-                {
-                    for (int i = 0; i < edges.Count; i += 2)
-                    {
-                        if (edges[i].CrossingPoint.X <= point.X && edges[i + 1].CrossingPoint.X >= point.X)
-                        {
+                if(edges.Count > 0 && edges.Count % 2 == 0) {
+                    for(int i = 0; i < edges.Count; i += 2) {
+                        if(edges[i].CrossingPoint.X <= point.X && edges[i + 1].CrossingPoint.X >= point.X) {
                             return true;
                         }
                     }
@@ -1047,15 +918,12 @@ namespace FarseerGames.FarseerPhysics.Collisions
             return inPolygon;
         }
 
-        private static Vector2? GetTopMostVertex(ref Vertices vertices)
-        {
+        private static Vector2? GetTopMostVertex(ref Vertices vertices) {
             float topMostValue = float.MaxValue;
             Vector2? topMost = null;
 
-            for (int i = 0; i < vertices.Count; i++)
-            {
-                if (topMostValue > vertices[i].Y)
-                {
+            for(int i = 0; i < vertices.Count; i++) {
+                if(topMostValue > vertices[i].Y) {
                     topMostValue = vertices[i].Y;
                     topMost = vertices[i];
                 }
@@ -1064,14 +932,11 @@ namespace FarseerGames.FarseerPhysics.Collisions
             return topMost;
         }
 
-        private static float GetTopMostCoord(ref Vertices vertices)
-        {
+        private static float GetTopMostCoord(ref Vertices vertices) {
             float returnValue = float.MaxValue;
 
-            for (int i = 0; i < vertices.Count; i++)
-            {
-                if (returnValue > vertices[i].Y)
-                {
+            for(int i = 0; i < vertices.Count; i++) {
+                if(returnValue > vertices[i].Y) {
                     returnValue = vertices[i].Y;
                 }
             }
@@ -1079,14 +944,11 @@ namespace FarseerGames.FarseerPhysics.Collisions
             return returnValue;
         }
 
-        private static float GetBottomMostCoord(ref Vertices vertices)
-        {
+        private static float GetBottomMostCoord(ref Vertices vertices) {
             float returnValue = float.MinValue;
 
-            for (int i = 0; i < vertices.Count; i++)
-            {
-                if (returnValue < vertices[i].Y)
-                {
+            for(int i = 0; i < vertices.Count; i++) {
+                if(returnValue < vertices[i].Y) {
                     returnValue = vertices[i].Y;
                 }
             }
@@ -1094,8 +956,7 @@ namespace FarseerGames.FarseerPhysics.Collisions
             return returnValue;
         }
 
-        private static List<CrossingEdgeInfo> GetCrossingEdges(ref Vertices polygon, EdgeAlignment edgeAlign, int checkLine)
-        {
+        private static List<CrossingEdgeInfo> GetCrossingEdges(ref Vertices polygon, EdgeAlignment edgeAlign, int checkLine) {
             List<CrossingEdgeInfo> edges = new List<CrossingEdgeInfo>();
 
             Vector2 slope;
@@ -1108,41 +969,31 @@ namespace FarseerGames.FarseerPhysics.Collisions
             Vector2 crossingPoint;
             bool addCrossingPoint;
 
-            if (polygon.Count > 1)
-            {
+            if(polygon.Count > 1) {
                 edgeVertex2 = polygon[polygon.Count - 1];
 
-                switch (edgeAlign)
-                {
+                switch(edgeAlign) {
                     case EdgeAlignment.Vertical:
-                        for (int i = 0; i < polygon.Count; i++)
-                        {
+                        for(int i = 0; i < polygon.Count; i++) {
                             edgeVertex1 = polygon[i];
 
-                            if ((edgeVertex1.Y >= checkLine && edgeVertex2.Y <= checkLine) || (edgeVertex1.Y <= checkLine && edgeVertex2.Y >= checkLine))
-                            {
-                                if (edgeVertex1.Y != edgeVertex2.Y)
-                                {
+                            if((edgeVertex1.Y >= checkLine && edgeVertex2.Y <= checkLine) || (edgeVertex1.Y <= checkLine && edgeVertex2.Y >= checkLine)) {
+                                if(edgeVertex1.Y != edgeVertex2.Y) {
                                     addCrossingPoint = true;
                                     slope = edgeVertex2 - edgeVertex1;
 
-                                    if (edgeVertex1.Y == checkLine)
-                                    {
+                                    if(edgeVertex1.Y == checkLine) {
                                         edgeVertexPreview = polygon[(i + 1) % polygon.Count];
                                         slopePreview = edgeVertex1 - edgeVertexPreview;
 
-                                        if (slope.Y > 0)
-                                        {
+                                        if(slope.Y > 0) {
                                             addCrossingPoint = (slopePreview.Y <= 0);
-                                        }
-                                        else
-                                        {
+                                        } else {
                                             addCrossingPoint = (slopePreview.Y >= 0);
                                         }
                                     }
 
-                                    if (addCrossingPoint)
-                                    {
+                                    if(addCrossingPoint) {
                                         crossingPoint = new Vector2((checkLine - edgeVertex1.Y) / slope.Y * slope.X + edgeVertex1.X, (float)checkLine);
                                         edges.Add(new CrossingEdgeInfo(edgeVertex1, edgeVertex2, crossingPoint, edgeAlign));
                                     }
@@ -1161,8 +1012,7 @@ namespace FarseerGames.FarseerPhysics.Collisions
             return edges;
         }
 
-        private static bool SplitPolygonEdge(ref Vertices polygon, EdgeAlignment edgeAlign, Vector2 coordInsideThePolygon, out int vertex1Index, out int vertex2Index)
-        {
+        private static bool SplitPolygonEdge(ref Vertices polygon, EdgeAlignment edgeAlign, Vector2 coordInsideThePolygon, out int vertex1Index, out int vertex2Index) {
             List<CrossingEdgeInfo> edges = new List<CrossingEdgeInfo>();
 
             Vector2 slope;
@@ -1181,23 +1031,18 @@ namespace FarseerGames.FarseerPhysics.Collisions
             vertex1Index = 0;
             vertex2Index = 0;
 
-            switch (edgeAlign)
-            {
+            switch(edgeAlign) {
                 case EdgeAlignment.Vertical:
                     edges = GetCrossingEdges(ref polygon, EdgeAlignment.Vertical, (int)coordInsideThePolygon.Y);
 
                     foundEdgeCoord.Y = coordInsideThePolygon.Y;
 
-                    if (edges != null && edges.Count > 1 && edges.Count % 2 == 0)
-                    {
-                        for (int i = 0; i < edges.Count; i++)
-                        {
-                            if (edges[i].CrossingPoint.X < coordInsideThePolygon.X)
-                            {
+                    if(edges != null && edges.Count > 1 && edges.Count % 2 == 0) {
+                        for(int i = 0; i < edges.Count; i++) {
+                            if(edges[i].CrossingPoint.X < coordInsideThePolygon.X) {
                                 distance = coordInsideThePolygon.X - edges[i].CrossingPoint.X;
 
-                                if (distance < shortestDistance)
-                                {
+                                if(distance < shortestDistance) {
                                     shortestDistance = distance;
                                     foundEdgeCoord.X = edges[i].CrossingPoint.X;
 
@@ -1206,8 +1051,7 @@ namespace FarseerGames.FarseerPhysics.Collisions
                             }
                         }
 
-                        if (edgeCoordFound)
-                        {
+                        if(edgeCoordFound) {
                             shortestDistance = float.MaxValue;
 
                             edgeVertex2Index = polygon.Count - 1;
@@ -1215,13 +1059,11 @@ namespace FarseerGames.FarseerPhysics.Collisions
                             Vector2 tempVector1;
                             Vector2 tempVector2;
 
-                            for (edgeVertex1Index = 0; edgeVertex1Index < polygon.Count; edgeVertex1Index++)
-                            {
+                            for(edgeVertex1Index = 0; edgeVertex1Index < polygon.Count; edgeVertex1Index++) {
                                 tempVector1 = polygon[edgeVertex1Index];
                                 tempVector2 = polygon[edgeVertex2Index];
                                 distance = Calculator.DistanceBetweenPointAndLineSegment(ref foundEdgeCoord, ref tempVector1, ref tempVector2);
-                                if (distance < shortestDistance)
-                                {
+                                if(distance < shortestDistance) {
                                     shortestDistance = distance;
 
                                     nearestEdgeVertex1Index = edgeVertex1Index;
@@ -1233,8 +1075,7 @@ namespace FarseerGames.FarseerPhysics.Collisions
                                 edgeVertex2Index = edgeVertex1Index;
                             }
 
-                            if (edgeFound)
-                            {
+                            if(edgeFound) {
                                 slope = polygon[nearestEdgeVertex2Index] - polygon[nearestEdgeVertex1Index];
                                 slope.Normalize();
 
@@ -1260,8 +1101,7 @@ namespace FarseerGames.FarseerPhysics.Collisions
             return false;
         }
 
-        private static Vertices CreateSimplePolygon(ref PolygonCreationAssistance pca, Vector2 entrance, Vector2 last)
-        {
+        private static Vertices CreateSimplePolygon(ref PolygonCreationAssistance pca, Vector2 entrance, Vector2 last) {
             bool entranceFound = false;
 
             Vertices polygon = new Vertices();
@@ -1272,34 +1112,23 @@ namespace FarseerGames.FarseerPhysics.Collisions
 
             #region Entrance check
             // Get the entrance point. //todo: alle möglichkeiten testen
-            if (entrance == Vector2.Zero || !pca.InBounds(entrance))
-            {
+            if(entrance == Vector2.Zero || !pca.InBounds(entrance)) {
                 entranceFound = GetHullEntrance(ref pca, out entrance);
 
-                if (entranceFound)
-                {
+                if(entranceFound) {
                     current = new Vector2(entrance.X - 1f, entrance.Y);
                 }
-            }
-            else
-            {
-                if (pca.IsSolid(entrance))
-                {
-                    if (IsNearPixel(ref pca, entrance, last))
-                    {
+            } else {
+                if(pca.IsSolid(entrance)) {
+                    if(IsNearPixel(ref pca, entrance, last)) {
                         current = last;
                         entranceFound = true;
-                    }
-                    else
-                    {
+                    } else {
                         Vector2 temp;
-                        if (SearchNearPixels(ref pca, false, entrance, out temp))
-                        {
+                        if(SearchNearPixels(ref pca, false, entrance, out temp)) {
                             current = temp;
                             entranceFound = true;
-                        }
-                        else
-                        {
+                        } else {
                             entranceFound = false;
                         }
                     }
@@ -1307,8 +1136,7 @@ namespace FarseerGames.FarseerPhysics.Collisions
             }
             #endregion
 
-            if (entranceFound)
-            {
+            if(entranceFound) {
 
                 // next has to be set to entrance so it'll be added as the
                 // first point in the list.
@@ -1317,16 +1145,14 @@ namespace FarseerGames.FarseerPhysics.Collisions
                 // Fast bugfix XD. The entrance point of course has to be added first to the polygon XD. Damn I forgot that!
                 polygon.Add(entrance);
 
-                do
-                {
+                do {
                     Vector2 outstanding;
 
                     // Add the vertex to a hull pre vision list.
                     hullArea.Add(next);
 
                     // Search in the pre vision list for an outstanding point.
-                    if (SearchForOutstandingVertex(ref hullArea, pca.HullTolerance, out outstanding))
-                    {
+                    if(SearchForOutstandingVertex(ref hullArea, pca.HullTolerance, out outstanding)) {
                         // Add it and remove all vertices that don't matter anymore
                         // (all the vertices before the outstanding).
                         polygon.Add(outstanding);
@@ -1338,29 +1164,25 @@ namespace FarseerGames.FarseerPhysics.Collisions
                     current = next;
 
                     // Get the next point on hull.
-                    if (!GetNextHullPoint(ref pca, ref last, ref current, out next))
-                    {
+                    if(!GetNextHullPoint(ref pca, ref last, ref current, out next)) {
                         next = entrance;
                     }
                 } // Exit loop if next piont is the entrance point. The hull is complete now!
-                while (next != entrance);
+                while(next != entrance);
             }
 
             return polygon;
         }
 
-        private static bool SearchNearPixels(ref PolygonCreationAssistance pca, bool searchingForSolidPixel, Vector2 current, out Vector2 foundPixel)
-        {
+        private static bool SearchNearPixels(ref PolygonCreationAssistance pca, bool searchingForSolidPixel, Vector2 current, out Vector2 foundPixel) {
             int x;
             int y;
 
-            for (int i = 0; i < 8; i++)
-            {
+            for(int i = 0; i < 8; i++) {
                 x = (int)current.X + _closePixels[i, 0];
                 y = (int)current.Y + _closePixels[i, 1];
 
-                if (!searchingForSolidPixel ^ pca.IsSolid(x, y))
-                {
+                if(!searchingForSolidPixel ^ pca.IsSolid(x, y)) {
                     foundPixel = new Vector2(x, y);
                     return true;
                 }
@@ -1371,17 +1193,13 @@ namespace FarseerGames.FarseerPhysics.Collisions
             return false;
         }
 
-        private static bool IsNearPixel(ref PolygonCreationAssistance pca, Vector2 current, Vector2 near)
-        {
-            for (int i = 0; i < 8; i++)
-            {
+        private static bool IsNearPixel(ref PolygonCreationAssistance pca, Vector2 current, Vector2 near) {
+            for(int i = 0; i < 8; i++) {
                 int x = (int)current.X + _closePixels[i, 0];
                 int y = (int)current.Y + _closePixels[i, 1];
 
-                if (x >= 0 && x <= pca.Width && y >= 0 && y <= pca.Height)
-                {
-                    if (x == (int)near.X && y == (int)near.Y)
-                    {
+                if(x >= 0 && x <= pca.Width && y >= 0 && y <= pca.Height) {
+                    if(x == (int)near.X && y == (int)near.Y) {
                         return true;
                     }
                 }
@@ -1390,15 +1208,11 @@ namespace FarseerGames.FarseerPhysics.Collisions
             return false;
         }
 
-        private static bool GetHullEntrance(ref PolygonCreationAssistance pca, out Vector2 entrance)
-        {
+        private static bool GetHullEntrance(ref PolygonCreationAssistance pca, out Vector2 entrance) {
             // Search for first solid pixel.
-            for (int y = 0; y <= pca.Height; y++)
-            {
-                for (int x = 0; x <= pca.Width; x++)
-                {
-                    if (pca.IsSolid(x, y))
-                    {
+            for(int y = 0; y <= pca.Height; y++) {
+                for(int x = 0; x <= pca.Width; x++) {
+                    if(pca.IsSolid(x, y)) {
                         entrance = new Vector2(x, y);
                         return true;
                     }
@@ -1410,28 +1224,22 @@ namespace FarseerGames.FarseerPhysics.Collisions
             return false;
         }
 
-        private static bool GetNextHullEntrance(ref PolygonCreationAssistance pca, Vector2 start, out Vector2? entrance)
-        {
+        private static bool GetNextHullEntrance(ref PolygonCreationAssistance pca, Vector2 start, out Vector2? entrance) {
             // Search for first solid pixel.
             int size = pca.Height * pca.Width;
             int x;
 
             bool foundTransparent = false;
 
-            for (int i = (int)start.X + (int)start.Y * pca.Width; i <= size; i++)
-            {
-                if (pca.IsSolid(i))
-                {
-                    if (foundTransparent)
-                    {
+            for(int i = (int)start.X + (int)start.Y * pca.Width; i <= size; i++) {
+                if(pca.IsSolid(i)) {
+                    if(foundTransparent) {
                         x = i % pca.Width;
 
                         entrance = new Vector2(x, (i - x) / pca.Width);
                         return true;
                     }
-                }
-                else
-                {
+                } else {
                     foundTransparent = true;
                 }
             }
@@ -1441,8 +1249,7 @@ namespace FarseerGames.FarseerPhysics.Collisions
             return false;
         }
 
-        private static bool GetNextHullPoint(ref PolygonCreationAssistance pca, ref Vector2 last, ref Vector2 current, out Vector2 next)
-        {
+        private static bool GetNextHullPoint(ref PolygonCreationAssistance pca, ref Vector2 last, ref Vector2 current, out Vector2 next) {
             int x;
             int y;
 
@@ -1451,16 +1258,14 @@ namespace FarseerGames.FarseerPhysics.Collisions
 
             const int pixelsToCheck = 8;// _closePixels.Length;
 
-            for (int i = 0; i < pixelsToCheck; i++)
-            {
+            for(int i = 0; i < pixelsToCheck; i++) {
                 indexOfPixelToCheck = (indexOfFirstPixelToCheck + i) % pixelsToCheck;
 
                 x = (int)current.X + _closePixels[indexOfPixelToCheck, 0];
                 y = (int)current.Y + _closePixels[indexOfPixelToCheck, 1];
 
-                if (x >= 0 && x < pca.Width && y >= 0 && y <= pca.Height)
-                {
-                    if (pca.IsSolid(x, y)) //todo
+                if(x >= 0 && x < pca.Width && y >= 0 && y <= pca.Height) {
+                    if(pca.IsSolid(x, y)) //todo
                     {
                         next = new Vector2(x, y);
                         return true;
@@ -1472,8 +1277,7 @@ namespace FarseerGames.FarseerPhysics.Collisions
             return false;
         }
 
-        private static bool SearchForOutstandingVertex(ref Vertices hullArea, float hullTolerance, out Vector2 outstanding)
-        {
+        private static bool SearchForOutstandingVertex(ref Vertices hullArea, float hullTolerance, out Vector2 outstanding) {
             int hullAreaLastPoint = hullArea.Count - 1;
 
             Vector2 outstandingResult = Vector2.Zero;
@@ -1484,14 +1288,12 @@ namespace FarseerGames.FarseerPhysics.Collisions
             Vector2 tempVector3;
 
             // Search between the first and last hull point.
-            for (int i = 1; i < hullAreaLastPoint; i++)
-            {
+            for(int i = 1; i < hullAreaLastPoint; i++) {
                 tempVector1 = hullArea[i];
                 tempVector2 = hullArea[0];
                 tempVector3 = hullArea[hullAreaLastPoint];
                 // Check if the distance is over the one that's tolerable.
-                if (Calculator.DistanceBetweenPointAndLineSegment(ref tempVector1, ref  tempVector2, ref tempVector3) >= hullTolerance)
-                {
+                if(Calculator.DistanceBetweenPointAndLineSegment(ref tempVector1, ref  tempVector2, ref tempVector3) >= hullTolerance) {
                     outstandingResult = hullArea[i];
                     found = true;
                     break;
@@ -1502,8 +1304,7 @@ namespace FarseerGames.FarseerPhysics.Collisions
             return found;
         }
 
-        private static int GetIndexOfFirstPixelToCheck(Vector2 last, Vector2 current)
-        {
+        private static int GetIndexOfFirstPixelToCheck(Vector2 last, Vector2 current) {
             /// .: pixel
             /// l: last position
             /// c: current position
@@ -1514,11 +1315,9 @@ namespace FarseerGames.FarseerPhysics.Collisions
             /// . . .
 
             //Calculate in which direction the last move went and decide over the next first pixel.
-            switch ((int)(current.X - last.X))
-            {
+            switch((int)(current.X - last.X)) {
                 case 1:
-                    switch ((int)(current.Y - last.Y))
-                    {
+                    switch((int)(current.Y - last.Y)) {
                         case 1:
                             return 1;
 
@@ -1531,8 +1330,7 @@ namespace FarseerGames.FarseerPhysics.Collisions
                     break;
 
                 case 0:
-                    switch ((int)(current.Y - last.Y))
-                    {
+                    switch((int)(current.Y - last.Y)) {
                         case 1:
                             return 2;
 
@@ -1542,8 +1340,7 @@ namespace FarseerGames.FarseerPhysics.Collisions
                     break;
 
                 case -1:
-                    switch ((int)(current.Y - last.Y))
-                    {
+                    switch((int)(current.Y - last.Y)) {
                         case 1:
                             return 3;
 
@@ -1569,18 +1366,15 @@ namespace FarseerGames.FarseerPhysics.Collisions
         /// <param name="polygon2">The second polygon.</param>
         /// <param name="error">The error returned from union</param>
         /// <returns>The union of the two polygons, or null if there was an error.</returns>
-        public static Vertices Union(Vertices polygon1, Vertices polygon2, out PolyUnionError error)
-        {
+        public static Vertices Union(Vertices polygon1, Vertices polygon2, out PolyUnionError error) {
             Vertices poly1;
             Vertices poly2;
             List<EdgeIntersectInfo> intersections;
 
             int startingIndex = PreparePolygons(polygon1, polygon2, out poly1, out poly2, out intersections, out error);
 
-            if (startingIndex == -1)
-            {
-                switch (error)
-                {
+            if(startingIndex == -1) {
+                switch(error) {
                     case PolyUnionError.NoIntersections:
                         return null;
 
@@ -1597,31 +1391,24 @@ namespace FarseerGames.FarseerPhysics.Collisions
             Vector2 startingVertex = poly1[startingIndex];
             int currentIndex = startingIndex;
 
-            do
-            {
+            do {
                 // Add the current vertex to the final union
                 union.Add(currentPoly[currentIndex]);
 
-                foreach (EdgeIntersectInfo intersect in intersections)
-                {
+                foreach(EdgeIntersectInfo intersect in intersections) {
                     // If the current point is an intersection point
-                    if (currentPoly[currentIndex] == intersect.IntersectionPoint)
-                    {
+                    if(currentPoly[currentIndex] == intersect.IntersectionPoint) {
                         // Make sure we want to swap polygons here.
                         int otherIndex = otherPoly.IndexOf(intersect.IntersectionPoint);
 
                         // If the next vertex, if we do swap, is not inside the current polygon,
                         // then its safe to swap, otherwise, just carry on with the current poly.
-                        if (!PointInPolygonAngle(otherPoly[otherPoly.NextIndex(otherIndex)], currentPoly))
-                        {
+                        if(!PointInPolygonAngle(otherPoly[otherPoly.NextIndex(otherIndex)], currentPoly)) {
                             // switch polygons
-                            if (currentPoly == poly1)
-                            {
+                            if(currentPoly == poly1) {
                                 currentPoly = poly2;
                                 otherPoly = poly1;
-                            }
-                            else
-                            {
+                            } else {
                                 currentPoly = poly1;
                                 otherPoly = poly2;
                             }
@@ -1637,14 +1424,13 @@ namespace FarseerGames.FarseerPhysics.Collisions
 
                 // Move to next index
                 currentIndex = currentPoly.NextIndex(currentIndex);
-            } while ((currentPoly[currentIndex] != startingVertex) && (union.Count <= (poly1.Count + poly2.Count)));
+            } while((currentPoly[currentIndex] != startingVertex) && (union.Count <= (poly1.Count + poly2.Count)));
 
 
             // If the number of vertices in the union is more than the combined vertices
             // of the input polygons, then something is wrong and the algorithm will
             // loop forever. Luckily, we check for that.
-            if (union.Count > (poly1.Count + poly2.Count))
-            {
+            if(union.Count > (poly1.Count + poly2.Count)) {
                 error = PolyUnionError.InfiniteLoop;
             }
 
@@ -1660,18 +1446,15 @@ namespace FarseerGames.FarseerPhysics.Collisions
         /// <returns>
         /// The result of the polygon subtraction, or null if there was an error.
         /// </returns>
-        public static Vertices Subtract(Vertices polygon1, Vertices polygon2, out PolyUnionError error)
-        {
+        public static Vertices Subtract(Vertices polygon1, Vertices polygon2, out PolyUnionError error) {
             Vertices poly1;
             Vertices poly2;
             List<EdgeIntersectInfo> intersections;
 
             int startingIndex = PreparePolygons(polygon1, polygon2, out poly1, out poly2, out intersections, out error);
 
-            if (startingIndex == -1)
-            {
-                switch (error)
-                {
+            if(startingIndex == -1) {
+                switch(error) {
                     case PolyUnionError.NoIntersections:
                         return null;
 
@@ -1691,36 +1474,28 @@ namespace FarseerGames.FarseerPhysics.Collisions
             // Trace direction
             bool forward = true;
 
-            do
-            {
+            do {
                 // Add the current vertex to the final union
                 subtract.Add(currentPoly[currentIndex]);
 
-                foreach (EdgeIntersectInfo intersect in intersections)
-                {
+                foreach(EdgeIntersectInfo intersect in intersections) {
                     // If the current point is an intersection point
-                    if (currentPoly[currentIndex] == intersect.IntersectionPoint)
-                    {
+                    if(currentPoly[currentIndex] == intersect.IntersectionPoint) {
                         // Make sure we want to swap polygons here.
                         int otherIndex = otherPoly.IndexOf(intersect.IntersectionPoint);
 
                         Vector2 otherVertex;
-                        if (forward)
-                        {
+                        if(forward) {
                             otherVertex = otherPoly[otherPoly.PreviousIndex(otherIndex)];
 
                             // If the next vertex, if we do swap, is inside the current polygon,
                             // then its safe to swap, otherwise, just carry on with the current poly.
-                            if (PointInPolygonAngle(otherVertex, currentPoly))
-                            {
+                            if(PointInPolygonAngle(otherVertex, currentPoly)) {
                                 // switch polygons
-                                if (currentPoly == poly1)
-                                {
+                                if(currentPoly == poly1) {
                                     currentPoly = poly2;
                                     otherPoly = poly1;
-                                }
-                                else
-                                {
+                                } else {
                                     currentPoly = poly1;
                                     otherPoly = poly2;
                                 }
@@ -1734,23 +1509,17 @@ namespace FarseerGames.FarseerPhysics.Collisions
                                 // Stop checking intersections for this point.
                                 break;
                             }
-                        }
-                        else
-                        {
+                        } else {
                             otherVertex = otherPoly[otherPoly.NextIndex(otherIndex)];
 
                             // If the next vertex, if we do swap, is outside the current polygon,
                             // then its safe to swap, otherwise, just carry on with the current poly.
-                            if (!PointInPolygonAngle(otherVertex, currentPoly))
-                            {
+                            if(!PointInPolygonAngle(otherVertex, currentPoly)) {
                                 // switch polygons
-                                if (currentPoly == poly1)
-                                {
+                                if(currentPoly == poly1) {
                                     currentPoly = poly2;
                                     otherPoly = poly1;
-                                }
-                                else
-                                {
+                                } else {
                                     currentPoly = poly1;
                                     otherPoly = poly2;
                                 }
@@ -1768,24 +1537,20 @@ namespace FarseerGames.FarseerPhysics.Collisions
                     }
                 }
 
-                if (forward)
-                {
+                if(forward) {
                     // Move to next index
                     currentIndex = currentPoly.NextIndex(currentIndex);
-                }
-                else
-                {
+                } else {
                     currentIndex = currentPoly.PreviousIndex(currentIndex);
                 }
-            } while ((currentPoly[currentIndex] != startingVertex) &&
+            } while((currentPoly[currentIndex] != startingVertex) &&
                      (subtract.Count <= (poly1.Count + poly2.Count)));
 
 
             // If the number of vertices in the union is more than the combined vertices
             // of the input polygons, then something is wrong and the algorithm will
             // loop forever. Luckily, we check for that.
-            if (subtract.Count > (poly1.Count + poly2.Count))
-            {
+            if(subtract.Count > (poly1.Count + poly2.Count)) {
                 error = PolyUnionError.InfiniteLoop;
             }
 
@@ -1801,8 +1566,7 @@ namespace FarseerGames.FarseerPhysics.Collisions
         /// <returns>
         /// The intersection of the two polygons, or null if there was an error.
         /// </returns>
-        public static Vertices Intersect(Vertices polygon1, Vertices polygon2, out PolyUnionError error)
-        {
+        public static Vertices Intersect(Vertices polygon1, Vertices polygon2, out PolyUnionError error) {
             error = PolyUnionError.None;
 
             Vertices poly1;
@@ -1812,10 +1576,8 @@ namespace FarseerGames.FarseerPhysics.Collisions
             PolyUnionError gotError;
             int startingIndex = PreparePolygons(polygon1, polygon2, out poly1, out poly2, out intersections, out gotError);
 
-            if (startingIndex == -1)
-            {
-                switch (gotError)
-                {
+            if(startingIndex == -1) {
+                switch(gotError) {
                     case PolyUnionError.NoIntersections:
                         return null;
 
@@ -1832,31 +1594,24 @@ namespace FarseerGames.FarseerPhysics.Collisions
             int currentIndex = poly1.IndexOf(intersections[0].IntersectionPoint);
             Vector2 startingVertex = poly1[currentIndex];
 
-            do
-            {
+            do {
                 // Add the current vertex to the final union
                 intersectOut.Add(currentPoly[currentIndex]);
 
-                foreach (EdgeIntersectInfo intersect in intersections)
-                {
+                foreach(EdgeIntersectInfo intersect in intersections) {
                     // If the current point is an intersection point
-                    if (currentPoly[currentIndex] == intersect.IntersectionPoint)
-                    {
+                    if(currentPoly[currentIndex] == intersect.IntersectionPoint) {
                         // Make sure we want to swap polygons here.
                         int otherIndex = otherPoly.IndexOf(intersect.IntersectionPoint);
 
                         // If the next vertex, if we do swap, is inside the current polygon,
                         // then its safe to swap, otherwise, just carry on with the current poly.
-                        if (PointInPolygonAngle(otherPoly[otherPoly.NextIndex(otherIndex)], currentPoly))
-                        {
+                        if(PointInPolygonAngle(otherPoly[otherPoly.NextIndex(otherIndex)], currentPoly)) {
                             // switch polygons
-                            if (currentPoly == poly1)
-                            {
+                            if(currentPoly == poly1) {
                                 currentPoly = poly2;
                                 otherPoly = poly1;
-                            }
-                            else
-                            {
+                            } else {
                                 currentPoly = poly1;
                                 otherPoly = poly2;
                             }
@@ -1872,15 +1627,14 @@ namespace FarseerGames.FarseerPhysics.Collisions
 
                 // Move to next index
                 currentIndex = currentPoly.NextIndex(currentIndex);
-            } while ((currentPoly[currentIndex] != startingVertex) &&
+            } while((currentPoly[currentIndex] != startingVertex) &&
                      (intersectOut.Count <= (poly1.Count + poly2.Count)));
 
 
             // If the number of vertices in the union is more than the combined vertices
             // of the input polygons, then something is wrong and the algorithm will
             // loop forever. Luckily, we check for that.
-            if (intersectOut.Count > (poly1.Count + poly2.Count))
-            {
+            if(intersectOut.Count > (poly1.Count + poly2.Count)) {
                 error = PolyUnionError.InfiniteLoop;
             }
 
@@ -1898,8 +1652,7 @@ namespace FarseerGames.FarseerPhysics.Collisions
         /// <param name="error">The error.</param>
         /// <returns></returns>
         private static int PreparePolygons(Vertices polygon1, Vertices polygon2, out Vertices poly1, out Vertices poly2,
-                                    out List<EdgeIntersectInfo> intersections, out PolyUnionError error)
-        {
+                                    out List<EdgeIntersectInfo> intersections, out PolyUnionError error) {
             error = PolyUnionError.None;
 
             // Make a copy of the polygons so that we dont modify the originals, and
@@ -1910,23 +1663,19 @@ namespace FarseerGames.FarseerPhysics.Collisions
 
             // Find intersection points
             intersections = new List<EdgeIntersectInfo>();
-            if (!VerticesIntersect(poly1, poly2, ref intersections))
-            {
+            if(!VerticesIntersect(poly1, poly2, ref intersections)) {
                 // No intersections found - polygons do not overlap.
                 error = PolyUnionError.NoIntersections;
                 return -1;
             }
 
             // Add intersection points to original polygons, ignoring existing points.
-            foreach (EdgeIntersectInfo intersect in intersections)
-            {
-                if (!poly1.Contains(intersect.IntersectionPoint))
-                {
+            foreach(EdgeIntersectInfo intersect in intersections) {
+                if(!poly1.Contains(intersect.IntersectionPoint)) {
                     poly1.Insert(poly1.IndexOf(intersect.EdgeOne.EdgeStart) + 1, intersect.IntersectionPoint);
                 }
 
-                if (!poly2.Contains(intersect.IntersectionPoint))
-                {
+                if(!poly2.Contains(intersect.IntersectionPoint)) {
                     poly2.Insert(poly2.IndexOf(intersect.EdgeTwo.EdgeStart) + 1, intersect.IntersectionPoint);
                 }
             }
@@ -1936,21 +1685,18 @@ namespace FarseerGames.FarseerPhysics.Collisions
             // to begin polygon trace.
             int startingIndex = -1;
             int currentIndex = 0;
-            do
-            {
-                if (!PointInPolygonAngle(poly1[currentIndex], poly2))
-                {
+            do {
+                if(!PointInPolygonAngle(poly1[currentIndex], poly2)) {
                     startingIndex = currentIndex;
                     break;
                 }
                 currentIndex = poly1.NextIndex(currentIndex);
-            } while (currentIndex != 0);
+            } while(currentIndex != 0);
 
             // If we dont find a point on polygon1 thats outside of the
             // intersect area, the polygon1 must be inside of polygon2,
             // in which case, polygon2 IS the union of the two.
-            if (startingIndex == -1)
-            {
+            if(startingIndex == -1) {
                 error = PolyUnionError.Poly1InsidePoly2;
             }
 
@@ -1965,21 +1711,18 @@ namespace FarseerGames.FarseerPhysics.Collisions
         /// <param name="intersections"></param>
         /// <returns></returns>
         private static bool VerticesIntersect(Vertices polygon1, Vertices polygon2,
-                                       ref List<EdgeIntersectInfo> intersections)
-        {
+                                       ref List<EdgeIntersectInfo> intersections) {
             // Make sure the output is clear before we start.
             intersections.Clear();
 
             // Iterate through polygon1's edges
-            for (int i = 0; i < polygon1.Count; i++)
-            {
+            for(int i = 0; i < polygon1.Count; i++) {
                 // Get edge vertices
                 Vector2 p1 = polygon1[i];
                 Vector2 p2 = polygon1[polygon1.NextIndex(i)];
 
                 // Get intersections between this edge and polygon2
-                for (int j = 0; j < polygon2.Count; j++)
-                {
+                for(int j = 0; j < polygon2.Count; j++) {
                     Vector2 point;
 
                     Vector2 p3 = polygon2[j];
@@ -1988,8 +1731,7 @@ namespace FarseerGames.FarseerPhysics.Collisions
                     // _defaultFloatTolerance = .00001f (Perhaps this should be made available publically from RayHelper?
 
                     // Check if the edges intersect
-                    if (RayHelper.LineIntersect(p1, p2, p3, p4, true, true, 0.00001f, out point))
-                    {
+                    if(RayHelper.LineIntersect(p1, p2, p3, p4, true, true, 0.00001f, out point)) {
                         // Here, we round the returned intersection point to its nearest whole number.
                         // This prevents floating point anomolies where 99.9999-> is returned instead of 100.
                         point = new Vector2((float)Math.Round(point.X, 0), (float)Math.Round(point.Y, 0));
@@ -2008,13 +1750,11 @@ namespace FarseerGames.FarseerPhysics.Collisions
         /// * Compute the sum of the angles made between the test point and each pair of points making up the polygon. 
         /// * If this sum is 2pi then the point is an interior point, if 0 then the point is an exterior point. 
         /// </summary>
-        private static bool PointInPolygonAngle(Vector2 point, Vertices polygon)
-        {
+        private static bool PointInPolygonAngle(Vector2 point, Vertices polygon) {
             double angle = 0;
 
             // Iterate through polygon's edges
-            for (int i = 0; i < polygon.Count; i++)
-            {
+            for(int i = 0; i < polygon.Count; i++) {
                 /*
                 p1.h = polygon[i].h - p.h;
                 p1.v = polygon[i].v - p.v;
@@ -2028,8 +1768,7 @@ namespace FarseerGames.FarseerPhysics.Collisions
                 angle += VectorAngle(p1, p2);
             }
 
-            if (Math.Abs(angle) < Math.PI)
-            {
+            if(Math.Abs(angle) < Math.PI) {
                 return false;
             }
 
@@ -2041,14 +1780,13 @@ namespace FarseerGames.FarseerPhysics.Collisions
         /// The angle is from vector 1 to vector 2, positive anticlockwise
         /// The result is between -pi -> pi
         /// </summary>
-        private static double VectorAngle(Vector2 p1, Vector2 p2)
-        {
+        private static double VectorAngle(Vector2 p1, Vector2 p2) {
             double theta1 = Math.Atan2(p1.Y, p1.X);
             double theta2 = Math.Atan2(p2.Y, p2.X);
             double dtheta = theta2 - theta1;
-            while (dtheta > Math.PI)
+            while(dtheta > Math.PI)
                 dtheta -= (2 * Math.PI);
-            while (dtheta < -Math.PI)
+            while(dtheta < -Math.PI)
                 dtheta += (2 * Math.PI);
 
             return (dtheta);
@@ -2059,10 +1797,9 @@ namespace FarseerGames.FarseerPhysics.Collisions
         /// </summary>
         /// <param name="polygon">The polygon whose vertices should be rounded.</param>
         /// <returns>A new polygon with rounded vertices.</returns>
-        public static Vertices Round(Vertices polygon)
-        {
+        public static Vertices Round(Vertices polygon) {
             Vertices returnPoly = new Vertices();
-            for (int i = 0; i < polygon.Count; i++)
+            for(int i = 0; i < polygon.Count; i++)
                 returnPoly.Add(new Vector2((float)Math.Round(polygon[i].X, 0), (float)Math.Round(polygon[i].Y, 0)));
 
             return returnPoly;
@@ -2075,8 +1812,7 @@ namespace FarseerGames.FarseerPhysics.Collisions
         /// <param name="p2">Vertex 2</param>
         /// <param name="p3">Vertex 3</param>
         /// <returns></returns>
-        private static bool VerticesAreCollinear(Vector2 p1, Vector2 p2, Vector2 p3)
-        {
+        private static bool VerticesAreCollinear(Vector2 p1, Vector2 p2, Vector2 p3) {
             double collinearity = (p3.X - p1.X) * (p2.Y - p1.Y) + (p3.Y - p1.Y) * (p1.X - p2.X);
             return (collinearity == 0);
         }
@@ -2087,24 +1823,22 @@ namespace FarseerGames.FarseerPhysics.Collisions
         /// <param name="polygon">The polygon that needs simplification.</param>
         /// <param name="bias">The distance bias (in pixels) between points. Points closer than this will be 'joined'.</param>
         /// <returns>A simplified polygon.</returns>
-        public static Vertices Simplify(Vertices polygon, int bias)
-        {
+        public static Vertices Simplify(Vertices polygon, int bias) {
             //We can't simplify polygons under 3 vertices
-            if (polygon.Count < 3)
+            if(polygon.Count < 3)
                 return polygon;
 
             Vertices simplified = new Vertices();
             Vertices roundPolygon = Round(polygon);
 
-            for (int curr = 0; curr < roundPolygon.Count; curr++)
-            {
+            for(int curr = 0; curr < roundPolygon.Count; curr++) {
                 int prev = roundPolygon.PreviousIndex(curr);
                 int next = roundPolygon.NextIndex(curr);
 
-                if ((roundPolygon[prev] - roundPolygon[curr]).Length() <= bias)
+                if((roundPolygon[prev] - roundPolygon[curr]).Length() <= bias)
                     continue;
 
-                if (!VerticesAreCollinear(roundPolygon[prev], roundPolygon[curr], roundPolygon[next]))
+                if(!VerticesAreCollinear(roundPolygon[prev], roundPolygon[curr], roundPolygon[next]))
                     simplified.Add(roundPolygon[curr]);
             }
 
@@ -2116,8 +1850,7 @@ namespace FarseerGames.FarseerPhysics.Collisions
         /// </summary>
         /// <param name="polygon">The polygon that needs simplification.</param>
         /// <returns>A simplified polygon.</returns>
-        public static Vertices Simplify(Vertices polygon)
-        {
+        public static Vertices Simplify(Vertices polygon) {
             return Simplify(polygon, 0);
         }
 
@@ -2132,9 +1865,8 @@ namespace FarseerGames.FarseerPhysics.Collisions
         /// <param name="endRadius">Radius of the capsule ends.</param>
         /// <param name="edges">The number of edges of the capsule ends. The more edges, the more it resembles an capsule</param>
         /// <returns></returns>
-        public static Vertices CreateCapsule(float height, float endRadius, int edges)
-        {
-            if (endRadius >= height / 2)
+        public static Vertices CreateCapsule(float height, float endRadius, int edges) {
+            if(endRadius >= height / 2)
                 throw new ArgumentException("The radius must be lower than height / 2. Higher values of radius would create a circle, and not a half circle.", "endRadius");
 
             return CreateCapsule(height, endRadius, edges, endRadius, edges);
@@ -2150,27 +1882,26 @@ namespace FarseerGames.FarseerPhysics.Collisions
         /// <param name="bottomRadius">Radius of bottom.</param>
         /// <param name="bottomEdges">The number of edges of the bottom. The more edges, the more it resembles an capsule</param>
         /// <returns></returns>
-        public static Vertices CreateCapsule(float height, float topRadius, int topEdges, float bottomRadius, int bottomEdges)
-        {
-            if (height <= 0)
+        public static Vertices CreateCapsule(float height, float topRadius, int topEdges, float bottomRadius, int bottomEdges) {
+            if(height <= 0)
                 throw new ArgumentException("Height must be longer than 0", "height");
 
-            if (topRadius <= 0)
+            if(topRadius <= 0)
                 throw new ArgumentException("The top radius must be more than 0", "topRadius");
 
-            if (topEdges <= 0)
+            if(topEdges <= 0)
                 throw new ArgumentException("Top edges must be more than 0", "topEdges");
 
-            if (bottomRadius <= 0)
+            if(bottomRadius <= 0)
                 throw new ArgumentException("The bottom radius must be more than 0", "bottomRadius");
 
-            if (bottomEdges <= 0)
+            if(bottomEdges <= 0)
                 throw new ArgumentException("Bottom edges must be more than 0", "bottomEdges");
 
-            if (topRadius >= height / 2)
+            if(topRadius >= height / 2)
                 throw new ArgumentException("The top radius must be lower than height / 2. Higher values of top radius would create a circle, and not a half circle.", "topRadius");
 
-            if (bottomRadius >= height / 2)
+            if(bottomRadius >= height / 2)
                 throw new ArgumentException("The bottom radius must be lower than height / 2. Higher values of bottom radius would create a circle, and not a half circle.", "bottomRadius");
 
             Vertices vertices = new Vertices();
@@ -2181,8 +1912,7 @@ namespace FarseerGames.FarseerPhysics.Collisions
             vertices.Add(new Vector2(topRadius, newHeight));
 
             float stepSize = MathHelper.Pi / topEdges;
-            for (int i = 1; i < topEdges; i++)
-            {
+            for(int i = 1; i < topEdges; i++) {
                 vertices.Add(new Vector2(topRadius * Calculator.Cos(stepSize * i), topRadius * Calculator.Sin(stepSize * i) + newHeight));
             }
 
@@ -2192,8 +1922,7 @@ namespace FarseerGames.FarseerPhysics.Collisions
             vertices.Add(new Vector2(-bottomRadius, -newHeight));
 
             stepSize = MathHelper.Pi / bottomEdges;
-            for (int i = 1; i < bottomEdges; i++)
-            {
+            for(int i = 1; i < bottomEdges; i++) {
                 vertices.Add(new Vector2(-bottomRadius * Calculator.Cos(stepSize * i), -bottomRadius * Calculator.Sin(stepSize * i) - newHeight));
             }
 
@@ -2216,39 +1945,32 @@ namespace FarseerGames.FarseerPhysics.Collisions
 
         #region Vertex
 
-        struct Vertex
-        {
+        struct Vertex {
             public readonly Vector2 Position;
             public readonly short Index;
 
-            public Vertex(Vector2 position, short index)
-            {
+            public Vertex(Vector2 position, short index) {
                 Position = position;
                 Index = index;
             }
 
-            public override bool Equals(object obj)
-            {
-                if (obj.GetType() != typeof(Vertex))
+            public override bool Equals(object obj) {
+                if(obj.GetType() != typeof(Vertex))
                     return false;
                 return Equals((Vertex)obj);
             }
 
-            public bool Equals(Vertex obj)
-            {
+            public bool Equals(Vertex obj) {
                 return obj.Position.Equals(Position) && obj.Index == Index;
             }
 
-            public override int GetHashCode()
-            {
-                unchecked
-                {
+            public override int GetHashCode() {
+                unchecked {
                     return (Position.GetHashCode() * 397) ^ Index;
                 }
             }
 
-            public override string ToString()
-            {
+            public override string ToString() {
                 return string.Format("{0} ({1})", Position, Index);
             }
         }
@@ -2256,33 +1978,29 @@ namespace FarseerGames.FarseerPhysics.Collisions
 
         #region LineSegment
 
-        struct LineSegment
-        {
+        struct LineSegment {
             public Vertex A;
             public Vertex B;
 
-            public LineSegment(Vertex a, Vertex b)
-            {
+            public LineSegment(Vertex a, Vertex b) {
                 A = a;
                 B = b;
             }
 
-            public float? IntersectsWithRay(Vector2 origin, Vector2 direction)
-            {
+            public float? IntersectsWithRay(Vector2 origin, Vector2 direction) {
                 float largestDistance = MathHelper.Max(A.Position.X - origin.X, B.Position.X - origin.X) * 2f;
                 LineSegment raySegment = new LineSegment(new Vertex(origin, 0), new Vertex(origin + (direction * largestDistance), 0));
 
                 Vector2? intersection = FindIntersection(this, raySegment);
                 float? value = null;
 
-                if (intersection != null)
+                if(intersection != null)
                     value = Vector2.Distance(origin, intersection.Value);
 
                 return value;
             }
 
-            public static Vector2? FindIntersection(LineSegment a, LineSegment b)
-            {
+            public static Vector2? FindIntersection(LineSegment a, LineSegment b) {
                 float x1 = a.A.Position.X;
                 float y1 = a.A.Position.Y;
                 float x2 = a.B.Position.X;
@@ -2300,7 +2018,7 @@ namespace FarseerGames.FarseerPhysics.Collisions
                 float ua = uaNum / denom;
                 float ub = ubNum / denom;
 
-                if (MathHelper.Clamp(ua, 0f, 1f) != ua || MathHelper.Clamp(ub, 0f, 1f) != ub)
+                if(MathHelper.Clamp(ua, 0f, 1f) != ua || MathHelper.Clamp(ub, 0f, 1f) != ub)
                     return null;
 
                 return a.A.Position + (a.B.Position - a.A.Position) * ua;
@@ -2314,76 +2032,66 @@ namespace FarseerGames.FarseerPhysics.Collisions
         /// <summary>
         /// A basic triangle structure that holds the three vertices that make up a given triangle.
         /// </summary>
-        struct Triangle
-        {
+        struct Triangle {
             public readonly Vertex A;
             public readonly Vertex B;
             public readonly Vertex C;
 
-            public Triangle(Vertex a, Vertex b, Vertex c)
-            {
+            public Triangle(Vertex a, Vertex b, Vertex c) {
                 A = a;
                 B = b;
                 C = c;
             }
 
-            public bool ContainsPoint(Vertex point)
-            {
+            public bool ContainsPoint(Vertex point) {
                 //return true if the point to test is one of the vertices
-                if (point.Equals(A) || point.Equals(B) || point.Equals(C))
+                if(point.Equals(A) || point.Equals(B) || point.Equals(C))
                     return true;
 
                 bool oddNodes = false;
 
-                if (checkPointToSegment(C, A, point))
+                if(checkPointToSegment(C, A, point))
                     oddNodes = !oddNodes;
-                if (checkPointToSegment(A, B, point))
+                if(checkPointToSegment(A, B, point))
                     oddNodes = !oddNodes;
-                if (checkPointToSegment(B, C, point))
+                if(checkPointToSegment(B, C, point))
                     oddNodes = !oddNodes;
 
                 return oddNodes;
             }
 
-            public static bool ContainsPoint(Vertex a, Vertex b, Vertex c, Vertex point)
-            {
+            public static bool ContainsPoint(Vertex a, Vertex b, Vertex c, Vertex point) {
                 return new Triangle(a, b, c).ContainsPoint(point);
             }
 
-            static bool checkPointToSegment(Vertex sA, Vertex sB, Vertex point)
-            {
-                if ((sA.Position.Y < point.Position.Y && sB.Position.Y >= point.Position.Y) ||
-                    (sB.Position.Y < point.Position.Y && sA.Position.Y >= point.Position.Y))
-                {
+            static bool checkPointToSegment(Vertex sA, Vertex sB, Vertex point) {
+                if((sA.Position.Y < point.Position.Y && sB.Position.Y >= point.Position.Y) ||
+                    (sB.Position.Y < point.Position.Y && sA.Position.Y >= point.Position.Y)) {
                     float x =
                         sA.Position.X +
                         (point.Position.Y - sA.Position.Y) /
                         (sB.Position.Y - sA.Position.Y) *
                         (sB.Position.X - sA.Position.X);
 
-                    if (x < point.Position.X)
+                    if(x < point.Position.X)
                         return true;
                 }
 
                 return false;
             }
 
-            public override bool Equals(object obj)
-            {
-                if (obj.GetType() != typeof(Triangle))
+            public override bool Equals(object obj) {
+                if(obj.GetType() != typeof(Triangle))
                     return false;
                 return Equals((Triangle)obj);
             }
 
-            public bool Equals(Triangle obj)
-            {
+            public bool Equals(Triangle obj) {
                 return obj.A.Equals(A) && obj.B.Equals(B) && obj.C.Equals(C);
             }
 
-            public override int GetHashCode()
-            {
-                unchecked
-                {
+            public override int GetHashCode() {
+                unchecked {
                     int result = A.GetHashCode();
                     result = (result * 397) ^ B.GetHashCode();
                     result = (result * 397) ^ C.GetHashCode();
@@ -2398,16 +2106,13 @@ namespace FarseerGames.FarseerPhysics.Collisions
         /// Implements a List structure as a cyclical list where indices are wrapped.
         /// </summary>
         /// <typeparam name="T">The Type to hold in the list.</typeparam>
-        class CyclicalList<T> : List<T>
-        {
-            public new T this[int index]
-            {
-                get
-                {
+        class CyclicalList<T>: List<T> {
+            public new T this[int index] {
+                get {
                     //perform the index wrapping
-                    while (index < 0)
+                    while(index < 0)
                         index = Count + index;
-                    if (index >= Count)
+                    if(index >= Count)
                         index %= Count;
 
                     return base[index];
@@ -2422,26 +2127,23 @@ namespace FarseerGames.FarseerPhysics.Collisions
         /// indexing into the list with an out-of-bounds index will automatically cycle
         /// around the list to find a valid node.
         /// </summary>
-        class IndexableCyclicalLinkedList<T> : LinkedList<T>
-        {
+        class IndexableCyclicalLinkedList<T>: LinkedList<T> {
             /// <summary>
             /// Gets the LinkedListNode at a particular index.
             /// </summary>
             /// <param name="index">The index of the node to retrieve.</param>
             /// <returns>The LinkedListNode found at the index given.</returns>
-            public LinkedListNode<T> this[int index]
-            {
-                get
-                {
+            public LinkedListNode<T> this[int index] {
+                get {
                     //perform the index wrapping
-                    while (index < 0)
+                    while(index < 0)
                         index = Count + index;
-                    if (index >= Count)
+                    if(index >= Count)
                         index %= Count;
 
                     //find the proper node
                     LinkedListNode<T> node = First;
-                    for (int i = 0; i < index; i++)
+                    for(int i = 0; i < index; i++)
                         node = node.Next;
 
                     return node;
@@ -2452,8 +2154,7 @@ namespace FarseerGames.FarseerPhysics.Collisions
             /// Removes the node at a given index.
             /// </summary>
             /// <param name="index">The index of the node to remove.</param>
-            public void RemoveAt(int index)
-            {
+            public void RemoveAt(int index) {
                 Remove(this[index]);
             }
 
@@ -2462,10 +2163,9 @@ namespace FarseerGames.FarseerPhysics.Collisions
             /// </summary>
             /// <param name="item">The item to find.</param>
             /// <returns>The index of the item if found; -1 if the item is not found.</returns>
-            public int IndexOf(T item)
-            {
-                for (int i = 0; i < Count; i++)
-                    if (this[i].Value.Equals(item))
+            public int IndexOf(T item) {
+                for(int i = 0; i < Count; i++)
+                    if(this[i].Value.Equals(item))
                         return i;
 
                 return -1;
@@ -2488,14 +2188,13 @@ namespace FarseerGames.FarseerPhysics.Collisions
             Vector2[] inputVertices,
             WindingOrder desiredWindingOrder,
             out Vector2[] outputVertices,
-            out short[] indices)
-        {
+            out short[] indices) {
             //Log("\nBeginning triangulation...");
 
             List<Triangle> triangles = new List<Triangle>();
 
             //make sure we have our vertices wound properly
-            if (DetermineWindingOrder(inputVertices) == WindingOrder.Clockwise)
+            if(DetermineWindingOrder(inputVertices) == WindingOrder.Clockwise)
                 outputVertices = ReverseWindingOrder(inputVertices);
             else
                 outputVertices = (Vector2[])inputVertices.Clone();
@@ -2507,7 +2206,7 @@ namespace FarseerGames.FarseerPhysics.Collisions
             reflexVertices.Clear();
 
             //generate the cyclical list of vertices in the polygon
-            for (int i = 0; i < outputVertices.Length; i++)
+            for(int i = 0; i < outputVertices.Length; i++)
                 polygonVertices.AddLast(new Vertex(outputVertices[i], (short)i));
 
             //categorize all of the vertices as convex, reflex, and ear
@@ -2515,11 +2214,11 @@ namespace FarseerGames.FarseerPhysics.Collisions
             FindEarVertices();
 
             //clip all the ear vertices
-            while (polygonVertices.Count > 3 && earVertices.Count > 0)
+            while(polygonVertices.Count > 3 && earVertices.Count > 0)
                 ClipNextEar(triangles);
 
             //if there are still three points, use that for the last triangle
-            if (polygonVertices.Count == 3)
+            if(polygonVertices.Count == 3)
                 triangles.Add(new Triangle(
                     polygonVertices[0].Value,
                     polygonVertices[1].Value,
@@ -2530,19 +2229,14 @@ namespace FarseerGames.FarseerPhysics.Collisions
 
             //move the if statement out of the loop to prevent all the
             //redundant comparisons
-            if (desiredWindingOrder == WindingOrder.CounterClockwise)
-            {
-                for (int i = 0; i < triangles.Count; i++)
-                {
+            if(desiredWindingOrder == WindingOrder.CounterClockwise) {
+                for(int i = 0; i < triangles.Count; i++) {
                     indices[(i * 3)] = triangles[i].A.Index;
                     indices[(i * 3) + 1] = triangles[i].B.Index;
                     indices[(i * 3) + 2] = triangles[i].C.Index;
                 }
-            }
-            else
-            {
-                for (int i = 0; i < triangles.Count; i++)
-                {
+            } else {
+                for(int i = 0; i < triangles.Count; i++) {
                     indices[(i * 3)] = triangles[i].C.Index;
                     indices[(i * 3) + 1] = triangles[i].B.Index;
                     indices[(i * 3) + 2] = triangles[i].A.Index;
@@ -2560,8 +2254,7 @@ namespace FarseerGames.FarseerPhysics.Collisions
         /// <param name="shapeVerts">An array of vertices for the primary shape.</param>
         /// <param name="holeVerts">An array of vertices for the hole to be cut. It is assumed that these vertices lie completely within the shape verts.</param>
         /// <returns>The new array of vertices that can be passed to Triangulate to properly triangulate the shape with the hole.</returns>
-        public static Vector2[] CutHoleInShape(Vector2[] shapeVerts, Vector2[] holeVerts)
-        {
+        public static Vector2[] CutHoleInShape(Vector2[] shapeVerts, Vector2[] holeVerts) {
             Log("\nCutting hole into shape...");
 
             //make sure the shape vertices are wound counter clockwise and the hole vertices clockwise
@@ -2575,11 +2268,11 @@ namespace FarseerGames.FarseerPhysics.Collisions
             reflexVertices.Clear();
 
             //generate the cyclical list of vertices in the polygon
-            for (int i = 0; i < shapeVerts.Length; i++)
+            for(int i = 0; i < shapeVerts.Length; i++)
                 polygonVertices.AddLast(new Vertex(shapeVerts[i], (short)i));
 
             CyclicalList<Vertex> holePolygon = new CyclicalList<Vertex>();
-            for (int i = 0; i < holeVerts.Length; i++)
+            for(int i = 0; i < holeVerts.Length; i++)
                 holePolygon.Add(new Vertex(holeVerts[i], (short)(i + polygonVertices.Count)));
 
 #if DEBUG
@@ -2599,20 +2292,19 @@ namespace FarseerGames.FarseerPhysics.Collisions
 
             //find the hole vertex with the largest X value
             Vertex rightMostHoleVertex = holePolygon[0];
-            foreach (Vertex v in holePolygon)
-                if (v.Position.X > rightMostHoleVertex.Position.X)
+            foreach(Vertex v in holePolygon)
+                if(v.Position.X > rightMostHoleVertex.Position.X)
                     rightMostHoleVertex = v;
 
             //construct a list of all line segments where at least one vertex
             //is to the right of the rightmost hole vertex with one vertex
             //above the hole vertex and one below
             List<LineSegment> segmentsToTest = new List<LineSegment>();
-            for (int i = 0; i < polygonVertices.Count; i++)
-            {
+            for(int i = 0; i < polygonVertices.Count; i++) {
                 Vertex a = polygonVertices[i].Value;
                 Vertex b = polygonVertices[i + 1].Value;
 
-                if ((a.Position.X > rightMostHoleVertex.Position.X || b.Position.X > rightMostHoleVertex.Position.X) &&
+                if((a.Position.X > rightMostHoleVertex.Position.X || b.Position.X > rightMostHoleVertex.Position.X) &&
                     ((a.Position.Y >= rightMostHoleVertex.Position.Y && b.Position.Y <= rightMostHoleVertex.Position.Y) ||
                     (a.Position.Y <= rightMostHoleVertex.Position.Y && b.Position.Y >= rightMostHoleVertex.Position.Y)))
                     segmentsToTest.Add(new LineSegment(a, b));
@@ -2622,13 +2314,10 @@ namespace FarseerGames.FarseerPhysics.Collisions
             //our hole vertex.
             float? closestPoint = null;
             LineSegment closestSegment = new LineSegment();
-            foreach (LineSegment segment in segmentsToTest)
-            {
+            foreach(LineSegment segment in segmentsToTest) {
                 float? intersection = segment.IntersectsWithRay(rightMostHoleVertex.Position, Vector2.UnitX);
-                if (intersection != null)
-                {
-                    if (closestPoint == null || closestPoint.Value > intersection.Value)
-                    {
+                if(intersection != null) {
+                    if(closestPoint == null || closestPoint.Value > intersection.Value) {
                         closestPoint = intersection;
                         closestSegment = segment;
                     }
@@ -2637,7 +2326,7 @@ namespace FarseerGames.FarseerPhysics.Collisions
 
             //if closestPoint is null, there were no collisions (likely from improper input data),
             //but we'll just return without doing anything else
-            if (closestPoint == null)
+            if(closestPoint == null)
                 return shapeVerts;
 
             //otherwise we can find our mutually visible vertex to split the polygon
@@ -2651,24 +2340,21 @@ namespace FarseerGames.FarseerPhysics.Collisions
 
             //see if any of the reflex vertices lie inside of the MIP triangle
             List<Vertex> interiorReflexVertices = new List<Vertex>();
-            foreach (Vertex v in reflexVertices)
-                if (mip.ContainsPoint(v))
+            foreach(Vertex v in reflexVertices)
+                if(mip.ContainsPoint(v))
                     interiorReflexVertices.Add(v);
 
             //if there are any interior reflex vertices, find the one that, when connected
             //to our rightMostHoleVertex, forms the line closest to Vector2.UnitX
-            if (interiorReflexVertices.Count > 0)
-            {
+            if(interiorReflexVertices.Count > 0) {
                 float closestDot = -1f;
-                foreach (Vertex v in interiorReflexVertices)
-                {
+                foreach(Vertex v in interiorReflexVertices) {
                     //compute the dot product of the vector against the UnitX
                     Vector2 d = Vector2.Normalize(v.Position - rightMostHoleVertex.Position);
                     float dot = Vector2.Dot(Vector2.UnitX, d);
 
                     //if this line is the closest we've found
-                    if (dot > closestDot)
-                    {
+                    if(dot > closestDot) {
                         //save the value and save the vertex as P
                         closestDot = dot;
                         P = v;
@@ -2685,8 +2371,7 @@ namespace FarseerGames.FarseerPhysics.Collisions
             Log("Inserting hole at injection point {0} starting at hole vertex {1}.",
                 P,
                 rightMostHoleVertex);
-            for (int i = mIndex; i <= mIndex + holePolygon.Count; i++)
-            {
+            for(int i = mIndex; i <= mIndex + holePolygon.Count; i++) {
                 Log("Inserting vertex {0} after vertex {1}.", holePolygon[i], polygonVertices[injectPoint].Value);
                 polygonVertices.AddAfter(polygonVertices[injectPoint++], holePolygon[i]);
             }
@@ -2701,7 +2386,7 @@ namespace FarseerGames.FarseerPhysics.Collisions
 
             //finally we write out the new polygon vertices and return them out
             Vector2[] newShapeVerts = new Vector2[polygonVertices.Count];
-            for (int i = 0; i < polygonVertices.Count; i++)
+            for(int i = 0; i < polygonVertices.Count; i++)
                 newShapeVerts[i] = polygonVertices[i].Value.Position;
 
             return newShapeVerts;
@@ -2717,11 +2402,9 @@ namespace FarseerGames.FarseerPhysics.Collisions
         /// <param name="vertices">The vertices of the polygon.</param>
         /// <param name="windingOrder">The desired winding order.</param>
         /// <returns>A new set of vertices if the winding order didn't match; otherwise the original set.</returns>
-        public static Vector2[] EnsureWindingOrder(Vector2[] vertices, WindingOrder windingOrder)
-        {
+        public static Vector2[] EnsureWindingOrder(Vector2[] vertices, WindingOrder windingOrder) {
             //Log("\nEnsuring winding order of {0}...", windingOrder);
-            if (DetermineWindingOrder(vertices) != windingOrder)
-            {
+            if(DetermineWindingOrder(vertices) != windingOrder) {
                 //Log("Reversing vertices...");
                 return ReverseWindingOrder(vertices);
             }
@@ -2739,8 +2422,7 @@ namespace FarseerGames.FarseerPhysics.Collisions
         /// </summary>
         /// <param name="vertices">The vertices of the polygon.</param>
         /// <returns>The new vertices for the polygon with the opposite winding order.</returns>
-        public static Vector2[] ReverseWindingOrder(Vector2[] vertices)
-        {
+        public static Vector2[] ReverseWindingOrder(Vector2[] vertices) {
             //Log("\nReversing winding order...");
             Vector2[] newVerts = new Vector2[vertices.Length];
 
@@ -2752,7 +2434,7 @@ namespace FarseerGames.FarseerPhysics.Collisions
 #endif
 
             newVerts[0] = vertices[0];
-            for (int i = 1; i < newVerts.Length; i++)
+            for(int i = 1; i < newVerts.Length; i++)
                 newVerts[i] = vertices[vertices.Length - i];
 
 #if DEBUG
@@ -2774,21 +2456,19 @@ namespace FarseerGames.FarseerPhysics.Collisions
         /// </summary>
         /// <param name="vertices">The vertices of the polygon.</param>
         /// <returns>The calculated winding order of the polygon.</returns>
-        public static WindingOrder DetermineWindingOrder(Vector2[] vertices)
-        {
+        public static WindingOrder DetermineWindingOrder(Vector2[] vertices) {
             int clockWiseCount = 0;
             int counterClockWiseCount = 0;
             Vector2 p1 = vertices[0];
 
-            for (int i = 1; i < vertices.Length; i++)
-            {
+            for(int i = 1; i < vertices.Length; i++) {
                 Vector2 p2 = vertices[i];
                 Vector2 p3 = vertices[(i + 1) % vertices.Length];
 
                 Vector2 e1 = p1 - p2;
                 Vector2 e2 = p3 - p2;
 
-                if (e1.X * e2.Y - e1.Y * e2.X >= 0)
+                if(e1.X * e2.Y - e1.Y * e2.X >= 0)
                     clockWiseCount++;
                 else
                     counterClockWiseCount++;
@@ -2809,8 +2489,7 @@ namespace FarseerGames.FarseerPhysics.Collisions
 
         #region ClipNextEar
 
-        private static void ClipNextEar(ICollection<Triangle> triangles)
-        {
+        private static void ClipNextEar(ICollection<Triangle> triangles) {
             //find the triangle
             Vertex ear = earVertices[0].Value;
             Vertex prev = polygonVertices[polygonVertices.IndexOf(ear) - 1].Value;
@@ -2849,41 +2528,30 @@ namespace FarseerGames.FarseerPhysics.Collisions
 
         #region ValidateAdjacentVertex
 
-        private static void ValidateAdjacentVertex(Vertex vertex)
-        {
+        private static void ValidateAdjacentVertex(Vertex vertex) {
             //Log("Validating: {0}...", vertex);
 
-            if (reflexVertices.Contains(vertex))
-            {
-                if (IsConvex(vertex))
-                {
+            if(reflexVertices.Contains(vertex)) {
+                if(IsConvex(vertex)) {
                     reflexVertices.Remove(vertex);
                     convexVertices.Add(vertex);
                     //Log("Vertex: {0} now convex", vertex);
-                }
-                else
-                {
+                } else {
                     //Log("Vertex: {0} still reflex", vertex);
                 }
             }
 
-            if (convexVertices.Contains(vertex))
-            {
+            if(convexVertices.Contains(vertex)) {
                 bool wasEar = earVertices.Contains(vertex);
                 bool isEar = IsEar(vertex);
 
-                if (wasEar && !isEar)
-                {
+                if(wasEar && !isEar) {
                     earVertices.Remove(vertex);
                     //Log("Vertex: {0} no longer ear", vertex);
-                }
-                else if (!wasEar && isEar)
-                {
+                } else if(!wasEar && isEar) {
                     earVertices.AddFirst(vertex);
                     //Log("Vertex: {0} now ear", vertex);
-                }
-                else
-                {
+                } else {
                     //Log("Vertex: {0} still ear", vertex);
                 }
             }
@@ -2893,19 +2561,14 @@ namespace FarseerGames.FarseerPhysics.Collisions
 
         #region FindConvexAndReflexVertices
 
-        private static void FindConvexAndReflexVertices()
-        {
-            for (int i = 0; i < polygonVertices.Count; i++)
-            {
+        private static void FindConvexAndReflexVertices() {
+            for(int i = 0; i < polygonVertices.Count; i++) {
                 Vertex v = polygonVertices[i].Value;
 
-                if (IsConvex(v))
-                {
+                if(IsConvex(v)) {
                     convexVertices.Add(v);
                     //Log("Convex: {0}", v);
-                }
-                else
-                {
+                } else {
                     reflexVertices.Add(v);
                     //Log("Reflex: {0}", v);
                 }
@@ -2916,14 +2579,11 @@ namespace FarseerGames.FarseerPhysics.Collisions
 
         #region FindEarVertices
 
-        private static void FindEarVertices()
-        {
-            for (int i = 0; i < convexVertices.Count; i++)
-            {
+        private static void FindEarVertices() {
+            for(int i = 0; i < convexVertices.Count; i++) {
                 Vertex c = convexVertices[i];
 
-                if (IsEar(c))
-                {
+                if(IsEar(c)) {
                     earVertices.AddLast(c);
                     //Log("Ear: {0}", c);
                 }
@@ -2934,20 +2594,17 @@ namespace FarseerGames.FarseerPhysics.Collisions
 
         #region IsEar
 
-        private static bool IsEar(Vertex c)
-        {
+        private static bool IsEar(Vertex c) {
             Vertex p = polygonVertices[polygonVertices.IndexOf(c) - 1].Value;
             Vertex n = polygonVertices[polygonVertices.IndexOf(c) + 1].Value;
 
             //Log("Testing vertex {0} as ear with triangle {1}, {0}, {2}...", c, p, n);
 
-            foreach (Vertex t in reflexVertices)
-            {
-                if (t.Equals(p) || t.Equals(c) || t.Equals(n))
+            foreach(Vertex t in reflexVertices) {
+                if(t.Equals(p) || t.Equals(c) || t.Equals(n))
                     continue;
 
-                if (Triangle.ContainsPoint(p, c, n, t))
-                {
+                if(Triangle.ContainsPoint(p, c, n, t)) {
                     //Log("\tTriangle contains vertex {0}...", t);
                     return false;
                 }
@@ -2960,8 +2617,7 @@ namespace FarseerGames.FarseerPhysics.Collisions
 
         #region IsConvex
 
-        private static bool IsConvex(Vertex c)
-        {
+        private static bool IsConvex(Vertex c) {
             Vertex p = polygonVertices[polygonVertices.IndexOf(c) - 1].Value;
             Vertex n = polygonVertices[polygonVertices.IndexOf(c) + 1].Value;
 
@@ -2976,8 +2632,7 @@ namespace FarseerGames.FarseerPhysics.Collisions
 
         #region IsReflex
 
-        private static bool IsReflex(Vertex c)
-        {
+        private static bool IsReflex(Vertex c) {
             return !IsConvex(c);
         }
 
@@ -2986,8 +2641,7 @@ namespace FarseerGames.FarseerPhysics.Collisions
         #region Log
 
         //[Conditional("DEBUG")]
-        private static void Log(string format, params object[] parameters)
-        {
+        private static void Log(string format, params object[] parameters) {
             Console.WriteLine(format, parameters);
         }
 
@@ -3000,8 +2654,7 @@ namespace FarseerGames.FarseerPhysics.Collisions
         /// <summary>
         /// Specifies a desired winding order for the shape vertices.
         /// </summary>
-        public enum WindingOrder
-        {
+        public enum WindingOrder {
             Clockwise,
             CounterClockwise
         }
@@ -3020,16 +2673,14 @@ namespace FarseerGames.FarseerPhysics.Collisions
         /// <param name="body">Body to attach too.</param>
         /// <param name="maxPolysToFind">Maximum Geoms to return.</param>
         /// <returns>A list of Geoms.</returns>
-        public static List<Geom> DecomposeGeom(Vertices vertices, Body body, int maxPolysToFind)
-        {
+        public static List<Geom> DecomposeGeom(Vertices vertices, Body body, int maxPolysToFind) {
             Vertices[] verts = Polygon.DecomposeVertices(vertices, maxPolysToFind);
 
             List<Geom> geomList = new List<Geom>();
 
             Vector2 mainCentroid = vertices.GetCentroid();
 
-            foreach (Vertices v in verts)
-            {
+            foreach(Vertices v in verts) {
                 //Vector2 subCentroid = v.GetCentroid();
                 geomList.Add(new Geom(body, v, -mainCentroid, 0, 1.0f));
             }
@@ -3051,10 +2702,9 @@ namespace FarseerGames.FarseerPhysics.Collisions
         /// Requires that vertices are of a simple polygon. Handles collinear points.
         /// </remarks>
         /// <returns>A convex hull in counterclockwise winding order.</returns>
-        public Vertices GetConvexHull()
-        {
+        public Vertices GetConvexHull() {
             //With less than 3 vertices, this is about the best we can do for a convex hull
-            if (Count < 3)
+            if(Count < 3)
                 return this;
 
             //We'll never need a queue larger than the current number of Vertices +1
@@ -3066,8 +2716,7 @@ namespace FarseerGames.FarseerPhysics.Collisions
             //Start by placing first 3 vertices in convex CCW order
             int startIndex = 3;
             float k = IsLeft(this[0], this[1], this[2]);
-            if (k == 0)
-            {
+            if(k == 0) {
                 //Vertices are collinear.
                 deque[0] = this[0];
                 deque[1] = this[2]; //We can skip vertex 1 because it should be between 0 and 2
@@ -3075,22 +2724,17 @@ namespace FarseerGames.FarseerPhysics.Collisions
                 qf = 2;
 
                 //Go until the end of the collinear sequence of vertices
-                for (startIndex = 3; startIndex < this.Count; startIndex++)
-                    if (IsLeft(deque[0], deque[1], this[startIndex]) == 0) //This point is also collinear
+                for(startIndex = 3; startIndex < this.Count; startIndex++)
+                    if(IsLeft(deque[0], deque[1], this[startIndex]) == 0) //This point is also collinear
                         deque[1] = this[startIndex];
                     else break;
-            }
-            else
-            {
+            } else {
                 deque[0] = deque[3] = this[2];
-                if (k > 0)
-                {
+                if(k > 0) {
                     //Is Left.  Set deque = {2, 0, 1, 2}
                     deque[1] = this[0];
                     deque[2] = this[1];
-                }
-                else
-                {
+                } else {
                     //Is Right. Set deque = {2, 1, 0, 2}
                     deque[1] = this[1];
                     deque[2] = this[0];
@@ -3101,18 +2745,16 @@ namespace FarseerGames.FarseerPhysics.Collisions
             qbm1 = qb == deque.Length - 1 ? 0 : qb + 1;       //qbm1 = qb + 1;
 
             //Add vertices one at a time and adjust convex hull as needed
-            for (int i = startIndex; i < Count; i++)
-            {
+            for(int i = startIndex; i < Count; i++) {
                 Vector2 nextPt = this[i];
 
                 //Ignore if it is already within the convex hull we have constructed
-                if (IsLeft(deque[qfm1], deque[qf], nextPt) > 0 &&
+                if(IsLeft(deque[qfm1], deque[qf], nextPt) > 0 &&
                     IsLeft(deque[qb], deque[qbm1], nextPt) > 0)
                     continue;
 
                 //Pop front until convex
-                while (!(IsLeft(deque[qfm1], deque[qf], nextPt) > 0))
-                {
+                while(!(IsLeft(deque[qfm1], deque[qf], nextPt) > 0)) {
                     //Pop the front element from the queue
                     qf = qfm1;                                    //qf--;
                     qfm1 = qf == 0 ? deque.Length - 1 : qf - 1;   //qfm1 = qf - 1;
@@ -3123,8 +2765,7 @@ namespace FarseerGames.FarseerPhysics.Collisions
                 deque[qf] = nextPt;
 
                 //Pop back until convex
-                while (!(IsLeft(deque[qb], deque[qbm1], nextPt) > 0))
-                {
+                while(!(IsLeft(deque[qb], deque[qbm1], nextPt) > 0)) {
                     //Pop the back element from the queue
                     qb = qbm1;                                    //qb++;
                     qbm1 = qb == deque.Length - 1 ? 0 : qb + 1;   //qbm1 = qb + 1;
@@ -3137,14 +2778,13 @@ namespace FarseerGames.FarseerPhysics.Collisions
 
             //Create the convex hull from what is left in the deque
             Vertices convexHull = new Vertices(Count + 1);
-            if (qb < qf)
-                for (int i = qb; i < qf; i++)
+            if(qb < qf)
+                for(int i = qb; i < qf; i++)
                     convexHull.Add(deque[i]);
-            else
-            {
-                for (int i = 0; i < qf; i++)
+            else {
+                for(int i = 0; i < qf; i++)
                     convexHull.Add(deque[i]);
-                for (int i = qb; i < deque.Length; i++)
+                for(int i = qb; i < deque.Length; i++)
                     convexHull.Add(deque[i]);
             }
             return convexHull;
@@ -3156,8 +2796,7 @@ namespace FarseerGames.FarseerPhysics.Collisions
         /// <remarks>Used by method <c>GetConvexHull()</c>.</remarks>
         /// <returns>Positive number if points arc left, negative if points arc right, 
         /// and 0 if points are collinear.</returns>
-        private float IsLeft(Vector2 a, Vector2 b, Vector2 c)
-        {
+        private float IsLeft(Vector2 a, Vector2 b, Vector2 c) {
             //cross product
             return (b.X - a.X) * (c.Y - a.Y) - (c.X - a.X) * (b.Y - a.Y);
         }
@@ -3167,14 +2806,12 @@ namespace FarseerGames.FarseerPhysics.Collisions
     }
 
     #region Sickbattery's Extension - Enums & Classes
-    public enum EdgeAlignment
-    {
+    public enum EdgeAlignment {
         Vertical = 0,
         Horizontal = 1
     }
 
-    public class CrossingEdgeInfo : IComparable
-    {
+    public class CrossingEdgeInfo: IComparable {
         #region Attributes
         private Vector2 _egdeVertex1;
         private Vector2 _edgeVertex2;
@@ -3184,34 +2821,29 @@ namespace FarseerGames.FarseerPhysics.Collisions
         #endregion
 
         #region Properties
-        public Vector2 EdgeVertex1
-        {
+        public Vector2 EdgeVertex1 {
             get { return _egdeVertex1; }
             set { _egdeVertex1 = value; }
         }
 
-        public Vector2 EdgeVertex2
-        {
+        public Vector2 EdgeVertex2 {
             get { return _edgeVertex2; }
             set { _edgeVertex2 = value; }
         }
 
-        public EdgeAlignment CheckLineAlignment
-        {
+        public EdgeAlignment CheckLineAlignment {
             get { return _alignment; }
             set { _alignment = value; }
         }
 
-        public Vector2 CrossingPoint
-        {
+        public Vector2 CrossingPoint {
             get { return _crossingPoint; }
             set { _crossingPoint = value; }
         }
         #endregion
 
         #region Constructor
-        public CrossingEdgeInfo(Vector2 edgeVertex1, Vector2 edgeVertex2, Vector2 crossingPoint, EdgeAlignment checkLineAlignment)
-        {
+        public CrossingEdgeInfo(Vector2 edgeVertex1, Vector2 edgeVertex2, Vector2 crossingPoint, EdgeAlignment checkLineAlignment) {
             _egdeVertex1 = edgeVertex1;
             _edgeVertex2 = edgeVertex2;
 
@@ -3221,31 +2853,23 @@ namespace FarseerGames.FarseerPhysics.Collisions
         #endregion
 
         #region IComparable Member
-        public int CompareTo(object obj)
-        {
+        public int CompareTo(object obj) {
             CrossingEdgeInfo cei = (CrossingEdgeInfo)obj;
             int result = 0;
 
-            switch (_alignment)
-            {
+            switch(_alignment) {
                 case EdgeAlignment.Vertical:
-                    if (_crossingPoint.X < cei.CrossingPoint.X)
-                    {
+                    if(_crossingPoint.X < cei.CrossingPoint.X) {
                         result = -1;
-                    }
-                    else if (_crossingPoint.X > cei.CrossingPoint.X)
-                    {
+                    } else if(_crossingPoint.X > cei.CrossingPoint.X) {
                         result = 1;
                     }
                     break;
 
                 case EdgeAlignment.Horizontal:
-                    if (_crossingPoint.Y < cei.CrossingPoint.Y)
-                    {
+                    if(_crossingPoint.Y < cei.CrossingPoint.Y) {
                         result = -1;
-                    }
-                    else if (_crossingPoint.Y > cei.CrossingPoint.Y)
-                    {
+                    } else if(_crossingPoint.Y > cei.CrossingPoint.Y) {
                         result = 1;
                     }
                     break;
@@ -3259,8 +2883,7 @@ namespace FarseerGames.FarseerPhysics.Collisions
     /// <summary>
     /// Class used as a data container and helper for the texture-to-vertices code.
     /// </summary>
-    public class PolygonCreationAssistance
-    {
+    public class PolygonCreationAssistance {
         private uint[] _data;
         private int _width;
         private int _height;
@@ -3271,82 +2894,64 @@ namespace FarseerGames.FarseerPhysics.Collisions
         private bool _holeDetection;
         private bool _multipartDetection;
 
-        public uint[] Data
-        {
+        public uint[] Data {
             get { return _data; }
         }
 
-        public int Width
-        {
+        public int Width {
             get { return _width; }
         }
 
-        public int Height
-        {
+        public int Height {
             get { return _height; }
         }
 
-        public byte AlphaTolerance
-        {
+        public byte AlphaTolerance {
             get { return _alphaTolerance; }
-            set
-            {
+            set {
                 _alphaTolerance = value;
                 _alphaToleranceRealValue = (uint)value << 24;
             }
         }
 
-        public float HullTolerance
-        {
+        public float HullTolerance {
             get { return _hullTolerance; }
-            set
-            {
+            set {
                 float hullTolerance = value;
 
-                if (hullTolerance > 4f) hullTolerance = 4f;
-                if (hullTolerance < 0.9f) hullTolerance = 0.9f;
+                if(hullTolerance > 4f) hullTolerance = 4f;
+                if(hullTolerance < 0.9f) hullTolerance = 0.9f;
 
                 _hullTolerance = hullTolerance;
             }
         }
 
-        public int HoleDetectionLineStepSize
-        {
+        public int HoleDetectionLineStepSize {
             get { return _holeDetectionLineStepSize; }
-            set
-            {
-                if (value < 1)
-                {
+            set {
+                if(value < 1) {
                     _holeDetectionLineStepSize = 1;
-                }
-                else
-                {
-                    if (value > 10)
-                    {
+                } else {
+                    if(value > 10) {
                         _holeDetectionLineStepSize = 10;
-                    }
-                    else
-                    {
+                    } else {
                         _holeDetectionLineStepSize = value;
                     }
                 }
             }
         }
 
-        public bool HoleDetection
-        {
+        public bool HoleDetection {
             get { return _holeDetection; }
             set { _holeDetection = value; }
         }
 
-        public bool MultipartDetection
-        {
+        public bool MultipartDetection {
             get { return _multipartDetection; }
             set { _multipartDetection = value; }
         }
 
-        public PolygonCreationAssistance(uint[] data, int width, int height)
-        {
+        public PolygonCreationAssistance(uint[] data, int width, int height) {
             _data = data;
             _width = width;
             _height = height;
@@ -3360,42 +2965,36 @@ namespace FarseerGames.FarseerPhysics.Collisions
             _multipartDetection = false;
         }
 
-        public bool IsSolid(Vector2 pixel)
-        {
+        public bool IsSolid(Vector2 pixel) {
             return IsSolid((int)pixel.X, (int)pixel.Y);
         }
 
-        public bool IsSolid(int x, int y)
-        {
-            if (x >= 0 && x < _width && y >= 0 && y < _height)
+        public bool IsSolid(int x, int y) {
+            if(x >= 0 && x < _width && y >= 0 && y < _height)
                 return ((_data[x + y * _width] & 0xFF000000) >= _alphaToleranceRealValue);
 
             return false;
         }
 
-        public bool IsSolid(int index)
-        {
-            if (index >= 0 && index < _width * _height)
+        public bool IsSolid(int index) {
+            if(index >= 0 && index < _width * _height)
                 return ((_data[index] & 0xFF000000) >= _alphaToleranceRealValue);
 
             return false;
         }
 
-        public bool InBounds(Vector2 coord)
-        {
+        public bool InBounds(Vector2 coord) {
             return (coord.X >= 0f && coord.X < _width && coord.Y >= 0f && coord.Y < _height);
         }
 
-        public bool IsValid()
-        {
-            if (_data != null && _data.Length > 0)
+        public bool IsValid() {
+            if(_data != null && _data.Length > 0)
                 return _data.Length == _width * _height;
 
             return false;
         }
 
-        ~PolygonCreationAssistance()
-        {
+        ~PolygonCreationAssistance() {
             _data = null;
         }
     }
@@ -3423,14 +3022,12 @@ namespace FarseerGames.FarseerPhysics.Collisions
      * 3. This notice may not be removed or altered from any source distribution.
      */
 
-    internal class Triangle
-    {
+    internal class Triangle {
         public float[] x;
         public float[] y;
 
         //Constructor automatically fixes orientation to ccw
-        public Triangle(float x1, float y1, float x2, float y2, float x3, float y3)
-        {
+        public Triangle(float x1, float y1, float x2, float y2, float x3, float y3) {
             x = new float[3];
             y = new float[3];
             float dx1 = x2 - x1;
@@ -3439,13 +3036,10 @@ namespace FarseerGames.FarseerPhysics.Collisions
             float dy2 = y3 - y1;
             float cross = dx1 * dy2 - dx2 * dy1;
             bool ccw = (cross > 0);
-            if (ccw)
-            {
+            if(ccw) {
                 x[0] = x1; x[1] = x2; x[2] = x3;
                 y[0] = y1; y[1] = y2; y[2] = y3;
-            }
-            else
-            {
+            } else {
                 x[0] = x1; x[1] = x3; x[2] = x2;
                 y[0] = y1; y[1] = y3; y[2] = y2;
             }
@@ -3457,8 +3051,7 @@ namespace FarseerGames.FarseerPhysics.Collisions
         //    y = new float[3];
         //}
 
-        public Triangle(Triangle t)
-        {
+        public Triangle(Triangle t) {
             x = new float[3];
             y = new float[3];
 
@@ -3475,12 +3068,11 @@ namespace FarseerGames.FarseerPhysics.Collisions
         //    }
         //}
 
-        public bool IsInside(float _x, float _y)
-        {
-            if (_x < x[0] && _x < x[1] && _x < x[2]) return false;
-            if (_x > x[0] && _x > x[1] && _x > x[2]) return false;
-            if (_y < y[0] && _y < y[1] && _y < y[2]) return false;
-            if (_y > y[0] && _y > y[1] && _y > y[2]) return false;
+        public bool IsInside(float _x, float _y) {
+            if(_x < x[0] && _x < x[1] && _x < x[2]) return false;
+            if(_x > x[0] && _x > x[1] && _x > x[2]) return false;
+            if(_y < y[0] && _y < y[1] && _y < y[2]) return false;
+            if(_y > y[0] && _y > y[1] && _y > y[2]) return false;
 
             float vx2 = _x - x[0]; float vy2 = _y - y[0];
             float vx1 = x[1] - x[0]; float vy1 = y[1] - y[0];
@@ -3499,8 +3091,7 @@ namespace FarseerGames.FarseerPhysics.Collisions
         }
     }
 
-    internal class Polygon
-    {
+    internal class Polygon {
         private const int maxVerticesPerPolygon = 32;
         private const float angularSlop = 1.0f / 180.0f * (float)Math.PI; // 1 degrees
 
@@ -3509,64 +3100,54 @@ namespace FarseerGames.FarseerPhysics.Collisions
         private int nVertices;
         private float area;
 
-        private Polygon(float[] _x, float[] _y, int nVert)
-        {
+        private Polygon(float[] _x, float[] _y, int nVert) {
             nVertices = nVert;
             x = new float[nVertices];
             y = new float[nVertices];
-            for (int i = 0; i < nVertices; ++i)
-            {
+            for(int i = 0; i < nVertices; ++i) {
                 x[i] = _x[i];
                 y[i] = _y[i];
             }
         }
 
-        private Polygon(Vector2[] v, int nVert)
-        {
+        private Polygon(Vector2[] v, int nVert) {
             nVertices = nVert;
             x = new float[nVertices];
             y = new float[nVertices];
-            for (int i = 0; i < nVertices; ++i)
-            {
+            for(int i = 0; i < nVertices; ++i) {
                 x[i] = v[i].X;
                 y[i] = v[i].Y;
 
             }
         }
 
-        private Polygon()
-        {
+        private Polygon() {
             x = null;
             y = null;
             nVertices = 0;
         }
 
-        private float GetArea()
-        {
+        private float GetArea() {
             area = 0.0f;
 
             //First do wraparound
             area += x[nVertices - 1] * y[0] - x[0] * y[nVertices - 1];
-            for (int i = 0; i < nVertices - 1; ++i)
-            {
+            for(int i = 0; i < nVertices - 1; ++i) {
                 area += x[i] * y[i + 1] - x[i + 1] * y[i];
             }
             area *= .5f;
             return area;
         }
 
-        private bool IsCCW()
-        {
+        private bool IsCCW() {
             return (GetArea() > 0.0f);
         }
 
-        private void MergeParallelEdges(float tolerance)
-        {
-            if (nVertices <= 3) return;             //Can't do anything useful here to a triangle
+        private void MergeParallelEdges(float tolerance) {
+            if(nVertices <= 3) return;             //Can't do anything useful here to a triangle
             bool[] mergeMe = new bool[nVertices];
             int newNVertices = nVertices;
-            for (int i = 0; i < nVertices; ++i)
-            {
+            for(int i = 0; i < nVertices; ++i) {
                 int lower = (i == 0) ? (nVertices - 1) : (i - 1);
                 int middle = i;
                 int upper = (i == nVertices - 1) ? (0) : (i + 1);
@@ -3576,8 +3157,7 @@ namespace FarseerGames.FarseerPhysics.Collisions
                 float dy1 = y[upper] - y[middle];
                 float norm0 = (float)Math.Sqrt(dx0 * dx0 + dy0 * dy0);
                 float norm1 = (float)Math.Sqrt(dx1 * dx1 + dy1 * dy1);
-                if (!(norm0 > 0.0f && norm1 > 0.0f) && newNVertices > 3)
-                {
+                if(!(norm0 > 0.0f && norm1 > 0.0f) && newNVertices > 3) {
                     //Merge identical points
                     mergeMe[i] = true;
                     --newNVertices;
@@ -3586,26 +3166,21 @@ namespace FarseerGames.FarseerPhysics.Collisions
                 dx1 /= norm1; dy1 /= norm1;
                 float cross = dx0 * dy1 - dx1 * dy0;
                 float dot = dx0 * dx1 + dy0 * dy1;
-                if (Math.Abs(cross) < tolerance && dot > 0 && newNVertices > 3)
-                {
+                if(Math.Abs(cross) < tolerance && dot > 0 && newNVertices > 3) {
                     mergeMe[i] = true;
                     --newNVertices;
-                }
-                else
-                {
+                } else {
                     mergeMe[i] = false;
                 }
             }
-            if (newNVertices == nVertices || newNVertices == 0)
-            {
+            if(newNVertices == nVertices || newNVertices == 0) {
                 return;
             }
             float[] newx = new float[newNVertices];
             float[] newy = new float[newNVertices];
             int currIndex = 0;
-            for (int i = 0; i < nVertices; ++i)
-            {
-                if (mergeMe[i] || newNVertices == 0 || currIndex == newNVertices) continue;
+            for(int i = 0; i < nVertices; ++i) {
+                if(mergeMe[i] || newNVertices == 0 || currIndex == newNVertices) continue;
 
                 //b2Assert(currIndex < newNVertices);
                 newx[currIndex] = x[i];
@@ -3619,42 +3194,35 @@ namespace FarseerGames.FarseerPhysics.Collisions
             //	printf("%d \n", newNVertices);
         }
 
-        private Polygon(Triangle t)
-        {
+        private Polygon(Triangle t) {
             nVertices = 3;
             x = new float[nVertices];
             y = new float[nVertices];
-            for (int i = 0; i < nVertices; ++i)
-            {
+            for(int i = 0; i < nVertices; ++i) {
                 x[i] = t.x[i];
                 y[i] = t.y[i];
             }
         }
 
-        private Polygon(Polygon p)
-        {
+        private Polygon(Polygon p) {
             nVertices = p.nVertices;
             x = new float[nVertices];
             y = new float[nVertices];
-            for (int i = 0; i < nVertices; ++i)
-            {
+            for(int i = 0; i < nVertices; ++i) {
                 x[i] = p.x[i];
                 y[i] = p.y[i];
             }
         }
 
-        private void Set(Polygon p)
-        {
-            if (nVertices != p.nVertices)
-            {
+        private void Set(Polygon p) {
+            if(nVertices != p.nVertices) {
                 nVertices = p.nVertices;
 
                 x = new float[nVertices];
                 y = new float[nVertices];
             }
 
-            for (int i = 0; i < nVertices; ++i)
-            {
+            for(int i = 0; i < nVertices; ++i) {
                 x[i] = p.x[i];
                 y[i] = p.y[i];
             }
@@ -3666,11 +3234,9 @@ namespace FarseerGames.FarseerPhysics.Collisions
         /// <returns>
         /// 	<c>true</c> if this instance is convex; otherwise, <c>false</c>.
         /// </returns>
-        private bool IsConvex()
-        {
+        private bool IsConvex() {
             bool isPositive = false;
-            for (int i = 0; i < nVertices; ++i)
-            {
+            for(int i = 0; i < nVertices; ++i) {
                 int lower = (i == 0) ? (nVertices - 1) : (i - 1);
                 int middle = i;
                 int upper = (i == nVertices - 1) ? (0) : (i + 1);
@@ -3682,12 +3248,9 @@ namespace FarseerGames.FarseerPhysics.Collisions
                 // Cross product should have same sign
                 // for each vertex if poly is convex.
                 bool newIsP = (cross >= 0) ? true : false;
-                if (i == 0)
-                {
+                if(i == 0) {
                     isPositive = newIsP;
-                }
-                else if (isPositive != newIsP)
-                {
+                } else if(isPositive != newIsP) {
                     return false;
                 }
             }
@@ -3703,85 +3266,65 @@ namespace FarseerGames.FarseerPhysics.Collisions
         /// </summary>
         /// <param name="t">The triangle to add.</param>
         /// <returns></returns>
-        private Polygon Add(Triangle t)
-        {
+        private Polygon Add(Triangle t) {
             //		float32 equalTol = .001f;
             // First, find vertices that connect
             int firstP = -1;
             int firstT = -1;
             int secondP = -1;
             int secondT = -1;
-            for (int i = 0; i < nVertices; i++)
-            {
-                if (t.x[0] == x[i] && t.y[0] == y[i])
-                {
-                    if (firstP == -1)
-                    {
+            for(int i = 0; i < nVertices; i++) {
+                if(t.x[0] == x[i] && t.y[0] == y[i]) {
+                    if(firstP == -1) {
                         firstP = i;
                         firstT = 0;
-                    }
-                    else
-                    {
+                    } else {
                         secondP = i;
                         secondT = 0;
                     }
-                }
-                else if (t.x[1] == x[i] && t.y[1] == y[i])
-                {
-                    if (firstP == -1)
-                    {
+                } else if(t.x[1] == x[i] && t.y[1] == y[i]) {
+                    if(firstP == -1) {
                         firstP = i;
                         firstT = 1;
-                    }
-                    else
-                    {
+                    } else {
                         secondP = i;
                         secondT = 1;
                     }
-                }
-                else if (t.x[2] == x[i] && t.y[2] == y[i])
-                {
-                    if (firstP == -1)
-                    {
+                } else if(t.x[2] == x[i] && t.y[2] == y[i]) {
+                    if(firstP == -1) {
                         firstP = i;
                         firstT = 2;
-                    }
-                    else
-                    {
+                    } else {
                         secondP = i;
                         secondT = 2;
                     }
                 }
             }
             // Fix ordering if first should be last vertex of poly
-            if (firstP == 0 && secondP == nVertices - 1)
-            {
+            if(firstP == 0 && secondP == nVertices - 1) {
                 firstP = nVertices - 1;
                 secondP = 0;
             }
 
             // Didn't find it
-            if (secondP == -1)
-            {
+            if(secondP == -1) {
                 return null;
             }
 
             // Find tip index on triangle
             int tipT = 0;
-            if (tipT == firstT || tipT == secondT)
+            if(tipT == firstT || tipT == secondT)
                 tipT = 1;
-            if (tipT == firstT || tipT == secondT)
+            if(tipT == firstT || tipT == secondT)
                 tipT = 2;
 
             float[] newx = new float[nVertices + 1];
             float[] newy = new float[nVertices + 1];
             int currOut = 0;
-            for (int i = 0; i < nVertices; i++)
-            {
+            for(int i = 0; i < nVertices; i++) {
                 newx[currOut] = x[i];
                 newy[currOut] = y[i];
-                if (i == firstP)
-                {
+                if(i == firstP) {
                     ++currOut;
                     newx[currOut] = t.x[tipT];
                     newy[currOut] = t.y[tipT];
@@ -3804,24 +3347,20 @@ namespace FarseerGames.FarseerPhysics.Collisions
         /// <param name="poutA">The pout A.</param>
         /// <param name="poutB">The pout B.</param>
         /// <returns></returns>
-        private static bool ResolvePinchPoint(Polygon pin, out Polygon poutA, out Polygon poutB)
-        {
+        private static bool ResolvePinchPoint(Polygon pin, out Polygon poutA, out Polygon poutB) {
             poutA = new Polygon();
             poutB = new Polygon();
 
-            if (pin.nVertices < 3) return false;
+            if(pin.nVertices < 3) return false;
             const float tol = .001f;
             bool hasPinchPoint = false;
             int pinchIndexA = -1;
             int pinchIndexB = -1;
-            for (int i = 0; i < pin.nVertices; ++i)
-            {
-                for (int j = i + 1; j < pin.nVertices; ++j)
-                {
+            for(int i = 0; i < pin.nVertices; ++i) {
+                for(int j = i + 1; j < pin.nVertices; ++j) {
                     //Don't worry about pinch points where the points
                     //are actually just dupe neighbors
-                    if (Math.Abs(pin.x[i] - pin.x[j]) < tol && Math.Abs(pin.y[i] - pin.y[j]) < tol && j != i + 1)
-                    {
+                    if(Math.Abs(pin.x[i] - pin.x[j]) < tol && Math.Abs(pin.y[i] - pin.y[j]) < tol && j != i + 1) {
                         pinchIndexA = i;
                         pinchIndexB = j;
                         //printf("pinch: %f, %f == %f, %f\n",pin.x[i],pin.y[i],pin.x[j],pin.y[j]);
@@ -3830,17 +3369,15 @@ namespace FarseerGames.FarseerPhysics.Collisions
                         break;
                     }
                 }
-                if (hasPinchPoint) break;
+                if(hasPinchPoint) break;
             }
-            if (hasPinchPoint)
-            {
+            if(hasPinchPoint) {
                 //printf("Found pinch point\n");
                 int sizeA = pinchIndexB - pinchIndexA;
-                if (sizeA == pin.nVertices) return false;//has dupe points at wraparound, not a problem here
+                if(sizeA == pin.nVertices) return false;//has dupe points at wraparound, not a problem here
                 float[] xA = new float[sizeA];
                 float[] yA = new float[sizeA];
-                for (int i = 0; i < sizeA; ++i)
-                {
+                for(int i = 0; i < sizeA; ++i) {
                     int ind = Remainder(pinchIndexA + i, pin.nVertices);             // is this right
                     xA[i] = pin.x[ind];
                     yA[i] = pin.y[ind];
@@ -3851,8 +3388,7 @@ namespace FarseerGames.FarseerPhysics.Collisions
                 int sizeB = pin.nVertices - sizeA;
                 float[] xB = new float[sizeB];
                 float[] yB = new float[sizeB];
-                for (int i = 0; i < sizeB; ++i)
-                {
+                for(int i = 0; i < sizeB; ++i) {
                     int ind = Remainder(pinchIndexB + i, pin.nVertices);          // is this right    
                     xB[i] = pin.x[ind];
                     yB[i] = pin.y[ind];
@@ -3893,32 +3429,27 @@ namespace FarseerGames.FarseerPhysics.Collisions
         /// <param name="vNum">The v num.</param>
         /// <param name="results">The results.</param>
         /// <returns></returns>
-        private static int TriangulatePolygon(float[] xv, float[] yv, int vNum, out Triangle[] results)
-        {
+        private static int TriangulatePolygon(float[] xv, float[] yv, int vNum, out Triangle[] results) {
             results = new Triangle[175];
 
-            if (vNum < 3)
+            if(vNum < 3)
                 return 0;
 
             //Recurse and split on pinch points
             Polygon pA, pB;
             Polygon pin = new Polygon(xv, yv, vNum);
-            if (ResolvePinchPoint(pin, out pA, out pB))
-            {
+            if(ResolvePinchPoint(pin, out pA, out pB)) {
                 Triangle[] mergeA = new Triangle[pA.nVertices];
                 Triangle[] mergeB = new Triangle[pB.nVertices];
                 int nA = TriangulatePolygon(pA.x, pA.y, pA.nVertices, out mergeA);
                 int nB = TriangulatePolygon(pB.x, pB.y, pB.nVertices, out mergeB);
-                if (nA == -1 || nB == -1)
-                {
+                if(nA == -1 || nB == -1) {
                     return -1;
                 }
-                for (int i = 0; i < nA; ++i)
-                {
+                for(int i = 0; i < nA; ++i) {
                     results[i] = new Triangle(mergeA[i]);
                 }
-                for (int i = 0; i < nB; ++i)
-                {
+                for(int i = 0; i < nB; ++i) {
                     results[nA + i] = new Triangle(mergeB[i]);
                 }
                 return (nA + nB);
@@ -3928,22 +3459,18 @@ namespace FarseerGames.FarseerPhysics.Collisions
             int bufferSize = 0;
             float[] xrem = new float[vNum];
             float[] yrem = new float[vNum];
-            for (int i = 0; i < vNum; ++i)
-            {
+            for(int i = 0; i < vNum; ++i) {
                 xrem[i] = xv[i];
                 yrem[i] = yv[i];
             }
 
-            while (vNum > 3)
-            {
+            while(vNum > 3) {
                 // Find an ear
                 int earIndex = -1;
                 //float32 earVolume = -1.0f;
                 float earMaxMinCross = -10.0f;
-                for (int i = 0; i < vNum; ++i)
-                {
-                    if (IsEar(i, xrem, yrem, vNum))
-                    {
+                for(int i = 0; i < vNum; ++i) {
+                    if(IsEar(i, xrem, yrem, vNum)) {
                         int lower = Remainder(i - 1, vNum);
                         int upper = Remainder(i + 1, vNum);
                         Vector2 d1 = new Vector2(xrem[upper] - xrem[i], yrem[upper] - yrem[i]);
@@ -3958,8 +3485,7 @@ namespace FarseerGames.FarseerPhysics.Collisions
                         float cross31 = Math.Abs(Calculator.Cross(ref d3, ref d1));
                         //Find the maximum minimum angle
                         float minCross = Math.Min(cross12, Math.Min(cross23, cross31));
-                        if (minCross > earMaxMinCross)
-                        {
+                        if(minCross > earMaxMinCross) {
                             earIndex = i;
                             earMaxMinCross = minCross;
                         }
@@ -3977,14 +3503,12 @@ namespace FarseerGames.FarseerPhysics.Collisions
                 // Note: sometimes this is happening because the
                 // remaining points are collinear.  Really these
                 // should just be thrown out without halting triangulation.
-                if (earIndex == -1)
-                {
-                    for (int i = 0; i < bufferSize; i++)
-                    {
+                if(earIndex == -1) {
+                    for(int i = 0; i < bufferSize; i++) {
                         results[i] = new Triangle(buffer[i]);
                     }
 
-                    if (bufferSize > 0)
+                    if(bufferSize > 0)
                         return bufferSize;
 
                     return -1;
@@ -3997,9 +3521,8 @@ namespace FarseerGames.FarseerPhysics.Collisions
                 float[] newx = new float[vNum];
                 float[] newy = new float[vNum];
                 int currDest = 0;
-                for (int i = 0; i < vNum; ++i)
-                {
-                    if (currDest == earIndex) ++currDest;
+                for(int i = 0; i < vNum; ++i) {
+                    if(currDest == earIndex) ++currDest;
                     newx[i] = xrem[currDest];
                     newy[i] = yrem[currDest];
                     ++currDest;
@@ -4024,8 +3547,7 @@ namespace FarseerGames.FarseerPhysics.Collisions
 
             //b2Assert(bufferSize == xremLength-2);
 
-            for (int i = 0; i < bufferSize; i++)
-            {
+            for(int i = 0; i < bufferSize; i++) {
                 results[i] = new Triangle(buffer[i]);
             }
 
@@ -4038,11 +3560,9 @@ namespace FarseerGames.FarseerPhysics.Collisions
         /// <param name="x">The x.</param>
         /// <param name="modulus">The modulus.</param>
         /// <returns></returns>
-        private static int Remainder(int x, int modulus)
-        {
+        private static int Remainder(int x, int modulus) {
             int rem = x % modulus;
-            while (rem < 0)
-            {
+            while(rem < 0) {
                 rem += modulus;
             }
             return rem;
@@ -4068,86 +3588,69 @@ namespace FarseerGames.FarseerPhysics.Collisions
         /// <param name="polys">The polys.</param>
         /// <param name="polysLength">Length of the polys.</param>
         /// <returns></returns>
-        private static int PolygonizeTriangles(Triangle[] triangulated, int triangulatedLength, out Polygon[] polys, int polysLength)
-        {
+        private static int PolygonizeTriangles(Triangle[] triangulated, int triangulatedLength, out Polygon[] polys, int polysLength) {
             int polyIndex = 0;
             polys = new Polygon[50];
 
-            if (triangulatedLength <= 0)
-            {
+            if(triangulatedLength <= 0) {
                 return 0;
             }
             bool[] covered = new bool[triangulatedLength];
-            for (int i = 0; i < triangulatedLength; ++i)
-            {
+            for(int i = 0; i < triangulatedLength; ++i) {
                 covered[i] = false;
                 //Check here for degenerate triangles
-                if (((triangulated[i].x[0] == triangulated[i].x[1]) && (triangulated[i].y[0] == triangulated[i].y[1]))
+                if(((triangulated[i].x[0] == triangulated[i].x[1]) && (triangulated[i].y[0] == triangulated[i].y[1]))
                      || ((triangulated[i].x[1] == triangulated[i].x[2]) && (triangulated[i].y[1] == triangulated[i].y[2]))
-                     || ((triangulated[i].x[0] == triangulated[i].x[2]) && (triangulated[i].y[0] == triangulated[i].y[2])))
-                {
+                     || ((triangulated[i].x[0] == triangulated[i].x[2]) && (triangulated[i].y[0] == triangulated[i].y[2]))) {
                     covered[i] = true;
                 }
             }
 
             bool notDone = true;
-            while (notDone)
-            {
+            while(notDone) {
                 int currTri = -1;
-                for (int i = 0; i < triangulatedLength; ++i)
-                {
-                    if (covered[i])
+                for(int i = 0; i < triangulatedLength; ++i) {
+                    if(covered[i])
                         continue;
                     currTri = i;
                     break;
                 }
-                if (currTri == -1)
-                {
+                if(currTri == -1) {
                     notDone = false;
-                }
-                else
-                {
+                } else {
                     Polygon poly = new Polygon(triangulated[currTri]);
                     covered[currTri] = true;
                     int index = 0;
-                    for (int i = 0; i < 2 * triangulatedLength; ++i, ++index)
-                    {
-                        while (index >= triangulatedLength) index -= triangulatedLength;
-                        if (covered[index])
-                        {
+                    for(int i = 0; i < 2 * triangulatedLength; ++i, ++index) {
+                        while(index >= triangulatedLength) index -= triangulatedLength;
+                        if(covered[index]) {
                             continue;
                         }
                         Polygon newP = poly.Add(triangulated[index]);
-                        if (newP == null)
-                        {                                 // is this right
+                        if(newP == null) {                                 // is this right
                             continue;
                         }
-                        if (newP.nVertices > maxVerticesPerPolygon)
-                        {
+                        if(newP.nVertices > maxVerticesPerPolygon) {
                             newP = null;
                             continue;
                         }
-                        if (newP.IsConvex())
-                        { //Or should it be IsUsable?  Maybe re-write IsConvex to apply the angle threshold from Box2d
+                        if(newP.IsConvex()) { //Or should it be IsUsable?  Maybe re-write IsConvex to apply the angle threshold from Box2d
                             poly = new Polygon(newP);
                             newP = null;
                             covered[index] = true;
-                        }
-                        else
-                        {
+                        } else {
                             newP = null;
                         }
                     }
-                    if (polyIndex < polysLength)
-                    {
+                    if(polyIndex < polysLength) {
                         poly.MergeParallelEdges(angularSlop);
                         //If identical points are present, a triangle gets
                         //borked by the MergeParallelEdges function, hence
                         //the vertex number check
-                        if (poly.nVertices >= 3) polys[polyIndex] = new Polygon(poly);
+                        if(poly.nVertices >= 3) polys[polyIndex] = new Polygon(poly);
                         //else printf("Skipping corrupt poly\n");
                     }
-                    if (poly.nVertices >= 3) polyIndex++; //Must be outside (polyIndex < polysLength) test
+                    if(poly.nVertices >= 3) polyIndex++; //Must be outside (polyIndex < polysLength) test
                 }
             }
             return polyIndex;
@@ -4166,61 +3669,51 @@ namespace FarseerGames.FarseerPhysics.Collisions
         /// <returns>
         /// 	<c>true</c> if the specified i is ear; otherwise, <c>false</c>.
         /// </returns>
-        private static bool IsEar(int i, float[] xv, float[] yv, int xvLength)
-        {
+        private static bool IsEar(int i, float[] xv, float[] yv, int xvLength) {
             float dx0, dy0, dx1, dy1;
-            if (i >= xvLength || i < 0 || xvLength < 3)
-            {
+            if(i >= xvLength || i < 0 || xvLength < 3) {
                 return false;
             }
             int upper = i + 1;
             int lower = i - 1;
-            if (i == 0)
-            {
+            if(i == 0) {
                 dx0 = xv[0] - xv[xvLength - 1];
                 dy0 = yv[0] - yv[xvLength - 1];
                 dx1 = xv[1] - xv[0];
                 dy1 = yv[1] - yv[0];
                 lower = xvLength - 1;
-            }
-            else if (i == xvLength - 1)
-            {
+            } else if(i == xvLength - 1) {
                 dx0 = xv[i] - xv[i - 1];
                 dy0 = yv[i] - yv[i - 1];
                 dx1 = xv[0] - xv[i];
                 dy1 = yv[0] - yv[i];
                 upper = 0;
-            }
-            else
-            {
+            } else {
                 dx0 = xv[i] - xv[i - 1];
                 dy0 = yv[i] - yv[i - 1];
                 dx1 = xv[i + 1] - xv[i];
                 dy1 = yv[i + 1] - yv[i];
             }
             float cross = dx0 * dy1 - dx1 * dy0;
-            if (cross > 0)
+            if(cross > 0)
                 return false;
             Triangle myTri = new Triangle(xv[i], yv[i], xv[upper], yv[upper],
                                       xv[lower], yv[lower]);
-            for (int j = 0; j < xvLength; ++j)
-            {
-                if (j == i || j == lower || j == upper)
+            for(int j = 0; j < xvLength; ++j) {
+                if(j == i || j == lower || j == upper)
                     continue;
-                if (myTri.IsInside(xv[j], yv[j]))
+                if(myTri.IsInside(xv[j], yv[j]))
                     return false;
             }
             return true;
         }
 
-        private static void ReversePolygon(float[] x, float[] y, int n)
-        {
-            if (n == 1)
+        private static void ReversePolygon(float[] x, float[] y, int n) {
+            if(n == 1)
                 return;
             int low = 0;
             int high = n - 1;
-            while (low < high)
-            {
+            while(low < high) {
                 float buffer = x[low];
                 x[low] = x[high];
                 x[high] = buffer;
@@ -4248,29 +3741,24 @@ namespace FarseerGames.FarseerPhysics.Collisions
         /// <param name="results">The results.</param>
         /// <param name="maxPolys">The max polys.</param>
         /// <returns></returns>
-        private static int DecomposeConvex(Polygon p, out Polygon[] results, int maxPolys)
-        {
+        private static int DecomposeConvex(Polygon p, out Polygon[] results, int maxPolys) {
             results = new Polygon[1];
 
-            if (p.nVertices < 3) return 0;
+            if(p.nVertices < 3) return 0;
 
             Triangle[] triangulated = new Triangle[p.nVertices - 2];
             int nTri;
-            if (p.IsCCW())
-            {
+            if(p.IsCCW()) {
                 //printf("It is ccw \n");
                 Polygon tempP = new Polygon(p);
                 ReversePolygon(tempP.x, tempP.y, tempP.nVertices);
                 nTri = TriangulatePolygon(tempP.x, tempP.y, tempP.nVertices, out triangulated);
                 //			ReversePolygon(p->x, p->y, p->nVertices); //reset orientation
-            }
-            else
-            {
+            } else {
                 //printf("It is not ccw \n");
                 nTri = TriangulatePolygon(p.x, p.y, p.nVertices, out triangulated);
             }
-            if (nTri < 1)
-            {
+            if(nTri < 1) {
                 //Still no luck?  Oh well...
                 return -1;
             }
@@ -4278,8 +3766,7 @@ namespace FarseerGames.FarseerPhysics.Collisions
             return nPolys;
         }
 
-        public static Vertices[] DecomposeVertices(Vertices v, int max)
-        {
+        public static Vertices[] DecomposeVertices(Vertices v, int max) {
             Polygon p = new Polygon(v.ToArray(), v.Count);      // convert the vertices to a polygon
 
             Polygon[] output;
@@ -4290,22 +3777,18 @@ namespace FarseerGames.FarseerPhysics.Collisions
 
             int i;
 
-            for (i = 0; i < output.Length; i++)
-            {
-                if (output[i] != null)
-                {
+            for(i = 0; i < output.Length; i++) {
+                if(output[i] != null) {
                     verticesOut[i] = new Vertices();
 
-                    for (int j = 0; j < output[i].nVertices; j++)
+                    for(int j = 0; j < output[i].nVertices; j++)
                         verticesOut[i].Add(new Vector2(output[i].x[j], output[i].y[j]));
-                }
-                else
+                } else
                     break;
             }
 
             Vertices[] verts = new Vertices[i];
-            for (int k = 0; k < i; k++)
-            {
+            for(int k = 0; k < i; k++) {
                 verts[k] = new Vertices(verticesOut[k]);
             }
 
@@ -4319,18 +3802,15 @@ namespace FarseerGames.FarseerPhysics.Collisions
     /// <summary>
     /// Enumerator to specify errors with Polygon functions.
     /// </summary>
-    public enum PolyUnionError
-    {
+    public enum PolyUnionError {
         None,
         NoIntersections,
         Poly1InsidePoly2,
         InfiniteLoop
     }
 
-    public class Edge
-    {
-        public Edge(Vector2 edgeStart, Vector2 edgeEnd)
-        {
+    public class Edge {
+        public Edge(Vector2 edgeStart, Vector2 edgeEnd) {
             EdgeStart = edgeStart;
             EdgeEnd = edgeEnd;
         }
@@ -4339,10 +3819,8 @@ namespace FarseerGames.FarseerPhysics.Collisions
         public Vector2 EdgeEnd { get; private set; }
     }
 
-    public class EdgeIntersectInfo
-    {
-        public EdgeIntersectInfo(Edge edgeOne, Edge edgeTwo, Vector2 intersectionPoint)
-        {
+    public class EdgeIntersectInfo {
+        public EdgeIntersectInfo(Edge edgeOne, Edge edgeTwo, Vector2 intersectionPoint) {
             EdgeOne = edgeOne;
             EdgeTwo = edgeTwo;
             IntersectionPoint = intersectionPoint;

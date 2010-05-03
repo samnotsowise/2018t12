@@ -8,14 +8,12 @@ using Microsoft.Xna.Framework;
 using FarseerGames.FarseerPhysics.Mathematics;
 #endif
 
-namespace FarseerGames.FarseerPhysics.Dynamics.Joints
-{
+namespace FarseerGames.FarseerPhysics.Dynamics.Joints {
     /// <summary>
     /// Creates a revolute joint between 2 bodies.
     /// Can be used as wheels on a car.
     /// </summary>
-    public class RevoluteJoint : Joint
-    {
+    public class RevoluteJoint: Joint {
         public event JointDelegate JointUpdated;
 
         private Vector2 _accumulatedImpulse;
@@ -34,12 +32,10 @@ namespace FarseerGames.FarseerPhysics.Dynamics.Joints
         private Vector2 _r2;
         private Vector2 _velocityBias;
 
-        public RevoluteJoint()
-        {
+        public RevoluteJoint() {
         }
 
-        public RevoluteJoint(Body body1, Body body2, Vector2 anchor)
-        {
+        public RevoluteJoint(Body body1, Body body2, Vector2 anchor) {
             _body1 = body1;
             _body2 = body2;
 
@@ -55,8 +51,7 @@ namespace FarseerGames.FarseerPhysics.Dynamics.Joints
         /// Gets or sets the first body.
         /// </summary>
         /// <Value>The body1.</Value>
-        public Body Body1
-        {
+        public Body Body1 {
             get { return _body1; }
             set { _body1 = value; }
         }
@@ -65,8 +60,7 @@ namespace FarseerGames.FarseerPhysics.Dynamics.Joints
         /// Gets or sets the second body.
         /// </summary>
         /// <Value>The body2.</Value>
-        public Body Body2
-        {
+        public Body Body2 {
             get { return _body2; }
             set { _body2 = value; }
         }
@@ -75,11 +69,9 @@ namespace FarseerGames.FarseerPhysics.Dynamics.Joints
         /// Gets or sets the anchor.
         /// </summary>
         /// <Value>The anchor.</Value>
-        public Vector2 Anchor
-        {
+        public Vector2 Anchor {
             get { return _anchor; }
-            set
-            {
+            set {
                 _anchor = value;
                 _body1.GetLocalPosition(ref _anchor, out _localAnchor1);
                 _body2.GetLocalPosition(ref _anchor, out _localAnchor2);
@@ -90,10 +82,8 @@ namespace FarseerGames.FarseerPhysics.Dynamics.Joints
         /// This gives the anchor position after the simulation starts
         /// </summary>
         /// <Value>The current anchor.</Value>
-        public Vector2 CurrentAnchor
-        {
-            get
-            {
+        public Vector2 CurrentAnchor {
+            get {
                 Vector2.Add(ref _body1.position, ref _r1, out _currentAnchor); //_anchor moves once simulator starts
                 return _currentAnchor;
             }
@@ -104,11 +94,9 @@ namespace FarseerGames.FarseerPhysics.Dynamics.Joints
         /// </summary>
         /// <param name="initialAnchor">The initial anchor.</param>
         /// <exception cref="ArgumentNullException"><c>_body1</c> is null.</exception>
-        public void SetInitialAnchor(Vector2 initialAnchor)
-        {
+        public void SetInitialAnchor(Vector2 initialAnchor) {
             _anchor = initialAnchor;
-            if (_body1 == null)
-            {
+            if(_body1 == null) {
                 throw new ArgumentNullException("initialAnchor",
                                                 "Body must be set prior to setting the _anchor of the Revolute Joint");
             }
@@ -119,10 +107,8 @@ namespace FarseerGames.FarseerPhysics.Dynamics.Joints
         /// <summary>
         /// Validates this instance.
         /// </summary>
-        public override void Validate()
-        {
-            if (_body1.IsDisposed || _body2.IsDisposed)
-            {
+        public override void Validate() {
+            if(_body1.IsDisposed || _body2.IsDisposed) {
                 Dispose();
             }
         }
@@ -131,12 +117,11 @@ namespace FarseerGames.FarseerPhysics.Dynamics.Joints
         /// Calculates all the work needed before updating the joint.
         /// </summary>
         /// <param name="inverseDt">The inverse dt.</param>
-        public override void PreStep(float inverseDt)
-        {
-            if (_body1.isStatic && _body2.isStatic)
+        public override void PreStep(float inverseDt) {
+            if(_body1.isStatic && _body2.isStatic)
                 return;
 
-            if (!_body1.Enabled && !_body2.Enabled)
+            if(!_body1.Enabled && !_body2.Enabled)
                 return;
 
             _body1InverseMass = _body1.inverseMass;
@@ -193,8 +178,7 @@ namespace FarseerGames.FarseerPhysics.Dynamics.Joints
             _body1.ApplyAngularImpulse(-_floatTemp1);
         }
 
-        private void MatrixInvert2D(ref Matrix matrix, out Matrix invertedMatrix)
-        {
+        private void MatrixInvert2D(ref Matrix matrix, out Matrix invertedMatrix) {
             float a = matrix.M11, b = matrix.M12, c = matrix.M21, d = matrix.M22;
             float det = a * d - b * c;
             Debug.Assert(det != 0.0f);
@@ -209,14 +193,13 @@ namespace FarseerGames.FarseerPhysics.Dynamics.Joints
         /// <summary>
         /// Updates this instance.
         /// </summary>
-        public override void Update()
-        {
+        public override void Update() {
             base.Update();
 
-            if (_body1.isStatic && _body2.isStatic)
+            if(_body1.isStatic && _body2.isStatic)
                 return;
 
-            if (!_body1.Enabled && !_body2.Enabled)
+            if(!_body1.Enabled && !_body2.Enabled)
                 return;
 
             #region INLINE: Calculator.Cross(ref _body2.AngularVelocity, ref _r2, out _vectorTemp1);
@@ -291,8 +274,7 @@ namespace FarseerGames.FarseerPhysics.Dynamics.Joints
 
             #endregion
 
-            if (_impulse != Vector2.Zero)
-            {
+            if(_impulse != Vector2.Zero) {
                 #region INLINE: _body2.ApplyImpulse(ref _impulse);
 
 
@@ -348,7 +330,7 @@ namespace FarseerGames.FarseerPhysics.Dynamics.Joints
 
                 #endregion
 
-                if (JointUpdated != null)
+                if(JointUpdated != null)
                     JointUpdated(this, _body1, _body2);
             }
 

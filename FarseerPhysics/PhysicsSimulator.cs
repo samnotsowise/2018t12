@@ -16,13 +16,11 @@ using Microsoft.Xna.Framework.Content;
 using FarseerGames.FarseerPhysics.Mathematics;
 #endif
 
-namespace FarseerGames.FarseerPhysics
-{
+namespace FarseerGames.FarseerPhysics {
     /// <summary>
     /// Keeps track of bodies, geometries, joints, springs, controllers and other dynamics.
     /// </summary>
-    public class PhysicsSimulator
-    {
+    public class PhysicsSimulator {
         private IBroadPhaseCollider _broadPhaseCollider;
         internal Pool<Arbiter> arbiterPool;
 
@@ -107,8 +105,7 @@ namespace FarseerGames.FarseerPhysics
         /// Initializes a new instance of the <see cref="PhysicsSimulator"/> class.
         /// Gravity is set to zero.
         /// </summary>
-        public PhysicsSimulator()
-        {
+        public PhysicsSimulator() {
             ConstructPhysicsSimulator(Vector2.Zero);
         }
 
@@ -116,8 +113,7 @@ namespace FarseerGames.FarseerPhysics
         /// Initializes a new instance of the <see cref="PhysicsSimulator"/> class.
         /// </summary>
         /// <param name="gravity">The gravity.</param>
-        public PhysicsSimulator(Vector2 gravity)
-        {
+        public PhysicsSimulator(Vector2 gravity) {
             UpdateTime = -1;
             UpdatePositionsTime = -1;
             ApplyImpulsesTime = -1;
@@ -134,12 +130,10 @@ namespace FarseerGames.FarseerPhysics
         /// </summary>
         /// <value>The current broad phase collider.</value>
         /// <exception cref="Exception">The <see cref="GeomList"/> must be empty when setting the broad phase collider type</exception>
-        public IBroadPhaseCollider BroadPhaseCollider
-        {
+        public IBroadPhaseCollider BroadPhaseCollider {
             get { return _broadPhaseCollider; }
-            set
-            {
-                if (GeomList.Count > 0)
+            set {
+                if(GeomList.Count > 0)
                     throw new Exception("The GeomList must be empty when setting the broad phase collider type");
 
                 _broadPhaseCollider = value;
@@ -211,8 +205,7 @@ namespace FarseerGames.FarseerPhysics
 #endif
         public float UpdateTime { get; internal set; }
 
-        private void ConstructPhysicsSimulator(Vector2 gravity)
-        {
+        private void ConstructPhysicsSimulator(Vector2 gravity) {
             GeomList = new GenericList<Geom>(32);
             _geomAddList = new List<Geom>(32);
             _geomRemoveList = new List<Geom>(32);
@@ -244,96 +237,81 @@ namespace FarseerGames.FarseerPhysics
             arbiterPool = new Pool<Arbiter>(128);
         }
 
-        public void Add(Geom geometry)
-        {
-            if (geometry == null)
+        public void Add(Geom geometry) {
+            if(geometry == null)
                 throw new ArgumentNullException("geometry", "Can't add null geometry");
 
-            if (!_geomAddList.Contains(geometry))
-            {
+            if(!_geomAddList.Contains(geometry)) {
                 _geomAddList.Add(geometry);
             }
         }
 
-        public void Remove(Geom geometry)
-        {
-            if (geometry == null)
+        public void Remove(Geom geometry) {
+            if(geometry == null)
                 throw new ArgumentNullException("geometry", "Can't remove null geometry");
 
             _geomRemoveList.Add(geometry);
         }
 
-        public void Add(Body body)
-        {
-            if (body == null)
+        public void Add(Body body) {
+            if(body == null)
                 throw new ArgumentNullException("body", "Can't add null body");
 
-            if (!_bodyAddList.Contains(body))
-            {
+            if(!_bodyAddList.Contains(body)) {
                 _bodyAddList.Add(body);
             }
         }
 
-        public void Remove(Body body)
-        {
-            if (body == null)
+        public void Remove(Body body) {
+            if(body == null)
                 throw new ArgumentNullException("body", "Can't remove null body");
 
             _bodyRemoveList.Add(body);
         }
 
-        public void Add(Controller controller)
-        {
-            if (controller == null)
+        public void Add(Controller controller) {
+            if(controller == null)
                 throw new ArgumentNullException("controller", "Can't add null controller");
 
-            if (!_controllerAddList.Contains(controller))
-            {
+            if(!_controllerAddList.Contains(controller)) {
                 _controllerAddList.Add(controller);
             }
         }
 
-        public void Remove(Controller controller)
-        {
-            if (controller == null)
+        public void Remove(Controller controller) {
+            if(controller == null)
                 throw new ArgumentNullException("controller", "Can't remove null controller");
 
             _controllerRemoveList.Add(controller);
         }
 
-        public void Add(Joint joint)
-        {
-            if (joint == null)
+        public void Add(Joint joint) {
+            if(joint == null)
                 throw new ArgumentNullException("joint", "Can't add null joint");
 
-            if (!_jointAddList.Contains(joint))
-            {
+            if(!_jointAddList.Contains(joint)) {
                 _jointAddList.Add(joint);
             }
         }
 
-        public void Remove(Joint joint)
-        {
-            if (joint == null)
+        public void Remove(Joint joint) {
+            if(joint == null)
                 throw new ArgumentNullException("joint", "Can't remove null joint");
 
             _jointRemoveList.Add(joint);
         }
 
-        public void Add(Spring spring)
-        {
-            if (spring == null)
+        public void Add(Spring spring) {
+            if(spring == null)
                 throw new ArgumentNullException("spring", "Can't add null spring");
 
-            if (!_springAddList.Contains(spring))
-            {
+            if(!_springAddList.Contains(spring)) {
                 _springAddList.Add(spring);
             }
         }
 
-        public void Remove(Spring spring)
-        {
-            if (spring == null)
+        public void Remove(Spring spring) {
+            if(spring == null)
                 throw new ArgumentNullException("spring", "Can't remove null spring");
 
             _springRemoveList.Add(spring);
@@ -342,13 +320,11 @@ namespace FarseerGames.FarseerPhysics
         /// <summary>
         /// Resets the physics simulator back to it's original state. Only gravity is persisted.
         /// </summary>
-        public void Clear()
-        {
+        public void Clear() {
             ConstructPhysicsSimulator(Gravity);
         }
 
-        public void Update(float dt)
-        {
+        public void Update(float dt) {
             Update(dt, 0);
         }
 
@@ -357,8 +333,7 @@ namespace FarseerGames.FarseerPhysics
         /// Also removes bodies and geometries. If there is any disposed items, those will get
         /// removed too.
         /// </summary>
-        public void ProcessAddedAndRemoved()
-        {
+        public void ProcessAddedAndRemoved() {
             ProcessAddedItems();
             ProcessRemovedItems();
             ProcessDisposedItems();
@@ -369,10 +344,9 @@ namespace FarseerGames.FarseerPhysics
         /// </summary>
         /// <param name="dt">The delta time.</param>
         /// <param name="dtReal">The real delta time.</param>
-        public void Update(float dt, float dtReal)
-        {
+        public void Update(float dt, float dtReal) {
 #if (XNA)
-            if (EnableDiagnostics) _sw.Start();
+            if(EnableDiagnostics) _sw.Start();
 #endif
 
             ProcessAddedItems();
@@ -382,44 +356,43 @@ namespace FarseerGames.FarseerPhysics
             ArbiterList.PrepareForBroadphaseCollision(GeomList);
 
 #if (XNA)
-            if (EnableDiagnostics)
+            if(EnableDiagnostics)
                 CleanUpTime = _sw.ElapsedTicks;
 #endif
 
             //If there is no change in time, no need to calculate anything.
-            if (dt == 0 || !Enabled)
+            if(dt == 0 || !Enabled)
                 return;
 
             DoBroadPhaseCollision();
 #if (XNA)
-            if (EnableDiagnostics)
+            if(EnableDiagnostics)
                 BroadPhaseCollisionTime = _sw.ElapsedTicks - CleanUpTime;
 #endif
             DoNarrowPhaseCollision();
 #if (XNA)
-            if (EnableDiagnostics)
+            if(EnableDiagnostics)
                 NarrowPhaseCollisionTime = _sw.ElapsedTicks - BroadPhaseCollisionTime - CleanUpTime;
 #endif
             ApplyForces(dt, dtReal);
 #if (XNA)
-            if (EnableDiagnostics)
+            if(EnableDiagnostics)
                 ApplyForcesTime = _sw.ElapsedTicks - NarrowPhaseCollisionTime - BroadPhaseCollisionTime - CleanUpTime;
 #endif
             ApplyImpulses(dt);
 
 #if (XNA)
-            if (EnableDiagnostics)
+            if(EnableDiagnostics)
                 ApplyImpulsesTime = _sw.ElapsedTicks - ApplyForcesTime - NarrowPhaseCollisionTime - BroadPhaseCollisionTime - CleanUpTime;
 #endif
             UpdatePositions(dt);
 #if (XNA)
-            if (EnableDiagnostics)
+            if(EnableDiagnostics)
                 UpdatePositionsTime = _sw.ElapsedTicks - ApplyImpulsesTime - ApplyForcesTime - NarrowPhaseCollisionTime - BroadPhaseCollisionTime - CleanUpTime;
 #endif
 #if (XNA)
 
-            if (EnableDiagnostics)
-            {
+            if(EnableDiagnostics) {
                 _sw.Stop();
                 UpdateTime = _sw.ElapsedTicks;
 
@@ -441,8 +414,7 @@ namespace FarseerGames.FarseerPhysics
         /// <param name="x">The x value</param>
         /// <param name="y">The y value</param>
         /// <returns>The first geom that collides with the specified x and y coordinates</returns>
-        public Geom Collide(float x, float y)
-        {
+        public Geom Collide(float x, float y) {
             return Collide(new Vector2(x, y));
         }
 
@@ -451,12 +423,9 @@ namespace FarseerGames.FarseerPhysics
         /// </summary>
         /// <param name="point">The point to check against.</param>
         /// <returns>The first geom that collides with the specified point</returns>
-        public Geom Collide(Vector2 point)
-        {
-            foreach (Geom geometry in GeomList)
-            {
-                if (geometry.Collide(point))
-                {
+        public Geom Collide(Vector2 point) {
+            foreach(Geom geometry in GeomList) {
+                if(geometry.Collide(point)) {
                     return geometry;
                 }
             }
@@ -469,8 +438,7 @@ namespace FarseerGames.FarseerPhysics
         /// <param name="x">The x value.</param>
         /// <param name="y">The y value.</param>
         /// <returns>A list of geoms that collided with the X and Y values</returns>
-        public List<Geom> CollideAll(float x, float y)
-        {
+        public List<Geom> CollideAll(float x, float y) {
             return CollideAll(new Vector2(x, y));
         }
 
@@ -479,13 +447,10 @@ namespace FarseerGames.FarseerPhysics
         /// </summary>
         /// <param name="point">The point to check against.</param>
         /// <returns>A list of geoms that collided with the point</returns>
-        public List<Geom> CollideAll(Vector2 point)
-        {
+        public List<Geom> CollideAll(Vector2 point) {
             List<Geom> returnGeomList = new List<Geom>();
-            foreach (Geom geom in GeomList)
-            {
-                if (geom.Collide(point))
-                {
+            foreach(Geom geom in GeomList) {
+                if(geom.Collide(point)) {
                     returnGeomList.Add(geom);
                 }
             }
@@ -497,8 +462,7 @@ namespace FarseerGames.FarseerPhysics
         /// The broad phase is responsible for finding geometries that are in close
         /// vicinity (collideable) to each other.
         /// </summary>
-        private void DoBroadPhaseCollision()
-        {
+        private void DoBroadPhaseCollision() {
             _broadPhaseCollider.Update();
         }
 
@@ -507,10 +471,8 @@ namespace FarseerGames.FarseerPhysics
         /// The narrow phase checks collisionpairs found in the broad phase in detail.
         /// This phase creates contacts between geometries and then applies impulse to them.
         /// </summary>
-        private void DoNarrowPhaseCollision()
-        {
-            for (int i = 0; i < ArbiterList.Count; i++)
-            {
+        private void DoNarrowPhaseCollision() {
+            for(int i = 0; i < ArbiterList.Count; i++) {
                 ArbiterList[i].Collide();
             }
             ArbiterList.RemoveContactCountEqualsZero(arbiterPool);
@@ -522,35 +484,30 @@ namespace FarseerGames.FarseerPhysics
         /// </summary>
         /// <param name="dt">The delta time.</param>
         /// <param name="dtReal">The real delta time.</param>
-        private void ApplyForces(float dt, float dtReal)
-        {
-            for (int i = 0; i < ControllerList.Count; i++)
-            {
-                if (!ControllerList[i].Enabled || ControllerList[i].IsDisposed)
+        private void ApplyForces(float dt, float dtReal) {
+            for(int i = 0; i < ControllerList.Count; i++) {
+                if(!ControllerList[i].Enabled || ControllerList[i].IsDisposed)
                     continue;
 
                 ControllerList[i].Update(dt, dtReal);
             }
 
-            for (int i = 0; i < SpringList.Count; i++)
-            {
-                if (!SpringList[i].Enabled || SpringList[i].IsDisposed)
+            for(int i = 0; i < SpringList.Count; i++) {
+                if(!SpringList[i].Enabled || SpringList[i].IsDisposed)
                     continue;
 
                 SpringList[i].Update(dt);
             }
 
-            for (int i = 0; i < BodyList.Count; i++)
-            {
+            for(int i = 0; i < BodyList.Count; i++) {
                 Body body = BodyList[i];
-                if (!body.Enabled || body.isStatic || body.IsDisposed)
+                if(!body.Enabled || body.isStatic || body.IsDisposed)
                     continue;
 
                 //Apply accumulated external impules
                 body.ApplyImpulses();
 
-                if (!body.IgnoreGravity)
-                {
+                if(!body.IgnoreGravity) {
                     body.force.X = body.force.X + (Gravity.X * body.mass);
                     body.force.Y = body.force.Y + (Gravity.Y * body.mass);
                 }
@@ -565,39 +522,33 @@ namespace FarseerGames.FarseerPhysics
         /// Applies the impulses to all joints and arbiters.
         /// </summary>
         /// <param name="dt">The delta time.</param>
-        private void ApplyImpulses(float dt)
-        {
+        private void ApplyImpulses(float dt) {
             float inverseDt = 1f / dt;
 
-            for (int i = 0; i < JointList.Count; i++)
-            {
-                if (!JointList[i].Enabled || JointList[i].IsDisposed)
+            for(int i = 0; i < JointList.Count; i++) {
+                if(!JointList[i].Enabled || JointList[i].IsDisposed)
                     continue;
 
                 JointList[i].PreStep(inverseDt);
             }
 
-            for (int i = 0; i < ArbiterList.Count; i++)
-            {
-                if (!ArbiterList[i].GeometryA.CollisionResponseEnabled || !ArbiterList[i].GeometryB.CollisionResponseEnabled)
+            for(int i = 0; i < ArbiterList.Count; i++) {
+                if(!ArbiterList[i].GeometryA.CollisionResponseEnabled || !ArbiterList[i].GeometryB.CollisionResponseEnabled)
                     continue;
 
                 ArbiterList[i].PreStepImpulse(ref inverseDt);
             }
 
-            for (int h = 0; h < Iterations; h++)
-            {
-                for (int i = 0; i < JointList.Count; i++)
-                {
-                    if (!JointList[i].Enabled || JointList[i].IsDisposed)
+            for(int h = 0; h < Iterations; h++) {
+                for(int i = 0; i < JointList.Count; i++) {
+                    if(!JointList[i].Enabled || JointList[i].IsDisposed)
                         continue;
 
                     JointList[i].Update();
                 }
 
-                for (int i = 0; i < ArbiterList.Count; i++)
-                {
-                    if (!ArbiterList[i].GeometryA.CollisionResponseEnabled || !ArbiterList[i].GeometryB.CollisionResponseEnabled)
+                for(int i = 0; i < ArbiterList.Count; i++) {
+                    if(!ArbiterList[i].GeometryA.CollisionResponseEnabled || !ArbiterList[i].GeometryB.CollisionResponseEnabled)
                         continue;
 
                     ArbiterList[i].ApplyImpulse();
@@ -609,11 +560,9 @@ namespace FarseerGames.FarseerPhysics
         /// Updates the position on all bodies.
         /// </summary>
         /// <param name="dt">The delta time.</param>
-        private void UpdatePositions(float dt)
-        {
-            for (int i = 0; i < BodyList.Count; i++)
-            {
-                if (!BodyList[i].Enabled || BodyList[i].isStatic || BodyList[i].IsDisposed)
+        private void UpdatePositions(float dt) {
+            for(int i = 0; i < BodyList.Count; i++) {
+                if(!BodyList[i].Enabled || BodyList[i].isStatic || BodyList[i].IsDisposed)
                     continue;
 
                 BodyList[i].IntegratePosition(dt);
@@ -623,14 +572,11 @@ namespace FarseerGames.FarseerPhysics
         /// <summary>
         /// Processes the added geometries, springs, joints, bodies and controllers.
         /// </summary>
-        private void ProcessAddedItems()
-        {
+        private void ProcessAddedItems() {
             //Add any new geometries
             _tempCount = _geomAddList.Count;
-            for (int i = 0; i < _tempCount; i++)
-            {
-                if (!GeomList.Contains(_geomAddList[i]))
-                {
+            for(int i = 0; i < _tempCount; i++) {
+                if(!GeomList.Contains(_geomAddList[i])) {
                     _geomAddList[i].InSimulation = true;
                     GeomList.Add(_geomAddList[i]);
 
@@ -642,10 +588,8 @@ namespace FarseerGames.FarseerPhysics
 
             //Add any new bodies
             _tempCount = _bodyAddList.Count;
-            for (int i = 0; i < _tempCount; i++)
-            {
-                if (!BodyList.Contains(_bodyAddList[i]))
-                {
+            for(int i = 0; i < _tempCount; i++) {
+                if(!BodyList.Contains(_bodyAddList[i])) {
                     BodyList.Add(_bodyAddList[i]);
                 }
             }
@@ -653,10 +597,8 @@ namespace FarseerGames.FarseerPhysics
 
             //Add any new controllers
             _tempCount = _controllerAddList.Count;
-            for (int i = 0; i < _tempCount; i++)
-            {
-                if (!ControllerList.Contains(_controllerAddList[i]))
-                {
+            for(int i = 0; i < _tempCount; i++) {
+                if(!ControllerList.Contains(_controllerAddList[i])) {
                     ControllerList.Add(_controllerAddList[i]);
                 }
             }
@@ -664,10 +606,8 @@ namespace FarseerGames.FarseerPhysics
 
             //Add any new joints
             _tempCount = _jointAddList.Count;
-            for (int i = 0; i < _tempCount; i++)
-            {
-                if (!JointList.Contains(_jointAddList[i]))
-                {
+            for(int i = 0; i < _tempCount; i++) {
+                if(!JointList.Contains(_jointAddList[i])) {
                     JointList.Add(_jointAddList[i]);
                 }
             }
@@ -675,10 +615,8 @@ namespace FarseerGames.FarseerPhysics
 
             //Add any new springs
             _tempCount = _springAddList.Count;
-            for (int i = 0; i < _tempCount; i++)
-            {
-                if (!SpringList.Contains(_springAddList[i]))
-                {
+            for(int i = 0; i < _tempCount; i++) {
+                if(!SpringList.Contains(_springAddList[i])) {
                     SpringList.Add(_springAddList[i]);
                 }
             }
@@ -688,21 +626,17 @@ namespace FarseerGames.FarseerPhysics
         /// <summary>
         /// Processes the removed geometries (and their arbiters), bodies, controllers, joints and springs.
         /// </summary>
-        private void ProcessRemovedItems()
-        {
+        private void ProcessRemovedItems() {
             //Remove any new geometries
             _tempCount = _geomRemoveList.Count;
-            for (int i = 0; i < _tempCount; i++)
-            {
+            for(int i = 0; i < _tempCount; i++) {
                 _geomRemoveList[i].InSimulation = false;
                 GeomList.Remove(_geomRemoveList[i]);
 
                 //Remove any arbiters associated with the geometries being removed
-                for (int j = ArbiterList.Count; j > 0; j--)
-                {
-                    if (ArbiterList[j - 1].GeometryA == _geomRemoveList[i] ||
-                        ArbiterList[j - 1].GeometryB == _geomRemoveList[i])
-                    {
+                for(int j = ArbiterList.Count; j > 0; j--) {
+                    if(ArbiterList[j - 1].GeometryA == _geomRemoveList[i] ||
+                        ArbiterList[j - 1].GeometryB == _geomRemoveList[i]) {
                         //TODO: Should we create a RemoveComplete method and remove all Contacts associated
                         //with the arbiter?
                         arbiterPool.Insert(ArbiterList[j - 1]);
@@ -711,8 +645,7 @@ namespace FarseerGames.FarseerPhysics
                 }
             }
 
-            if (_geomRemoveList.Count > 0)
-            {
+            if(_geomRemoveList.Count > 0) {
                 _broadPhaseCollider.ProcessRemovedGeoms();
             }
 
@@ -720,32 +653,28 @@ namespace FarseerGames.FarseerPhysics
 
             //Remove any new bodies
             _tempCount = _bodyRemoveList.Count;
-            for (int i = 0; i < _tempCount; i++)
-            {
+            for(int i = 0; i < _tempCount; i++) {
                 BodyList.Remove(_bodyRemoveList[i]);
             }
             _bodyRemoveList.Clear();
 
             //Remove any new controllers
             _tempCount = _controllerRemoveList.Count;
-            for (int i = 0; i < _tempCount; i++)
-            {
+            for(int i = 0; i < _tempCount; i++) {
                 ControllerList.Remove(_controllerRemoveList[i]);
             }
             _controllerRemoveList.Clear();
 
             //Remove any new joints
             int jointRemoveCount = _jointRemoveList.Count;
-            for (int i = 0; i < jointRemoveCount; i++)
-            {
+            for(int i = 0; i < jointRemoveCount; i++) {
                 JointList.Remove(_jointRemoveList[i]);
             }
             _jointRemoveList.Clear();
 
             //Remove any new springs
             _tempCount = _springRemoveList.Count;
-            for (int i = 0; i < _tempCount; i++)
-            {
+            for(int i = 0; i < _tempCount; i++) {
                 SpringList.Remove(_springRemoveList[i]);
             }
             _springRemoveList.Clear();
@@ -754,30 +683,25 @@ namespace FarseerGames.FarseerPhysics
         /// <summary>
         /// Processes the disposed controllers, joints, springs, bodies and cleans up the arbiter list.
         /// </summary>
-        private void ProcessDisposedItems()
-        {
+        private void ProcessDisposedItems() {
             //Allow each controller to validate itself. this is where a controller can Dispose of itself if need be.
-            for (int i = 0; i < ControllerList.Count; i++)
-            {
+            for(int i = 0; i < ControllerList.Count; i++) {
                 ControllerList[i].Validate();
             }
 
             //Allow each joint to validate itself. this is where a joint can Dispose of itself if need be.
-            for (int i = 0; i < JointList.Count; i++)
-            {
+            for(int i = 0; i < JointList.Count; i++) {
                 JointList[i].Validate();
             }
 
             //Allow each spring to validate itself. this is where a spring can Dispose of itself if need be.
-            for (int i = 0; i < SpringList.Count; i++)
-            {
+            for(int i = 0; i < SpringList.Count; i++) {
                 SpringList[i].Validate();
             }
 
             _tempCount = GeomList.RemoveDisposed();
 
-            if (_tempCount > 0)
-            {
+            if(_tempCount > 0) {
                 _broadPhaseCollider.ProcessDisposedGeoms();
             }
 

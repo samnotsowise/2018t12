@@ -1,7 +1,6 @@
 using System;
 
-namespace FarseerGames.FarseerPhysics
-{
+namespace FarseerGames.FarseerPhysics {
 #if(!XNA)
     public enum CurveLoopType
     {
@@ -26,8 +25,7 @@ namespace FarseerGames.FarseerPhysics
     }
 #endif
 
-    public enum NarrowPhaseCollider
-    {
+    public enum NarrowPhaseCollider {
         DistanceGrid,
         SAT
     }
@@ -35,8 +33,7 @@ namespace FarseerGames.FarseerPhysics
     /// <summary>
     /// Determine the type of joint or spring used to link bodies, in the path generator.
     /// </summary>
-    public enum LinkType
-    {
+    public enum LinkType {
         /// <summary>
         /// Use a revolute point
         /// </summary>
@@ -56,8 +53,7 @@ namespace FarseerGames.FarseerPhysics
     }
 
     [Flags]
-    public enum CollisionCategory
-    {
+    public enum CollisionCategory {
         None = 0,
         All = int.MaxValue,
         Cat1 = 1,
@@ -96,8 +92,7 @@ namespace FarseerGames.FarseerPhysics
     /// <summary>
     /// Used to determine the type of friction applied to geometries.
     /// </summary>
-    public enum FrictionType
-    {
+    public enum FrictionType {
         /// <summary>
         /// Takes the average of the friction from the two geometries colliding.
         /// </summary>
@@ -111,8 +106,7 @@ namespace FarseerGames.FarseerPhysics
     /// <summary>
     /// Defines the type of gravity.
     /// </summary>
-    public enum GravityType
-    {
+    public enum GravityType {
         /// <summary>
         /// Gives the most realistic gravity.
         /// </summary>

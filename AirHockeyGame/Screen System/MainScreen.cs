@@ -7,8 +7,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
-namespace AirHockeyGame.Screens
-{
+namespace AirHockeyGame.Screens {
     /// <summary>
     /// The main game screen
     /// </summary>
@@ -19,7 +18,7 @@ namespace AirHockeyGame.Screens
         private Puck puck;
         private Board board;
         private ScoreBox scoreBox;
-        
+
         /// <summary>
         /// Initialises MainScreen
         /// </summary>
@@ -33,7 +32,7 @@ namespace AirHockeyGame.Screens
         /// Loads MainScreen content
         /// </summary>
         public override void LoadContent() {
-            
+
             //Load board
             this.board = new Board(PhysicsSimulator);
 
@@ -43,11 +42,11 @@ namespace AirHockeyGame.Screens
             //Load Paddles
             this.playerPaddle = new PlayerPaddle(ScreenManager.ContentManager.Load<Texture2D>("Content\\Core Game\\playerPaddle"), 82, new Vector2(256, 384), PhysicsSimulator);
             this.opponentPaddle = new OpponentPaddle(ScreenManager.ContentManager.Load<Texture2D>("Content\\Core Game\\opponentPaddle"), 82, new Vector2(768, 384), PhysicsSimulator);
-            
+
             //Load ScoreBox
             this.scoreBox = new ScoreBox();
             scoreBox.LoadContent(ScreenManager.ContentManager);
-            
+
             base.LoadContent();
         }
 
@@ -70,15 +69,14 @@ namespace AirHockeyGame.Screens
             if(input.IsNewKeyPress(Keys.F)) {
                 ScreenManager.RequestParticleEffect('s', this.puck.position);
             }
-            if(input.IsNewKeyPress(Keys.R))
-            {
+            if(input.IsNewKeyPress(Keys.R)) {
                 scoreBox.Scored();
                 //Moves the particle effects further right if the number is two digits long
                 int horOffset = 10;
-                if (scoreBox.thisScore >= 10)
+                if(scoreBox.thisScore >= 10)
                     horOffset += 10;
 
-                ScreenManager.RequestParticleEffect('r', 
+                ScreenManager.RequestParticleEffect('r',
                     new Vector2(this.scoreBox.ScoreTextPosition.X + horOffset, this.scoreBox.ScoreTextPosition.Y + 15));
             }
             base.HandleInput(input);
@@ -148,7 +146,7 @@ namespace AirHockeyGame.Screens
             ScreenManager.SpriteBatch.Draw(this.playerPaddle.texture, this.playerPaddle.rect, Color.White);
             ScreenManager.SpriteBatch.Draw(this.opponentPaddle.texture, this.opponentPaddle.rect, Color.White);
             ScreenManager.SpriteBatch.Draw(ScreenManager.ContentManager.Load<Texture2D>("Content\\Core Game\\boardEdges"), this.board.rect, Color.White);
-            
+
             //Draw ScoreBox
             scoreBox.Draw(ScreenManager.SpriteBatch);
 

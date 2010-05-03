@@ -9,25 +9,19 @@ using Microsoft.Xna.Framework;
 using FarseerGames.FarseerPhysics.Mathematics;
 #endif
 
-namespace FarseerGames.FarseerPhysics.Factories
-{
+namespace FarseerGames.FarseerPhysics.Factories {
     /// <summary>
     /// An easy to use factory for creating geoms
     /// </summary>
-    public class GeomFactory
-    {
+    public class GeomFactory {
         private static GeomFactory _instance;
 
-        private GeomFactory()
-        {
+        private GeomFactory() {
         }
 
-        public static GeomFactory Instance
-        {
-            get
-            {
-                if (_instance == null)
-                {
+        public static GeomFactory Instance {
+            get {
+                if(_instance == null) {
                     _instance = new GeomFactory();
                 }
                 return _instance;
@@ -43,8 +37,7 @@ namespace FarseerGames.FarseerPhysics.Factories
         /// <param name="width">The width.</param>
         /// <param name="height">The height.</param>
         /// <returns>The geometry</returns>
-        public Geom CreateRectangleGeom(PhysicsSimulator physicsSimulator, Body body, float width, float height)
-        {
+        public Geom CreateRectangleGeom(PhysicsSimulator physicsSimulator, Body body, float width, float height) {
             return CreateRectangleGeom(physicsSimulator, body, width, height, Vector2.Zero, 0, 0);
         }
 
@@ -55,8 +48,7 @@ namespace FarseerGames.FarseerPhysics.Factories
         /// <param name="width">The width.</param>
         /// <param name="height">The height.</param>
         /// <returns>The geometry</returns>
-        public Geom CreateRectangleGeom(Body body, float width, float height)
-        {
+        public Geom CreateRectangleGeom(Body body, float width, float height) {
             return CreateRectangleGeom(body, width, height, Vector2.Zero, 0, 0);
         }
 
@@ -70,8 +62,7 @@ namespace FarseerGames.FarseerPhysics.Factories
         /// <param name="positionOffset">The position offset.</param>
         /// <param name="rotationOffset">The rotation offset.</param>
         /// <returns>The geometry</returns>
-        public Geom CreateRectangleGeom(PhysicsSimulator physicsSimulator, Body body, float width, float height, Vector2 positionOffset, float rotationOffset)
-        {
+        public Geom CreateRectangleGeom(PhysicsSimulator physicsSimulator, Body body, float width, float height, Vector2 positionOffset, float rotationOffset) {
             return CreateRectangleGeom(physicsSimulator, body, width, height, positionOffset, rotationOffset, 0);
         }
 
@@ -84,8 +75,7 @@ namespace FarseerGames.FarseerPhysics.Factories
         /// <param name="positionOffset">The position offset.</param>
         /// <param name="rotationOffset">The rotation offset.</param>
         /// <returns>The geometry</returns>
-        public Geom CreateRectangleGeom(Body body, float width, float height, Vector2 positionOffset, float rotationOffset)
-        {
+        public Geom CreateRectangleGeom(Body body, float width, float height, Vector2 positionOffset, float rotationOffset) {
             return CreateRectangleGeom(body, width, height, positionOffset, rotationOffset, 0);
         }
 
@@ -98,8 +88,7 @@ namespace FarseerGames.FarseerPhysics.Factories
         /// <param name="height">The height.</param>
         /// <param name="collisionGridSize">Size of the collision grid cells. Pass in 0 or less automatically calculate the grid cell size. - not used with SAT</param>
         /// <returns></returns>
-        public Geom CreateRectangleGeom(PhysicsSimulator physicsSimulator, Body body, float width, float height, float collisionGridSize)
-        {
+        public Geom CreateRectangleGeom(PhysicsSimulator physicsSimulator, Body body, float width, float height, float collisionGridSize) {
             return CreateRectangleGeom(physicsSimulator, body, width, height, Vector2.Zero, 0, collisionGridSize);
         }
 
@@ -111,8 +100,7 @@ namespace FarseerGames.FarseerPhysics.Factories
         /// <param name="height">The height.</param>
         /// <param name="collisionGridSize">Size of the collision grid. - not used with SAT</param>
         /// <returns></returns>
-        public Geom CreateRectangleGeom(Body body, float width, float height, float collisionGridSize)
-        {
+        public Geom CreateRectangleGeom(Body body, float width, float height, float collisionGridSize) {
             return CreateRectangleGeom(body, width, height, Vector2.Zero, 0, collisionGridSize);
         }
 
@@ -127,8 +115,7 @@ namespace FarseerGames.FarseerPhysics.Factories
         /// <param name="rotationOffset">The rotation offset.</param>
         /// <param name="collisionGridSize">Size of the collision grid. - not used with SAT</param>
         /// <returns></returns>
-        public Geom CreateRectangleGeom(PhysicsSimulator physicsSimulator, Body body, float width, float height, Vector2 positionOffset, float rotationOffset, float collisionGridSize)
-        {
+        public Geom CreateRectangleGeom(PhysicsSimulator physicsSimulator, Body body, float width, float height, Vector2 positionOffset, float rotationOffset, float collisionGridSize) {
             Geom geometry = CreateRectangleGeom(body, width, height, positionOffset, rotationOffset, collisionGridSize);
             physicsSimulator.Add(geometry);
             return geometry;
@@ -144,12 +131,11 @@ namespace FarseerGames.FarseerPhysics.Factories
         /// <param name="rotationOffset">The rotation offset.</param>
         /// <param name="collisionGridSize">Size of the collision grid. - not used with SAT</param>
         /// <returns></returns>
-        public Geom CreateRectangleGeom(Body body, float width, float height, Vector2 positionOffset, float rotationOffset, float collisionGridSize)
-        {
-            if (width <= 0)
+        public Geom CreateRectangleGeom(Body body, float width, float height, Vector2 positionOffset, float rotationOffset, float collisionGridSize) {
+            if(width <= 0)
                 throw new ArgumentOutOfRangeException("width", "Width must be more than 0");
 
-            if (height <= 0)
+            if(height <= 0)
                 throw new ArgumentOutOfRangeException("height", "Height must be more than 0");
 
             Vertices vertices = Vertices.CreateRectangle(width, height);
@@ -169,8 +155,7 @@ namespace FarseerGames.FarseerPhysics.Factories
         /// <param name="yRadius">The y radius.</param>
         /// <param name="numberOfEdges">The number of edges.</param>
         /// <returns></returns>
-        public Geom CreateEllipseGeom(PhysicsSimulator physicsSimulator, Body body, float xRadius, float yRadius, int numberOfEdges)
-        {
+        public Geom CreateEllipseGeom(PhysicsSimulator physicsSimulator, Body body, float xRadius, float yRadius, int numberOfEdges) {
             return CreateEllipseGeom(physicsSimulator, body, xRadius, yRadius, numberOfEdges, Vector2.Zero, 0, 0);
         }
 
@@ -182,8 +167,7 @@ namespace FarseerGames.FarseerPhysics.Factories
         /// <param name="yRadius">The y radius.</param>
         /// <param name="numberOfEdges">The number of edges.</param>
         /// <returns></returns>
-        public Geom CreateEllipseGeom(Body body, float xRadius, float yRadius, int numberOfEdges)
-        {
+        public Geom CreateEllipseGeom(Body body, float xRadius, float yRadius, int numberOfEdges) {
             return CreateEllipseGeom(body, xRadius, yRadius, numberOfEdges, Vector2.Zero, 0, 0);
         }
 
@@ -198,8 +182,7 @@ namespace FarseerGames.FarseerPhysics.Factories
         /// <param name="offset">The offset.</param>
         /// <param name="rotationOffset">The rotation offset.</param>
         /// <returns></returns>
-        public Geom CreateEllipseGeom(PhysicsSimulator physicsSimulator, Body body, float xRadius, float yRadius, int numberOfEdges, Vector2 offset, float rotationOffset)
-        {
+        public Geom CreateEllipseGeom(PhysicsSimulator physicsSimulator, Body body, float xRadius, float yRadius, int numberOfEdges, Vector2 offset, float rotationOffset) {
             return CreateEllipseGeom(physicsSimulator, body, xRadius, yRadius, numberOfEdges, offset, rotationOffset, 0);
         }
 
@@ -213,8 +196,7 @@ namespace FarseerGames.FarseerPhysics.Factories
         /// <param name="offset">The offset.</param>
         /// <param name="rotationOffset">The rotation offset.</param>
         /// <returns></returns>
-        public Geom CreateEllipseGeom(Body body, float xRadius, float yRadius, int numberOfEdges, Vector2 offset, float rotationOffset)
-        {
+        public Geom CreateEllipseGeom(Body body, float xRadius, float yRadius, int numberOfEdges, Vector2 offset, float rotationOffset) {
             return CreateEllipseGeom(body, xRadius, yRadius, numberOfEdges, offset, rotationOffset, 0);
         }
 
@@ -228,8 +210,7 @@ namespace FarseerGames.FarseerPhysics.Factories
         /// <param name="numberOfEdges">The number of edges.</param>
         /// <param name="collisionGridSize">Size of the collision grid. - not used with SAT</param>
         /// <returns></returns>
-        public Geom CreateEllipseGeom(PhysicsSimulator physicsSimulator, Body body, float xRadius, float yRadius, int numberOfEdges, float collisionGridSize)
-        {
+        public Geom CreateEllipseGeom(PhysicsSimulator physicsSimulator, Body body, float xRadius, float yRadius, int numberOfEdges, float collisionGridSize) {
             return CreateEllipseGeom(physicsSimulator, body, xRadius, yRadius, numberOfEdges, Vector2.Zero, 0,
                                      collisionGridSize);
         }
@@ -243,8 +224,7 @@ namespace FarseerGames.FarseerPhysics.Factories
         /// <param name="numberOfEdges">The number of edges.</param>
         /// <param name="collisionGridSize">Size of the collision grid. - not used with SAT</param>
         /// <returns></returns>
-        public Geom CreateEllipseGeom(Body body, float xRadius, float yRadius, int numberOfEdges, float collisionGridSize)
-        {
+        public Geom CreateEllipseGeom(Body body, float xRadius, float yRadius, int numberOfEdges, float collisionGridSize) {
             return CreateEllipseGeom(body, xRadius, yRadius, numberOfEdges, Vector2.Zero, 0, collisionGridSize);
         }
 
@@ -260,8 +240,7 @@ namespace FarseerGames.FarseerPhysics.Factories
         /// <param name="rotationOffset">The rotation offset.</param>
         /// <param name="collisionGridSize">Size of the collision grid. - not used with SAT</param>
         /// <returns></returns>
-        public Geom CreateEllipseGeom(PhysicsSimulator physicsSimulator, Body body, float xRadius, float yRadius, int numberOfEdges, Vector2 offset, float rotationOffset, float collisionGridSize)
-        {
+        public Geom CreateEllipseGeom(PhysicsSimulator physicsSimulator, Body body, float xRadius, float yRadius, int numberOfEdges, Vector2 offset, float rotationOffset, float collisionGridSize) {
             Geom geometry = CreateEllipseGeom(body, xRadius, yRadius, numberOfEdges, offset, rotationOffset,
                                               collisionGridSize);
             physicsSimulator.Add(geometry);
@@ -279,12 +258,11 @@ namespace FarseerGames.FarseerPhysics.Factories
         /// <param name="rotationOffset">The rotation offset.</param>
         /// <param name="collisionGridSize">Size of the collision grid. - not used with SAT</param>
         /// <returns></returns>
-        public Geom CreateEllipseGeom(Body body, float xRadius, float yRadius, int numberOfEdges, Vector2 offset, float rotationOffset, float collisionGridSize)
-        {
-            if (xRadius <= 0)
+        public Geom CreateEllipseGeom(Body body, float xRadius, float yRadius, int numberOfEdges, Vector2 offset, float rotationOffset, float collisionGridSize) {
+            if(xRadius <= 0)
                 throw new ArgumentOutOfRangeException("xRadius", "xRadius must be more than 0");
 
-            if (yRadius <= 0)
+            if(yRadius <= 0)
                 throw new ArgumentOutOfRangeException("yRadius", "yRadius must be more than 0");
 
             Vertices vertices = Vertices.CreateEllipse(xRadius, yRadius, numberOfEdges);
@@ -303,8 +281,7 @@ namespace FarseerGames.FarseerPhysics.Factories
         /// <param name="radius">The radius.</param>
         /// <param name="numberOfEdges">The number of edges.</param>
         /// <returns></returns>
-        public Geom CreateCircleGeom(PhysicsSimulator physicsSimulator, Body body, float radius, int numberOfEdges)
-        {
+        public Geom CreateCircleGeom(PhysicsSimulator physicsSimulator, Body body, float radius, int numberOfEdges) {
             return CreateCircleGeom(physicsSimulator, body, radius, numberOfEdges, Vector2.Zero, 0, 0);
         }
 
@@ -315,8 +292,7 @@ namespace FarseerGames.FarseerPhysics.Factories
         /// <param name="radius">The radius.</param>
         /// <param name="numberOfEdges">The number of edges.</param>
         /// <returns></returns>
-        public Geom CreateCircleGeom(Body body, float radius, int numberOfEdges)
-        {
+        public Geom CreateCircleGeom(Body body, float radius, int numberOfEdges) {
             return CreateCircleGeom(body, radius, numberOfEdges, Vector2.Zero, 0, 0);
         }
 
@@ -331,8 +307,7 @@ namespace FarseerGames.FarseerPhysics.Factories
         /// <param name="rotationOffset">The rotation offset.</param>
         /// <returns></returns>
         public Geom CreateCircleGeom(PhysicsSimulator physicsSimulator, Body body, float radius, int numberOfEdges,
-                                     Vector2 offset, float rotationOffset)
-        {
+                                     Vector2 offset, float rotationOffset) {
             return CreateCircleGeom(physicsSimulator, body, radius, numberOfEdges, offset, rotationOffset, 0);
         }
 
@@ -345,8 +320,7 @@ namespace FarseerGames.FarseerPhysics.Factories
         /// <param name="offset">The offset.</param>
         /// <param name="rotationOffset">The rotation offset.</param>
         /// <returns></returns>
-        public Geom CreateCircleGeom(Body body, float radius, int numberOfEdges, Vector2 offset, float rotationOffset)
-        {
+        public Geom CreateCircleGeom(Body body, float radius, int numberOfEdges, Vector2 offset, float rotationOffset) {
             return CreateCircleGeom(body, radius, numberOfEdges, offset, rotationOffset, 0);
         }
 
@@ -360,8 +334,7 @@ namespace FarseerGames.FarseerPhysics.Factories
         /// <param name="collisionGridSize">Size of the collision grid.</param>
         /// <returns></returns>
         public Geom CreateCircleGeom(PhysicsSimulator physicsSimulator, Body body, float radius, int numberOfEdges,
-                                     float collisionGridSize)
-        {
+                                     float collisionGridSize) {
             return CreateCircleGeom(physicsSimulator, body, radius, numberOfEdges, Vector2.Zero, 0,
                                     collisionGridSize);
         }
@@ -374,8 +347,7 @@ namespace FarseerGames.FarseerPhysics.Factories
         /// <param name="numberOfEdges">The number of edges.</param>
         /// <param name="collisionGridSize">Size of the collision grid. - not used with SAT</param>
         /// <returns></returns>
-        public Geom CreateCircleGeom(Body body, float radius, int numberOfEdges, float collisionGridSize)
-        {
+        public Geom CreateCircleGeom(Body body, float radius, int numberOfEdges, float collisionGridSize) {
             return CreateCircleGeom(body, radius, numberOfEdges, Vector2.Zero, 0, collisionGridSize);
         }
 
@@ -391,8 +363,7 @@ namespace FarseerGames.FarseerPhysics.Factories
         /// <param name="collisionGridSize">Size of the collision grid. - not used with SAT</param>
         /// <returns></returns>
         public Geom CreateCircleGeom(PhysicsSimulator physicsSimulator, Body body, float radius, int numberOfEdges,
-                                     Vector2 offset, float rotationOffset, float collisionGridSize)
-        {
+                                     Vector2 offset, float rotationOffset, float collisionGridSize) {
             Geom geometry = CreateCircleGeom(body, radius, numberOfEdges, offset, rotationOffset, collisionGridSize);
             physicsSimulator.Add(geometry);
             return geometry;
@@ -409,9 +380,8 @@ namespace FarseerGames.FarseerPhysics.Factories
         /// <param name="collisionGridSize">Size of the collision grid. - not used with SAT</param>
         /// <returns></returns>
         public Geom CreateCircleGeom(Body body, float radius, int numberOfEdges, Vector2 offset, float rotationOffset,
-                                     float collisionGridSize)
-        {
-            if (radius <= 0)
+                                     float collisionGridSize) {
+            if(radius <= 0)
                 throw new ArgumentOutOfRangeException("radius", "Radius must be more than 0");
 
             Vertices vertices = Vertices.CreateCircle(radius, numberOfEdges);
@@ -431,8 +401,7 @@ namespace FarseerGames.FarseerPhysics.Factories
         /// <param name="collisionGridSize">Size of the collision grid. - not used with SAT
         /// Put in 0 or less to make the engine calculate a grid cell size.</param>
         /// <returns></returns>
-        public Geom CreatePolygonGeom(PhysicsSimulator physicsSimulator, Body body, Vertices vertices, float collisionGridSize)
-        {
+        public Geom CreatePolygonGeom(PhysicsSimulator physicsSimulator, Body body, Vertices vertices, float collisionGridSize) {
             return CreatePolygonGeom(physicsSimulator, body, vertices, Vector2.Zero, 0, collisionGridSize);
         }
 
@@ -444,8 +413,7 @@ namespace FarseerGames.FarseerPhysics.Factories
         /// <param name="collisionGridSize">Size of the collision grid. - not used with SAT
         /// Put in 0 or less to make the engine calculate a grid cell size.</param>
         /// <returns></returns>
-        public Geom CreatePolygonGeom(Body body, Vertices vertices, float collisionGridSize)
-        {
+        public Geom CreatePolygonGeom(Body body, Vertices vertices, float collisionGridSize) {
             return CreatePolygonGeom(body, vertices, Vector2.Zero, 0, collisionGridSize);
         }
 
@@ -460,8 +428,7 @@ namespace FarseerGames.FarseerPhysics.Factories
         /// <param name="collisionGridSize">Size of the collision grid. - not used with SAT
         /// Put in 0 or less to make the engine calculate a grid cell size.</param>
         /// <returns></returns>
-        public Geom CreatePolygonGeom(PhysicsSimulator physicsSimulator, Body body, Vertices vertices, Vector2 positionOffset, float rotationOffset, float collisionGridSize)
-        {
+        public Geom CreatePolygonGeom(PhysicsSimulator physicsSimulator, Body body, Vertices vertices, Vector2 positionOffset, float rotationOffset, float collisionGridSize) {
             Geom geometry = CreatePolygonGeom(body, vertices, positionOffset, rotationOffset, collisionGridSize);
             physicsSimulator.Add(geometry);
             return geometry;
@@ -477,14 +444,13 @@ namespace FarseerGames.FarseerPhysics.Factories
         /// <param name="collisionGridSize">Size of the collision grid. - not used with SAT
         /// Put in 0 or less to make the engine calculate a grid cell size.</param>
         /// <returns></returns>
-        public Geom CreatePolygonGeom(Body body, Vertices vertices, Vector2 positionOffset, float rotationOffset, float collisionGridSize)
-        {
-            if (body == null)
+        public Geom CreatePolygonGeom(Body body, Vertices vertices, Vector2 positionOffset, float rotationOffset, float collisionGridSize) {
+            if(body == null)
                 throw new ArgumentNullException("body", "Body must not be null");
 
-            if (vertices == null)
+            if(vertices == null)
                 throw new ArgumentNullException("vertices", "Vertices must not be null");
-            
+
             //Adjust the verts to be relative to the centroid.
             Vector2 centroid = vertices.GetCentroid();
 
@@ -505,11 +471,9 @@ namespace FarseerGames.FarseerPhysics.Factories
         /// <param name="vertices">The vertices.</param>
         /// <param name="maxGeoms">The number of geometries to split the geometry into. It is needed to make SAT support concave polygons. The engine will try to reach the desired number of geometries.</param>
         /// <returns></returns>
-        public List<Geom> CreateSATPolygonGeom(PhysicsSimulator physicsSimulator, Body body, Vertices vertices, int maxGeoms)
-        {
+        public List<Geom> CreateSATPolygonGeom(PhysicsSimulator physicsSimulator, Body body, Vertices vertices, int maxGeoms) {
             List<Geom> geometries = CreateSATPolygonGeom(body, vertices, maxGeoms);
-            foreach (Geom geom in geometries)
-            {
+            foreach(Geom geom in geometries) {
                 physicsSimulator.Add(geom);
             }
 
@@ -524,12 +488,11 @@ namespace FarseerGames.FarseerPhysics.Factories
         /// <param name="vertices">The vertices.</param>
         /// <param name="numberOfGeoms">The number of geoms.</param>
         /// <returns></returns>
-        public List<Geom> CreateSATPolygonGeom(Body body, Vertices vertices, int numberOfGeoms)
-        {
-            if (body == null)
+        public List<Geom> CreateSATPolygonGeom(Body body, Vertices vertices, int numberOfGeoms) {
+            if(body == null)
                 throw new ArgumentNullException("body", "Body must not be null");
 
-            if (vertices == null)
+            if(vertices == null)
                 throw new ArgumentNullException("vertices", "Vertices must not be null");
 
             List<Geom> geometries = Vertices.DecomposeGeom(vertices, body, numberOfGeoms);
@@ -547,8 +510,7 @@ namespace FarseerGames.FarseerPhysics.Factories
         /// <param name="body">The body.</param>
         /// <param name="geometry">The geometry to clone.</param>
         /// <returns></returns>
-        public Geom CreateGeom(PhysicsSimulator physicsSimulator, Body body, Geom geometry)
-        {
+        public Geom CreateGeom(PhysicsSimulator physicsSimulator, Body body, Geom geometry) {
             Geom geometryClone = CreateGeom(body, geometry);
             physicsSimulator.Add(geometryClone);
             return geometryClone;
@@ -560,8 +522,7 @@ namespace FarseerGames.FarseerPhysics.Factories
         /// <param name="body">The body.</param>
         /// <param name="geometry">The geometry to clone.</param>
         /// <returns></returns>
-        public Geom CreateGeom(Body body, Geom geometry)
-        {
+        public Geom CreateGeom(Body body, Geom geometry) {
             Geom geometryClone = new Geom(body, geometry);
             return geometryClone;
         }
@@ -576,8 +537,7 @@ namespace FarseerGames.FarseerPhysics.Factories
         /// <param name="rotationOffset">The rotation offset.</param>
         /// <returns></returns>
         public Geom CreateGeom(PhysicsSimulator physicsSimulator, Body body, Geom geometry, Vector2 offset,
-                               float rotationOffset)
-        {
+                               float rotationOffset) {
             Geom geometryClone = CreateGeom(body, geometry, offset, rotationOffset);
             physicsSimulator.Add(geometryClone);
             return geometryClone;
@@ -591,8 +551,7 @@ namespace FarseerGames.FarseerPhysics.Factories
         /// <param name="offset">The offset.</param>
         /// <param name="rotationOffset">The rotation offset.</param>
         /// <returns></returns>
-        public Geom CreateGeom(Body body, Geom geometry, Vector2 offset, float rotationOffset)
-        {
+        public Geom CreateGeom(Body body, Geom geometry, Vector2 offset, float rotationOffset) {
             Geom geometryClone = new Geom(body, geometry, offset, rotationOffset);
             return geometryClone;
         }

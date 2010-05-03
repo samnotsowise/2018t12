@@ -14,10 +14,10 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using AirHockeyGame;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
-using AirHockeyGame;
 #endregion
 
 namespace GameScreenManager.ScreenSystem {
@@ -94,18 +94,16 @@ namespace GameScreenManager.ScreenSystem {
 
             //Creates a settings instance with default variables
             //This is then saved to file
-            if (GameState.gameSettings == null)
-            {
+            if(GameState.gameSettings == null) {
                 GameState.gameSettings = new Settings();
                 GameState.gameSettings.WriteSettingsFile();
             }
-            
+
             //Load profile
             GameState.playerProfile = Profile.ReadProfile("profile.dat");
 
             //Check if a file was read, if not, create profile
-            if (GameState.playerProfile == null)
-            {
+            if(GameState.playerProfile == null) {
                 GameState.playerProfile = new Profile();
                 GameState.playerProfile.WriteProfile("profile.dat");
             }

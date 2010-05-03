@@ -1,9 +1,6 @@
-﻿namespace GameScreenManager.ScreenSystem
-{
-    public class MenuItem
-    {
-        public MenuItem(GameScreen screen, bool isExitItem)
-        {
+﻿namespace GameScreenManager.ScreenSystem {
+    public class MenuItem {
+        public MenuItem(GameScreen screen, bool isExitItem) {
             Screen = screen;
             IsExitItem = isExitItem;
         }

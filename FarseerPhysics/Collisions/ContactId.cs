@@ -1,16 +1,13 @@
 using System;
 
-namespace FarseerGames.FarseerPhysics.Collisions
-{
+namespace FarseerGames.FarseerPhysics.Collisions {
     /// <summary>
     /// Used in collision detection
     /// Provides an implementation that gives an ID for contacts
     /// </summary>
-    public struct ContactId : IEquatable<ContactId>
-    {
+    public struct ContactId: IEquatable<ContactId> {
         public ContactId(int geometryAIndex, int geometryAVertex, int geometryBIndex)
-            : this()
-        {
+            : this() {
             Geom1Index = geometryAIndex;
             Geom1Vertex = geometryAVertex;
             Geom2Index = geometryBIndex;
@@ -36,40 +33,34 @@ namespace FarseerGames.FarseerPhysics.Collisions
 
         #region IEquatable<ContactId> Members
 
-        public bool Equals(ContactId other)
-        {
+        public bool Equals(ContactId other) {
             return (Geom1Index == other.Geom1Index) && (Geom1Vertex == other.Geom1Vertex) &&
                    (Geom2Index == other.Geom2Index);
         }
 
         #endregion
 
-        public bool Equals(ref ContactId other)
-        {
+        public bool Equals(ref ContactId other) {
             return (Geom1Index == other.Geom1Index) && (Geom1Vertex == other.Geom1Vertex) &&
                    (Geom2Index == other.Geom2Index);
         }
 
-        public override bool Equals(object obj)
-        {
-            if (!(obj is ContactId))
+        public override bool Equals(object obj) {
+            if(!(obj is ContactId))
                 return false;
 
             return Equals((ContactId)obj);
         }
 
-        public static bool operator ==(ContactId contactId1, ContactId contactId2)
-        {
+        public static bool operator ==(ContactId contactId1, ContactId contactId2) {
             return contactId1.Equals(ref contactId2);
         }
 
-        public static bool operator !=(ContactId contactId1, ContactId contactId2)
-        {
+        public static bool operator !=(ContactId contactId1, ContactId contactId2) {
             return !contactId1.Equals(ref contactId2);
         }
 
-        public override int GetHashCode()
-        {
+        public override int GetHashCode() {
             return Geom1Index + Geom1Vertex + Geom2Index;
         }
     }

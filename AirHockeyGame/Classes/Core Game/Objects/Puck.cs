@@ -1,9 +1,22 @@
-﻿using FarseerGames.FarseerPhysics;
+﻿/*
+ *      Puck Class
+ * 
+ * Description:
+ *      Used to create pucks.
+ *      Most of this object is
+ *      handled by the physics
+ *      engine.
+ *      
+ * Author(s):
+ *      Sam Thompson
+ */
+
+using AirHockeyGame;
+using FarseerGames.FarseerPhysics;
 using FarseerGames.FarseerPhysics.Collisions;
 using FarseerGames.FarseerPhysics.Factories;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using AirHockeyGame;
 
 namespace FarseerGames.AirHockeyGame {
 
@@ -30,13 +43,7 @@ namespace FarseerGames.AirHockeyGame {
             this.rect = new Rectangle((int)this.position.X, (int)this.position.Y, this.width, this.height);
             this.initialPosition = iP;
             this.pS = pS;
-
-            //-------------------
-            //Physics Properties
-
             this.CreateBody(this.pS);
-
-            //-------------------
 
             //Set the object to it's initial position
             this.UpdatePosition(this.initialPosition);
@@ -59,9 +66,13 @@ namespace FarseerGames.AirHockeyGame {
         /// <param name="p">Position</param>
         public override void UpdatePosition(Vector2 p) {
             GameState.puckPos = p;
- 	        base.UpdatePosition(p);
+            base.UpdatePosition(p);
         }
 
+        /// <summary>
+        /// Creates a physics body for this paddle
+        /// </summary>
+        /// <param name="pS">Physics Simulator</param>
         public override void CreateBody(PhysicsSimulator pS) {
 
             //Create a physics body

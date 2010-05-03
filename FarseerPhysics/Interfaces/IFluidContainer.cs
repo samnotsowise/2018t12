@@ -6,10 +6,8 @@ using Microsoft.Xna.Framework;
 using FarseerGames.FarseerPhysics.Mathematics;
 #endif
 
-namespace FarseerGames.FarseerPhysics.Interfaces
-{
-    public interface IFluidContainer
-    {
+namespace FarseerGames.FarseerPhysics.Interfaces {
+    public interface IFluidContainer {
         bool Intersect(ref AABB aabb);
         bool Contains(ref Vector2 vector);
     }

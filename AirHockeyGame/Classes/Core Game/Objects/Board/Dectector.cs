@@ -1,15 +1,26 @@
-﻿using Microsoft.Xna.Framework;
+﻿/*
+ *      Detector Class
+ * 
+ * Description:
+ *      A board object simply used to
+ *      check for collisions
+ *      
+ * Author(s):
+ *      Sam Thompson
+ */
+
+using Microsoft.Xna.Framework;
 
 namespace FarseerGames.AirHockeyGame {
 
     /// <summary>
-    /// A Restrictor object
+    /// A Detector object
     /// Extends GameObject
     /// </summary>
     class Detector: GameObject {
 
         /// <summary>
-        /// Constructor - used to create a new Restrictor object
+        /// Constructor - used to create a new Detector object
         /// </summary>
         /// <param name="w">Width</param>
         /// <param name="h">Height</param>

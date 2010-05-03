@@ -4,13 +4,11 @@ using Microsoft.Xna.Framework;
 using FarseerGames.FarseerPhysics.Mathematics;
 #endif
 
-namespace FarseerGames.FarseerPhysics.Dynamics.Springs
-{
+namespace FarseerGames.FarseerPhysics.Dynamics.Springs {
     /// <summary>
     /// Attaches 2 bodies with a spring. Works kind of like a rubber band.
     /// </summary>
-    public class LinearSpring : Spring
-    {
+    public class LinearSpring: Spring {
         public event SpringDelegate SpringUpdated;
 
         private Vector2 _attachPoint1;
@@ -19,13 +17,11 @@ namespace FarseerGames.FarseerPhysics.Dynamics.Springs
         private Body _body2;
         private float _restLength;
 
-        public LinearSpring()
-        {
+        public LinearSpring() {
         }
 
         public LinearSpring(Body body1, Vector2 attachPoint1, Body body2, Vector2 attachPoint2, float springConstant,
-                            float dampingConstant)
-        {
+                            float dampingConstant) {
             _body1 = body1;
             _body2 = body2;
             _attachPoint1 = attachPoint1;
@@ -40,8 +36,7 @@ namespace FarseerGames.FarseerPhysics.Dynamics.Springs
         /// Gets or sets the fist body.
         /// </summary>
         /// <Value>The body1.</Value>
-        public Body Body1
-        {
+        public Body Body1 {
             get { return _body1; }
             set { _body1 = value; }
         }
@@ -50,8 +45,7 @@ namespace FarseerGames.FarseerPhysics.Dynamics.Springs
         /// Gets or sets the second body.
         /// </summary>
         /// <Value>The body2.</Value>
-        public Body Body2
-        {
+        public Body Body2 {
             get { return _body2; }
             set { _body2 = value; }
         }
@@ -60,8 +54,7 @@ namespace FarseerGames.FarseerPhysics.Dynamics.Springs
         /// Gets or sets the fist attach point.
         /// </summary>
         /// <Value>The attach point1.</Value>
-        public Vector2 AttachPoint1
-        {
+        public Vector2 AttachPoint1 {
             get { return _attachPoint1; }
             set { _attachPoint1 = value; }
         }
@@ -70,8 +63,7 @@ namespace FarseerGames.FarseerPhysics.Dynamics.Springs
         /// Gets or sets the second attach point.
         /// </summary>
         /// <Value>The attach point2.</Value>
-        public Vector2 AttachPoint2
-        {
+        public Vector2 AttachPoint2 {
             get { return _attachPoint2; }
             set { _attachPoint2 = value; }
         }
@@ -80,30 +72,26 @@ namespace FarseerGames.FarseerPhysics.Dynamics.Springs
         /// Gets or sets the length of the rest.
         /// </summary>
         /// <Value>The length of the rest.</Value>
-        public float RestLength
-        {
+        public float RestLength {
             get { return _restLength; }
             set { _restLength = value; }
         }
 
-        public override void Validate()
-        {
+        public override void Validate() {
             //if either of the springs's connected bodies are disposed then dispose the spring.
-            if (_body1.IsDisposed || _body2.IsDisposed)
-            {
+            if(_body1.IsDisposed || _body2.IsDisposed) {
                 Dispose();
             }
         }
 
-        public override void Update(float dt)
-        {
+        public override void Update(float dt) {
             base.Update(dt);
 
             //If both bodies can't move. Don't apply forces to them.
-            if (_body1.isStatic && _body2.isStatic)
+            if(_body1.isStatic && _body2.isStatic)
                 return;
 
-            if (!_body1.Enabled && !_body2.Enabled)
+            if(!_body1.Enabled && !_body2.Enabled)
                 return;
 
             //F = -{s(L-r) + d[(v1-v2).L]/l}L/l   : s=spring const, d = dampning const, L=difference vector (p1-p2), l = difference magnitude, r = rest length,
@@ -115,8 +103,7 @@ namespace FarseerGames.FarseerPhysics.Dynamics.Springs
             float differenceMagnitude = _difference.Length();
 
             //If already close to rest length then return
-            if (differenceMagnitude < _epsilon)
-            {
+            if(differenceMagnitude < _epsilon) {
                 return;
             }
 
@@ -139,25 +126,21 @@ namespace FarseerGames.FarseerPhysics.Dynamics.Springs
 
             bool changed = false;
 
-            if (_force != Vector2.Zero)
-            {
-                if (!_body1.IsStatic)
-                {
+            if(_force != Vector2.Zero) {
+                if(!_body1.IsStatic) {
                     _body1.ApplyForceAtLocalPoint(ref _force, ref _attachPoint1);
-                    changed = true;                  
+                    changed = true;
                 }
 
-                if (!_body2.IsStatic)
-                {
+                if(!_body2.IsStatic) {
                     Vector2.Multiply(ref _force, -1, out _force);
                     _body2.ApplyForceAtLocalPoint(ref _force, ref _attachPoint2);
                     changed = true;
                 }
             }
 
-            if (changed)
-            {
-                if (SpringUpdated != null)
+            if(changed) {
+                if(SpringUpdated != null)
                     SpringUpdated(this, _body1, _body2);
             }
 

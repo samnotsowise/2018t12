@@ -11,14 +11,12 @@ using FarseerGames.FarseerPhysics.Mathematics;
 using Microsoft.Xna.Framework;
 #endif
 
-namespace FarseerGames.FarseerPhysics.Dynamics
-{
+namespace FarseerGames.FarseerPhysics.Dynamics {
     /// <summary>
     /// Used for collision detection.
     /// Constructed when 2 geoms collide. Applies impulses between the 2 geoms.
     /// </summary>
-    public class Arbiter : IEquatable<Arbiter>
-    {
+    public class Arbiter: IEquatable<Arbiter> {
         private float _frictionCoefficientCombined;
         private ContactList _newContactList;
         private ContactList _mergedContactList;
@@ -31,8 +29,7 @@ namespace FarseerGames.FarseerPhysics.Dynamics
         public Geom GeometryA;
         public Geom GeometryB;
 
-        public Arbiter()
-        {
+        public Arbiter() {
             ContactList = new ContactList(PhysicsSimulator.MaxContactsToDetect);
             _newContactList = new ContactList(PhysicsSimulator.MaxContactsToDetect);
             _mergedContactList = new ContactList(PhysicsSimulator.MaxContactsToDetect);
@@ -43,24 +40,19 @@ namespace FarseerGames.FarseerPhysics.Dynamics
         /// </summary>
         public ContactList ContactList { get; private set; }
 
-        internal void ConstructArbiter(Geom geometry1, Geom geometry2, PhysicsSimulator physicsSimulator)
-        {
+        internal void ConstructArbiter(Geom geometry1, Geom geometry2, PhysicsSimulator physicsSimulator) {
             _physicsSimulator = physicsSimulator;
 
             //Sort the geometries by creational order (id)
-            if (geometry1 < geometry2)
-            {
+            if(geometry1 < geometry2) {
                 GeometryA = geometry1;
                 GeometryB = geometry2;
-            }
-            else
-            {
+            } else {
                 GeometryA = geometry2;
                 GeometryB = geometry1;
             }
 
-            switch (_physicsSimulator.FrictionType)
-            {
+            switch(_physicsSimulator.FrictionType) {
                 case FrictionType.Average:
                     _frictionCoefficientCombined = (GeometryA.FrictionCoefficient + GeometryB.FrictionCoefficient) / 2f;
                     break;
@@ -73,10 +65,8 @@ namespace FarseerGames.FarseerPhysics.Dynamics
             }
         }
 
-        internal void PreStepImpulse(ref float inverseDt)
-        {
-            for (i = 0; i < ContactList.Count; i++)
-            {
+        internal void PreStepImpulse(ref float inverseDt) {
+            for(i = 0; i < ContactList.Count; i++) {
                 Contact contact = ContactList[i];
 
                 //calculate contact offset from body position
@@ -139,10 +129,8 @@ namespace FarseerGames.FarseerPhysics.Dynamics
             }
         }
 
-        internal void ApplyImpulse()
-        {
-            for (i = 0; i < ContactList.Count; i++)
-            {
+        internal void ApplyImpulse() {
+            for(i = 0; i < ContactList.Count; i++) {
                 _contact = ContactList[i];
 
                 #region INLINE: Vector2.Subtract(ref _contact.Position, ref geometryA.body.position, out _contact.R1);
@@ -305,8 +293,7 @@ namespace FarseerGames.FarseerPhysics.Dynamics
             }
         }
 
-        internal void Reset()
-        {
+        internal void Reset() {
             GeometryA = null;
             GeometryB = null;
             ContactList.Clear();
@@ -314,27 +301,24 @@ namespace FarseerGames.FarseerPhysics.Dynamics
             _mergedContactList.Clear();
         }
 
-        internal void Collide()
-        {
+        internal void Collide() {
             _newContactList.Clear();
 
             //Call the narrow phase collider and get back the contacts
-            if (PhysicsSimulator.NarrowPhaseCollider == NarrowPhaseCollider.DistanceGrid)
+            if(PhysicsSimulator.NarrowPhaseCollider == NarrowPhaseCollider.DistanceGrid)
                 DistanceGrid.Instance.Collide(GeometryA, GeometryB, _newContactList);
-            else if (PhysicsSimulator.NarrowPhaseCollider == NarrowPhaseCollider.SAT)
+            else if(PhysicsSimulator.NarrowPhaseCollider == NarrowPhaseCollider.SAT)
                 SAT.Instance.Collide(GeometryA, GeometryB, _newContactList);
 
             contactCount = _newContactList.Count;
 
             //Sort contact list by seperation (amount of penetration)
             //Insertion sort
-            for (i = 1; i < contactCount; i++)
-            {
+            for(i = 1; i < contactCount; i++) {
                 indexContact = _newContactList[i];
                 j = i;
 
-                while ((j > 0) && (_newContactList[j - 1].Separation > indexContact.Separation))
-                {
+                while((j > 0) && (_newContactList[j - 1].Separation > indexContact.Separation)) {
                     _newContactList[j] = _newContactList[j - 1];
                     j = j - 1;
                 }
@@ -343,77 +327,67 @@ namespace FarseerGames.FarseerPhysics.Dynamics
             }
 
             //resolve deepest contacts first
-            if (contactCount > _physicsSimulator.MaxContactsToResolve)
+            if(contactCount > _physicsSimulator.MaxContactsToResolve)
                 _newContactList.RemoveRange(_physicsSimulator.MaxContactsToResolve, contactCount - _physicsSimulator.MaxContactsToResolve);
 
             //allow user to cancel collision if desired
-            if (GeometryA.OnCollision != null)
-                if (_newContactList.Count > 0)
-                    if (!GeometryA.OnCollision(GeometryA, GeometryB, _newContactList))
+            if(GeometryA.OnCollision != null)
+                if(_newContactList.Count > 0)
+                    if(!GeometryA.OnCollision(GeometryA, GeometryB, _newContactList))
                         _newContactList.Clear();
 
-            if (GeometryB.OnCollision != null)
-                if (_newContactList.Count > 0)
-                    if (!GeometryB.OnCollision(GeometryB, GeometryA, _newContactList))
+            if(GeometryB.OnCollision != null)
+                if(_newContactList.Count > 0)
+                    if(!GeometryB.OnCollision(GeometryB, GeometryA, _newContactList))
                         _newContactList.Clear(); _mergedContactList.Clear();
 
             //Calculate on the new contacts gathered (Warm starting is done here)
-            for (i = 0; i < _newContactList.Count; i++)
-            {
+            for(i = 0; i < _newContactList.Count; i++) {
                 int index = ContactList.IndexOfSafe(_newContactList[i]);
-                if (index > -1)
-                {
+                if(index > -1) {
                     //continuation of collision
                     Contact contact = _newContactList[i];
                     contact.normalImpulse = ContactList[index].normalImpulse;
                     contact.tangentImpulse = ContactList[index].tangentImpulse;
                     _mergedContactList.Add(contact);
-                }
-                else
-                {
+                } else {
                     //first time collision
                     _mergedContactList.Add(_newContactList[i]);
                 }
             }
 
             ContactList.Clear();
-            for (i = 0; i < _mergedContactList.Count; i++)
+            for(i = 0; i < _mergedContactList.Count; i++)
                 ContactList.Add(_mergedContactList[i]);
         }
 
-        internal bool ContainsInvalidGeom()
-        {
+        internal bool ContainsInvalidGeom() {
             return GeometryA.IsDisposed || GeometryB.IsDisposed || (GeometryA.body.isStatic && GeometryB.body.isStatic) || (!GeometryA.body.Enabled || !GeometryB.body.Enabled) || (GeometryA.CollisionGroup == GeometryB.CollisionGroup) && (GeometryA.CollisionGroup != 0 && GeometryB.CollisionGroup != 0) || (((GeometryA.CollisionCategories & GeometryB.CollidesWith) == CollisionCategory.None) & ((GeometryB.CollisionCategories & GeometryA.CollidesWith) == CollisionCategory.None));
         }
 
-        public override bool Equals(object obj)
-        {
-            if (!(obj is Arbiter))
+        public override bool Equals(object obj) {
+            if(!(obj is Arbiter))
                 return false;
 
             return Equals((Arbiter)obj);
         }
 
         //TODO: Implement hash
-        public override int GetHashCode()
-        {
+        public override int GetHashCode() {
             return base.GetHashCode();
         }
 
-        public static bool operator ==(Arbiter arbiter1, Arbiter arbiter2)
-        {
+        public static bool operator ==(Arbiter arbiter1, Arbiter arbiter2) {
             return arbiter1.Equals(arbiter2);
         }
 
-        public static bool operator !=(Arbiter arbiter1, Arbiter arbiter2)
-        {
+        public static bool operator !=(Arbiter arbiter1, Arbiter arbiter2) {
             return !arbiter1.Equals(arbiter2);
         }
-     
+
         #region IEquatable<Arbiter> Members
 
-        public bool Equals(Arbiter other)
-        {
+        public bool Equals(Arbiter other) {
             return (GeometryA == other.GeometryA) && (GeometryB == other.GeometryB);
         }
 

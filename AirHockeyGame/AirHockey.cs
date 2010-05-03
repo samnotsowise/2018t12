@@ -1,6 +1,5 @@
 using System;
 using AirHockeyGame.Screens;
-using GameScreenManager.Components;
 using GameScreenManager.ScreenSystem;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;

@@ -4,7 +4,7 @@
  * Description:
  *      Abstract class for creating game objects
  *      
- * Authors:
+ * Author(s):
  *      Sam Thompson
  */
 

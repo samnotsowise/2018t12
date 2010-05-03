@@ -9,15 +9,12 @@
 #endregion
 
 using System;
-using System.Collections.Generic;
+using AirHockeyGame;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Input;
-using AirHockeyGame;
 
-namespace GameScreenManager.ScreenSystem
-{
+namespace GameScreenManager.ScreenSystem {
     /// <summary>
     /// The options screen is brought up over the top of the main menu
     /// screen, and gives the user a chance to configure the game
@@ -35,7 +32,7 @@ namespace GameScreenManager.ScreenSystem
         const float timeBeforeExitAllowed = 100.0f;
         bool exitAllowed;
         bool nameChanging;
-        
+
         private Settings oldSettings;
         private Profile oldProfile;
         #endregion
@@ -89,22 +86,20 @@ namespace GameScreenManager.ScreenSystem
         public void SaveChanges() {
             //If settings have changed or no previous settings existed,
             //write settings to file
-            if (oldSettings == null || !oldSettings.IsEqual(GameState.gameSettings))
-            {
+            if(oldSettings == null || !oldSettings.IsEqual(GameState.gameSettings)) {
                 GameState.gameSettings.WriteSettingsFile();
                 oldSettings = GameState.gameSettings;
             }
 
             //If profile has been changed, save it to file
-            if (oldProfile == null || !oldProfile.Matches(GameState.playerProfile))
-            {
+            if(oldProfile == null || !oldProfile.Matches(GameState.playerProfile)) {
                 //If new name is empty, old name is inserted
-                if (GameState.playerProfile.Name.Equals(""))
-                    if (!oldProfile.Name.Equals(""))
+                if(GameState.playerProfile.Name.Equals(""))
+                    if(!oldProfile.Name.Equals(""))
                         GameState.playerProfile.Name = oldProfile.Name;
                     else
                         GameState.playerProfile.Name = "Player Name";//if old name is also empty, default name is inserted
-                
+
                 GameState.playerProfile.WriteProfile("profile.dat");
                 oldProfile = GameState.playerProfile;
             }
@@ -133,8 +128,7 @@ namespace GameScreenManager.ScreenSystem
                     break;
                 //Name
                 case 2:
-                    if (!nameChanging)
-                    {
+                    if(!nameChanging) {
                         nameChanging = true;
                         GameState.playerProfile.Name = "";
 
@@ -170,26 +164,21 @@ namespace GameScreenManager.ScreenSystem
                     ScreenManager.GoToMainMenu();
                 }
             }
-            
+
             //If player is changing the name displayed
-            if (nameChanging)
-            {
+            if(nameChanging) {
                 Keys[] pressedKeys = keyboard.GetPressedKeys();
-                for (int i = 0; i < pressedKeys.Length; i++)
-                {
-                    if (GameState.playerProfile.Name.Length < Profile.MaxNameLength)
-                    {
+                for(int i = 0; i < pressedKeys.Length; i++) {
+                    if(GameState.playerProfile.Name.Length < Profile.MaxNameLength) {
                         //Checks it's an alphabet character
-                        if ((int)pressedKeys[i] >= 65 && (int)pressedKeys[i] <= 90)
-                        {
+                        if((int)pressedKeys[i] >= 65 && (int)pressedKeys[i] <= 90) {
                             //Check it was not held down
-                            if (!prevKeyboardState.IsKeyDown(pressedKeys[i]))
-                            {
+                            if(!prevKeyboardState.IsKeyDown(pressedKeys[i])) {
                                 //Converts character to lowercase
                                 String character = pressedKeys[i].ToString().ToLower();
 
                                 //If shift is held, it's changed to upperspace
-                                if (keyboard.IsKeyDown(Keys.RightShift) || keyboard.IsKeyDown(Keys.LeftShift))
+                                if(keyboard.IsKeyDown(Keys.RightShift) || keyboard.IsKeyDown(Keys.LeftShift))
                                     character = character.ToUpper();
 
                                 //Appends character to name
@@ -200,16 +189,14 @@ namespace GameScreenManager.ScreenSystem
                             }
                         }
                         //Adds space if player presses spacebar
-                        if (pressedKeys[i] == Keys.Space && !prevKeyboardState.IsKeyDown(Keys.Space))
-                        {
+                        if(pressedKeys[i] == Keys.Space && !prevKeyboardState.IsKeyDown(Keys.Space)) {
                             GameState.playerProfile.Name += " ";
                             //Displays new name
                             MenuEntries[2] = ("Name: " + GameState.playerProfile.Name + "|");
                         }
                     }
                     //User can press backspace to delete last character
-                    if (pressedKeys[i] == Keys.Back && !prevKeyboardState.IsKeyDown(Keys.Back) && GameState.playerProfile.Name.Length > 0)
-                    {
+                    if(pressedKeys[i] == Keys.Back && !prevKeyboardState.IsKeyDown(Keys.Back) && GameState.playerProfile.Name.Length > 0) {
                         GameState.playerProfile.Name = GameState.playerProfile.Name.Substring(0, GameState.playerProfile.Name.Length - 1);
                         MenuEntries[2] = ("Name: " + GameState.playerProfile.Name + "|");
                     }
@@ -217,8 +204,7 @@ namespace GameScreenManager.ScreenSystem
             }
 
             //If player presses up or down, they stop editing the name
-            if (keyboard.IsKeyDown(Keys.Down) || keyboard.IsKeyDown(Keys.Up))
-            {
+            if(keyboard.IsKeyDown(Keys.Down) || keyboard.IsKeyDown(Keys.Up)) {
                 nameChanging = false;
                 MenuEntries[2] = ("Name: " + GameState.playerProfile.Name);
             }
@@ -243,5 +229,5 @@ namespace GameScreenManager.ScreenSystem
 
 
         #endregion
-    }  
+    }
 }

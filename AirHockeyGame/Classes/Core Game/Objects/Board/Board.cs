@@ -1,4 +1,15 @@
-﻿using FarseerGames.FarseerPhysics;
+﻿/*
+ *      Board Class
+ * 
+ * Description:
+ *      A collection of boundaries and 
+ *      detectors
+ *      
+ * Author(s):
+ *      Sam Thompson
+ */
+
+using FarseerGames.FarseerPhysics;
 using Microsoft.Xna.Framework;
 
 namespace FarseerGames.AirHockeyGame {
@@ -32,19 +43,19 @@ namespace FarseerGames.AirHockeyGame {
 
             //Boundaries
             this.boundaries = new Boundary[5];
-            
+
             //Top
             this.boundaries[0] = new Boundary(this.width, 92, new Vector2(0, 0), pS);
-            
+
             //Bottom
             this.boundaries[1] = new Boundary(this.width, 84, new Vector2(0, 684), pS);
-            
+
             //Left
             this.boundaries[2] = new Boundary(45, 592, new Vector2(0, 92), pS);
-            
+
             //Right
             this.boundaries[3] = new Boundary(45, 592, new Vector2(979, 92), pS);
-            
+
             //MidLine
             this.boundaries[4] = new Boundary(6, 768, new Vector2(509, 0), pS, 101);
 

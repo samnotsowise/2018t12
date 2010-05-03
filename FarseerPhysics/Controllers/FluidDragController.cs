@@ -9,8 +9,7 @@ using Microsoft.Xna.Framework;
 using FarseerGames.FarseerPhysics.Mathematics;
 #endif
 
-namespace FarseerGames.FarseerPhysics.Controllers
-{
+namespace FarseerGames.FarseerPhysics.Controllers {
     /// <summary>
     /// FluidDragController applies fluid physics to the bodies within it.  Things like fluid drag and fluid density
     /// can be adjusted to give semi-realistic motion for bodies in fluid.
@@ -35,8 +34,7 @@ namespace FarseerGames.FarseerPhysics.Controllers
     /// defined by the <see cref="WaveController"/> will have fluid physics applied to it.
     /// 
     /// </summary>
-    public sealed class FluidDragController : Controller
-    {
+    public sealed class FluidDragController: Controller {
         #region Delegates
 
         public delegate void EntryEventHandler(Geom geom, Vertices verts);
@@ -66,8 +64,7 @@ namespace FarseerGames.FarseerPhysics.Controllers
 
         public EntryEventHandler Entry;
 
-        public FluidDragController()
-        {
+        public FluidDragController() {
             _geomList = new List<Geom>();
             _geomInFluidList = new Dictionary<Geom, bool>();
         }
@@ -98,8 +95,7 @@ namespace FarseerGames.FarseerPhysics.Controllers
         /// <param name="rotationalDragCoefficient">Rotational drag coefficient of the fluid</param>
         /// <param name="gravity">The direction gravity acts. Buoyancy force will act in opposite direction of gravity.</param>
         public void Initialize(IFluidContainer fluidContainer, float density, float linearDragCoefficient,
-                               float rotationalDragCoefficient, Vector2 gravity)
-        {
+                               float rotationalDragCoefficient, Vector2 gravity) {
             _fluidContainer = fluidContainer;
             Density = density;
             LinearDragCoefficient = linearDragCoefficient;
@@ -114,8 +110,7 @@ namespace FarseerGames.FarseerPhysics.Controllers
         /// to watch this geom and it if enters my fluid container, apply the fluid physics.
         /// </summary>
         /// <param name="geom">The geom to be added.</param>
-        public void AddGeom(Geom geom)
-        {
+        public void AddGeom(Geom geom) {
             _geomList.Add(geom);
             _geomInFluidList.Add(geom, false);
         }
@@ -124,50 +119,44 @@ namespace FarseerGames.FarseerPhysics.Controllers
         /// Removes a geometry from the fluid drag controller.
         /// </summary>
         /// <param name="geom">The geom.</param>
-        public void RemoveGeom(Geom geom)
-        {
+        public void RemoveGeom(Geom geom) {
             _geomList.Remove(geom);
             _geomInFluidList.Remove(geom);
         }
 
-        public override void Validate()
-        {
+        public override void Validate() {
             //do nothing
         }
 
         /// <summary>
         /// Resets the fluid drag controller
         /// </summary>
-        public void Reset()
-        {
+        public void Reset() {
             _geomInFluidList.Clear();
-            for (int i = 0; i < _geomList.Count; i++)
-            {
+            for(int i = 0; i < _geomList.Count; i++) {
                 _geomInFluidList.Add(_geomList[i], false);
             }
         }
 
-        public override void Update(float dt, float dtReal)
-        {
-            for (int i = 0; i < _geomList.Count; i++)
-            {
+        public override void Update(float dt, float dtReal) {
+            for(int i = 0; i < _geomList.Count; i++) {
                 _totalArea = _geomList[i].localVertices.GetArea();
 
                 //If the AABB of the geometry does not intersect the fluidcontainer
                 //continue to the next geometry
-                if (!_fluidContainer.Intersect(ref _geomList[i].AABB))
+                if(!_fluidContainer.Intersect(ref _geomList[i].AABB))
                     continue;
 
                 //Find the vertices contained in the fluidcontainer
                 FindVerticesInFluid(_geomList[i]);
 
                 //The geometry is not in the fluid, up til a certain point.
-                if (_vertices.Count < _geomList[i].LocalVertices.Count * 0.15f)
+                if(_vertices.Count < _geomList[i].LocalVertices.Count * 0.15f)
                     _geomInFluidList[_geomList[i]] = false;
 
                 _area = _vertices.GetArea();
 
-                if (_area < .000001)
+                if(_area < .000001)
                     continue;
 
                 _centroid = _vertices.GetCentroid(_area);
@@ -180,19 +169,17 @@ namespace FarseerGames.FarseerPhysics.Controllers
 
                 //Add the buoyancy force and lienar drag force
                 Vector2.Add(ref _buoyancyForce, ref _linearDragForce, out _totalForce);
-                
+
                 //Apply total force to the body
                 _geomList[i].body.ApplyForceAtWorldPoint(ref _totalForce, ref _centroid);
 
                 //Apply rotational drag
                 _geomList[i].body.ApplyTorque(_rotationalDragTorque);
 
-                if (_geomInFluidList[_geomList[i]] == false)
-                {
+                if(_geomInFluidList[_geomList[i]] == false) {
                     //The geometry is now in the water. Fire the Entry event
                     _geomInFluidList[_geomList[i]] = true;
-                    if (Entry != null)
-                    {
+                    if(Entry != null) {
                         Entry(_geomList[i], _vertices);
                     }
                 }
@@ -203,14 +190,11 @@ namespace FarseerGames.FarseerPhysics.Controllers
         /// Finds what vertices of the geometry that is inside the fluidcontainer
         /// </summary>
         /// <param name="geom">The geometry to check against</param>
-        private void FindVerticesInFluid(Geom geom)
-        {
+        private void FindVerticesInFluid(Geom geom) {
             _vertices.Clear();
-            for (int i = 0; i < geom.worldVertices.Count; i++)
-            {
+            for(int i = 0; i < geom.worldVertices.Count; i++) {
                 _vert = geom.worldVertices[i];
-                if (_fluidContainer.Contains(ref _vert))
-                {
+                if(_fluidContainer.Contains(ref _vert)) {
                     _vertices.Add(_vert);
                 }
             }
@@ -220,8 +204,7 @@ namespace FarseerGames.FarseerPhysics.Controllers
         /// Calculates the linear and rotational drag of the geometry
         /// </summary>
         /// <param name="geom">The geometry</param>
-        private void CalculateDrag(Geom geom)
-        {
+        private void CalculateDrag(Geom geom) {
             //localCentroid = geom.body.GetLocalPosition(_centroid);
             geom.body.GetVelocityAtWorldPoint(ref _centroid, out _centroidVelocity);
 
@@ -229,7 +212,7 @@ namespace FarseerGames.FarseerPhysics.Controllers
             _axis.Y = _centroidVelocity.X;
 
             //can't normalize a zero length vector
-            if (_axis.X != 0 || _axis.Y != 0)
+            if(_axis.X != 0 || _axis.Y != 0)
                 _axis.Normalize();
 
             _vertices.ProjectToAxis(ref _axis, out _min, out _max);

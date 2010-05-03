@@ -4,14 +4,12 @@ using FarseerGames.FarseerPhysics.Mathematics;
 using Microsoft.Xna.Framework;
 #endif
 
-namespace FarseerGames.FarseerPhysics.Dynamics.Joints
-{
+namespace FarseerGames.FarseerPhysics.Dynamics.Joints {
     /// <summary>
     /// A pin joint works like 2 revolute joints with a fixed distance between them.
     /// Essentially it places 2 bodies at a fixed distance from each other.
     /// </summary>
-    public class PinJoint : Joint
-    {
+    public class PinJoint: Joint {
         public event JointDelegate JointUpdated;
 
         private float _accumulatedImpulse;
@@ -28,12 +26,10 @@ namespace FarseerGames.FarseerPhysics.Dynamics.Joints
         private Vector2 _worldAnchor2;
         private Vector2 _worldAnchorDifferenceNormalized;
 
-        public PinJoint()
-        {
+        public PinJoint() {
         }
 
-        public PinJoint(Body body1, Vector2 anchor1, Body body2, Vector2 anchor2)
-        {
+        public PinJoint(Body body1, Vector2 anchor1, Body body2, Vector2 anchor2) {
             _body1 = body1;
             _body2 = body2;
 
@@ -54,8 +50,7 @@ namespace FarseerGames.FarseerPhysics.Dynamics.Joints
         /// Gets or sets the first body.
         /// </summary>
         /// <Value>The body1.</Value>
-        public Body Body1
-        {
+        public Body Body1 {
             get { return _body1; }
             set { _body1 = value; }
         }
@@ -64,8 +59,7 @@ namespace FarseerGames.FarseerPhysics.Dynamics.Joints
         /// Gets or sets the second body.
         /// </summary>
         /// <Value>The body2.</Value>
-        public Body Body2
-        {
+        public Body Body2 {
             get { return _body2; }
             set { _body2 = value; }
         }
@@ -74,8 +68,7 @@ namespace FarseerGames.FarseerPhysics.Dynamics.Joints
         /// Gets or sets the target distance.
         /// </summary>
         /// <Value>The target distance.</Value>
-        public float TargetDistance
-        {
+        public float TargetDistance {
             get { return _targetDistance; }
             set { _targetDistance = value; }
         }
@@ -84,11 +77,9 @@ namespace FarseerGames.FarseerPhysics.Dynamics.Joints
         /// Gets or sets the fist anchor.
         /// </summary>
         /// <Value>The anchor1.</Value>
-        public Vector2 Anchor1
-        {
+        public Vector2 Anchor1 {
             get { return _anchor1; }
-            set
-            {
+            set {
                 _anchor1 = value;
                 _body1.GetBodyMatrix(out _body1MatrixTemp);
                 Vector2.TransformNormal(ref _anchor1, ref _body1MatrixTemp, out _r1);
@@ -100,11 +91,9 @@ namespace FarseerGames.FarseerPhysics.Dynamics.Joints
         /// Gets or sets the second anchor.
         /// </summary>
         /// <Value>The anchor2.</Value>
-        public Vector2 Anchor2
-        {
+        public Vector2 Anchor2 {
             get { return _anchor2; }
-            set
-            {
+            set {
                 _anchor2 = value;
                 _body2.GetBodyMatrix(out _body2MatrixTemp);
                 Vector2.TransformNormal(ref _anchor2, ref _body2MatrixTemp, out _r2);
@@ -116,8 +105,7 @@ namespace FarseerGames.FarseerPhysics.Dynamics.Joints
         /// Gets the first world anchor.
         /// </summary>
         /// <Value>The world anchor1.</Value>
-        public Vector2 WorldAnchor1
-        {
+        public Vector2 WorldAnchor1 {
             get { return _worldAnchor1; }
         }
 
@@ -125,25 +113,21 @@ namespace FarseerGames.FarseerPhysics.Dynamics.Joints
         /// Gets the second world anchor.
         /// </summary>
         /// <Value>The world anchor2.</Value>
-        public Vector2 WorldAnchor2
-        {
+        public Vector2 WorldAnchor2 {
             get { return _worldAnchor2; }
         }
 
-        public override void Validate()
-        {
-            if (_body1.IsDisposed || _body2.IsDisposed)
-            {
+        public override void Validate() {
+            if(_body1.IsDisposed || _body2.IsDisposed) {
                 Dispose();
             }
         }
 
-        public override void PreStep(float inverseDt)
-        {
-            if (_body1.isStatic && _body2.isStatic)
+        public override void PreStep(float inverseDt) {
+            if(_body1.isStatic && _body2.isStatic)
                 return;
 
-            if (!_body1.Enabled && !_body2.Enabled)
+            if(!_body1.Enabled && !_body2.Enabled)
                 return;
 
             //calc r1 and r2 from the anchors
@@ -188,14 +172,13 @@ namespace FarseerGames.FarseerPhysics.Dynamics.Joints
             _body1.ApplyAngularImpulse(_angularImpulse);
         }
 
-        public override void Update()
-        {
+        public override void Update() {
             base.Update();
 
-            if (_body1.isStatic && _body2.isStatic)
+            if(_body1.isStatic && _body2.isStatic)
                 return;
 
-            if (!_body1.Enabled && !_body2.Enabled)
+            if(!_body1.Enabled && !_body2.Enabled)
                 return;
 
             //Calc velocity anchor points (angular component + linear)
@@ -221,8 +204,7 @@ namespace FarseerGames.FarseerPhysics.Dynamics.Joints
             //Add to the accumulated impulse
             _accumulatedImpulse += _impulseMagnitude;
 
-            if (_impulse != Vector2.Zero)
-            {
+            if(_impulse != Vector2.Zero) {
                 //Apply impulse
                 _body2.ApplyImmediateImpulse(ref _impulse);
                 Calculator.Cross(ref _r2, ref _impulse, out _angularImpulse);
@@ -233,7 +215,7 @@ namespace FarseerGames.FarseerPhysics.Dynamics.Joints
                 Calculator.Cross(ref _r1, ref _impulse, out _angularImpulse);
                 _body1.ApplyAngularImpulse(_angularImpulse);
 
-                if (JointUpdated != null)
+                if(JointUpdated != null)
                     JointUpdated(this, _body1, _body2);
             }
         }

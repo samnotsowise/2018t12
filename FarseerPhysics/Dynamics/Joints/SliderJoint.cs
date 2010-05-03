@@ -5,14 +5,12 @@ using FarseerGames.FarseerPhysics.Mathematics;
 using Microsoft.Xna.Framework;
 #endif
 
-namespace FarseerGames.FarseerPhysics.Dynamics.Joints
-{
+namespace FarseerGames.FarseerPhysics.Dynamics.Joints {
     /// <summary>
     /// Slider joint is just like pin joint, but the distance between the bodies are not fixed.
     /// The bodies can move towards or away from each other within limits.
     /// </summary>
-    public class SliderJoint : Joint
-    {
+    public class SliderJoint: Joint {
         public event JointDelegate JointUpdated;
 
         private float _accumulatedImpulse;
@@ -34,12 +32,10 @@ namespace FarseerGames.FarseerPhysics.Dynamics.Joints
         private Vector2 _worldAnchor2;
         private Vector2 _worldAnchorDifferenceNormalized;
 
-        public SliderJoint()
-        {
+        public SliderJoint() {
         }
 
-        public SliderJoint(Body body1, Vector2 anchor1, Body body2, Vector2 anchor2, float min, float max)
-        {
+        public SliderJoint(Body body1, Vector2 anchor1, Body body2, Vector2 anchor2, float min, float max) {
             _body1 = body1;
             _body2 = body2;
 
@@ -58,8 +54,7 @@ namespace FarseerGames.FarseerPhysics.Dynamics.Joints
         /// Gets or sets the first body.
         /// </summary>
         /// <Value>The body1.</Value>
-        public Body Body1
-        {
+        public Body Body1 {
             get { return _body1; }
             set { _body1 = value; }
         }
@@ -68,8 +63,7 @@ namespace FarseerGames.FarseerPhysics.Dynamics.Joints
         /// Gets or sets the second body.
         /// </summary>
         /// <Value>The body2.</Value>
-        public Body Body2
-        {
+        public Body Body2 {
             get { return _body2; }
             set { _body2 = value; }
         }
@@ -78,8 +72,7 @@ namespace FarseerGames.FarseerPhysics.Dynamics.Joints
         /// Gets or sets the slop.
         /// </summary>
         /// <Value>The slop.</Value>
-        public float Slop
-        {
+        public float Slop {
             get { return _slop; }
             set { _slop = value; }
         }
@@ -88,8 +81,7 @@ namespace FarseerGames.FarseerPhysics.Dynamics.Joints
         /// Gets or sets the min.
         /// </summary>
         /// <Value>The min.</Value>
-        public float Min
-        {
+        public float Min {
             get { return _min; }
             set { _min = value; }
         }
@@ -98,8 +90,7 @@ namespace FarseerGames.FarseerPhysics.Dynamics.Joints
         /// Gets or sets the max.
         /// </summary>
         /// <Value>The max.</Value>
-        public float Max
-        {
+        public float Max {
             get { return _max; }
             set { _max = value; }
         }
@@ -108,11 +99,9 @@ namespace FarseerGames.FarseerPhysics.Dynamics.Joints
         /// Gets or sets the first anchor.
         /// </summary>
         /// <Value>The anchor1.</Value>
-        public Vector2 Anchor1
-        {
+        public Vector2 Anchor1 {
             get { return _anchor1; }
-            set
-            {
+            set {
                 _anchor1 = value;
                 _body1.GetBodyMatrix(out _body1MatrixTemp);
                 Vector2.TransformNormal(ref _anchor1, ref _body1MatrixTemp, out _r1);
@@ -124,11 +113,9 @@ namespace FarseerGames.FarseerPhysics.Dynamics.Joints
         /// Gets or sets the second anchor.
         /// </summary>
         /// <Value>The anchor2.</Value>
-        public Vector2 Anchor2
-        {
+        public Vector2 Anchor2 {
             get { return _anchor2; }
-            set
-            {
+            set {
                 _anchor2 = value;
                 _body2.GetBodyMatrix(out _body2MatrixTemp);
                 Vector2.TransformNormal(ref _anchor2, ref _body2MatrixTemp, out _r2);
@@ -140,8 +127,7 @@ namespace FarseerGames.FarseerPhysics.Dynamics.Joints
         /// Gets the first world anchor.
         /// </summary>
         /// <Value>The world anchor1.</Value>
-        public Vector2 WorldAnchor1
-        {
+        public Vector2 WorldAnchor1 {
             get { return _worldAnchor1; }
         }
 
@@ -149,8 +135,7 @@ namespace FarseerGames.FarseerPhysics.Dynamics.Joints
         /// Gets the second world anchor.
         /// </summary>
         /// <Value>The world anchor2.</Value>
-        public Vector2 WorldAnchor2
-        {
+        public Vector2 WorldAnchor2 {
             get { return _worldAnchor2; }
         }
 
@@ -158,29 +143,24 @@ namespace FarseerGames.FarseerPhysics.Dynamics.Joints
         /// Gets the current anchor position.
         /// </summary>
         /// <Value>The current anchor position.</Value>
-        public Vector2 CurrentAnchorPosition
-        {
-            get
-            {
+        public Vector2 CurrentAnchorPosition {
+            get {
                 Vector2.Add(ref _body1.position, ref _r1, out _anchor); //_anchor moves once simulator starts
                 return _anchor;
             }
         }
 
-        public override void Validate()
-        {
-            if (_body1.IsDisposed || _body2.IsDisposed)
-            {
+        public override void Validate() {
+            if(_body1.IsDisposed || _body2.IsDisposed) {
                 Dispose();
             }
         }
 
-        public override void PreStep(float inverseDt)
-        {
-            if (_body1.isStatic && _body2.isStatic)
+        public override void PreStep(float inverseDt) {
+            if(_body1.isStatic && _body2.isStatic)
                 return;
 
-            if (!_body1.Enabled && !_body2.Enabled)
+            if(!_body1.Enabled && !_body2.Enabled)
                 return;
 
             //calc r1 and r2 from the anchors
@@ -197,42 +177,29 @@ namespace FarseerGames.FarseerPhysics.Dynamics.Joints
             _distance = _worldAnchorDifference.Length();
             JointError = 0;
 
-            if (_distance > _max)
-            {
-                if (_lowerLimitViolated)
-                {
+            if(_distance > _max) {
+                if(_lowerLimitViolated) {
                     _accumulatedImpulse = 0;
                     _lowerLimitViolated = false;
                 }
                 _upperLimitViolated = true;
-                if (_distance < _max + _slop)
-                {
+                if(_distance < _max + _slop) {
                     JointError = 0; //allow some _slop 
-                }
-                else
-                {
+                } else {
                     JointError = _distance - _max;
                 }
-            }
-            else if (_distance < _min)
-            {
-                if (_upperLimitViolated)
-                {
+            } else if(_distance < _min) {
+                if(_upperLimitViolated) {
                     _accumulatedImpulse = 0;
                     _upperLimitViolated = false;
                 }
                 _lowerLimitViolated = true;
-                if (_distance > _min - _slop)
-                {
+                if(_distance > _min - _slop) {
                     JointError = 0;
-                }
-                else
-                {
+                } else {
                     JointError = _distance - _min;
                 }
-            }
-            else
-            {
+            } else {
                 _upperLimitViolated = false;
                 _lowerLimitViolated = false;
                 JointError = 0;
@@ -267,17 +234,16 @@ namespace FarseerGames.FarseerPhysics.Dynamics.Joints
             _body1.ApplyAngularImpulse(_angularImpulse);
         }
 
-        public override void Update()
-        {
+        public override void Update() {
             base.Update();
 
-            if (_body1.isStatic && _body2.isStatic)
+            if(_body1.isStatic && _body2.isStatic)
                 return;
 
-            if (!_body1.Enabled && !_body2.Enabled)
+            if(!_body1.Enabled && !_body2.Enabled)
                 return;
 
-            if (!_upperLimitViolated && !_lowerLimitViolated)
+            if(!_upperLimitViolated && !_lowerLimitViolated)
                 return;
 
             //calc velocity anchor points (angular component + linear)
@@ -299,12 +265,9 @@ namespace FarseerGames.FarseerPhysics.Dynamics.Joints
 
             float oldAccumulatedImpulse = _accumulatedImpulse;
 
-            if (_upperLimitViolated)
-            {
+            if(_upperLimitViolated) {
                 _accumulatedImpulse = Math.Min(oldAccumulatedImpulse + _impulseMagnitude, 0);
-            }
-            else if (_lowerLimitViolated)
-            {
+            } else if(_lowerLimitViolated) {
                 _accumulatedImpulse = Math.Max(oldAccumulatedImpulse + _impulseMagnitude, 0);
             }
 
@@ -313,8 +276,7 @@ namespace FarseerGames.FarseerPhysics.Dynamics.Joints
             //convert scalar impulse to vector
             Vector2.Multiply(ref _worldAnchorDifferenceNormalized, _impulseMagnitude, out _impulse);
 
-            if (_impulse != Vector2.Zero)
-            {
+            if(_impulse != Vector2.Zero) {
                 //apply impulse
                 _body2.ApplyImmediateImpulse(ref _impulse);
                 Calculator.Cross(ref _r2, ref _impulse, out _angularImpulse);
@@ -325,7 +287,7 @@ namespace FarseerGames.FarseerPhysics.Dynamics.Joints
                 Calculator.Cross(ref _r1, ref _impulse, out _angularImpulse);
                 _body1.ApplyAngularImpulse(_angularImpulse);
 
-                if (JointUpdated != null)
+                if(JointUpdated != null)
                     JointUpdated(this, _body1, _body2);
             }
         }

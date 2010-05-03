@@ -7,22 +7,16 @@ using Microsoft.Xna.Framework;
 using FarseerGames.FarseerPhysics.Mathematics;
 #endif
 
-namespace FarseerGames.FarseerPhysics.Collisions
-{
-    public class SAT : INarrowPhaseCollider
-    {
+namespace FarseerGames.FarseerPhysics.Collisions {
+    public class SAT: INarrowPhaseCollider {
         private static SAT _instance;
 
-        private SAT()
-        {
+        private SAT() {
         }
 
-        public static SAT Instance
-        {
-            get
-            {
-                if (_instance == null)
-                {
+        public static SAT Instance {
+            get {
+                if(_instance == null) {
                     _instance = new SAT();
                 }
                 return _instance;
@@ -38,46 +32,36 @@ namespace FarseerGames.FarseerPhysics.Collisions
         /// <param name="geomB">The second Geom.</param>
         /// <param name="contactList">Set of Contacts between the two Geoms.
         /// NOTE- this will be empty if no contacts are present.</param>
-        public void Collide(Geom geomA, Geom geomB, ContactList contactList)
-        {
+        public void Collide(Geom geomA, Geom geomB, ContactList contactList) {
             PolygonCollisionResult result = PolygonCollision(geomA.WorldVertices, geomB.WorldVertices);
             float distance = result.MinimumTranslationVector.Length();
             int contactsDetected = 0;
             Vector2 normal = Vector2.Normalize(-result.MinimumTranslationVector);
             int contactsHandled = 0;
 
-            if (result.Intersect && distance > 0.001f)
-            {
-                for (int i = 0; i < geomA.WorldVertices.Count; i++)
-                {
-                    if (contactsDetected <= PhysicsSimulator.MaxContactsToDetect)
-                    {
-                        if (InsidePolygon(geomB.WorldVertices, geomA.WorldVertices[i]))
-                        {
+            if(result.Intersect && distance > 0.001f) {
+                for(int i = 0; i < geomA.WorldVertices.Count; i++) {
+                    if(contactsDetected <= PhysicsSimulator.MaxContactsToDetect) {
+                        if(InsidePolygon(geomB.WorldVertices, geomA.WorldVertices[i])) {
                             Contact c = new Contact(geomA.WorldVertices[i], normal, -distance, new ContactId(geomA.id, i, geomB.id));
                             contactList.Add(c);
                             contactsDetected++;
                             contactsHandled++;
                         }
-                    }
-                    else break;
+                    } else break;
                 }
 
                 contactsDetected = 0;
 
-                for (int i = 0; i < geomB.WorldVertices.Count; i++)
-                {
-                    if (contactsDetected <= PhysicsSimulator.MaxContactsToDetect)
-                    {
-                        if (InsidePolygon(geomA.WorldVertices, geomB.WorldVertices[i]))
-                        {
+                for(int i = 0; i < geomB.WorldVertices.Count; i++) {
+                    if(contactsDetected <= PhysicsSimulator.MaxContactsToDetect) {
+                        if(InsidePolygon(geomA.WorldVertices, geomB.WorldVertices[i])) {
                             Contact c = new Contact(geomB.WorldVertices[i], normal, -distance, new ContactId(geomB.id, i, geomA.id));
                             contactList.Add(c);
                             contactsDetected++;
                             contactsHandled++;
                         }
-                    }
-                    else break;
+                    } else break;
                 }
 
                 // No vertices of either polygon are inside the other, despite their intersection.
@@ -85,13 +69,11 @@ namespace FarseerGames.FarseerPhysics.Collisions
                 // So select the vertex that is furthest past the edge forming the 
                 // separating axis as the contact point.
                 //   - Andrew Russell
-                if (contactsHandled == 0)
-                {
+                if(contactsHandled == 0) {
                     int edgeIndex = result.bestEdgeIndex;
                     Geom separatingEdgeOn = geomA;
                     Geom otherPolygon = geomB;
-                    if (result.bestEdgeIndex >= geomA.WorldVertices.Count)
-                    {
+                    if(result.bestEdgeIndex >= geomA.WorldVertices.Count) {
                         edgeIndex -= geomA.WorldVertices.Count;
                         separatingEdgeOn = geomB;
                         otherPolygon = geomA;
@@ -103,11 +85,9 @@ namespace FarseerGames.FarseerPhysics.Collisions
 
                     int mostPenetrationIndex = 0;
                     float mostPenetration = Vector2.Dot(axis, otherPolygon.WorldVertices[0]);
-                    for (int i = 1; i < otherPolygon.WorldVertices.Count; i++)
-                    {
+                    for(int i = 1; i < otherPolygon.WorldVertices.Count; i++) {
                         float penetration = Vector2.Dot(axis, otherPolygon.WorldVertices[i]);
-                        if (penetration < mostPenetration)
-                        {
+                        if(penetration < mostPenetration) {
                             mostPenetration = penetration;
                             mostPenetrationIndex = i;
                         }
@@ -120,30 +100,23 @@ namespace FarseerGames.FarseerPhysics.Collisions
             }
         }
 
-        public bool Intersect(Geom geom, ref Vector2 position)
-        {
+        public bool Intersect(Geom geom, ref Vector2 position) {
             return InsidePolygon(geom.LocalVertices, position);
         }
 
-        private bool InsidePolygon(Vertices polygon, Vector2 position)
-        {
+        private bool InsidePolygon(Vertices polygon, Vector2 position) {
             int counter = 0;
             int i;
 
             Vector2 p1 = polygon[0];
-            for (i = 1; i <= polygon.Count; i++)
-            {
+            for(i = 1; i <= polygon.Count; i++) {
                 Vector2 p2 = polygon[i % polygon.Count];
-                if (position.Y > Math.Min(p1.Y, p2.Y))
-                {
-                    if (position.Y <= Math.Max(p1.Y, p2.Y))
-                    {
-                        if (position.X <= Math.Max(p1.X, p2.X))
-                        {
-                            if (p1.Y != p2.Y)
-                            {
+                if(position.Y > Math.Min(p1.Y, p2.Y)) {
+                    if(position.Y <= Math.Max(p1.Y, p2.Y)) {
+                        if(position.X <= Math.Max(p1.X, p2.X)) {
+                            if(p1.Y != p2.Y) {
                                 double xinters = (position.Y - p1.Y) * (p2.X - p1.X) / (p2.Y - p1.Y) + p1.X;
-                                if (p1.X == p2.X || position.X <= xinters)
+                                if(p1.X == p2.X || position.X <= xinters)
                                     counter++;
                             }
                         }
@@ -152,29 +125,23 @@ namespace FarseerGames.FarseerPhysics.Collisions
                 p1 = p2;
             }
 
-            if (counter % 2 == 0)
+            if(counter % 2 == 0)
                 return false;
 
             return true;
         }
 
-        private void ProjectPolygon(Vector2 axis, Vertices polygon, out float min, out float max)
-        {
+        private void ProjectPolygon(Vector2 axis, Vertices polygon, out float min, out float max) {
             // To project a point on an axis use the dot product
             float dotProduct = Vector2.Dot(axis, polygon[0]);
             min = dotProduct;
             max = dotProduct;
-            for (int i = 0; i < polygon.Count; i++)
-            {
+            for(int i = 0; i < polygon.Count; i++) {
                 dotProduct = Vector2.Dot(polygon[i], axis);
-                if (dotProduct < min)
-                {
+                if(dotProduct < min) {
                     min = dotProduct;
-                }
-                else
-                {
-                    if (dotProduct > max)
-                    {
+                } else {
+                    if(dotProduct > max) {
                         max = dotProduct;
                     }
                 }
@@ -190,10 +157,8 @@ namespace FarseerGames.FarseerPhysics.Collisions
         /// <param name="minB">The min B.</param>
         /// <param name="maxB">The max B.</param>
         /// <returns></returns>
-        private float IntervalDistance(float minA, float maxA, float minB, float maxB)
-        {
-            if (minA < minB)
-            {
+        private float IntervalDistance(float minA, float maxA, float minB, float maxB) {
+            if(minA < minB) {
                 return minB - maxA;
             }
 
@@ -209,8 +174,7 @@ namespace FarseerGames.FarseerPhysics.Collisions
         /// <param name="polygonB">The polygon B.</param>
         /// <param name="velocity">The velocity.</param>
         /// <returns></returns>
-        private PolygonCollisionResult PolygonCollision(Vertices polygonA, Vertices polygonB)
-        {
+        private PolygonCollisionResult PolygonCollision(Vertices polygonA, Vertices polygonB) {
             PolygonCollisionResult result = new PolygonCollisionResult();
             result.Intersect = true;
 
@@ -221,14 +185,10 @@ namespace FarseerGames.FarseerPhysics.Collisions
             Vector2 edge;
 
             // Loop through all the edges of both polygons
-            for (int edgeIndex = 0; edgeIndex < edgeCountA + edgeCountB; edgeIndex++)
-            {
-                if (edgeIndex < edgeCountA)
-                {
+            for(int edgeIndex = 0; edgeIndex < edgeCountA + edgeCountB; edgeIndex++) {
+                if(edgeIndex < edgeCountA) {
                     edge = polygonA.GetEdge(edgeIndex);
-                }
-                else
-                {
+                } else {
                     edge = polygonB.GetEdge(edgeIndex - edgeCountA);
                 }
 
@@ -246,7 +206,7 @@ namespace FarseerGames.FarseerPhysics.Collisions
                 // Check if the polygon projections are currentlty intersecting
                 float intervalDistance = IntervalDistance(minA, maxA, minB, maxB);
 
-                if (intervalDistance > 0)
+                if(intervalDistance > 0)
                     result.Intersect = false;
 
                 // ===== 2. Now find if the polygons *will* intersect =====
@@ -270,19 +230,18 @@ namespace FarseerGames.FarseerPhysics.Collisions
 
                 // If the polygons are not intersecting and won't intersect, exit the loop
                 //if (!result.Intersect && !result.WillIntersect) break;
-                if (!result.Intersect) break;
+                if(!result.Intersect) break;
 
                 // Check if the current interval distance is the minimum one. If so store
                 // the interval distance and the current distance.
                 // This will be used to calculate the minimum translation vector
                 intervalDistance = Math.Abs(intervalDistance);
-                if (intervalDistance < minIntervalDistance)
-                {
+                if(intervalDistance < minIntervalDistance) {
                     minIntervalDistance = intervalDistance;
                     translationAxis = axis;
 
                     Vector2 d = polygonA.GetCentroid() - polygonB.GetCentroid();
-                    if (Vector2.Dot(d, translationAxis) < 0)
+                    if(Vector2.Dot(d, translationAxis) < 0)
                         translationAxis = -translationAxis;
 
                     result.bestEdgeIndex = edgeIndex;
@@ -291,7 +250,7 @@ namespace FarseerGames.FarseerPhysics.Collisions
 
             // The minimum translation vector
             // can be used to push the polygons appart.
-                result.MinimumTranslationVector = translationAxis * minIntervalDistance;
+            result.MinimumTranslationVector = translationAxis * minIntervalDistance;
 
             return result;
         }
@@ -300,8 +259,7 @@ namespace FarseerGames.FarseerPhysics.Collisions
     /// <summary>
     /// Structure that stores the results of the PolygonCollision function
     /// </summary>
-    internal struct PolygonCollisionResult
-    {
+    internal struct PolygonCollisionResult {
         // Are the polygons currently intersecting?
         public bool Intersect;
 

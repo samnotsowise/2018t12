@@ -4,13 +4,11 @@ using GameScreenManager.ScreenSystem;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace GameScreenManager.Components
-{
+namespace GameScreenManager.Components {
     /// <summary>
     /// Displays the FPS
     /// </summary>
-    public class FrameRateCounter : DrawableGameComponent
-    {
+    public class FrameRateCounter: DrawableGameComponent {
         private TimeSpan _elapsedTime = TimeSpan.Zero;
         private NumberFormatInfo _format;
         private int _frameCounter;
@@ -18,27 +16,24 @@ namespace GameScreenManager.Components
         private ScreenManager _screenManager;
 
         public FrameRateCounter(ScreenManager screenManager)
-            : base(screenManager.Game)
-        {
+            : base(screenManager.Game) {
             _screenManager = screenManager;
             _format = new NumberFormatInfo();
             _format.NumberDecimalSeparator = ".";
         }
 
 
-        public override void Update(GameTime gameTime)
-        {
+        public override void Update(GameTime gameTime) {
             _elapsedTime += gameTime.ElapsedGameTime;
 
-            if (_elapsedTime <= TimeSpan.FromSeconds(1)) return;
+            if(_elapsedTime <= TimeSpan.FromSeconds(1)) return;
 
             _elapsedTime -= TimeSpan.FromSeconds(1);
             _frameRate = _frameCounter;
             _frameCounter = 0;
         }
 
-        public override void Draw(GameTime gameTime)
-        {
+        public override void Draw(GameTime gameTime) {
             _frameCounter++;
 
             string fps = string.Format(_format, "fps: {0}", _frameRate);

@@ -3,10 +3,8 @@ using GameScreenManager.DrawingSystem;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace GameScreenManager.ScreenSystem
-{
-    public class PauseScreen : MenuScreen
-    {
+namespace GameScreenManager.ScreenSystem {
+    public class PauseScreen: MenuScreen {
         private const int leftBorder = 20;
         private const int panelHeight = 512;
         private const int panelWidth = 640;
@@ -23,8 +21,7 @@ namespace GameScreenManager.ScreenSystem
         private Texture2D _textPanelTexture;
         private string _title = "Title";
 
-        public PauseScreen(string title, string details)
-        {
+        public PauseScreen(string title, string details) {
             IsPopup = true;
             _title = title;
             _details = details;
@@ -32,33 +29,29 @@ namespace GameScreenManager.ScreenSystem
             TransitionOffTime = TimeSpan.FromSeconds(.2f);
         }
 
-        public override void Initialize()
-        {
+        public override void Initialize() {
             base.Initialize();
             MenuEntries.Add("Resume Game");
             MenuEntries.Add("Quit");
         }
 
-        protected override void OnSelectEntry(int entryIndex)
-        {
-            switch (entryIndex)
-            {
+        protected override void OnSelectEntry(int entryIndex) {
+            switch(entryIndex) {
                 case 0:
                     ExitScreen();
                     break;
                 case 1:
                     //also remove the screen that called this pausescreen
-                    
+
                     ScreenManager.GoToMainMenu();
                     break;
             }
         }
 
-        public override void LoadContent()
-        {
+        public override void LoadContent() {
             _panelTexture = DrawingHelper.CreateRectangleTexture(ScreenManager.GraphicsDevice, panelWidth, panelHeight,
                                                                  _panelColor);
-            LeftBorder = ScreenManager.ScreenCenter.X - panelWidth/2f + leftBorder;
+            LeftBorder = ScreenManager.ScreenCenter.X - panelWidth / 2f + leftBorder;
 
             _textPanelTexture = DrawingHelper.CreateRectangleTexture(ScreenManager.GraphicsDevice, textPanelWidth,
                                                                      textPanelHeight, _textPanelColor);
@@ -66,16 +59,15 @@ namespace GameScreenManager.ScreenSystem
             base.LoadContent();
         }
 
-        public override void Draw(GameTime gameTime)
-        {
+        public override void Draw(GameTime gameTime) {
             ScreenManager.SpriteBatch.Begin(SpriteBlendMode.AlphaBlend);
-            Vector2 panelOrigin = new Vector2(_panelTexture.Width/2f, _panelTexture.Height/2f);
+            Vector2 panelOrigin = new Vector2(_panelTexture.Width / 2f, _panelTexture.Height / 2f);
             ScreenManager.SpriteBatch.Draw(_panelTexture, ScreenManager.ScreenCenter, null, _panelColor, 0, panelOrigin,
                                            Vector2.One, SpriteEffects.None, 0);
 
             Vector2 textPanelTexturePosition =
-                new Vector2(ScreenManager.ScreenCenter.X - panelWidth/2f + textPanelLeftBorder,
-                            ScreenManager.ScreenCenter.Y - textPanelHeight/2f);
+                new Vector2(ScreenManager.ScreenCenter.X - panelWidth / 2f + textPanelLeftBorder,
+                            ScreenManager.ScreenCenter.Y - textPanelHeight / 2f);
             ScreenManager.SpriteBatch.Draw(_textPanelTexture, textPanelTexturePosition, null, _textPanelColor, 0,
                                            Vector2.Zero, Vector2.One, SpriteEffects.None, 0);
 
