@@ -272,7 +272,7 @@ namespace GameScreenManager.ScreenSystem
             ScreenManager.SpriteBatch.Draw(background, fullscreen, fade);
 
             //Draws current profile pic
-            ScreenManager.SpriteBatch.Draw(GameState.profilePictures[GameState.playerProfile.PictureIndex], picturePos, Color.White);
+            ScreenManager.SpriteBatch.Draw(GameState.profilePictures[GameState.playerProfile.PictureIndex], picturePos, fade);
 
             base.Draw(gameTime);
             ScreenManager.SpriteBatch.End();
