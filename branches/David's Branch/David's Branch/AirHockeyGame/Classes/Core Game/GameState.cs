@@ -18,6 +18,7 @@ namespace AirHockeyGame
         public static int opponentScore;
         public static Settings gameSettings;
         public static Profile playerProfile;
+        public static Profile opponentProfile;
         public static Texture2D[] profilePictures;
 
         public static void Initialise()

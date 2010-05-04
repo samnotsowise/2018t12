@@ -100,6 +100,9 @@ namespace GameScreenManager.ScreenSystem {
                 GameState.gameSettings.WriteSettingsFile();
             }
             
+            //Initialise opponent profile
+            GameState.opponentProfile = new Profile("Opponent");
+
             //Load profile
             GameState.playerProfile = Profile.ReadProfile("profile.dat");
 

@@ -377,7 +377,16 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Public\Documents\CSC 2018 Project\branches\David's Branch\David's Branch\AirHockeyGame\bin\x86\Debug\Content\ScreenSystem\Images\Main Menu\profileBoard.xnb</Output>
-      <Time>2010-05-03T22:27:51.5955782+01:00</Time>
+      <Time>2010-05-04T02:38:41.615668+01:00</Time>
+    </Item>
+    <Item>
+      <Source>ScreenSystem\Images\Main Menu\iconFrame.png</Source>
+      <Name>ScreenSystem\Images\Main Menu\iconFrame</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Public\Documents\CSC 2018 Project\branches\David's Branch\David's Branch\AirHockeyGame\bin\x86\Debug\Content\ScreenSystem\Images\Main Menu\iconFrame.xnb</Output>
+      <Time>2010-05-04T02:38:40.4266+01:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
