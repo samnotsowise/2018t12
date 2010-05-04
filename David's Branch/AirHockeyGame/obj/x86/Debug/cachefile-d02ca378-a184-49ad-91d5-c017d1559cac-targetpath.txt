@@ -40,3 +40,4 @@ Content\ProfilePics\profilepic7.xnb
 Content\ProfilePics\profilepic8.xnb
 Content\ProfilePics\profilepic0.xnb
 Content\ScreenSystem\Images\Main Menu\profileBoard.xnb
+Content\ScreenSystem\Images\Main Menu\iconFrame.xnb

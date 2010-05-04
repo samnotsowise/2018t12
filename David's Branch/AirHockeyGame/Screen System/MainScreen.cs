@@ -19,11 +19,23 @@ namespace AirHockeyGame.Screens
         private Puck puck;
         private Board board;
         private ScoreBox scoreBox;
-        
+        private SpriteFont font;
+
+        //Player details
+        Vector2 playerIconPos, opponentIconPos;
+        Vector2 playerNamePos, opponentNamePos;
+
         /// <summary>
         /// Initialises MainScreen
         /// </summary>
         public override void Initialize() {
+
+            //Player detail displays
+            playerIconPos   = new Vector2(325, 10);
+            playerNamePos = new Vector2(315 - 10 * GameState.playerProfile.Name.Length, 40);
+            opponentIconPos = new Vector2(615, 10);
+            opponentNamePos = new Vector2(705, 40);
+            
             PhysicsSimulator = new PhysicsSimulator(new Vector2(0, 0));
             PhysicsSimulatorView = new PhysicsSimulatorView(PhysicsSimulator);
             base.Initialize();
@@ -34,6 +46,9 @@ namespace AirHockeyGame.Screens
         /// </summary>
         public override void LoadContent() {
             
+            //Font
+            font = ScreenManager.ContentManager.Load<SpriteFont>(@"Content\Fonts\gamefont");
+
             //Load board
             this.board = new Board(PhysicsSimulator);
 
@@ -114,6 +129,16 @@ namespace AirHockeyGame.Screens
             ScreenManager.SpriteBatch.Draw(this.netPaddle.texture, this.netPaddle.rect, Color.White);
             ScreenManager.SpriteBatch.Draw(ScreenManager.ContentManager.Load<Texture2D>("Content\\Core Game\\boardEdges"), this.board.rect, Color.White);
             
+            //Draw player avatars
+            ScreenManager.SpriteBatch.Draw(GameState.profilePictures[GameState.playerProfile.PictureIndex],
+                                           playerIconPos, Color.White);
+            ScreenManager.SpriteBatch.Draw(GameState.profilePictures[GameState.opponentProfile.PictureIndex],
+                                           opponentIconPos, Color.White);
+            //Draw player names
+            ScreenManager.SpriteBatch.DrawString(font, GameState.playerProfile.Name, playerNamePos, Color.White, 0, Vector2.Zero, 0.5f, SpriteEffects.None, 0);
+            ScreenManager.SpriteBatch.DrawString(font, GameState.opponentProfile.Name, opponentNamePos, Color.White, 0, Vector2.Zero, 0.5f, SpriteEffects.None, 0);
+
+
             //Draw ScoreBox
             scoreBox.Draw(ScreenManager.SpriteBatch);
 

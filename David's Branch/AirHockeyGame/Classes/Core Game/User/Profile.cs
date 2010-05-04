@@ -68,6 +68,7 @@ namespace AirHockeyGame
         {
             this.name = name;
             win = lost = draw = 0;
+            this.PictureIndex = 0;
         }
 
         /// <summary>

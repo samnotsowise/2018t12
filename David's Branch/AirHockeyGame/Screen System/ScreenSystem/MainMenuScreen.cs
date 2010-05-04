@@ -17,6 +17,7 @@ namespace GameScreenManager.ScreenSystem
         private Texture2D background;
         private Texture2D logo;
         private Texture2D profileBoard;
+        private Texture2D iconFrame;
         private ContextBox contentBox;
         private SpriteFont font;
         private const float boxPosX = 600.0f;
@@ -101,6 +102,7 @@ namespace GameScreenManager.ScreenSystem
             background = content.Load<Texture2D>(@"ScreenSystem\Images\Main Menu\background");
             logo = content.Load<Texture2D>(@"ScreenSystem\Images\Main Menu\logo");
             profileBoard = content.Load<Texture2D>(@"ScreenSystem\Images\Main Menu\profileBoard");
+            iconFrame = content.Load<Texture2D>(@"ScreenSystem\Images\Main Menu\iconFrame");
             font = content.Load<SpriteFont>(@"Fonts\gamefont");
             contentBox.LoadContent(content);
             base.LoadContent();
@@ -126,10 +128,25 @@ namespace GameScreenManager.ScreenSystem
             //Draw contentbox
             contentBox.Draw(ScreenManager.SpriteBatch, fade, transitionOffset);
 
-            ////Draw profile and profile details
-            ScreenManager.SpriteBatch.Draw(profileBoard, new Vector2(100, 525), null, fade, 0.0f, Vector2.Zero, 1.0f, SpriteEffects.None, 0.0f);
+            
+            
+            //Scale board to match name length
+            int boardWidth;
+            if(GameState.playerProfile.Name.Length <= 7)
+                boardWidth = profileBoard.Width;
+            else
+                boardWidth = profileBoard.Width + (GameState.playerProfile.Name.Length - 7) * 22;
+
+            //Draw profile and profile details
+            //Draw board
+            ScreenManager.SpriteBatch.Draw(profileBoard,new Rectangle(100,525, boardWidth, profileBoard.Height), fade);
+            //Draw icon frame
+            ScreenManager.SpriteBatch.Draw(iconFrame, new Vector2(118, 544), fade);
+            //Draw icon
             ScreenManager.SpriteBatch.Draw(GameState.profilePictures[GameState.playerProfile.PictureIndex], new Vector2(121, 547), null, fade, 0.0f, Vector2.Zero, 1.0f, SpriteEffects.None, 0.0f);
+            //Draw name string
             ScreenManager.SpriteBatch.DrawString(font, "Name: " + GameState.playerProfile.Name, new Vector2(225, 550), fade, 0, Vector2.Zero, 0.7f, SpriteEffects.None, 0);
+            //Draw stats string
             ScreenManager.SpriteBatch.DrawString(font, "W/L/D: " + GameState.playerProfile.WonLostDrawn, new Vector2(225, 600), fade, 0, Vector2.Zero, 0.7f, SpriteEffects.None, 0);
 
             base.Draw(gameTime);
