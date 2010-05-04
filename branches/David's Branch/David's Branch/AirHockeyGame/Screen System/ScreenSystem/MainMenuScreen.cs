@@ -129,8 +129,8 @@ namespace GameScreenManager.ScreenSystem
             ////Draw profile and profile details
             ScreenManager.SpriteBatch.Draw(profileBoard, new Vector2(100, 525), null, fade, 0.0f, Vector2.Zero, 1.0f, SpriteEffects.None, 0.0f);
             ScreenManager.SpriteBatch.Draw(GameState.profilePictures[GameState.playerProfile.PictureIndex], new Vector2(121, 547), null, fade, 0.0f, Vector2.Zero, 1.0f, SpriteEffects.None, 0.0f);
-            ScreenManager.SpriteBatch.DrawString(font, "Name: " + GameState.playerProfile.Name, new Vector2(225, 550), Color.White, 0, Vector2.Zero, 0.7f, SpriteEffects.None, 0);
-            ScreenManager.SpriteBatch.DrawString(font, "W/L/D: " + GameState.playerProfile.WonLostDrawn, new Vector2(225, 600), Color.White, 0, Vector2.Zero, 0.7f, SpriteEffects.None, 0);
+            ScreenManager.SpriteBatch.DrawString(font, "Name: " + GameState.playerProfile.Name, new Vector2(225, 550), fade, 0, Vector2.Zero, 0.7f, SpriteEffects.None, 0);
+            ScreenManager.SpriteBatch.DrawString(font, "W/L/D: " + GameState.playerProfile.WonLostDrawn, new Vector2(225, 600), fade, 0, Vector2.Zero, 0.7f, SpriteEffects.None, 0);
 
             base.Draw(gameTime);
             
