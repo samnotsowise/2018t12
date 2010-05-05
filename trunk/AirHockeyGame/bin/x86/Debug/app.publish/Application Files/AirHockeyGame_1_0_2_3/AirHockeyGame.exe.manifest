@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1">
+  <asmv1:assemblyIdentity name="AirHockeyGame.exe" version="1.0.2.3" publicKeyToken="4d2beb92393e988c" language="en-GB" processorArchitecture="x86" type="win32" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="AirHockeyGame" version="2.1.3.0" language="neutral" processorArchitecture="x86" />
+    <commandLine file="AirHockeyGame.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!--
+          UAC Manifest Options
+          If you want to change the Windows User Account Control level replace the 
+          requestedExecutionLevel node with one of the following.
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+         If you want to utilize File and Registry Virtualization for backward 
+         compatibility then delete the requestedExecutionLevel node.
+    -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="2.0.50727.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="WindowsBase" version="3.0.0.0" publicKeyToken="31bf3856ad364e35" language="neutral" processorArchitecture="msil" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="AirHockeyGame.exe" size="74240">
+      <assemblyIdentity name="AirHockeyGame" version="2.1.3.0" language="neutral" processorArchitecture="x86" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>z4A0sEZFDQWylu0HdXeMhgL/K8I=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="FarseerPhysics.dll" size="170496">
+      <assemblyIdentity name="FarseerPhysics" version="2.1.3.0" language="neutral" processorArchitecture="x86" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>xHK508ZlAn3P4NvXWtO7S0ZX7QM=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="AirHockeyGame.pdb" size="237056">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>/yB/fy6352QogBRVTC/vZLPcSiw=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="FarseerPhysics.pdb" size="482816">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>YlkJHREvoQE9BSEsLSmyRcZv0+0=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Game.ico" size="4286">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>/y21PfwGnUAkwpPwwaFuIIyWENo=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="GameThumbnail.png" size="5734">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>diNvdcDpDtGEMuMQIHpkKK3qVHc=</dsig:DigestValue>
+    </hash>
+  </file>
+<publisherIdentity name="CN=SamsMacBook\Sam" issuerKeyHash="d37c44d79764fc79d86d6b20f794e2a144435d1c" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>tUQ4pVw4N9S77rAHh2zwbVBhINo=</DigestValue></Reference></SignedInfo><SignatureValue>b54qWdOA8Rsph4eyxqk3cgE7ruu3oVpYZJRYmrFBQRCUekl0L2gMj3Vc07rBiu8JYz0tnAcs2eq9ig1lTAWiEAUoGpvZvhzk8eI9fG3/9btMtef6gqbuKwtUcM7kW0gJy7lLU/p/1xQh0E1I4hAfwZIv7jtifBsRbdLmnvHziP0=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>u12NloSJUGpoXf2i3AFL9IR4dpoHEePkfbBtNCXRlcbmkVjwBodVnGtSg6nd3E620QWtXT43S5jcn+05Lb/v58ypADTrfiWcWRxMrWj6ghIS8WrtGK0rkvD+HsMjjspRMGPc8A35b1QrVu4nOh/lc/tEAFbwKjTPnDoMShER1Ek=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="da2061506df06c8707b0eebbd437385ca53844b5" Description="" Url=""><as:assemblyIdentity name="AirHockeyGame.exe" version="1.0.2.3" publicKeyToken="4d2beb92393e988c" language="en-GB" processorArchitecture="x86" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=SamsMacBook\Sam</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>m7ua9aXGSY0D/j27e3ATjcHSvWU=</DigestValue></Reference></SignedInfo><SignatureValue>EOvvP4/S0VuEzyjsnDniehQLewkBtf8LOiqaInZtidx2Q4d3YHj9wJkNW2/3sw7gpxRDldoc9z1EzYrFkrDWVi+jdnOeFWW+BAoPizurp+fcV7yDc5B7SLkUe866d38m8aXD4r/dWH670p2oqiYiRmrkw+w1zGr+erPIsK/NN0M=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>u12NloSJUGpoXf2i3AFL9IR4dpoHEePkfbBtNCXRlcbmkVjwBodVnGtSg6nd3E620QWtXT43S5jcn+05Lb/v58ypADTrfiWcWRxMrWj6ghIS8WrtGK0rkvD+HsMjjspRMGPc8A35b1QrVu4nOh/lc/tEAFbwKjTPnDoMShER1Ek=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB1TCCAT6gAwIBAgIQRqmlyTe4aqNAs1cvhhDxoDANBgkqhkiG9w0BAQUFADApMScwJQYDVQQDHh4AUwBhAG0AcwBNAGEAYwBCAG8AbwBrAFwAUwBhAG0wHhcNMTAwNTA1MTk1NjU0WhcNMTEwNTA2MDE1NjU0WjApMScwJQYDVQQDHh4AUwBhAG0AcwBNAGEAYwBCAG8AbwBrAFwAUwBhAG0wgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBALtdjZaEiVBqaF39otwBS/SEeHaaBxHj5H2wbTQl0ZXG5pFY8AaHVZxrUoOp3dxOttEFrV0+N0uY3J/tOS2/7+fMqQA0634lnFkcTK1o+oISEvFq7RitK5Lw/h7DI47KUTBj3PAN+W9UK1buJzof5XP7RABW8Co0z5w6DEoREdRJAgMBAAEwDQYJKoZIhvcNAQEFBQADgYEAFIvIDahCFSGKf7nvrrGCO6wKvairrlYg7I8GRisR+BV1ZbIgK9hU9C7s4EvBMN9JwOghj4JAV43J1v4SdcBPZy4jw2D8bs8C5F4Q2HV5VnVXJ3YMO2s781n/WunF2hwrHbVBL9l4/mCz3raFmg8T+TqJYjACU5fBfiblfrFzWRE=</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>

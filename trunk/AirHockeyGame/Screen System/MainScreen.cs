@@ -227,12 +227,14 @@ namespace AirHockeyGame.Screens {
         }
 
         private void CheckGameOver() {
-            if(GameState.playerScore > 2) {
+            if(GameState.playerScore > 2 && gameActive == true) {
                 //You Win
+                gameActive = false;
                 GameState.playerProfile.GameWon();
                 ScreenManager.AddScreen(new GameEndOverlay("Game Won", "Congratulations. You won."));
-            } else if(GameState.opponentScore > 2) {
+            } else if(GameState.opponentScore > 2 && gameActive == true) {
                 //You Lose
+                gameActive = false;
                 GameState.playerProfile.GameLost();
                 ScreenManager.AddScreen(new GameEndOverlay("Game Lost", "Sadly, you lost."));
             } else if(this.elapsedTime >= this.gameLength && gameActive == true) {
