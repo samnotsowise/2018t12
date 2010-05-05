@@ -8,6 +8,7 @@
  *      David Valente
  */
 
+using AirHockeyGame;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
@@ -21,6 +22,15 @@ namespace FarseerGames.AirHockeyGame {
         private Vector2 thisScoreTextPos;
         private Vector2 opponentScoreTextPos;
 
+        //Effect variables
+        bool effect;
+        float scale;
+        string effectText;
+        Vector2 effectPos;
+        float effectTime;
+        const float effectLength = 500.0f;
+        Color effectColor;
+
         public Vector2 OpponentScorePosition {
             get { return opponentScoreTextPos; }
         }
@@ -32,9 +42,6 @@ namespace FarseerGames.AirHockeyGame {
         private Texture2D scoreOverlay;
         private SpriteFont font;
 
-        public int thisScore;       //score of this player
-        public int opponentScore;   //score of the opponent
-
         /// <summary>
         /// Creates a scoreboard to show the current points of both players.
         /// </summary>
@@ -44,9 +51,7 @@ namespace FarseerGames.AirHockeyGame {
             thisScoreTextPos = new Vector2(scoreBoxPos.X + 20, scoreBoxPos.Y + 10);
             opponentScoreTextPos = new Vector2(scoreBoxPos.X + 120, scoreBoxPos.Y + 10);
 
-            //Initialise scores
-            thisScore = 0;
-            opponentScore = 0;
+            ResetEffect();//initialise effect variables
         }
 
         /// <summary>
@@ -62,14 +67,31 @@ namespace FarseerGames.AirHockeyGame {
         /// When the player scores a point, the stored score increases.
         /// </summary>
         public void Scored() {
-            thisScore++;
+            GameState.playerScore++;
+            ResetEffect();//cancels current effect if one is playing
+            effect = true;
+            effectText = "" + GameState.playerScore;
+            effectPos = thisScoreTextPos;
         }
 
         /// <summary>
         /// When the opponent scores a point, the stored score increases.
         /// </summary>
         public void OpponentScored() {
-            opponentScore++;
+            GameState.opponentScore++;
+            ResetEffect();//cancels current effect if one is playing
+            effect = true;
+            effectText = "" + GameState.opponentScore;
+            effectPos = opponentScoreTextPos;
+        }
+
+        public void ResetEffect() {
+            effect = false;
+            scale = 1.0f;
+            effectText = "";
+            effectPos = Vector2.Zero;
+            effectTime = 0.0f;
+            effectColor = Color.Red;
         }
 
         /// <summary>
@@ -79,8 +101,28 @@ namespace FarseerGames.AirHockeyGame {
         public void Draw(SpriteBatch spriteBatch) {
             spriteBatch.Draw(scoreOverlay, scoreBoxPos, Color.White);
 
-            spriteBatch.DrawString(font, "" + thisScore, thisScoreTextPos, Color.Black);
-            spriteBatch.DrawString(font, "" + opponentScore, opponentScoreTextPos, Color.Black);
+            spriteBatch.DrawString(font, "" + GameState.playerScore, thisScoreTextPos, Color.Black);
+            spriteBatch.DrawString(font, "" + GameState.opponentScore, opponentScoreTextPos, Color.Black);
+
+            //Draw effect upon scoreup
+            if(effect)
+                spriteBatch.DrawString(font, effectText, effectPos, effectColor, 0.0f, Vector2.Zero, scale, SpriteEffects.None, 0);
+        }
+
+        public void Update(GameTime gameTime) {
+            if(effect) {
+                //Calculates the effect text's transparency based on the time elapsed
+                float translucency = 255.0f - ((effectTime / effectLength) * 255.0f);
+                effectColor.A = (byte)translucency;
+
+                //Increments timer and scales the text up
+                effectTime += gameTime.ElapsedGameTime.Milliseconds;
+                scale += 0.008f * gameTime.ElapsedGameTime.Milliseconds;
+
+                //Resets effect after certain time has elapsed
+                if(effectTime >= effectLength || effectColor.A <= 5)
+                    ResetEffect();
+            }
         }
     }
 }

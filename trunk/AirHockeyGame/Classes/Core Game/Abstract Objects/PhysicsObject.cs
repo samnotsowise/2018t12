@@ -40,13 +40,21 @@ namespace FarseerGames.AirHockeyGame {
         }
 
         /// <summary>
+        /// Reset object to the specified position
+        /// </summary>
+        /// <param name="p">Position</param>
+        public virtual void reset(Vector2 p) {
+            this.UpdatePosition(p);
+            this.body.Dispose();
+            this.CreateBody(this.pS);
+            this.UpdatePosition(p);
+        }
+
+        /// <summary>
         /// Resets the object to it's initial state
         /// </summary>
         public virtual void reset() {
-            this.UpdatePosition(this.initialPosition);
-            this.body.Dispose();
-            this.CreateBody(this.pS);
-            this.UpdatePosition(this.initialPosition);
+            this.reset(this.initialPosition);
         }
 
         /// <summary>

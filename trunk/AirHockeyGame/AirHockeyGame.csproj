@@ -112,6 +112,7 @@
     <Compile Include="Screen System\PhysicsSimulatorView.cs" />
     <Compile Include="Screen System\ScreenSystem\Custom Screen Classes\ContextBox.cs" />
     <Compile Include="Screen System\ScreenSystem\Custom Screen Classes\OptionsMenuScreen.cs" />
+    <Compile Include="Screen System\ScreenSystem\Custom Screen Classes\GameEndOverlay.cs" />
     <Compile Include="Screen System\ScreenSystem\Custom Screen Classes\Settings.cs" />
     <Compile Include="Screen System\ScreenSystem\GameScreen.cs" />
     <Compile Include="Screen System\ScreenSystem\InputState.cs" />
