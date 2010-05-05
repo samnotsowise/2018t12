@@ -585,6 +585,17 @@ C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\trunk\AirHockeyGame\b
 C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\trunk\AirHockeyGame\bin\x86\Debug\Content\ScreenSystem\blank.xnb
 C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\trunk\AirHockeyGame\bin\x86\Debug\Content\ScreenSystem\gradient.xnb
 C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\trunk\AirHockeyGame\bin\x86\Debug\Content\ScreenSystem\Particles\star.xnb
+C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\trunk\AirHockeyGame\bin\x86\Debug\Content\ProfilePics\profilepic0.xnb
+C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\trunk\AirHockeyGame\bin\x86\Debug\Content\ProfilePics\profilepic1.xnb
+C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\trunk\AirHockeyGame\bin\x86\Debug\Content\ProfilePics\profilepic2.xnb
+C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\trunk\AirHockeyGame\bin\x86\Debug\Content\ProfilePics\profilepic3.xnb
+C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\trunk\AirHockeyGame\bin\x86\Debug\Content\ProfilePics\profilepic4.xnb
+C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\trunk\AirHockeyGame\bin\x86\Debug\Content\ProfilePics\profilepic5.xnb
+C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\trunk\AirHockeyGame\bin\x86\Debug\Content\ProfilePics\profilepic6.xnb
+C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\trunk\AirHockeyGame\bin\x86\Debug\Content\ProfilePics\profilepic7.xnb
+C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\trunk\AirHockeyGame\bin\x86\Debug\Content\ProfilePics\profilepic8.xnb
+C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\trunk\AirHockeyGame\bin\x86\Debug\Content\ScreenSystem\Images\Main Menu\iconFrame.xnb
+C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\trunk\AirHockeyGame\bin\x86\Debug\Content\ScreenSystem\Images\Main Menu\profileBoard.xnb
 C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\trunk\AirHockeyGame\bin\x86\Debug\Content\Fonts\detailsFont.xnb
 C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\trunk\AirHockeyGame\bin\x86\Debug\Content\Fonts\diagnosticFont.xnb
 C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\trunk\AirHockeyGame\bin\x86\Debug\Content\Fonts\frameRateCounterFont.xnb
@@ -601,14 +612,7 @@ C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\trunk\AirHockeyGame\o
 C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\trunk\AirHockeyGame\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\trunk\AirHockeyGame\obj\x86\Debug\AirHockeyGame.exe
 C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\trunk\AirHockeyGame\obj\x86\Debug\AirHockeyGame.pdb
-C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\trunk\AirHockeyGame\bin\x86\Debug\Content\ProfilePics\profilepic0.xnb
-C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\trunk\AirHockeyGame\bin\x86\Debug\Content\ProfilePics\profilepic1.xnb
-C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\trunk\AirHockeyGame\bin\x86\Debug\Content\ProfilePics\profilepic2.xnb
-C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\trunk\AirHockeyGame\bin\x86\Debug\Content\ProfilePics\profilepic3.xnb
-C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\trunk\AirHockeyGame\bin\x86\Debug\Content\ProfilePics\profilepic4.xnb
-C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\trunk\AirHockeyGame\bin\x86\Debug\Content\ProfilePics\profilepic5.xnb
-C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\trunk\AirHockeyGame\bin\x86\Debug\Content\ProfilePics\profilepic6.xnb
-C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\trunk\AirHockeyGame\bin\x86\Debug\Content\ProfilePics\profilepic7.xnb
-C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\trunk\AirHockeyGame\bin\x86\Debug\Content\ProfilePics\profilepic8.xnb
-C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\trunk\AirHockeyGame\bin\x86\Debug\Content\ScreenSystem\Images\Main Menu\iconFrame.xnb
-C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\trunk\AirHockeyGame\bin\x86\Debug\Content\ScreenSystem\Images\Main Menu\profileBoard.xnb
+C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\trunk\AirHockeyGame\bin\x86\Debug\AirHockeyGame.exe.manifest
+C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\trunk\AirHockeyGame\bin\x86\Debug\AirHockeyGame.application
+C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\trunk\AirHockeyGame\obj\x86\Debug\AirHockeyGame.exe.manifest
+C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\trunk\AirHockeyGame\obj\x86\Debug\AirHockeyGame.application

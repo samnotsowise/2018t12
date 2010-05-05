@@ -218,78 +218,6 @@
       <Time>2010-04-28T16:59:39.644783+01:00</Time>
     </Item>
     <Item>
-      <Source>Fonts\detailsFont.spritefont</Source>
-      <Name>Fonts\detailsFont</Name>
-      <Importer>FontDescriptionImporter</Importer>
-      <Processor>FontDescriptionProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\trunk\AirHockeyGame\bin\x86\Debug\Content\Fonts\detailsFont.xnb</Output>
-      <Time>2010-03-25T10:35:25.011312+00:00</Time>
-    </Item>
-    <Item>
-      <Source>Fonts\diagnosticFont.spritefont</Source>
-      <Name>Fonts\diagnosticFont</Name>
-      <Importer>FontDescriptionImporter</Importer>
-      <Processor>FontDescriptionProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\trunk\AirHockeyGame\bin\x86\Debug\Content\Fonts\diagnosticFont.xnb</Output>
-      <Time>2010-03-25T10:35:25.011312+00:00</Time>
-    </Item>
-    <Item>
-      <Source>Fonts\frameRateCounterFont.spritefont</Source>
-      <Name>Fonts\frameRateCounterFont</Name>
-      <Importer>FontDescriptionImporter</Importer>
-      <Processor>FontDescriptionProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\trunk\AirHockeyGame\bin\x86\Debug\Content\Fonts\frameRateCounterFont.xnb</Output>
-      <Time>2010-03-25T10:35:25.011312+00:00</Time>
-    </Item>
-    <Item>
-      <Source>Fonts\gamefont.spritefont</Source>
-      <Name>Fonts\gamefont</Name>
-      <Importer>FontDescriptionImporter</Importer>
-      <Processor>FontDescriptionProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\trunk\AirHockeyGame\bin\x86\Debug\Content\Fonts\gamefont.xnb</Output>
-      <Time>2010-03-25T10:35:25.011312+00:00</Time>
-    </Item>
-    <Item>
-      <Source>Fonts\menufont.spritefont</Source>
-      <Name>Fonts\menufont</Name>
-      <Importer>FontDescriptionImporter</Importer>
-      <Processor>FontDescriptionProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\trunk\AirHockeyGame\bin\x86\Debug\Content\Fonts\menufont.xnb</Output>
-      <Time>2010-03-25T10:35:25.011312+00:00</Time>
-    </Item>
-    <Item>
-      <Source>ScreenSystem\menufont.spritefont</Source>
-      <Name>ScreenSystem\menufont</Name>
-      <Importer>FontDescriptionImporter</Importer>
-      <Processor>FontDescriptionProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\trunk\AirHockeyGame\bin\x86\Debug\Content\ScreenSystem\menufont.xnb</Output>
-      <Time>2010-04-28T15:54:41.767031+01:00</Time>
-    </Item>
-    <Item>
-      <Source>ScreenSystem\Particles\Arial.spritefont</Source>
-      <Name>ScreenSystem\Particles\Arial</Name>
-      <Importer>FontDescriptionImporter</Importer>
-      <Processor>FontDescriptionProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\trunk\AirHockeyGame\bin\x86\Debug\Content\ScreenSystem\Particles\Arial.xnb</Output>
-      <Time>2010-04-28T16:59:39.644783+01:00</Time>
-    </Item>
-    <Item>
-      <Source>ScreenSystem\gamefont.spritefont</Source>
-      <Name>ScreenSystem\gamefont</Name>
-      <Importer>FontDescriptionImporter</Importer>
-      <Processor>FontDescriptionProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\trunk\AirHockeyGame\bin\x86\Debug\Content\ScreenSystem\gamefont.xnb</Output>
-      <Time>2010-04-28T15:54:41.767031+01:00</Time>
-    </Item>
-    <Item>
       <Source>ProfilePics\profilepic0.png</Source>
       <Name>ProfilePics\profilepic0</Name>
       <Importer>TextureImporter</Importer>
@@ -387,6 +315,78 @@
       <Options>None</Options>
       <Output>C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\trunk\AirHockeyGame\bin\x86\Debug\Content\ScreenSystem\Images\Main Menu\profileBoard.xnb</Output>
       <Time>2010-05-04T13:54:35.945297+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Fonts\detailsFont.spritefont</Source>
+      <Name>Fonts\detailsFont</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\trunk\AirHockeyGame\bin\x86\Debug\Content\Fonts\detailsFont.xnb</Output>
+      <Time>2010-03-25T10:35:25.011312+00:00</Time>
+    </Item>
+    <Item>
+      <Source>Fonts\diagnosticFont.spritefont</Source>
+      <Name>Fonts\diagnosticFont</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\trunk\AirHockeyGame\bin\x86\Debug\Content\Fonts\diagnosticFont.xnb</Output>
+      <Time>2010-03-25T10:35:25.011312+00:00</Time>
+    </Item>
+    <Item>
+      <Source>Fonts\frameRateCounterFont.spritefont</Source>
+      <Name>Fonts\frameRateCounterFont</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\trunk\AirHockeyGame\bin\x86\Debug\Content\Fonts\frameRateCounterFont.xnb</Output>
+      <Time>2010-03-25T10:35:25.011312+00:00</Time>
+    </Item>
+    <Item>
+      <Source>Fonts\gamefont.spritefont</Source>
+      <Name>Fonts\gamefont</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\trunk\AirHockeyGame\bin\x86\Debug\Content\Fonts\gamefont.xnb</Output>
+      <Time>2010-03-25T10:35:25.011312+00:00</Time>
+    </Item>
+    <Item>
+      <Source>Fonts\menufont.spritefont</Source>
+      <Name>Fonts\menufont</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\trunk\AirHockeyGame\bin\x86\Debug\Content\Fonts\menufont.xnb</Output>
+      <Time>2010-03-25T10:35:25.011312+00:00</Time>
+    </Item>
+    <Item>
+      <Source>ScreenSystem\menufont.spritefont</Source>
+      <Name>ScreenSystem\menufont</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\trunk\AirHockeyGame\bin\x86\Debug\Content\ScreenSystem\menufont.xnb</Output>
+      <Time>2010-04-28T15:54:41.767031+01:00</Time>
+    </Item>
+    <Item>
+      <Source>ScreenSystem\Particles\Arial.spritefont</Source>
+      <Name>ScreenSystem\Particles\Arial</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\trunk\AirHockeyGame\bin\x86\Debug\Content\ScreenSystem\Particles\Arial.xnb</Output>
+      <Time>2010-04-28T16:59:39.644783+01:00</Time>
+    </Item>
+    <Item>
+      <Source>ScreenSystem\gamefont.spritefont</Source>
+      <Name>ScreenSystem\gamefont</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\trunk\AirHockeyGame\bin\x86\Debug\Content\ScreenSystem\gamefont.xnb</Output>
+      <Time>2010-04-28T15:54:41.767031+01:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
