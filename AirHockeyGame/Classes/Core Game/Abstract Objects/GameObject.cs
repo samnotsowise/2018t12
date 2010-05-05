@@ -47,5 +47,13 @@ namespace FarseerGames.AirHockeyGame {
             this.rect.Y = (int)this.position.Y;
         }
 
+        /// <summary>
+        /// Draws the GameObject
+        /// </summary>
+        /// <param name="sB">Sprite Batch</param>
+        public virtual void Draw(SpriteBatch sB) {
+            sB.Draw(this.texture, this.rect, Color.White);
+        }
+
     }
 }

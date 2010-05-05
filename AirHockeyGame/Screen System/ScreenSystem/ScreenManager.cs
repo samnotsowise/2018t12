@@ -14,10 +14,10 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using AirHockeyGame;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
+using AirHockeyGame;
 #endregion
 
 namespace GameScreenManager.ScreenSystem {
@@ -85,7 +85,7 @@ namespace GameScreenManager.ScreenSystem {
         /// Constructs a new screen manager component.
         /// </summary>
         /// <exception cref="InvalidOperationException">No graphics device service.</exception>
-        public ScreenManager(Game game)
+        public ScreenManager(AirHockey game)
             : base(game) {
             gameStart = false;
 
@@ -98,6 +98,15 @@ namespace GameScreenManager.ScreenSystem {
                 GameState.gameSettings = new Settings();
                 GameState.gameSettings.WriteSettingsFile();
             }
+
+            //Checks screen size is adjusted correctly
+            if(GameState.gameSettings.screenSize == Settings.ScreenSize.fullscreen)
+                game._graphics.IsFullScreen = true;
+            else
+                game._graphics.IsFullScreen = false;
+
+            //Initialise opponent profile
+            GameState.opponentProfile = new Profile("Opponent");
 
             //Load profile
             GameState.playerProfile = Profile.ReadProfile("profile.dat");
@@ -254,6 +263,8 @@ namespace GameScreenManager.ScreenSystem {
         /// </summary>
         protected override void LoadContent() {
             // Load content belonging to the screen manager.
+            GameState.LoadContent(this.ContentManager);
+
             SpriteBatch = new SpriteBatch(GraphicsDevice);
             _blankTexture = ContentManager.Load<Texture2D>("Content/Common/blank");
 

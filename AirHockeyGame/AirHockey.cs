@@ -10,7 +10,7 @@ namespace AirHockeyGame {
     /// </summary>
     public class AirHockey: Game {
 
-        private GraphicsDeviceManager _graphics;
+        public GraphicsDeviceManager _graphics;
         private ExplosionParticleSystem explosion;
         private ExplosionSmokeParticleSystem smoke;
         private StarParticleSystem stars;
@@ -27,10 +27,8 @@ namespace AirHockeyGame {
             _graphics.SynchronizeWithVerticalRetrace = false;
             TargetElapsedTime = new TimeSpan(0, 0, 0, 0, 10);
             IsFixedTimeStep = true;
-
             _graphics.PreferredBackBufferWidth = 1024;
             _graphics.PreferredBackBufferHeight = 768;
-            _graphics.IsFullScreen = false;
             //IsMouseVisible = true;
 
             //Set window defaults. Parent game can override in constructor

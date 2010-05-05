@@ -20,6 +20,7 @@ namespace AirHockeyGame {
         String name;
         int win, lost, draw;
         public const int MaxNameLength = 15;
+        int picture;
         #endregion
 
         #region Properties
@@ -29,13 +30,27 @@ namespace AirHockeyGame {
             set { name = value; }
         }
 
-        public int Win { get { return win; } }
+        public int Win {
+            get { return win; }
+            set { win = value; }
+        }
 
-        public int Lost { get { return lost; } }
+        public int Lost {
+            get { return lost; }
+            set { lost = value; }
+        }
 
-        public int Draw { get { return draw; } }
+        public int Draw {
+            get { return draw; }
+            set { draw = value; }
+        }
 
         public string WonLostDrawn { get { return "" + win + "/" + lost + "/" + draw; } }
+
+        public int PictureIndex {
+            get { return picture; }
+            set { picture = value; }
+        }
 
         public int TotalGamesPlayed { get { return win + lost + draw; } }
         #endregion
@@ -56,6 +71,7 @@ namespace AirHockeyGame {
         public Profile(String name) {
             this.name = name;
             win = lost = draw = 0;
+            this.PictureIndex = 0;
         }
 
         /// <summary>
@@ -63,6 +79,7 @@ namespace AirHockeyGame {
         /// </summary>
         public void GameWon() {
             win++;
+            GameState.playerProfile.WriteProfile("profile.dat");
         }
 
         /// <summary>
@@ -70,6 +87,7 @@ namespace AirHockeyGame {
         /// </summary>
         public void GameLost() {
             lost++;
+            GameState.playerProfile.WriteProfile("profile.dat");
         }
 
         /// <summary>
@@ -77,6 +95,7 @@ namespace AirHockeyGame {
         /// </summary>
         public void GameDrawn() {
             draw++;
+            GameState.playerProfile.WriteProfile("profile.dat");
         }
 
         /// <summary>
@@ -127,7 +146,7 @@ namespace AirHockeyGame {
         /// <param name="p"></param>
         /// <returns></returns>
         public bool Matches(Profile p) {
-            if(p.name.Equals(this.name) && p.WonLostDrawn.Equals(this.WonLostDrawn))
+            if(p.name.Equals(this.name) && p.WonLostDrawn.Equals(this.WonLostDrawn) && p.PictureIndex == this.PictureIndex)
                 return true;
             else
                 return false;

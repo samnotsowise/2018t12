@@ -79,6 +79,7 @@ namespace FarseerGames.AirHockeyGame {
                     } else {
                         this.force = new Vector2(diff.X + 48, diff.Y) * (50 * ((int)GameState.gameSettings.difficulty + 1));
                     }
+
                     //Otherwise, just match it's Y position
                 } else {
                     this.force = new Vector2(2000, (diff.Y) * 40);
