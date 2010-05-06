@@ -11,3 +11,6 @@ C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\branches\Sams Branch\
 C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\branches\Sams Branch\FarseerPhysics\Content\obj\x86\Debug\ResolveAssemblyReference.cache
 I:\CSC2018\2018t12\branches\David's Branch\trunk\FarseerPhysics\Content\obj\x86\Debug\ResolveAssemblyReference.cache
 C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\trunk\FarseerPhysics\Content\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Gary\Desktop\New Folder\trunk\FarseerPhysics\Content\obj\x86\Debug\ResolveAssemblyReference.cache
+E:\FarseerPhysics\Content\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\16280059\Desktop\T12\FarseerPhysics\Content\obj\x86\Debug\ResolveAssemblyReference.cache

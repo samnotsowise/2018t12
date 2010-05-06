@@ -77,6 +77,10 @@
     <XnaCompressContent>true</XnaCompressContent>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Lidgren.Network, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Documents\Downloads\lidgren-network\Lidgren.Network\bin\Debug\Lidgren.Network.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Xna.Framework, Version=3.1.0.0, Culture=neutral, PublicKeyToken=6d5c3888ef60e27d" />
     <Reference Include="Microsoft.Xna.Framework.Game, Version=3.1.0.0, Culture=neutral, PublicKeyToken=6d5c3888ef60e27d" />
     <Reference Include="mscorlib">
@@ -96,6 +100,7 @@
     <Compile Include="Classes\Core Game\Objects\Board\Dectector.cs" />
     <Compile Include="Classes\Core Game\Abstract Objects\GameObject.cs" />
     <Compile Include="Classes\Core Game\Abstract Objects\PaddleObject.cs" />
+    <Compile Include="Classes\Core Game\Objects\Paddles\NetworkPaddle.cs" />
     <Compile Include="Classes\Core Game\Objects\Paddles\OpponentPaddle.cs" />
     <Compile Include="Classes\Core Game\Objects\Paddles\PlayerPaddle.cs" />
     <Compile Include="Classes\Core Game\Objects\Puck.cs" />

@@ -1,250 +1,245 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="AirHockeyGame.AirHockey" Collapsed="true">
-    <Position X="15.75" Y="0.5" Width="1.5" />
+    <Position X="16.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQAAABAAABCAxAAAAAAAAAAAAAABAACBAQAAAABAAA=</HashCode>
       <FileName>AirHockey.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="AirHockeyGame.GameState">
-    <Position X="28.75" Y="6" Width="1.5" />
+  <Class Name="AirHockeyGame.GameState" Collapsed="true">
+    <Position X="18.5" Y="1.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAACAAAAAAAAEQCAAAAAAABAAAAEAAgAABAIAAAAIAQ=</HashCode>
       <FileName>Classes\Core Game\GameState.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="AirHockeyGame.Profile">
-    <Position X="30.75" Y="4.75" Width="1.5" />
+  <Class Name="AirHockeyGame.Profile" Collapsed="true">
+    <Position X="22" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>ABAAAACAAoIBwgAAAMIAAAQAAgIEAgAAAEEAAAAAIAA=</HashCode>
       <FileName>Classes\Core Game\User\Profile.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="AirHockeyGame.ExplosionParticleSystem" Collapsed="true">
-    <Position X="20.25" Y="11" Width="1.5" />
+    <Position X="5" Y="12" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAA=</HashCode>
       <FileName>Classes\Particles\ExplosionParticleSystem.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="AirHockeyGame.ExplosionSmokeParticleSystem" Collapsed="true">
-    <Position X="22.5" Y="11" Width="1.5" />
+    <Position X="7.25" Y="12" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAA=</HashCode>
       <FileName>Classes\Particles\ExplosionSmokeParticleSystem.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="AirHockeyGame.Particle" Collapsed="true">
-    <Position X="17.5" Y="2.5" Width="1.5" />
+    <Position X="16.75" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQAAAAAAAAAAYAgAAKAAIACAAAAAAAgAEBEAIBEQAA=</HashCode>
       <FileName>Classes\Particles\Particle.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="AirHockeyGame.ParticleSystem" Collapsed="true">
-    <Position X="19" Y="9.5" Width="1.5" />
+    <Position X="3.75" Y="10.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>CAQDCQAAAgAKAwAAABkQAABAgDQABgAIAEEAAAIACQY=</HashCode>
       <FileName>Classes\Particles\ParticleSystem.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="AirHockeyGame.SmokePlumeParticleSystem" Collapsed="true">
-    <Position X="15.75" Y="11" Width="1.5" />
+    <Position X="0.5" Y="12" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAACAAAAAgAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAA=</HashCode>
       <FileName>Classes\Particles\SmokePlumeParticleSystem.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="AirHockeyGame.StarParticleSystem" Collapsed="true">
-    <Position X="18" Y="11" Width="1.5" />
+    <Position X="2.75" Y="12" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAA=</HashCode>
       <FileName>Classes\Particles\StarParticleSystem.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="FarseerGames.AirHockeyGame.GameObject">
-    <Position X="6" Y="5.75" Width="1.5" />
+  <Class Name="FarseerGames.AirHockeyGame.GameObject" Collapsed="true">
+    <Position X="7.5" Y="4.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AEAQAAAAAAAAAiQAQAAAIAAAAAAAAhAAAAAAAAAAAAA=</HashCode>
       <FileName>Classes\Core Game\Abstract Objects\GameObject.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="FarseerGames.AirHockeyGame.PaddleObject">
-    <Position X="3" Y="10" Width="1.5" />
+  <Class Name="FarseerGames.AirHockeyGame.PaddleObject" Collapsed="true">
+    <Position X="5.25" Y="7.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAwAAAAACACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE=</HashCode>
       <FileName>Classes\Core Game\Abstract Objects\PaddleObject.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="FarseerGames.AirHockeyGame.PhysicsObject">
-    <Position X="6" Y="9.75" Width="1.75" />
+  <Class Name="FarseerGames.AirHockeyGame.PhysicsObject" Collapsed="true">
+    <Position X="7.5" Y="5.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAEAAAAACAAAAAAAAAAAQAAAAAAAAAAAAgAAAE=</HashCode>
       <FileName>Classes\Core Game\Abstract Objects\PhysicsObject.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="FarseerGames.AirHockeyGame.Board">
-    <Position X="11.75" Y="9.75" Width="1.5" />
+  <Class Name="FarseerGames.AirHockeyGame.Board" Collapsed="true">
+    <Position X="14.25" Y="5.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AQAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Classes\Core Game\Objects\Board\Board.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="FarseerGames.AirHockeyGame.Boundary">
-    <Position X="9" Y="10" Width="2" />
+  <Class Name="FarseerGames.AirHockeyGame.Boundary" Collapsed="true">
+    <Position X="12" Y="7.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Classes\Core Game\Objects\Board\Boundary.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="FarseerGames.AirHockeyGame.Detector">
-    <Position X="0.5" Y="9.75" Width="1.5" />
+  <Class Name="FarseerGames.AirHockeyGame.Detector" Collapsed="true">
+    <Position X="0.75" Y="5.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Classes\Core Game\Objects\Board\Dectector.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="FarseerGames.AirHockeyGame.OpponentPaddle">
-    <Position X="1" Y="13" Width="1.5" />
+  <Class Name="FarseerGames.AirHockeyGame.NetworkPaddle" Collapsed="true">
+    <Position X="3" Y="8.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAQAAAAAAAAAABAAQBAAAEAAAAAAAAAAAAAAAAAAACA=</HashCode>
+      <FileName>Classes\Core Game\Objects\Paddles\NetworkPaddle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FarseerGames.AirHockeyGame.OpponentPaddle" Collapsed="true">
+    <Position X="5.25" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAQAAAAEAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Classes\Core Game\Objects\Paddles\OpponentPaddle.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="FarseerGames.AirHockeyGame.PlayerPaddle">
-    <Position X="5" Y="13" Width="1.5" />
+  <Class Name="FarseerGames.AirHockeyGame.PlayerPaddle" Collapsed="true">
+    <Position X="7.5" Y="8.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQAAAAAAAAAABAAABAAAAAAAAAAAAAAAAAAAAAAACA=</HashCode>
       <FileName>Classes\Core Game\Objects\Paddles\PlayerPaddle.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="FarseerGames.AirHockeyGame.Puck">
-    <Position X="8" Y="11.75" Width="1.5" />
+  <Class Name="FarseerGames.AirHockeyGame.Puck" Collapsed="true">
+    <Position X="9.75" Y="7.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQAAAAACACAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAE=</HashCode>
       <FileName>Classes\Core Game\Objects\Puck.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="FarseerGames.AirHockeyGame.ScoreBox">
-    <Position X="13.5" Y="1.25" Width="1.5" />
+  <Class Name="FarseerGames.AirHockeyGame.ScoreBox" Collapsed="true">
+    <Position X="18.5" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAYACAQAAAgAAggIiQAQgAICAAAAAAAAAAgA4AIAAAQ=</HashCode>
       <FileName>Classes\Core Game\Objects\ScoreBox.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="FarseerGames.AirHockeyGame.Program" Collapsed="true">
-    <Position X="24.5" Y="2.5" Width="1.5" />
+    <Position X="23.75" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
       <FileName>Program.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GameScreenManager.Components.FrameRateCounter" Collapsed="true">
-    <Position X="17.5" Y="1.5" Width="1.5" />
+    <Position X="16.75" Y="1.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQAAAAAiAAAAgAAAAAQAAAABAAAAAAAAAAAAAAAAEA=</HashCode>
       <FileName>Screen System\Components\FramerateCounterComponent.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GameScreenManager.DrawingSystem.CircleBrush" Collapsed="true">
-    <Position X="19.25" Y="0.5" Width="1.5" />
+    <Position X="18.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAIgAAAAAAAAgAAAAAAAAACAAIAACAEAAAAgAAAAAA=</HashCode>
       <FileName>Screen System\DrawingSystem\CircleBrush.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GameScreenManager.DrawingSystem.DrawingHelper" Collapsed="true">
-    <Position X="22.75" Y="0.5" Width="1.5" />
+    <Position X="22" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAgAAAQAAAAAAAABIAQEIAAAAAAAAAAQA=</HashCode>
       <FileName>Screen System\DrawingSystem\DrawingHelper.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GameScreenManager.DrawingSystem.EllipseBrush" Collapsed="true">
-    <Position X="24.5" Y="0.5" Width="1.5" />
+    <Position X="23.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAggAAAAAAAAgAAACAAAAACAIABAAAEAAAAgAAAAAA=</HashCode>
       <FileName>Screen System\DrawingSystem\EllipseBrush.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GameScreenManager.DrawingSystem.LineBrush" Collapsed="true">
-    <Position X="22.75" Y="1.5" Width="1.5" />
+    <Position X="22" Y="1.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AIAAgAQAAAABAgARAAABQAAAAAAAAAAEAAAQgQAAQCA=</HashCode>
       <FileName>Screen System\DrawingSystem\LineBrush.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GameScreenManager.DrawingSystem.PolygonBrush" Collapsed="true">
-    <Position X="21" Y="2.5" Width="1.5" />
+    <Position X="20.25" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAgAAACAAKAgAEABAAAEJCQAAQIJAEEkgAgAAAAIA=</HashCode>
       <FileName>Screen System\DrawingSystem\PolygonBrush.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GameScreenManager.DrawingSystem.RectangleBrush" Collapsed="true">
-    <Position X="17.5" Y="3.5" Width="1.5" />
+    <Position X="16.75" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>CAAAgAAABAAAggAAAAAAAEACAAAAAAAEAAAAgAAAAAA=</HashCode>
       <FileName>Screen System\DrawingSystem\RectangleBrush.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="AirHockeyGame.Screens.MainScreen">
-    <Position X="11.25" Y="1.75" Width="1.75" />
+  <Class Name="AirHockeyGame.Screens.MainScreen" Collapsed="true">
+    <Position X="0.75" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAYAAACAQQAIA0QAAAAAIABQAAAAIAEAIAAEACAQAAw=</HashCode>
+      <HashCode>AAYAAACAQUAIA0QAAAAAIAhUAAABIAEAIBBEBCAQAAw=</HashCode>
       <FileName>Screen System\MainScreen.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GameScreenManager.PhysicsSimulatorView" Collapsed="true">
-    <Position X="19.25" Y="2.5" Width="1.5" />
+    <Position X="18.5" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>EgDQU2IzrROwIg0Xng2DKFP67yBxqoJFlGWIQAhCTLw=</HashCode>
       <FileName>Screen System\PhysicsSimulatorView.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GameScreenManager.ScreenSystem.ContextBox" Collapsed="true">
-    <Position X="21" Y="0.5" Width="1.5" />
+    <Position X="20.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAACAAwAAAAAAAgACEAAAAACCAAAAAAAAAAQ=</HashCode>
       <FileName>Screen System\ScreenSystem\Custom Screen Classes\ContextBox.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GameScreenManager.ScreenSystem.GameEndOverlay" Collapsed="true">
-    <Position X="2.75" Y="3.25" Width="1.5" />
+    <Position X="5.25" Y="3.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAYEKAAAIAAAwAEAAAgAAAAAAAAAACAQBAAgAQAAgQ=</HashCode>
       <FileName>Screen System\ScreenSystem\Custom Screen Classes\GameEndOverlay.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GameScreenManager.ScreenSystem.OptionsMenuScreen" Collapsed="true">
-    <Position X="7.25" Y="3.25" Width="1.5" />
+    <Position X="9.75" Y="3.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>gAQAAAAAAAAQCoAIAAAAQAAAAQAAAQgAACAAAAQAIAQ=</HashCode>
+      <HashCode>kAQAAAAAAAAQCoAIAAAAQAAAAQAAAQgAACQAAAQAIAQ=</HashCode>
       <FileName>Screen System\ScreenSystem\Custom Screen Classes\OptionsMenuScreen.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="GameScreenManager.ScreenSystem.Settings">
-    <Position X="32.75" Y="6" Width="1.5" />
-    <NestedTypes>
-      <Enum Name="GameScreenManager.ScreenSystem.Settings.Difficulty" Collapsed="true">
-        <TypeIdentifier>
-          <NewMemberFileName>Screen System\ScreenSystem\Custom Screen Classes\Settings.cs</NewMemberFileName>
-        </TypeIdentifier>
-      </Enum>
-      <Enum Name="GameScreenManager.ScreenSystem.Settings.ScreenSize" Collapsed="true">
-        <TypeIdentifier>
-          <NewMemberFileName>Screen System\ScreenSystem\Custom Screen Classes\Settings.cs</NewMemberFileName>
-        </TypeIdentifier>
-      </Enum>
-    </NestedTypes>
+  <Class Name="GameScreenManager.ScreenSystem.Settings" Collapsed="true">
+    <Position X="22" Y="3.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAIAAAABAAAAEAAAAQAAAAAAAgAAAAAAAEAAAAAAAAA=</HashCode>
+      <HashCode>AAIAAAABAAAAEEAAARAAAAAAAgAAAAAAAEAAAAAAAAA=</HashCode>
       <FileName>Screen System\ScreenSystem\Custom Screen Classes\Settings.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GameScreenManager.ScreenSystem.GameScreen" Collapsed="true">
-    <Position X="6" Y="0.5" Width="1.5" />
+    <Position X="6.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAwAEACAACBCAwAEEAIAAIAAAAAEAAgAAAAGAAYgBAQ=</HashCode>
       <FileName>Screen System\ScreenSystem\GameScreen.cs</FileName>
@@ -252,67 +247,67 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="GameScreenManager.ScreenSystem.InputState" Collapsed="true">
-    <Position X="21" Y="1.5" Width="1.5" />
+    <Position X="20.25" Y="1.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>QAQAAEgAAAAAAAGAQAAAQAABAAAAABAAACAAABAAAAA=</HashCode>
       <FileName>Screen System\ScreenSystem\InputState.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GameScreenManager.ScreenSystem.LogoScreen" Collapsed="true">
-    <Position X="0.5" Y="1.75" Width="1.5" />
+    <Position X="3" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQAAASAAAAAAgAAAAAAAAAAAQAAAAAAAAAAAAAAAAQ=</HashCode>
       <FileName>Screen System\ScreenSystem\LogoScreen.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GameScreenManager.ScreenSystem.MainMenuScreen" Collapsed="true">
-    <Position X="5" Y="3.25" Width="1.5" />
+    <Position X="7.5" Y="3.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAICABiAACESAwAAAABAAAAAAIMAAAAAAAAAAAQAIAQ=</HashCode>
       <FileName>Screen System\ScreenSystem\MainMenuScreen.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GameScreenManager.ScreenSystem.MenuItem" Collapsed="true">
-    <Position X="24.5" Y="1.5" Width="1.5" />
+    <Position X="23.75" Y="1.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAABAAAAIAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Screen System\ScreenSystem\MenuItem.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GameScreenManager.ScreenSystem.MenuScreen" Collapsed="true">
-    <Position X="6" Y="1.75" Width="1.5" />
+    <Position X="8.5" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAIGAAAAgAgBAAAAAAEAAAAAAAAAAAAAAgASAAAQ=</HashCode>
       <FileName>Screen System\ScreenSystem\MenuScreen.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GameScreenManager.ScreenSystem.PauseScreen" Collapsed="true">
-    <Position X="9.5" Y="3.25" Width="1.5" />
+    <Position X="12" Y="3.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAYEKAAAIAAAwAEAAAgAAAAAAAAAACAQBAAgAQAAgQ=</HashCode>
       <FileName>Screen System\ScreenSystem\PauseScreen.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GameScreenManager.ScreenSystem.ScreenManager" Collapsed="true">
-    <Position X="21" Y="3.5" Width="1.5" />
+    <Position X="20.25" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>RAQAFAAhEEIEIwAAAwAAABBgAABICAhAZAACEAAAAEQ=</HashCode>
       <FileName>Screen System\ScreenSystem\ScreenManager.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GameScreenManager.ScreenSystem.SpriteFonts" Collapsed="true">
-    <Position X="24.5" Y="3.5" Width="1.5" />
+    <Position X="23.75" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAABAAAAAAQCAECAAAAAAAAgAAAAAAQAAQAIA=</HashCode>
       <FileName>Screen System\ScreenSystem\SpriteFonts.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Enum Name="GameScreenManager.ScreenSystem.ScreenState" Collapsed="true">
-    <Position X="17.5" Y="4.75" Width="1.5" />
+    <Position X="16.75" Y="4.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAACAAAAAAAAAAAAAAAAAAAAAAAAgAAAIAAAEAAA=</HashCode>
       <FileName>Screen System\ScreenSystem\GameScreen.cs</FileName>
     </TypeIdentifier>
   </Enum>
-  <Font Name="Segoe UI" Size="9" />
+  <Font Name="Tahoma" Size="8.25" />
 </ClassDiagram>

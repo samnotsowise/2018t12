@@ -25,10 +25,14 @@ namespace GameScreenManager.ScreenSystem {
         }
         public ScreenSize screenSize;
 
+        public string serverAddress;
+        public string serverPort;
         //Creates an object to hold the settings with default values
         public Settings() {
             difficulty = Difficulty.medium;
             screenSize = ScreenSize.windowed;
+            serverAddress = "localhost";
+            serverPort = "2000";
         }
 
         /// <summary>
@@ -37,7 +41,9 @@ namespace GameScreenManager.ScreenSystem {
         /// <returns></returns>
         public bool IsEqual(Settings set2) {
             if(this.difficulty == set2.difficulty &&
-                this.screenSize == set2.screenSize)
+                this.screenSize == set2.screenSize && 
+                this.serverAddress == set2.serverAddress && 
+                this.serverPort == set2.serverPort)
                 return true;
             else
                 return false;
@@ -66,6 +72,8 @@ namespace GameScreenManager.ScreenSystem {
         public void Copy(Settings set) {
             this.difficulty = set.difficulty;
             this.screenSize = set.screenSize;
+            this.serverPort = set.serverPort;
+            this.serverAddress = set.serverAddress;
         }
 
         /// <summary>
