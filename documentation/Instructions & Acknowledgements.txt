@@ -1,0 +1,18 @@
+INSTRUCTIONS
+In order to run the game, open the file Game\AirHockey.sln with Microsoft Visual Studio 2008.
+Once open, click on the Start Debugging (F5) button.
+
+If running a multiplayer game then you should ensure an instance of AirHockeyServer.exe is 
+running.
+
+
+ACKNOWLEDGEMENTS
+This Game uses:
+	Farseer 2D Physics Engine:
+	http://farseerphysics.codeplex.com/
+
+	Game State Management:
+	http://creators.xna.com/en-GB/samples/gamestatemanagement
+
+	Lidgren.Network
+	http://code.google.com/p/lidgren-network/
