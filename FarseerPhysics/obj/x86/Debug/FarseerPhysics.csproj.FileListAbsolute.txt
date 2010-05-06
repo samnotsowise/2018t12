@@ -22,3 +22,21 @@ C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\trunk\FarseerPhysics\
 C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\trunk\FarseerPhysics\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\trunk\FarseerPhysics\obj\x86\Debug\FarseerPhysics.dll
 C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\trunk\FarseerPhysics\obj\x86\Debug\FarseerPhysics.pdb
+C:\Users\Gary\Desktop\New Folder\trunk\FarseerPhysics\bin\x86\Debug\FarseerPhysics.dll
+C:\Users\Gary\Desktop\New Folder\trunk\FarseerPhysics\bin\x86\Debug\FarseerPhysics.pdb
+C:\Users\Gary\Desktop\New Folder\trunk\FarseerPhysics\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Gary\Desktop\New Folder\trunk\FarseerPhysics\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Gary\Desktop\New Folder\trunk\FarseerPhysics\obj\x86\Debug\FarseerPhysics.dll
+C:\Users\Gary\Desktop\New Folder\trunk\FarseerPhysics\obj\x86\Debug\FarseerPhysics.pdb
+E:\FarseerPhysics\bin\x86\Debug\FarseerPhysics.dll
+E:\FarseerPhysics\bin\x86\Debug\FarseerPhysics.pdb
+E:\FarseerPhysics\obj\x86\Debug\ResolveAssemblyReference.cache
+E:\FarseerPhysics\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+E:\FarseerPhysics\obj\x86\Debug\FarseerPhysics.dll
+E:\FarseerPhysics\obj\x86\Debug\FarseerPhysics.pdb
+C:\Documents and Settings\16280059\Desktop\T12\FarseerPhysics\bin\x86\Debug\FarseerPhysics.dll
+C:\Documents and Settings\16280059\Desktop\T12\FarseerPhysics\bin\x86\Debug\FarseerPhysics.pdb
+C:\Documents and Settings\16280059\Desktop\T12\FarseerPhysics\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\16280059\Desktop\T12\FarseerPhysics\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Documents and Settings\16280059\Desktop\T12\FarseerPhysics\obj\x86\Debug\FarseerPhysics.dll
+C:\Documents and Settings\16280059\Desktop\T12\FarseerPhysics\obj\x86\Debug\FarseerPhysics.pdb

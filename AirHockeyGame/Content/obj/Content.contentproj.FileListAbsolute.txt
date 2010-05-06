@@ -17,3 +17,6 @@ C:\Users\David\Desktop\new branch\branches\David's Branch\David's Branch\AirHock
 C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\branches\David's Branch\David's Branch\AirHockeyGame\Content\obj\x86\Debug\ResolveAssemblyReference.cache
 C:\Users\Sam\Desktop\2018t12\branches\David's Branch\David's Branch\AirHockeyGame\Content\obj\x86\Debug\ResolveAssemblyReference.cache
 C:\Users\Sam\Documents\Visual Studio 2008\Projects\2018t12\trunk\AirHockeyGame\Content\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Gary\Desktop\New Folder\trunk\AirHockeyGame\Content\obj\x86\Debug\ResolveAssemblyReference.cache
+E:\AirHockeyGame\Content\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\16280059\Desktop\T12\AirHockeyGame\Content\obj\x86\Debug\ResolveAssemblyReference.cache

@@ -47,14 +47,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="AirHockeyGame.exe" size="74240">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="AirHockeyGame.exe" size="78848">
       <assemblyIdentity name="AirHockeyGame" version="2.1.3.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>yLpeOwFjqCjgsNSDprnQo4CzzBU=</dsig:DigestValue>
+        <dsig:DigestValue>cqPHZe8PqPC4wA54JZlXql/4NnU=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -66,7 +66,19 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>xHK508ZlAn3P4NvXWtO7S0ZX7QM=</dsig:DigestValue>
+        <dsig:DigestValue>v8uD0j9pmNeCj9UbtlDmGfwrftk=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Lidgren.Network.dll" size="96768">
+      <assemblyIdentity name="Lidgren.Network" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>qOmNxoI1xjfnxzHq95yaBlEnC0c=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

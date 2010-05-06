@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <Profile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Name>Player</Name>
-  <Win>0</Win>
-  <Lost>0</Lost>
-  <Draw>0</Draw>
-  <PictureIndex>1</PictureIndex>
+  <Name>Sam</Name>
+  <Win>2</Win>
+  <Lost>4</Lost>
+  <Draw>2</Draw>
+  <PictureIndex>5</PictureIndex>
 </Profile>

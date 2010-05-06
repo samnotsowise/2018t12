@@ -4,14 +4,14 @@
   <description asmv2:publisher="T12" asmv2:product="Air Hockey" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <deployment install="true" mapFileExtensions="true" />
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="AirHockeyGame.exe.manifest" size="4683">
+    <dependentAssembly dependencyType="install" codebase="AirHockeyGame.exe.manifest" size="5313">
       <assemblyIdentity name="AirHockeyGame.exe" version="1.0.2.4" publicKeyToken="0000000000000000" language="en-GB" processorArchitecture="x86" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>V+o8jdLgOcE3+MoSNin3dwLx2fs=</dsig:DigestValue>
+        <dsig:DigestValue>FPL4FGTaojCUi5JnvUQ9/cS6Mg8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

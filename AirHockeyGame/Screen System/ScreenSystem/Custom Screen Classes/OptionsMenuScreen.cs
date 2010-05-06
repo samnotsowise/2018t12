@@ -31,7 +31,7 @@ namespace GameScreenManager.ScreenSystem {
         float exitTimer;
         const float timeBeforeExitAllowed = 100.0f;
         bool exitAllowed;
-        bool nameChanging;
+        bool nameChanging,serverChanging, portChanging;
 
         Vector2 picturePos;
         private Settings oldSettings;
@@ -48,6 +48,9 @@ namespace GameScreenManager.ScreenSystem {
             : base() {
 
             nameChanging = false;
+            serverChanging = false;
+            portChanging = false;
+
             exitTimer = 0.0f;
             exitAllowed = false;
 
@@ -70,6 +73,8 @@ namespace GameScreenManager.ScreenSystem {
             MenuEntries.Add("Screen Mode: " + GameState.gameSettings.screenSize);
             MenuEntries.Add("Name: " + GameState.playerProfile.Name);
             MenuEntries.Add("Profile Picture: " + GameState.playerProfile.PictureIndex);
+            MenuEntries.Add("Server Address: " + GameState.gameSettings.serverAddress);
+            MenuEntries.Add("Server Port: " + GameState.gameSettings.serverPort);
             MenuEntries.Add("Return");
         }
 
@@ -149,8 +154,26 @@ namespace GameScreenManager.ScreenSystem {
 
                     MenuEntries[3] = "Profile Picture: " + GameState.playerProfile.PictureIndex;
                     break;
-                //Exit
+                //Server Address
                 case 4:
+                    if (!serverChanging)
+                    {
+                        serverChanging = true;
+                        GameState.gameSettings.serverAddress = "";
+                        MenuEntries[4] = ("Server Address: " + GameState.gameSettings.serverAddress + "|");
+                    }
+                    break;
+                //Server Port
+                case 5:
+                    if (!portChanging)
+                    {
+                        portChanging = true;
+                        GameState.gameSettings.serverPort = "";
+                        MenuEntries[5] = ("Server Port: " + GameState.gameSettings.serverPort + "|");
+                    }
+                    break;
+                //Exit
+                case 6:
                     SaveChanges();//save changes to settings to file
                     ScreenManager.GoToMainMenu();
                     break;
@@ -185,6 +208,34 @@ namespace GameScreenManager.ScreenSystem {
                 if(keyboard.IsKeyDown(Keys.Enter) || keyboard.IsKeyDown(Keys.Down) || keyboard.IsKeyDown(Keys.Up)) {
                     nameChanging = false;
                     MenuEntries[2] = ("Name: " + GameState.playerProfile.Name);
+                }
+            }
+
+            //If player is changing the server address
+            if (serverChanging)
+            {
+                GameState.gameSettings.serverAddress = GetText(keyboard, GameState.gameSettings.serverAddress);
+                MenuEntries[4] = ("Server Address: " + GameState.gameSettings.serverAddress + "|");
+
+                //If player presses up or down, they stop editing the name
+                if (keyboard.IsKeyDown(Keys.Enter) || keyboard.IsKeyDown(Keys.Down) || keyboard.IsKeyDown(Keys.Up))
+                {
+                    serverChanging = false;
+                    MenuEntries[4] = ("Server Address: " + GameState.gameSettings.serverAddress);
+                }
+            }
+
+            //If player is changing the server port
+            if (portChanging)
+            {
+                GameState.gameSettings.serverPort = GetText(keyboard, GameState.gameSettings.serverPort);
+                MenuEntries[5] = ("Server Port: " + GameState.gameSettings.serverPort + "|");
+
+                //If player presses up or down, they stop editing the name
+                if (keyboard.IsKeyDown(Keys.Enter) || keyboard.IsKeyDown(Keys.Down) || keyboard.IsKeyDown(Keys.Up))
+                {
+                    portChanging = false;
+                    MenuEntries[5] = ("Server Port: " + GameState.gameSettings.serverPort);
                 }
             }
 

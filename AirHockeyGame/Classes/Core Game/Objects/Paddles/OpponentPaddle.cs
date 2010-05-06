@@ -24,6 +24,19 @@ namespace FarseerGames.AirHockeyGame {
     /// Extends PaddleObject
     /// </summary>
     class OpponentPaddle: PaddleObject {
+        
+        private int mouseX, mouseY;
+        public int MouseX
+        {
+            get { return mouseX; }
+            set { mouseX = value; }
+        }
+
+        public int MouseY
+        {
+            get { return mouseY; }
+            set { mouseY = value; }
+        }
 
         /// <summary>
         /// Constructor - used to create a new OpponentPaddle object

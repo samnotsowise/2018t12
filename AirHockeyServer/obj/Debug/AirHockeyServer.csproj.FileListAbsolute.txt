@@ -1,0 +1,9 @@
+C:\Users\Gary\Desktop\New Folder\trunk\AirHockeyServer\bin\Debug\AirHockeyServer.exe
+C:\Users\Gary\Desktop\New Folder\trunk\AirHockeyServer\bin\Debug\AirHockeyServer.pdb
+C:\Users\Gary\Desktop\New Folder\trunk\AirHockeyServer\bin\Debug\Lidgren.Network.dll
+C:\Users\Gary\Desktop\New Folder\trunk\AirHockeyServer\bin\Debug\Lidgren.Network.pdb
+C:\Users\Gary\Desktop\New Folder\trunk\AirHockeyServer\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Gary\Desktop\New Folder\trunk\AirHockeyServer\obj\Debug\AirHockeyServer.exe
+C:\Users\Gary\Desktop\New Folder\trunk\AirHockeyServer\obj\Debug\AirHockeyServer.pdb
+C:\Documents and Settings\16280059\Desktop\T12\AirHockeyServer\obj\Debug\AirHockeyServer.exe
+C:\Documents and Settings\16280059\Desktop\T12\AirHockeyServer\obj\Debug\AirHockeyServer.pdb
